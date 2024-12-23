@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Space Mono", serif;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+body {
+    @apply bg-dark;
+}
+
+body:after {
+    background-image: url("https://files.facepunch.com/garry/1b1011b1/test.png?1=");
+    content: " ";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 500;
+    pointer-events: none;
+    opacity: .6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1b1b1b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #494949;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #383838;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+a {
+    @apply font-semibold;
+}
+
+table tr th {
+    @apply text-start px-3 pb-4 pt-3 min-w-[130px] text-white font-bold text-[13px];
+}
+
+table tr td {
+    @apply text-start px-3 py-2 text-[14px] min-w-[130px] text-gray-300 break-words font-medium;
+}
+
+table tr th.big {
+    @apply text-start px-3 py-2 min-w-[130px];
+}
+
+table tr td.big {
+    @apply text-start px-3 py-2 text-[12px] min-w-[130px] break-words;
+}
+
+table td p {
+    @apply w-full;
+}
+
+table tr {
+    @apply rounded-2xl even:bg-dark;
+}
+
+.notes li {
+    @apply text-[16px] font-normal leading-[32px];
+}
+
+.shadow-dual {
+    box-shadow:
+        -1px -1px 4px rgba(164, 164, 164, 0.10),
+        1px 1px 4px rgba(164, 164, 164, 0.10);
+}
+
+.markdown ul,
+.markdown li {
+    @apply list-disc ml-3;
+}
+
+.markdown h1 {
+    @apply mb-2;
+}
