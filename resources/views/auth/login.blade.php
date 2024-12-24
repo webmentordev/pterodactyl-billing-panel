@@ -15,9 +15,9 @@
 
 
     <div class="flex items-center my-4">
-        <div class="border-b border-gray-200 w-full"></div>
-        <p class="mx-4 text-sm">Or</p>
-        <div class="border-b border-gray-200 w-full"></div>
+        <div class="border-b border-white/10 w-full"></div>
+        <p class="mx-4 text-sm text-white">Or</p>
+        <div class="border-b border-white/10 w-full"></div>
     </div>
 
     <form method="POST" action="{{ route('login') }}">
@@ -25,7 +25,7 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" class="text-gray-100" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
                 required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
@@ -33,7 +33,7 @@
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" class="text-gray-100" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                 autocomplete="current-password" />
@@ -45,20 +45,20 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox"
-                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    class="rounded border-gray-200 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                <span class="ms-2 text-sm text-gray-200">{{ __('Remember me') }}</span>
             </label>
         </div>
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                <a class="underline text-sm text-gray-100 hover:text-rust rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
 
-            <x-primary-button class="ms-3">
+            <x-primary-button class="ms-3 bg-rust hover:text-black hover:bg-white">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>

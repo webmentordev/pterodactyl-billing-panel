@@ -14,6 +14,7 @@
 </head>
 
 <body class="font-sans antialiased">
+    <x-navigation />
     <main>
         {{ $slot }}
     </main>
