@@ -9,6 +9,7 @@
                 <th>Payments</th>
                 <th>Paid</th>
                 <th>Emailed</th>
+                <th>Invoices</th>
                 <th>Status</th>
                 <th class="text-end">Expire At</th>
                 <th class="text-end">Created At</th>
@@ -38,6 +39,9 @@
                                 width="20px">
                         @endif
                     </td>
+                    <td>
+                        {{ $item->billings_count }}
+                    </td>
                     <td width="50px">
                         @if ($item->status == 'paid')
                             <span
@@ -60,18 +64,13 @@
                             -
                         @endif
                     </td>
-
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                     <td class="flex items-center justify-end">
                         <div class="flex items-center h-fit mt-1">
-                            <a href="{{ $item->checkout_url }}" target="_blank" class="mr-1">
-                                <img src="https://api.iconify.design/ion:eye-sharp.svg?color=%23345cfe" width="18">
+                            <a href="{{ route('admin.billing', $item->id) }}" class="mr-1">
+                                <img src="https://api.iconify.design/mdi:eye-settings-outline.svg?color=%2358bcee"
+                                    width="18">
                             </a>
-                            <button wire:confirm="are you sure?" wire:click='deletePackage("{{ $item->id }}")'
-                                type="submit" class="mr-1">
-                                <img src="https://api.iconify.design/material-symbols:delete-outline.svg?color=%23d72d2d"
-                                    width="20">
-                            </button>
                         </div>
                     </td>
                 </tr>
@@ -83,6 +82,6 @@
             </div>
         @endif
     @else
-        <p class="mt-4 text-center">No orders exist in the system!</p>
+        <p class="mt-4 text-center text-white">No orders exist in the system!</p>
     @endif
 </section>

@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Order;
 
+use App\Models\Billing;
 use Carbon\Carbon;
 use App\Models\Order;
 use Livewire\Component;
@@ -16,11 +17,19 @@ class Success extends Component
             abort(401);
         }
         if ($order->status == 'pending') {
+            $time = Carbon::now()->addDays(30);
             $order->has_paid = true;
             $order->status = "paid";
-            $order->expire_at = Carbon::now()->addDays(30);
+            $order->expire_at = $time;
             $order->total_payments = $order->total_payments + 1;
             $order->save();
+            Billing::create([
+                'order_id' => $order->id,
+                'has_paid' => true,
+                'status' => 'paid',
+                'checkout_url' => $order->checkout_url,
+                'expire_at' => $time,
+            ]);
         } else {
             abort(401);
         }

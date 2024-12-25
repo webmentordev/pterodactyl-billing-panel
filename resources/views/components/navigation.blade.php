@@ -5,7 +5,7 @@
             <ul class="flex items-center text-white">
                 <a href="{{ route('home') }}" class="mx-6">Home</a>
                 <a href="{{ route('home') }}#packages" class="mx-6">Packages</a>
-                <a href="{{ route('dashboard') }}" class="mx-6">GamePanel</a>
+                <a href="{{ config('app.ptero_domain') }}" class="mx-6">GamePanel</a>
                 <a href="{{ route('dashboard') }}" class="mx-6">Client</a>
                 @auth
                     @if (Auth::user()->is_admin)

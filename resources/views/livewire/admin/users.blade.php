@@ -47,6 +47,6 @@
             </div>
         @endif
     @else
-        <p class="mt-4 text-center">No users exist in the system!</p>
+        <p class="mt-4 text-center text-white">No users exist in the system!</p>
     @endif
 </section>

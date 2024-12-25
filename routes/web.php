@@ -12,6 +12,7 @@ use App\Livewire\Admin\Packages\Update as UpdatePackage;
 use App\Livewire\Home;
 use App\Livewire\Order\Cancel as CancelOrder;
 use App\Livewire\Order\Success as SuccessOrder;
+use App\Livewire\Order\Renew as RenewOrder;
 use Illuminate\Support\Facades\Route;
 
 // Open Routes
@@ -32,7 +33,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/packages', Packages::class)->name('packages');
     Route::get('/package/create', CreatePackage::class)->name('packages.create');
     Route::get('/package/update/{package}', UpdatePackage::class)->name('package.update');
-    Route::get('/billings', AdminBilling::class)->name('billing');
+    Route::get('/billings/{order?}', AdminBilling::class)->name('billing');
     Route::get('/orders', AdminOrders::class)->name('orders');
 });
 
@@ -45,6 +46,6 @@ Route::middleware(['guest'])->group(function () {
 // Order purchase status
 Route::get('/order/{order}/success', SuccessOrder::class)->name('order.success');
 Route::get('/order/{order}/cancel', CancelOrder::class)->name('order.cancel');
-
+Route::get('/order/renew/{order}/{status}/{billing}', RenewOrder::class)->name('order.renew');
 
 require __DIR__ . '/auth.php';

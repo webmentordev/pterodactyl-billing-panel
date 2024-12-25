@@ -15,7 +15,7 @@ class Orders extends Component
     public function render()
     {
         return view('livewire.admin.orders', [
-            'orders' => Order::latest()->paginate(200)
+            'orders' => Order::latest()->withCount(['billings'])->paginate(200)
         ]);
     }
 }
