@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Server;
 use App\Models\Billing;
 use App\Models\Package;
 use Illuminate\Database\Eloquent\Model;
@@ -21,7 +22,8 @@ class Order extends Model
         'status',
         'checkout_url',
         'expire_at',
-        'total_payments'
+        'total_payments',
+        'server_id'
     ];
 
     protected $casts = [
@@ -41,5 +43,10 @@ class Order extends Model
     public function billings()
     {
         return $this->hasMany(Billing::class);
+    }
+
+    public function server()
+    {
+        return $this->hasMany(Server::class);
     }
 }
