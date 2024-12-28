@@ -1,11 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Moderustic:wght@300..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 * {
-    font-family: "Space Mono", serif;
+    font-family: "DM Sans", serif;
 }
 
 [x-cloak] {
@@ -54,12 +55,9 @@ h1,
 h2,
 h3,
 h4,
-.link {
+.links a,
+font {
     font-family: 'Bebas Neue', cursive;
-}
-
-a {
-    @apply font-semibold;
 }
 
 table tr th {

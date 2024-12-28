@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Order;
+use App\Models\Usage;
 use Illuminate\Database\Eloquent\Model;
 
 class Server extends Model
@@ -21,5 +22,10 @@ class Server extends Model
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+
+    public function usage()
+    {
+        return $this->hasMany(Usage::class);
     }
 }

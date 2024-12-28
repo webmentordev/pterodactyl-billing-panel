@@ -20,10 +20,11 @@ use App\Livewire\Admin\Packages\Update as UpdatePackage;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
+use App\Livewire\Package as SinglePackage;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
-
+Route::get('/buy-dedicated-rust-server', SinglePackage::class)->name('package');
 
 // Customer Routes
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
@@ -38,10 +39,6 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/servers', AdminServer::class)->name('servers');
     Route::get('/server/create', CreateServer::class)->name('server.create');
     Route::get('/server/update/{server}', UpdateServer::class)->name('server.update');
-
-    Route::get('/packages', Packages::class)->name('packages');
-    Route::get('/package/create', CreatePackage::class)->name('packages.create');
-    Route::get('/package/update/{package}', UpdatePackage::class)->name('package.update');
 
     Route::get('/billings/{order?}', AdminBilling::class)->name('billing');
     Route::get('/orders', AdminOrders::class)->name('orders');

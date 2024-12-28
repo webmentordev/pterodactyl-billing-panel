@@ -4,7 +4,6 @@
             <tr>
                 <th>ID</th>
                 <th>User</th>
-                <th>Package</th>
                 <th>Price</th>
                 <th>Payments</th>
                 <th>Paid</th>
@@ -19,7 +18,6 @@
                 <tr>
                     <td>{{ Str::afterLast($item->id, '-') }}</td>
                     <td>{{ $item->user->name }}</td>
-                    <td>{{ $item->package->name }}</td>
                     <td>${{ $item->price }}</td>
                     <td>{{ $item->total_payments }}</td>
                     <td>

@@ -11,7 +11,6 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('package_id')->constrained()->onDelete('cascade');
             $table->text('stripe_order_id')->nullable();
             $table->boolean('has_paid')->default(false);
             $table->string('status')->default('pending');

@@ -10,7 +10,7 @@
     </div>
     <div class="flex items-center justify-center py-12" id="packages">
         <div class="max-w-4xl w-full p-3 grid grid-cols-3 gap-6">
-            @foreach ($packages as $package)
+            {{-- @foreach ($packages as $package)
                 <div class="rounded-lg bg-dark-100 border border-white/10 p-8 flex flex-col justify-between text-white">
                     <div class="w-full">
                         <img src="{{ asset('/storage/' . $package->image) }}" width="80px" class="m-auto mb-5">
@@ -37,7 +37,7 @@
                         class="w-full bg-rust rounded-lg text-white font-semibold py-3">Pay
                         {{ $package->price }}</button>
                 </div>
-            @endforeach
+            @endforeach --}}
         </div>
     </div>
 </section>

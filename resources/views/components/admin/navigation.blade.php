@@ -8,7 +8,7 @@
         @endif
     </div>
 
-    <ul class="flex flex-col my-8 h-full text-white">
+    <ul class="flex flex-col my-8 h-full text-white font-bold">
         <a href="{{ route('admin.dashboard') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img
                 src="https://api.iconify.design/material-symbols:dashboard-customize-rounded.svg?color=%23FFFFFF"
@@ -20,9 +20,6 @@
         <a href="{{ route('admin.servers') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/solar:server-outline.svg?color=%23FFFFFF"
                 width="20px" class="mr-3"><span>Servers</span></a>
-        <a href="{{ route('admin.packages') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
-            wire:current="bg-dark"><img src="https://api.iconify.design/iconoir:packages.svg?color=%23FFFFFF"
-                width="20px" class="mr-3"><span>Packages</span></a>
         <a href="{{ route('admin.orders') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/carbon:delivery-parcel.svg?color=%23ffffff"
                 width="20px" class="mr-3"><span>Orders</span></a>

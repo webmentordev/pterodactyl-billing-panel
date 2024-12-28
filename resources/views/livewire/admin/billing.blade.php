@@ -4,7 +4,6 @@
             <tr>
                 <th>ID</th>
                 <th>User</th>
-                <th>Package</th>
                 <th>Price</th>
                 <th>Paid</th>
                 <th>Emailed</th>
@@ -16,7 +15,6 @@
                 <tr>
                     <td>{{ Str::afterLast($item->id, '-') }}</td>
                     <td>{{ $item->order->user->name }}</td>
-                    <td>{{ $item->order->package->name }}</td>
                     <td>${{ $item->order->price }}</td>
                     <td>
                         @if ($item->has_paid)
