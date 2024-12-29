@@ -6,8 +6,8 @@
                 <li class="mb-2">● Game Panel For Management</li>
                 <li class="mb-2">● Integrated Rust Sever Console (RCON)</li>
                 <li class="mb-2">● AMD Ryzen™ 5 3600 @ 3.6GHz</li>
-                <li class="mb-2">● 2 Threads CPU Performance</li>
-                <li class="mb-2">● Dedicated Threads (No Sharing)</li>
+                <li class="mb-2">● 2 vCores CPU Performance</li>
+                <li class="mb-2">● Dedicated CPU Threads (No Sharing)</li>
                 <li class="mb-2">● 12GB DDR4 RAM (Physical)</li>
                 <li class="mb-2">● 5GB RAM (Virtual)</li>
                 <li class="mb-2">● 50GB NVME SSD</li>
@@ -32,20 +32,30 @@
             <p class="mb-3 pb-3 border-b border-white/10">Rust - Assault Rifle</p>
             <ul class="list-disc ml-5">
                 <li>Rust Server</li>
-                <li>2 Threads (Ryzen™ 5 3600 @ 3.6GHz)</li>
+                <li>2 vCores (Ryzen™ 5 3600 @ 3.6GHz)</li>
                 <li>12GB DDR4 RAM</li>
                 <li>5GB RAM (Virtual)</li>
+                <li>Unlimited Players Slot</li>
+                <li>5000 Map Size Support</li>
                 <li>Location: Germany</li>
             </ul>
             <div class="mb-3 pb-3 border-b border-white/10"></div>
-            <p class="mb-3 pb-3 border-b border-white/10">Free Migration from Old Host</p>
+            <p class="mb-3 pb-3 border-b border-white/10">Free Server Migration (Contact Support)</p>
             <p class="flex justify-between items-center"><span>Setup Fees:</span> <span>$0.00 USD</span></p>
             <p class="flex justify-between items-center mb-3 pb-3 border-b border-white/10"><span>Monthly:</span>
-                <span>$20.00 USD</span>
+                <span>${{ number_format($price) }} USD</span>
             </p>
-            <p class="flex justify-between items-center"><span>Server Ready In:</span> <span>10 Minutes</span></p>
-            <button type="button" class="py-3 bg-rust-green text-white font-semibold my-2 rounded-sm">Pay Now
-                ${{ 20.0 }}</button>
+            <p class="flex justify-between items-center"><span>Server Ready In:</span> <span>~10 Minutes</span></p>
+            <button type="button" wire:click="buyNow"
+                class="py-3 bg-rust-green text-white font-semibold my-2 rounded-sm">
+                <div wire:target="buyNow" wire:loading.class="hidden">
+                    Pay Now
+                    ${{ number_format($price) }}
+                </div>
+                <div wire:target="buyNow" wire:loading>
+                    Processing...
+                </div>
+            </button>
             <p class="text-end">Total Due Today</p>
         </div>
     </div>

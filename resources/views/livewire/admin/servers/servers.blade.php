@@ -7,7 +7,7 @@
     @if (count($servers))
         <table class="w-full">
             <tr>
-                <th>Name</th>
+                <th>Node</th>
                 <th>IP</th>
                 <th>Location</th>
                 <th>Core</th>

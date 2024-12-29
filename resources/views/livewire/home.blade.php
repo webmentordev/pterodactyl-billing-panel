@@ -4,7 +4,14 @@
         <div class="absolute top-0 left-0 bg-dark/30 backdrop-blur-sm w-full h-full"></div>
         <div class="relative flex items-center justify-center h-full w-full z-10">
             <div class="text-center">
-                <h1 class="text-8xl text-white">Buy High Performance Dedicated <br> Rust Servers</h1>
+                <h1 class="text-8xl text-gray-300">High Performance <span class="text-rust">Dedicated</span> <br> Rust
+                    <span class="text-rust">Servers</span>
+                </h1>
+                <p class="text-white text-lg mb-4">We utilize high-performance consumer-grade hardware to ensure
+                    seamless, <br> low-latency gameplay</p>
+                <a href="{{ route('package') }}"
+                    class="inline-block text-white bg-rust p-3 rounded-sm font-semibold px-4">Get Your
+                    Server</a>
             </div>
         </div>
     </div>

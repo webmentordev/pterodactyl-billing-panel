@@ -19,6 +19,7 @@ return [
     'ptero_api' => env('PANEL_API'),
     'ptero_domain' => env('PANEL_DOMAIN'),
     'stripe_token' => env('STRIPE_TOKEN'),
+    'stripe_product_id' => env('STRIPE_PRODUCT_ID'),
     'google_id' => env('GOOGLE_CLIENT_ID'),
     'google_secret' => env('GOOGLE_CLIENT_SECRET'),
     'mail_address' => env('MAIL_FROM_ADDRESS'),

@@ -1,8 +1,10 @@
 @extends('layouts.email')
 @section('content')
     <section class="text-white email text-sm">
-        <h1 class="text-white mb-5 text-3xl items-center 360px:text-2xl">🎉Purchasing Your Rust Game Hosting🎉</h1>
-        <p class="mb-5">Dear <strong class="text-rust">{{ $order->user->name }}</strong>,</p>
+        <h1 class="text-white mb-2 text-3xl items-center 360px:text-2xl inline-block mt-3">🎉Purchasing Your Rust Game
+            Hosting🎉
+        </h1>
+        <p class="mb-2">Dear <strong class="text-rust">{{ $order->user->name }}</strong>,</p>
         <p class="mb-2">We’re thrilled to see you take the next step in your gaming journey! With your new Rust game
             hosting, you're all
             set for an incredible multiplayer experience. </p>
