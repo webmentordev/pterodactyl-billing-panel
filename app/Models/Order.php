@@ -22,7 +22,8 @@ class Order extends Model
         'checkout_url',
         'expire_at',
         'total_payments',
-        'server_id'
+        'server_id',
+        'is_active'
     ];
 
     protected $casts = [

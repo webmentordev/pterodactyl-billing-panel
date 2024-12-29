@@ -7,7 +7,7 @@
                 <th>Price</th>
                 <th>Payments</th>
                 <th>Paid</th>
-                <th>Emailed</th>
+                <th>IsActive</th>
                 <th>Invoices</th>
                 <th>Status</th>
                 <th class="text-end">Expire At</th>
@@ -29,12 +29,11 @@
                         @endif
                     </td>
                     <td>
-                        @if ($item->email_sent)
+                        @if ($item->is_active)
                             <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
                                 width="30px">
                         @else
-                            <img src="https://api.iconify.design/material-symbols:alarm-outline.svg?color=%23f9fd26"
-                                width="20px">
+                            <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
                         @endif
                     </td>
                     <td>

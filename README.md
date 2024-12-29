@@ -21,8 +21,10 @@ Follow these steps to properly setup Panel
 2. Go to settings, update the company name
 3. Go to settings, then Enable Automatic Allocation with ports
 4. Add new Location in Panel
-5. Create new Nest, name & description, then copy ID of Nest
-6. Go to Nest, Import Egg, select Egg, select next you created then save
+5. Delete All Nests in Nests tab
+6. Create new Nest, name & description, then copy ID of Nest
+7. Go to Nest, Import Egg, select Egg, select next you created then save
+8. Setup SMTP Credientials and Name in Emails in settings
 ```
 # Wing Installation & Setup  
 Follow these steps to properly setup Wings

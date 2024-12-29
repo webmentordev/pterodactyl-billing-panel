@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Models\Order;
-use App\Models\Package;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +15,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'name',
         'email',
+        'panel_user_id',
+        'subscribed',
         'password',
         'is_admin',
         'google_id',
@@ -35,11 +36,6 @@ class User extends Authenticatable implements MustVerifyEmail
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function packages()
-    {
-        return $this->hasMany(Package::class);
     }
 
     public function orders()

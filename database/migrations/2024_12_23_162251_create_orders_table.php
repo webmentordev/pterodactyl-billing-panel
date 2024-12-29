@@ -15,10 +15,10 @@ return new class extends Migration
             $table->boolean('has_paid')->default(false);
             $table->string('status')->default('pending');
             $table->text('checkout_url')->nullable();
-            $table->boolean('email_sent')->default(false);
             $table->timestamp('expire_at')->nullable();
             $table->text('total_payments')->default(0);
             $table->decimal('price', 10, 2);
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

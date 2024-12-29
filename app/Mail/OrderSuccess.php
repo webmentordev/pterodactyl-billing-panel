@@ -15,9 +15,10 @@ class OrderSuccess extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public Order $order)
+    public function __construct(public Order $order, public $password = null)
     {
         $this->order = $order;
+        $this->password = $password;
     }
 
     public function envelope(): Envelope
