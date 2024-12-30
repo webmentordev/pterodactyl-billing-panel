@@ -12,10 +12,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('ip');
-            $table->string('cores');
-            $table->string('ram');
+            $table->string('domain');
+            $table->bigInteger('cores');
+            $table->bigInteger('threads');
+            $table->bigInteger('swap');
+            $table->bigInteger('ram');
             $table->string('ram_type');
-            $table->string('storage');
+            $table->bigInteger('storage');
             $table->string('storage_type');
             $table->string('location');
             $table->timestamps();

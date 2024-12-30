@@ -15,6 +15,11 @@
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
             <div class="mb-2">
+                <x-input-label :value="__('Server Domain')" />
+                <x-text-input class="block mt-1 w-full" type="text" wire:model="domain" required />
+                <x-input-error :messages="$errors->get('domain')" class="mt-2" />
+            </div>
+            <div class="mb-2">
                 <x-input-label :value="__('IP Address')" />
                 <x-text-input class="block mt-1 w-full" type="text" wire:model="ip" required />
                 <x-input-error :messages="$errors->get('ip')" class="mt-2" />
@@ -51,6 +56,16 @@
                 <x-input-label :value="__('Cores')" />
                 <x-text-input class="block mt-1 w-full" type="number" wire:model="cores" required />
                 <x-input-error :messages="$errors->get('cores')" class="mt-2" />
+            </div>
+            <div class="mb-2">
+                <x-input-label :value="__('Threads')" />
+                <x-text-input class="block mt-1 w-full" type="number" wire:model="threads" required />
+                <x-input-error :messages="$errors->get('threads')" class="mt-2" />
+            </div>
+            <div class="mb-2">
+                <x-input-label :value="__('Swap (GB)')" />
+                <x-text-input class="block mt-1 w-full" type="number" wire:model="swap" required />
+                <x-input-error :messages="$errors->get('swap')" class="mt-2" />
             </div>
             <div class="mb-2">
                 <x-input-label :value="__('RAM (GB)')" />

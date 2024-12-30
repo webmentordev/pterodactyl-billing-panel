@@ -13,10 +13,14 @@ return new class extends Migration
             $table->uuid('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreignId('server_id')->constrained()->onDelete('cascade');
-            $table->integer('cpu_pin_1');
-            $table->integer('cpu_pin_2');
-            $table->integer('ram');
-            $table->integer('storage');
+            $table->bigInteger('cpu_pin_1');
+            $table->bigInteger('cpu_pin_2');
+            $table->bigInteger('server_port');
+            $table->bigInteger('query_port');
+            $table->bigInteger('rcon_port');
+            $table->bigInteger('app_port');
+            $table->bigInteger('ram');
+            $table->bigInteger('storage');
             $table->timestamps();
         });
     }

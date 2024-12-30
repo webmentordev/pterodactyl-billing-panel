@@ -13,6 +13,12 @@ class Usage extends Model
         'server_id',
         'cpu_pin_1',
         'cpu_pin_2',
+        'server_port',
+        'query_port',
+        'rcon_port',
+        'app_port',
+        'cpu_pin_2',
+        'cpu_pin_2',
         'ram',
         'storage',
     ];

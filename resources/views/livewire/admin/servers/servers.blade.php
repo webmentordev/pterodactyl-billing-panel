@@ -7,24 +7,30 @@
     @if (count($servers))
         <table class="w-full">
             <tr>
-                <th>Node</th>
+                <th>Name</th>
+                <th>Domain</th>
                 <th>IP</th>
                 <th>Location</th>
                 <th>Core</th>
+                <th>Threads</th>
                 <th>RAM</th>
                 <th>Storage</th>
+                <th>Swap</th>
                 <th class="text-end">Orders</th>
-                <th class="text-end">Created At</th>
+                <th class="text-end">Added At</th>
                 <th class="text-end">Action</th>
             </tr>
             @foreach ($servers as $item)
                 <tr>
                     <td>{{ $item->name }}</td>
+                    <td>{{ $item->domain }}</td>
                     <td>{{ $item->ip }}</td>
                     <td>{{ $item->location }}</td>
-                    <td>{{ $item->cores }} vCores</td>
+                    <td>{{ $item->cores }} Cores</td>
+                    <td>{{ $item->threads }} Threads</td>
                     <td>{{ $item->ram }}GB ({{ $item->ram_type }})</td>
                     <td>{{ $item->storage }}GB ({{ $item->storage_type }})</td>
+                    <td>{{ $item->swap }}GB</td>
                     <td class="text-end">{{ count($item->orders) }}</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                     <td class="flex items-center justify-end">

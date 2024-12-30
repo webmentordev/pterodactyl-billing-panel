@@ -18,15 +18,19 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
-    <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
-        <div>
-            <a href="/">
-                <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="180px">
-            </a>
-        </div>
+    <div class="min-h-screen relative flex flex-col justify-center items-center pt-6 bg-cover bg-center"
+        style="background-image: url({{ asset('assets/background/header_2.jpg') }})">
+        <div class="absolute w-full h-full top-0 left-0 bg-dark/30 backdrop-blur-sm"></div>
+        <div class="relative z-20 flex flex-col items-center max-w-lg w-full">
+            <div>
+                <a href="/">
+                    <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="140px">
+                </a>
+            </div>
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-4 shadow-md overflow-hidden sm:rounded-lg bg-dark-100">
-            {{ $slot }}
+            <div class="w-full sm:max-w-md mt-6 px-6 py-4 shadow-md overflow-hidden sm:rounded-lg bg-dark-100">
+                {{ $slot }}
+            </div>
         </div>
     </div>
 </body>

@@ -10,8 +10,8 @@
                 <p class="text-white text-lg mb-4">We utilize high-performance consumer-grade hardware to ensure
                     seamless, <br> low-latency gameplay</p>
                 <a href="{{ route('package') }}"
-                    class="inline-block text-white bg-rust p-3 rounded-sm font-semibold px-4">Get Your
-                    Server</a>
+                    class="inline-block text-white bg-rust p-3 rounded-sm font-semibold px-4 hover:bg-rust-green transition-all"
+                    title="Buy Under 20$ Dedicated Rust Server">Get 20$ Server</a>
             </div>
         </div>
     </div>

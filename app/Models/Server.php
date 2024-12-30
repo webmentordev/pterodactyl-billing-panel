@@ -11,7 +11,10 @@ class Server extends Model
     protected $fillable = [
         'name',
         'ip',
+        'domain',
         'cores',
+        'threads',
+        'swap',
         'ram',
         'ram_type',
         'storage',

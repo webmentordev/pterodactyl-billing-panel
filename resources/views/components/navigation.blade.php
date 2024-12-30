@@ -1,7 +1,10 @@
 <nav class="fixed top-3 w-full z-50">
-    <div class="bg-dark-100/90 rounded-lg p-2 border border-white/20 backdrop-blur max-w-7xl m-auto">
+    <div class="bg-dark-100/90 rounded-full p-2 border border-white/20 backdrop-blur max-w-7xl m-auto">
         <div class="flex items-center justify-between">
-            <a href="{{ route('home') }}"><img src="{{ asset('assets/logo.png') }}" alt="" width="50"></a>
+            <div class="flex items-center">
+                <a href="{{ route('home') }}"><img src="{{ asset('assets/logo.png') }}" alt="" width="40"></a>
+                <strong class="text-white text-2xl ml-3">RustDedicated</strong>
+            </div>
             <ul class="flex items-center text-white links">
                 <a href="{{ route('home') }}" class="mx-6 text-lg hover:text-rust transition-all">Home</a>
                 <a href="{{ route('package') }}" class="mx-6 text-lg hover:text-rust transition-all">Package</a>
@@ -10,6 +13,8 @@
                 <a href="{{ route('dashboard') }}" class="mx-6 text-lg hover:text-rust transition-all">Client</a>
                 <a href="https://discord.gg/5XFteSutRK" target="_blank"
                     class="mx-6 text-lg hover:text-rust transition-all">Discord</a>
+                <a href="https://youtube.com/@rustdedicatedhosting" target="_blank"
+                    class="mx-6 text-lg hover:text-rust transition-all">YouTube</a>
                 @auth
                     @if (Auth::user()->is_admin)
                         <a href="{{ route('admin.dashboard') }}"
@@ -17,15 +22,18 @@
                     @endif
                 @endauth
             </ul>
-
             @auth
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
-                    <button class="text-white bg-rust py-2 px-5 font-semibold rounded-lg">Logout</button>
+                    <button
+                        class="text-white bg-rust py-2 px-5 font-semibold rounded-full hover:bg-rust-green transition-all">Logout</button>
                 </form>
             @endauth
             @guest
-                <a href="{{ route('login') }}" class="text-white bg-rust rounded-2xl py-2 px-5 font-semibold">Login</a>
+                <ul class="flex items-center mr-5 links">
+                    <a href="{{ route('login') }}" class="text-white pr-4 border-r border-white/10">Login</a>
+                    <a href="{{ route('register') }}" class="text-white pl-4">Register</a>
+                </ul>
             @endguest
         </div>
     </div>

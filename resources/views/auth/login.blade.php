@@ -62,5 +62,8 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+
+        <p class="my-4 text-center text-gray-100">Do not have an account? <a href="{{ route('register') }}"
+                class="text-rust underline">Register Now</a></p>
     </form>
 </x-guest-layout>
