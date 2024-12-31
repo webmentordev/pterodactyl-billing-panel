@@ -5,10 +5,10 @@
             <ul class="">
                 <li class="mb-2">● Game Panel For Management</li>
                 <li class="mb-2">● Integrated Rust Console (RCON)</li>
-                <li class="mb-2">● Intel® Core™ i7-7700 @ 3.6GHz - 4.30GHz</li>
+                <li class="mb-2">● Intel® Core™ i7-7700 @ 4.20GHz</li>
                 <li class="mb-2">● 2 vCores CPU Performance</li>
                 <li class="mb-2">● Dedicated CPU Threads (No Sharing)</li>
-                <li class="mb-2">● 12GB DDR4 RAM (Physical)</li>
+                <li class="mb-2">● 15GB DDR4 RAM (Physical)</li>
                 <li class="mb-2">● 5GB RAM (Virtual)</li>
                 <li class="mb-2">● 50GB NVME SSD</li>
                 <li class="mb-2">● 8 Minutes Rust Server Startup Time</li>
@@ -17,7 +17,7 @@
                 <li class="mb-2">● 3 Server Backups</li>
                 <li class="mb-2">● Unlimited Players Slot (150 Recommended)</li>
                 <li class="mb-2">● Up to 20 Server Ticks (10 Recommended)</li>
-                <li class="mb-2">● Up to 4500 Map Size (4250 Recommended)</li>
+                <li class="mb-2">● Up to 5000 Map Size (4250 Recommended)</li>
                 <li class="mb-2">● Full FTP Access</li>
                 <li class="mb-2">● Sub User Management</li>
                 <li class="mb-2">● Carbon & Oxide Support</li>
@@ -35,12 +35,12 @@
             <p class="mb-3 pb-3 border-b border-white/10">Rust - Assault Rifle</p>
             <ul class="list-disc ml-5">
                 <li>Rust Server</li>
-                <li>2 vCores (Core™ i7-7700 @ 3.6GHz)</li>
-                <li>12GB DDR4 RAM</li>
+                <li>2 vCores (Core™ i7-7700 @ 4.2GHz)</li>
+                <li>15GB DDR4 RAM</li>
                 <li>5GB RAM (Virtual)</li>
                 <li>50GB M.2 NVME SSD</li>
                 <li>Unlimited Players Slot</li>
-                <li>4500 Map Size Support</li>
+                <li>5000 Map Size Support</li>
                 <li>Rust+ App Support</li>
                 <li>Full FTP Access</li>
                 <li>Location: Germany</li>

@@ -114,7 +114,7 @@
             "name": "Server Image",
             "description": "The header image for the top of your server listing.",
             "env_variable": "SERVER_IMG",
-            "default_value": "https://api.grouphost.online/api/files/1pmot3sjdt94wfe/4tn7s2i77q7i573/rustdedicated_header_gmaahvstec.png",
+            "default_value": "https://api.grouphost.online/api/files/1pmot3sjdt94wfe/n7t777lyv3n1yup/rustdedicated_header_0lqmbklzwz.png",
             "user_viewable": true,
             "user_editable": true,
             "rules": "nullable|url",
