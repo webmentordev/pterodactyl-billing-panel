@@ -18,6 +18,7 @@
     <main>
         {{ $slot }}
     </main>
+    <x-footer />
     @livewireScripts
 </body>
 

@@ -1,11 +1,11 @@
 <section class="w-full h-full">
     @if (count($users))
-        <table class="w-full">
+        <table class="w-full table-fixed">
             <tr>
-                <th>Logo</th>
+                <th width="60px">Logo</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Signed</th>
+                <th width="80px">Signed</th>
                 <th>Admin</th>
                 <th>Servers</th>
                 <th class="text-end">Joined At</th>
@@ -16,7 +16,8 @@
                         @if ($item->google_avatar)
                             <img src="{{ $item->google_avatar }}" width="30" class="rounded-full">
                         @else
-                            <img src="{{ asset('assets/logo.png') }}" width="30">
+                            <img src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}" width="30"
+                                title="Rust Dedicated Server" alt="Rust Dedicated Server">
                         @endif
                     </td>
                     <td>{{ $item->name }}</td>

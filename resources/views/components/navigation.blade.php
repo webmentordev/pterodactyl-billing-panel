@@ -1,20 +1,20 @@
 <nav class="fixed top-3 w-full z-50">
     <div class="bg-dark-100/90 rounded-full p-2 border border-white/20 backdrop-blur max-w-7xl m-auto">
         <div class="flex items-center justify-between">
-            <div class="flex items-center">
-                <a href="{{ route('home') }}"><img src="{{ asset('assets/logo.png') }}" alt="" width="40"></a>
+            <a href="{{ route('home') }}" class="flex items-center"><img
+                    src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}" alt="" width="40">
                 <strong class="text-white text-2xl ml-3">RustDedicated</strong>
-            </div>
+            </a>
             <ul class="flex items-center text-white links">
-                <a href="{{ route('home') }}" class="mx-6 text-lg hover:text-rust transition-all">Home</a>
-                <a href="{{ route('package') }}" class="mx-6 text-lg hover:text-rust transition-all">Package</a>
+                <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all">Home</a>
+                <a href="{{ route('package') }}" class="mx-6 hover:text-rust transition-all">Package</a>
                 <a href="{{ config('app.ptero_domain') }}"
                     class="mx-6 text-lg hover:text-rust transition-all">GamePanel</a>
-                <a href="{{ route('dashboard') }}" class="mx-6 text-lg hover:text-rust transition-all">Client</a>
+                <a href="{{ route('dashboard') }}" class="mx-6 hover:text-rust transition-all">Client</a>
                 <a href="https://discord.gg/5XFteSutRK" target="_blank"
-                    class="mx-6 text-lg hover:text-rust transition-all">Discord</a>
+                    class="mx-6 hover:text-rust transition-all">Discord</a>
                 <a href="https://youtube.com/@rustdedicatedhosting" target="_blank"
-                    class="mx-6 text-lg hover:text-rust transition-all">YouTube</a>
+                    class="mx-6 hover:text-rust transition-all">YouTube</a>
                 @auth
                     @if (Auth::user()->is_admin)
                         <a href="{{ route('admin.dashboard') }}"

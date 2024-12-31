@@ -5,29 +5,31 @@
     </div>
 
     @if (count($servers))
-        <table class="w-full">
+        <table class="w-full table-fixed">
             <tr>
-                <th>Name</th>
-                <th>Domain</th>
+                <th width="90px">Name</th>
+                <th width="200px">Processor</th>
+                <th width="210px">Domain</th>
                 <th>IP</th>
                 <th>Location</th>
-                <th>Core</th>
-                <th>Threads</th>
+                <th width="60px">Core</th>
+                <th width="80px">Threads</th>
                 <th>RAM</th>
                 <th>Storage</th>
-                <th>Swap</th>
-                <th class="text-end">Orders</th>
+                <th width="80px">Swap</th>
+                <th class="text-end" width="80px">Orders</th>
                 <th class="text-end">Added At</th>
                 <th class="text-end">Action</th>
             </tr>
             @foreach ($servers as $item)
                 <tr>
                     <td>{{ $item->name }}</td>
+                    <td style="width: 500px">{{ $item->processor }}</td>
                     <td>{{ $item->domain }}</td>
                     <td>{{ $item->ip }}</td>
                     <td>{{ $item->location }}</td>
-                    <td>{{ $item->cores }} Cores</td>
-                    <td>{{ $item->threads }} Threads</td>
+                    <td>{{ $item->cores }}</td>
+                    <td>{{ $item->threads }}</td>
                     <td>{{ $item->ram }}GB ({{ $item->ram_type }})</td>
                     <td>{{ $item->storage }}GB ({{ $item->storage_type }})</td>
                     <td>{{ $item->swap }}GB</td>

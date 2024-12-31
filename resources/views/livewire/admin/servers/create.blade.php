@@ -15,6 +15,11 @@
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />
             </div>
             <div class="mb-2">
+                <x-input-label :value="__('Processor')" />
+                <x-text-input class="block mt-1 w-full" type="text" wire:model="processor" required />
+                <x-input-error :messages="$errors->get('processor')" class="mt-2" />
+            </div>
+            <div class="mb-2">
                 <x-input-label :value="__('Server Domain')" />
                 <x-text-input class="block mt-1 w-full" type="text" wire:model="domain" required />
                 <x-input-error :messages="$errors->get('domain')" class="mt-2" />
