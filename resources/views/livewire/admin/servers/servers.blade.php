@@ -12,7 +12,7 @@
                 <th width="210px">Domain</th>
                 <th>IP</th>
                 <th>Location</th>
-                <th width="60px">Core</th>
+                <th width="60px">Cores</th>
                 <th width="80px">Threads</th>
                 <th>RAM</th>
                 <th>Storage</th>

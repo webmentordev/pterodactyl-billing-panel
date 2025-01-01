@@ -1,5 +1,7 @@
-<section class="w-full py-12">
-    <div class="mt-12 max-w-7xl m-auto flex">
+<section class="w-full py-12 bg-cover bg-center relative"
+    style="background-image: url({{ asset('assets/background/header_3.jpg') }})">
+    <div class="bg-black/50 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
+    <div class="mt-12 max-w-7xl m-auto flex relative z-10">
         <div class="flex flex-col text-white border border-white/20 bg-dark-100 rounded-2xl w-full p-8">
             <h1 class="text-5xl mb-3 w-full border-b border-white/10 pb-3">Budget High Specs Rust Hosting In Germany</h1>
             <ul class="">
@@ -23,7 +25,7 @@
                 <li class="mb-2">● Carbon & Oxide Support</li>
                 <li class="mb-2">● Modded & Community Server</li>
                 <li class="mb-2">● Future Server Upgarde Support</li>
-                <li class="mb-2">● <a href="https://discord.gg/5XFteSutRK"
+                <li class="mb-2">● Quick <a href="https://discord.gg/5XFteSutRK"
                         class="text-rust font-semibold underline">Discord</a>
                     support</li>
             </ul>
@@ -35,7 +37,7 @@
             <p class="mb-3 pb-3 border-b border-white/10">Rust - Assault Rifle</p>
             <ul class="list-disc ml-5">
                 <li>Rust Server</li>
-                <li>2 vCores (Core™ i7-7700 @ 4.2GHz)</li>
+                <li>2 vCores (Core™ i7-7700 @ 4.20GHz)</li>
                 <li>15GB DDR4 RAM</li>
                 <li>5GB RAM (Virtual)</li>
                 <li>50GB M.2 NVME SSD</li>
@@ -63,6 +65,7 @@
                 </div>
             </button>
             <p class="text-end">Total Due Today</p>
+            <p class="text-center">No Subscription</p>
         </div>
     </div>
 </section>
