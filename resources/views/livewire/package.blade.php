@@ -24,13 +24,13 @@
                 <li class="mb-2">● Sub User Management</li>
                 <li class="mb-2">● Carbon & Oxide Support</li>
                 <li class="mb-2">● Modded & Community Server</li>
-                <li class="mb-2">● Future Server Upgarde Support</li>
+                <li class="mb-2">● Future Server Upgrade Support</li>
                 <li class="mb-2">● Quick <a href="https://discord.gg/5XFteSutRK"
                         class="text-rust font-semibold underline">Discord</a>
                     support</li>
             </ul>
         </div>
-        <div
+        <div x-data="{ open: false }"
             class="flex flex-col text-white border border-white/20 bg-dark-100 h-fit rounded-2xl max-w-[400px] w-full ml-4 p-6">
             <h2 class="text-2xl text-center bg-dark w-full py-2 px-4 mb-4">Order Summery</h2>
 
@@ -65,7 +65,22 @@
                 </div>
             </button>
             <p class="text-end">Total Due Today</p>
-            <p class="text-center">No Subscription</p>
+            <button class="text-center underline text-rust font-semibold" x-on:click="open = true">No Automatic
+                Renewal?</button>
+            <div x-show="open" x-cloak x-transition x-on:click.self="open = false"
+                class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center">
+                <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full">
+                    <p class="text-white font-bold text-2xl mb-6">Why don’t we support automatic package renewal or
+                        subscriptions?</p>
+                    <p class="text-gray-200 mb-3">In our 3+ years of development experience, we’ve found that many
+                        customers either forget about their server or fail to cancel on time. This often leads to a poor
+                        experience when they request a refund for an accidental renewal, which we are frequently unable
+                        to process due to the refund period being exceeded. These situations can result in negative
+                        experiences and unfavorable reviews.</p>
+                    <p class="text-gray-200">We always email you 3 days before your package or server expires, giving
+                        you enough time to renew your server.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

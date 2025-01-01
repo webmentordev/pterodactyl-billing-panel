@@ -14,13 +14,16 @@ use Illuminate\Support\Facades\Artisan;
 
 class Success extends Component
 {
+    public $order;
+
     public function mount(Request $request, Order $order)
     {
         if (! $request->hasValidSignature()) {
             abort(401);
         }
+
         if ($order->status == 'pending') {
-            $time = Carbon::now()->addDays(30);
+            $time = Carbon::now()->addDays(31);
             $order->has_paid = true;
             $order->is_active = true;
             $order->status = "paid";
@@ -39,6 +42,7 @@ class Success extends Component
                 'expire_at' => $time,
             ]);
             Mail::to($order->user->email)->send(new OrderSuccess($order, $resultPassword));
+            $this->order = $order;
         } else {
             abort(401);
         }

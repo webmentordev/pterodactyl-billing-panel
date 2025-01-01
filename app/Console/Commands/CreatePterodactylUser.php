@@ -10,7 +10,7 @@ class CreatePterodactylUser extends Command
 {
     protected $signature = 'app:create-pterodactyl-user {userID}';
 
-    protected $description = 'Create User in Pterodactyl Panel';
+    protected $description = 'Create User in Pterodactyl Panel & Update ID';
 
     public function handle()
     {
