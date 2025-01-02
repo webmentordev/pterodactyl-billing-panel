@@ -16,11 +16,7 @@ class Usage extends Model
         'server_port',
         'query_port',
         'rcon_port',
-        'app_port',
-        'cpu_pin_2',
-        'cpu_pin_2',
-        'ram',
-        'storage',
+        'app_port'
     ];
 
     public function order()

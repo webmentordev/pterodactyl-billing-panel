@@ -7,6 +7,7 @@
     @if (count($servers))
         <table class="w-full table-fixed">
             <tr>
+                <th width="90px">NodeID</th>
                 <th width="90px">Name</th>
                 <th width="200px">Processor</th>
                 <th width="210px">Domain</th>
@@ -23,6 +24,7 @@
             </tr>
             @foreach ($servers as $item)
                 <tr>
+                    <td>{{ $item->node_id }}</td>
                     <td>{{ $item->name }}</td>
                     <td style="width: 500px">{{ $item->processor }}</td>
                     <td>{{ $item->domain }}</td>

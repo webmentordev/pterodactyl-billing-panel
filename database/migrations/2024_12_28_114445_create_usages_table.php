@@ -19,8 +19,6 @@ return new class extends Migration
             $table->bigInteger('query_port');
             $table->bigInteger('rcon_port');
             $table->bigInteger('app_port');
-            $table->bigInteger('ram');
-            $table->bigInteger('storage');
             $table->timestamps();
         });
     }

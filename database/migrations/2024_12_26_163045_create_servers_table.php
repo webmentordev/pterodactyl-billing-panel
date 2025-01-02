@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('node_id');
             $table->string('name');
             $table->string('processor');
             $table->string('ip');

@@ -10,6 +10,11 @@
 
         <div class="grid grid-cols-2 gap-3">
             <div class="mb-2">
+                <x-input-label :value="__('Panel NodeID')" />
+                <x-text-input class="block mt-1 w-full" type="number" wire:model="node_id" required />
+                <x-input-error :messages="$errors->get('node_id')" class="mt-2" />
+            </div>
+            <div class="mb-2">
                 <x-input-label :value="__('Server Name')" />
                 <x-text-input class="block mt-1 w-full" type="text" wire:model="name" required />
                 <x-input-error :messages="$errors->get('name')" class="mt-2" />

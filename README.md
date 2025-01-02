@@ -24,6 +24,8 @@ Follow these steps to properly setup Panel
 5. Create new Nest, name & description, then copy ID of Nest to .env
 6. Go to Nest, Import Egg, select Egg, select next you created then save
 7. Setup SMTP Credientials and Name in Emails in settings
+8. Go to panel server in /var/www/pterodactyl/config/cors.php
+    - Update explode(',', env('APP_CORS_ALLOWED_ORIGINS') ?? '') to 'allowed_origins' => ['your-complete-domain-here']
 ```
 # Wing Installation & Setup  
 Follow these steps to properly setup Wings
