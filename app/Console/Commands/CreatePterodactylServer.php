@@ -111,9 +111,11 @@ class CreatePterodactylServer extends Command
                     'rcon_port' => $rconPort,
                     'app_port' => $appPort
                 ]);
+                $order->server_id = $selectedServer->id;
+                $order->save();
                 return 1;
             } else {
-                $this->error('Failed to create server: ' . $response->body());
+                Log::error('Failed to create server: ' . $response->body());
                 return 0;
             }
         } else {

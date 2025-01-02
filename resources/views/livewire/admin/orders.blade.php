@@ -6,6 +6,7 @@
                 <th>User</th>
                 <th>Price</th>
                 <th>Payments</th>
+                <th>Server</th>
                 <th>Paid</th>
                 <th>IsActive</th>
                 <th>Invoices</th>
@@ -21,6 +22,13 @@
                     <td>${{ $item->price }}</td>
                     <td>{{ $item->total_payments }}</td>
                     <td>
+                        @if ($item->server)
+                            {{ $item->server->name }}
+                        @else
+                            -
+                        @endif
+                    </td>
+                    <td>
                         @if ($item->has_paid)
                             <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
                                 width="30px">
@@ -28,6 +36,7 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="18px">
                         @endif
                     </td>
+
                     <td>
                         @if ($item->is_active)
                             <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
@@ -36,6 +45,7 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
                         @endif
                     </td>
+
                     <td>
                         {{ $item->billings_count }}
                     </td>

@@ -7,6 +7,7 @@
                 <th>Email</th>
                 <th width="80px">Signed</th>
                 <th>Admin</th>
+                <th>Orders</th>
                 <th>Servers</th>
                 <th class="text-end">Joined At</th>
             </tr>
@@ -37,6 +38,7 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
                         @endif
                     </td>
+                    <td>{{ count($item->orders) }}</td>
                     <td>#</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                 </tr>

@@ -42,7 +42,7 @@ class Order extends Model
 
     public function server()
     {
-        return $this->hasMany(Server::class);
+        return $this->hasOne(Server::class, 'id', 'server_id');
     }
 
     public function usage()
