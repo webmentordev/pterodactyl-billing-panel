@@ -1,4 +1,4 @@
-<section class="w-full py-12 bg-cover bg-center relative"
+<section class="w-full py-12 bg-cover bg-center relative bg-fixed"
     style="background-image: url({{ asset('assets/background/header_3.jpg') }})">
     <div class="bg-black/50 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
     <div class="mt-12 max-w-7xl m-auto flex relative z-10">
@@ -16,7 +16,7 @@
                 <li class="mb-2">● 8 Minutes Rust Server Startup Time</li>
                 <li class="mb-2">● 2Gbps Uplink</li>
                 <li class="mb-2">● DDoS Protection up to 2Tb/s</li>
-                <li class="mb-2">● 3 Server Backups</li>
+                <li class="mb-2">● 2 Server Backups</li>
                 <li class="mb-2">● Unlimited Players Slot (150 Recommended)</li>
                 <li class="mb-2">● Up to 20 Server Ticks (10 Recommended)</li>
                 <li class="mb-2">● Up to 5000 Map Size (4250 Recommended)</li>

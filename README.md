@@ -35,5 +35,6 @@ Follow these steps to properly setup Wings
     - Paste the config on Wing in /etc/pterodactyl/config.yml
     - Restart the Wings.servic
     - Check In Panel if Node is working
-4. Add Ports for the Wing 28015-28070
+    - In Node setting, increase 'Maximum Web Upload Filesize'
+4. Add Ports for the Wing 28015-28090
 ```
