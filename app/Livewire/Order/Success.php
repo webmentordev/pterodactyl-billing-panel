@@ -41,6 +41,7 @@ class Success extends Component
                 'checkout_url' => $order->checkout_url,
                 'expire_at' => $time,
             ]);
+            Artisan::call('app:create-pterodactyl-server', ['orderID' => $order->id]);
             Mail::to($order->user->email)->send(new OrderSuccess($order, $resultPassword));
             $this->order = $order;
         } else {

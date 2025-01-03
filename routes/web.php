@@ -1,12 +1,15 @@
 <?php
 
 use App\Models\Order;
+use App\Models\Usage;
 use App\Livewire\Home;
+use App\Models\Server;
 use App\Mail\OrderSuccess;
 use App\Livewire\Admin\Users;
 use App\Livewire\User\Dashboard;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Package as SinglePackage;
 use App\Livewire\Order\Renew as RenewOrder;
 use App\Livewire\Admin\Orders as AdminOrders;
 use App\Livewire\Order\Cancel as CancelOrder;
@@ -14,10 +17,9 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
-use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Create as CreateServer;
+use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
-use App\Livewire\Package as SinglePackage;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
@@ -60,4 +62,20 @@ Route::get('/email/{order}', function (Order $order) {
 });
 
 
+Route::get('/ports/', function () {
+    $server = Server::where('id', 1)->first();
+    $assignedThreads = Usage::where('server_id', $server->id)
+        ->pluck('cpu_pin_1', 'cpu_pin_2')
+        ->flatten()
+        ->toArray();
+    for ($index = 0; $index < $server->threads; $index += 2) {
+        $firstThread = $index;
+        $secondThread = $index + 1;
+        if (!in_array($firstThread, $assignedThreads) && !in_array($secondThread, $assignedThreads)) {
+            return [$firstThread, $secondThread];
+        }
+    }
+    $newThreadStart = max($server->threads, max($assignedThreads) + 2);
+    return [$newThreadStart, $newThreadStart + 1];
+});
 require __DIR__ . '/auth.php';

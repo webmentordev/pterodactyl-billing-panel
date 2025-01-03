@@ -11,6 +11,7 @@ class Usage extends Model
     protected $fillable = [
         'order_id',
         'server_id',
+        'panel_server_id',
         'cpu_pin_1',
         'cpu_pin_2',
         'server_port',

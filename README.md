@@ -38,5 +38,11 @@ Follow these steps to properly setup Wings
     - Restart the Wings.servic
     - Check In Panel if Node is working
     - In Node setting, increase 'Maximum Web Upload Filesize'
-4. Add Ports for the Wing 28015-28090
+4. Add Ports for the Wing / Node 38015-38090
+5. Boost Server to Max Performance / GHz
+    - sudo apt install cpufrequtils -y
+    - sudo cpufreq-set -g performance
+    - sudo apt install stress
+    - stress --cpu 16 --timeout 30s
+    - watch -n 1 "cat /proc/cpuinfo | grep 'MHz'"
 ```

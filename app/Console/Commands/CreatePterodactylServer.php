@@ -25,34 +25,27 @@ class CreatePterodactylServer extends Command
         $rustEggID = config('app.ptero_egg_id');
         $backgroundImage = config('app.url') . '/assets/rustdedicated-hosting-banner.png';
         $allowedThreads = 2;
-
         $selectedServer = $this->getServers($allowedThreads);
 
         if ($selectedServer) {
-            $threads = $this->getUsage($selectedServer->id, $allowedThreads);
-
+            $threads = $this->getUsage($selectedServer);
             $threadOne = $threads[0];
             $threadTwo = $threads[1];
-
             $nodeNumber = $selectedServer->node_id;
             $seed = rand(0, 2147483647);
             $maxPorts = config('app.rust_max_ports');
             $freePorts = $this->getPorts($nodeNumber, $maxPorts);
-
             $additionalPorts = [];
             $serverPortID = $freePorts[0]['id'];
-
             $serverPort = $freePorts[0]['port'];
             $queryPort = $freePorts[1]['port'];
             $appPort = $freePorts[2]['port'];
             $rconPort = $freePorts[3]['port'];
-
             foreach ($freePorts as $index => $port) {
                 if ($index != 0) {
                     $additionalPorts[] = $port['id'];
                 }
             }
-
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
@@ -84,9 +77,9 @@ class CreatePterodactylServer extends Command
                     'RCON_PASS' => $rconPassword,
                 ],
                 'limits' => [
-                    'memory' => 15240,
-                    'swap' => 5000,
-                    'disk' => 30000,
+                    'memory' => 15360,
+                    'swap' => 5120,
+                    'disk' => 51200,
                     'io' => 500,
                     'cpu' => 200,
                     'threads' => "$threadOne,$threadTwo"
@@ -101,8 +94,9 @@ class CreatePterodactylServer extends Command
                 ],
             ]);
             if ($response->successful()) {
-                Usage::create([
+                $usage = Usage::create([
                     'order_id' => $order->id,
+                    'panel_server_id' => $response->json()['attributes']['id'],
                     'server_id' => $selectedServer->id,
                     'cpu_pin_1' => $threadOne,
                     'cpu_pin_2' => $threadTwo,
@@ -113,14 +107,18 @@ class CreatePterodactylServer extends Command
                 ]);
                 $order->server_id = $selectedServer->id;
                 $order->save();
-                return 1;
+                Http::post(config('app.discord_order'), [
+                    'content' => "Order #ID: " . $order->id . "\n```" . json_encode($usage) . "```",
+                ]);
             } else {
-                Log::error('Failed to create server: ' . $response->body());
-                return 0;
+                Http::post(config('app.discord_server'), [
+                    'content' => "Server could not be created!" . $response->body(),
+                ]);
             }
         } else {
-            Log::error('Servers are out of stock!');
-            return 0;
+            Http::post(config('app.discord_server'), [
+                'content' => "Servers are out of stock",
+            ]);
         }
     }
 
@@ -175,26 +173,20 @@ class CreatePterodactylServer extends Command
         return $servers->first();
     }
 
-    private function getUsage($id, $threads)
+    private function getUsage($server)
     {
-        $totalThreads = $threads;
-        $assignedThreads = [];
-        for ($index = 0; $index < $totalThreads; $index += 2) {
+        $assignedThreads = Usage::where('server_id', $server->id)
+            ->pluck('cpu_pin_1', 'cpu_pin_2')
+            ->flatten()
+            ->toArray();
+        for ($index = 0; $index < $server->threads; $index += 2) {
             $firstThread = $index;
             $secondThread = $index + 1;
-            $usage = Usage::where([
-                'server_id' => $id,
-                'cpu_pin_1' => $firstThread,
-                'cpu_pin_2' => $secondThread
-            ])->first();
-
-            if (!$usage) {
+            if (!in_array($firstThread, $assignedThreads) && !in_array($secondThread, $assignedThreads)) {
                 return [$firstThread, $secondThread];
-            } else {
-                $assignedThreads[] = $firstThread;
-                $assignedThreads[] = $secondThread;
             }
         }
-        return null;
+        $newThreadStart = max($server->threads, max($assignedThreads) + 2);
+        return [$newThreadStart, $newThreadStart + 1];
     }
 }

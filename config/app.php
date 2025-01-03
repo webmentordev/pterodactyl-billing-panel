@@ -27,6 +27,8 @@ return [
     'google_secret' => env('GOOGLE_CLIENT_SECRET'),
     'mail_address' => env('MAIL_FROM_ADDRESS'),
     'mail_name' => env('MAIL_FROM_NAME'),
+    'discord_order' => env('DISCORD_ORDER_WEHBOOK'),
+    'discord_server' => env('DISCORD_SERVER_WEHBOOK'),
 
     /*
     |--------------------------------------------------------------------------
