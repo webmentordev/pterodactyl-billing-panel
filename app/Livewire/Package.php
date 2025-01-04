@@ -3,6 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\Order;
+use App\Models\Reminder;
+use App\Models\Server;
 use Livewire\Component;
 use Stripe\StripeClient;
 use Livewire\Attributes\Layout;
@@ -11,7 +13,15 @@ use Illuminate\Support\Facades\Auth;
 
 class Package extends Component
 {
-    public $price = 20.0;
+    public $price = 20.0, $threads = 2, $outOfStock = false, $email;
+
+    public function mount()
+    {
+        $server = $this->getServers($this->threads);
+        if (!$server) {
+            $this->outOfStock = true;
+        }
+    }
 
     #[Layout('layouts.livewire.guest')]
     public function render()
@@ -21,6 +31,10 @@ class Package extends Component
 
     public function buyNow()
     {
+        if ($this->outOfStock) {
+            return;
+        }
+
         if (!Auth::check()) {
             return redirect()->route('login');
         }
@@ -60,5 +74,29 @@ class Package extends Component
         $order->checkout_url = $record['url'];
         $order->save();
         return redirect($record['url']);
+    }
+
+    private function getServers($allowedThreads)
+    {
+        $servers = Server::withCount('usage')
+            ->get()
+            ->filter(function ($server) use ($allowedThreads) {
+                $totalThreads = $server->threads;
+                $maxUsageGroups = intdiv($totalThreads, $allowedThreads);
+                return $server->usage_count < $maxUsageGroups;
+            });
+        return $servers->first();
+    }
+
+
+    public function request()
+    {
+        $this->validate([
+            'email' => ['required', 'email', 'max:255', 'unique:reminders,email'],
+        ], [
+            'email.unique' => 'The email address already exists in our system. We will use it to notify you.',
+        ]);
+        Reminder::create(['email' => $this->email]);
+        return session()->flash('success', 'Your request has been submitted!');
     }
 }

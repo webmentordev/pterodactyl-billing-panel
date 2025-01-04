@@ -12,6 +12,7 @@ class Usage extends Model
         'order_id',
         'server_id',
         'panel_server_id',
+        'panel_server_uid',
         'cpu_pin_1',
         'cpu_pin_2',
         'server_port',

@@ -23,7 +23,7 @@
             class="w-full mb-5 max-w-lg mt-6 px-8 py-4 overflow-hidden sm:rounded-lg bg-dark-100 border border-white/10">
             <div class="w-full flex items-center justify-center">
                 <a href="/">
-                    <img src="{{ asset('assets/logo.png') }}" alt="Logo" width="140px">
+                    <img src="{{ asset('assets/favicon.png') }}" alt="Logo" width="140px">
                 </a>
             </div>
             @yield('content')

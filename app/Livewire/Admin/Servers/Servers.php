@@ -6,6 +6,7 @@ use App\Models\Server;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\Attributes\Layout;
+use App\Jobs\CreateReminderEmailJobs;
 
 class Servers extends Component
 {
@@ -17,5 +18,10 @@ class Servers extends Component
         return view('livewire.admin.servers.servers', [
             'servers' => Server::latest()->paginate(200)
         ]);
+    }
+
+    public function sendReminder()
+    {
+        CreateReminderEmailJobs::dispatch()->onQueue('reminder');
     }
 }

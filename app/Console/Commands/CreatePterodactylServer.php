@@ -97,6 +97,7 @@ class CreatePterodactylServer extends Command
                 $usage = Usage::create([
                     'order_id' => $order->id,
                     'panel_server_id' => $response->json()['attributes']['id'],
+                    'panel_server_uid' => $response->json()['attributes']['identifier'],
                     'server_id' => $selectedServer->id,
                     'cpu_pin_1' => $threadOne,
                     'cpu_pin_2' => $threadTwo,

@@ -54,16 +54,53 @@
                 <span>${{ number_format($price) }} USD</span>
             </p>
             <p class="flex justify-between items-center"><span>Server Ready In:</span> <span>~10 Minutes</span></p>
-            <button type="button" wire:click="buyNow"
-                class="py-3 bg-rust-green text-white font-semibold my-2 rounded-sm">
-                <div wire:target="buyNow" wire:loading.class="hidden">
-                    Pay Now
-                    ${{ number_format($price) }}
+            @if (!$outOfStock)
+                <button type="button" wire:click="buyNow"
+                    class="py-3 bg-rust-green text-white font-semibold my-2 rounded-sm">
+                    <div wire:target="buyNow" wire:loading.class="hidden">
+                        Pay Now
+                        ${{ number_format($price) }}
+                    </div>
+                    <div wire:target="buyNow" wire:loading>
+                        Processing...
+                    </div>
+                </button>
+            @else
+                <div class="w-full relative" x-data="{ pop: false }">
+                    <button class="py-3 bg-rust-green text-white font-semibold my-2 rounded-sm w-full"
+                        x-on:click="pop = true">
+                        Pay Now
+                        ${{ number_format($price) }}
+                    </button>
+                    <div x-show="pop" x-cloak x-transition x-on:click.self="pop = false"
+                        class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center">
+                        <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full">
+                            <p class="text-white font-bold text-2xl mb-6">We are currently <strong class="text-rust">Out
+                                    Of Stock</strong></p>
+                            <p class="text-gray-200 mb-3">We regret to inform you that we are currently out of stock of
+                                servers. The Owner is actively working to replenish the inventory as quickly as possible
+                                to meet the growing demand.</p>
+                            <p class="text-gray-200 mb-3">Please provide your email address to receive a notification
+                                when servers are back in stock. It typically takes 2-3 hours for servers to become
+                                available again</p>
+
+                            @session('success')
+                                <x-alerts.success :message="$value" />
+                            @endsession
+
+                            <x-text-input class="block mt-1 w-full" type="email" wire:model="email" :value="old('email')"
+                                required placeholder="Email address" />
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <button type="submit" wire:click="request"
+                                class="py-2 px-6 rounded-sm bg-rust-green mt-3 inline-block font-bold">Request</button>
+                            <p
+                                class="p-4 py-2 rounded-lg italic text-white bg-rust-green/10 border border-rust-green mt-3">
+                                Once servers are back in stock, you will receive an email notification, after which your
+                                email address will be deleted from our system.</p>
+                        </div>
+                    </div>
                 </div>
-                <div wire:target="buyNow" wire:loading>
-                    Processing...
-                </div>
-            </button>
+            @endif
             <p class="text-end">Total Due Today</p>
             <button class="text-center underline text-rust font-semibold" x-on:click="open = true">No Automatic
                 Renewal?</button>

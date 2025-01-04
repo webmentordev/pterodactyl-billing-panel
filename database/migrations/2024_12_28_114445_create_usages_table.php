@@ -14,6 +14,7 @@ return new class extends Migration
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreignId('server_id')->constrained()->onDelete('cascade');
             $table->bigInteger('panel_server_id');
+            $table->string('panel_server_uid');
             $table->bigInteger('cpu_pin_1');
             $table->bigInteger('cpu_pin_2');
             $table->bigInteger('server_port');

@@ -1,5 +1,7 @@
 <section class="w-full h-full">
-    <div class="w-full mb-3 flex justify-end">
+    <div class="w-full mb-3 flex justify-between">
+        <button wire:click="sendReminder" class="py-2 px-4 bg-rust font-semibold text-white cursor-pointer">Send
+            Reminder</button>
         <a href="{{ route('admin.server.create') }}" class="py-2 px-4 bg-rust font-semibold text-white cursor-pointer">+
             Add new Server</a>
     </div>
