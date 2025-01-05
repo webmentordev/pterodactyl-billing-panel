@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\Server;
 use Livewire\Component;
 use App\Models\Reminder;
+use Exception;
 use Stripe\StripeClient;
 use Livewire\Attributes\Layout;
 use Illuminate\Support\Facades\Log;
@@ -143,93 +144,110 @@ class Package extends Component
             $order->save();
             return redirect($url);
         } else {
+            Http::post(config('app.discord_exception'), [
+                'content' => "```" .  $response->body() . "```",
+            ]);
             return abort(500);
         }
     }
 
     private function stripeCheckout()
     {
-        if ($this->outOfStock) {
-            return;
-        }
-        if (!Auth::check()) {
-            return redirect()->route('login');
-        }
+        try {
+            if ($this->outOfStock) {
+                return;
+            }
+            if (!Auth::check()) {
+                return redirect()->route('login');
+            }
 
-        $stripe = new StripeClient(config('app.stripe_token'));
-        $order = Order::create([
-            'user_id' => Auth::user()->id,
-            'price' => number_format($this->price)
-        ]);
-        $success = URL::temporarySignedRoute(
-            'order.success',
-            now()->addMinutes(30),
-            ['order' => $order->id]
-        );
-        $failed = URL::temporarySignedRoute(
-            'order.cancel',
-            now()->addMinutes(30),
-            ['order' => $order->id]
-        );
-        $record = $stripe->checkout->sessions->create([
-            'success_url' => $success,
-            'cancel_url' => $failed,
-            'line_items' => [
-                [
-                    'price_data' => [
-                        'currency' => 'usd',
-                        'product' => config('app.stripe_product_id'),
-                        'unit_amount' => intval($this->price * 100),
+            $stripe = new StripeClient(config('app.stripe_token'));
+            $order = Order::create([
+                'user_id' => Auth::user()->id,
+                'price' => number_format($this->price)
+            ]);
+            $success = URL::temporarySignedRoute(
+                'order.success',
+                now()->addMinutes(30),
+                ['order' => $order->id]
+            );
+            $failed = URL::temporarySignedRoute(
+                'order.cancel',
+                now()->addMinutes(30),
+                ['order' => $order->id]
+            );
+            $record = $stripe->checkout->sessions->create([
+                'success_url' => $success,
+                'cancel_url' => $failed,
+                'line_items' => [
+                    [
+                        'price_data' => [
+                            'currency' => 'usd',
+                            'product' => config('app.stripe_product_id'),
+                            'unit_amount' => intval($this->price * 100),
+                        ],
+                        'quantity' => 1,
                     ],
-                    'quantity' => 1,
                 ],
-            ],
-            'mode' => 'payment',
-            'expires_at' => time() + (30 * 60),
-        ]);
-        $order->gateway_order_id = $record['id'];
-        $order->gateway = $this->activeGateway;
-        $order->checkout_url = $record['url'];
-        $order->save();
-        return redirect($record['url']);
+                'mode' => 'payment',
+                'expires_at' => time() + (30 * 60),
+            ]);
+            $order->gateway_order_id = $record['id'];
+            $order->gateway = $this->activeGateway;
+            $order->checkout_url = $record['url'];
+            $order->save();
+            return redirect($record['url']);
+        } catch (Exception $e) {
+            Http::post(config('app.discord_exception'), [
+                'content' => "```" . $e->getMessage() . "```",
+            ]);
+        }
     }
 
 
     private function createLemonSqueezyUser($user)
     {
-        $apiToken = config('app.lemon_token');
-        $storeID =  config('app.lemon_store');
-        $response = Http::withHeaders([
-            'Accept' => 'application/vnd.api+json',
-            'Content-Type' => 'application/vnd.api+json',
-            'Authorization' => 'Bearer ' . $apiToken,
-        ])->post('https://api.lemonsqueezy.com/v1/customers', [
-            'data' => [
-                'type' => 'customers',
-                'attributes' => [
-                    'name' => $user->name,
-                    'email' => $user->email,
-                ],
-                'relationships' => [
-                    'store' => [
-                        'data' => [
-                            'type' => 'stores',
-                            'id' => $storeID,
+        try {
+            $apiToken = config('app.lemon_token');
+            $storeID =  config('app.lemon_store');
+            $response = Http::withHeaders([
+                'Accept' => 'application/vnd.api+json',
+                'Content-Type' => 'application/vnd.api+json',
+                'Authorization' => 'Bearer ' . $apiToken,
+            ])->post('https://api.lemonsqueezy.com/v1/customers', [
+                'data' => [
+                    'type' => 'customers',
+                    'attributes' => [
+                        'name' => $user->name,
+                        'email' => $user->email,
+                    ],
+                    'relationships' => [
+                        'store' => [
+                            'data' => [
+                                'type' => 'stores',
+                                'id' => $storeID,
+                            ],
                         ],
                     ],
                 ],
-            ],
-        ]);
-        if ($response->successful()) {
-            $result = $response->json();
-            $lemonUserID = $result['data']['id'];
-            $record = User::find($user->id);
-            $record->lemon_user_id = $lemonUserID;
-            $record->save();
-            return $lemonUserID;
-        } else {
-            Log::error($response->body());
-            return abort(500);
+            ]);
+            if ($response->successful()) {
+                $result = $response->json();
+                $lemonUserID = $result['data']['id'];
+                $record = User::find($user->id);
+                $record->lemon_user_id = $lemonUserID;
+                $record->save();
+                return $lemonUserID;
+            } else {
+                Http::post(config('app.discord_exception'), [
+                    'content' => "```" . $response->body() . "```",
+                ]);
+                return abort(500);
+            }
+        } catch (Exception $e) {
+            Http::post(config('app.discord_exception'), [
+                'content' => "```" . $e->getMessage() . "```",
+            ]);
         }
     }
 }

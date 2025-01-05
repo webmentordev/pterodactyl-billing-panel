@@ -48,6 +48,6 @@ class Order extends Model
 
     public function usage()
     {
-        return $this->hasMany(Usage::class);
+        return $this->hasOne(Usage::class);
     }
 }

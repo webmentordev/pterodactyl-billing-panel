@@ -37,6 +37,34 @@ WantedBy=multi-user.target
 systemctl daemon-reload
 systemctl restart reminder-queue
 ```  
+### Setup Server Suspend Worker  
+```
+sudo nano /etc/systemd/system/suspend-queue.service
+---------------------
+[Unit]
+Description=Server Suspend Job Queue
+After=network.target
+
+[Service]
+User=root
+Group=root
+Restart=always
+ExecStart=/usr/bin/php /var/www/laravel/artisan queue:work --queue=suspend --env=production
+WorkingDirectory=/var/www/laravel
+
+[Install]
+WantedBy=multi-user.target
+---------------------
+systemctl daemon-reload
+systemctl restart reminder-queue
+```  
+### Setup Cronjob for Timed tasks  
+```
+sudo crontab -e
+---------------------
+* * * * * cd /var/www/laravel && php artisan schedule:run >> /dev/null 2>&1
+---------------------
+```  
 
 # Panel Installation & Setup  
 Follow these steps to properly setup Panel

@@ -25,6 +25,7 @@ use App\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
+use App\Livewire\User\Billings;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
@@ -33,6 +34,7 @@ Route::get('/buy-dedicated-rust-server', SinglePackage::class)->name('package');
 // Customer Routes
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
+    Route::get('/billings', Billings::class)->name('billings');
 });
 
 // Administartor Routes

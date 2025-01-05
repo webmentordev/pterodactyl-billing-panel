@@ -38,7 +38,9 @@ class CreatePterodactylUser extends Command
                 $this->info($password);
                 return 0;
             } else {
-                $this->error('Failed to create user: ' . $response->body());
+                Http::post(config('app.discord_exception'), [
+                    'content' => "```" .  $response->body() . "```",
+                ]);
                 return 1;
             }
         } else {

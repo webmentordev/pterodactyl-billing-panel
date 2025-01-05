@@ -158,7 +158,9 @@ class CreatePterodactylServer extends Command
             );
             return array_slice($unassignedPorts, 0, $maxPorts);
         } else {
-            return 'Failed to retrieve node: ' . $response->body();
+            Http::post(config('app.discord_exception'), [
+                'content' => "```" . $response->body() . "```",
+            ]);
         }
     }
 
