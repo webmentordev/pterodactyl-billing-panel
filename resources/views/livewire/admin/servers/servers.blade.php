@@ -15,8 +15,7 @@
                 <th width="210px">Domain</th>
                 <th>IP</th>
                 <th>Location</th>
-                <th width="60px">Cores</th>
-                <th width="80px">Threads</th>
+                <th width="80px">Cores & Threads</th>
                 <th>RAM</th>
                 <th>Storage</th>
                 <th width="80px">Swap</th>
@@ -32,8 +31,7 @@
                     <td>{{ $item->domain }}</td>
                     <td>{{ $item->ip }}</td>
                     <td>{{ $item->location }}</td>
-                    <td>{{ $item->cores }}</td>
-                    <td>{{ $item->threads }}</td>
+                    <td>{{ $item->cores }} / {{ $item->threads }}</td>
                     <td>{{ $item->ram }}GB ({{ $item->ram_type }})</td>
                     <td>{{ $item->storage }}GB ({{ $item->storage_type }})</td>
                     <td>{{ $item->swap }}GB</td>

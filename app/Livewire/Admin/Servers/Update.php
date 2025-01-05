@@ -55,6 +55,7 @@ class Update extends Component
         $this->server->update(array_filter([
             'node_id' => $this->node_id,
             'name' => $this->name,
+            'processor' => $this->processor,
             'domain' => $this->domain,
             'threads' => $this->threads,
             'swap' => $this->swap,

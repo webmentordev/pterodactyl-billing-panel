@@ -15,7 +15,8 @@ class Order extends Model
 
     protected $fillable = [
         'user_id',
-        'stripe_order_id',
+        'gateway_order_id',
+        'gateway',
         'price',
         'has_paid',
         'status',

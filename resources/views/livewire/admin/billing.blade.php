@@ -1,15 +1,15 @@
 <section class="w-full h-full">
     @if (count($billing))
-        <table class="w-full">
+        <table class="w-full table-fixed">
             <tr>
-                <th>ID</th>
-                <th>User</th>
-                <th>Price</th>
-                <th>Paid</th>
-                <th>Emailed</th>
+                <th width="130px">ID</th>
+                <th width="220px">User</th>
+                <th width="90px">Price</th>
+                <th width="90px">Paid</th>
+                <th width="120px">Emailed</th>
                 <th>Status</th>
                 <th class="text-end">Order Expire</th>
-                <th class="text-end">Created At</th>
+                <th class="text-end" width="230px">Created At</th>
             </tr>
             @foreach ($billing as $item)
                 <tr>

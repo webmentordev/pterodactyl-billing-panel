@@ -1,19 +1,19 @@
 <section class="w-full h-full">
     @if (count($orders))
-        <table class="w-full">
+        <table class="w-full table-fixed">
             <tr>
-                <th>ID</th>
-                <th>User</th>
-                <th>Price</th>
-                <th>Payments</th>
-                <th>Server</th>
-                <th>Paid</th>
-                <th>IsActive</th>
-                <th>Invoices</th>
-                <th>Status</th>
+                <th width="130px">ID</th>
+                <th width="170px">User</th>
+                <th width="90px">Price</th>
+                <th width="90px">Payments</th>
+                <th width="150px">Server</th>
+                <th width="90px">Paid</th>
+                <th width="90px">IsActive</th>
+                <th width="90px">Invoices</th>
+                <th width="130px">Status</th>
                 <th class="text-end">Expire At</th>
                 <th class="text-end">Created At</th>
-                <th class="text-end">Action</th>
+                <th class="text-end" width="160px">Action</th>
             </tr>
             @foreach ($orders as $item)
                 <tr>
@@ -72,7 +72,7 @@
                         @endif
                     </td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
-                    <td class="flex items-center justify-end">
+                    <td class="flex items-center justify-end" width="160px">
                         <div class="flex items-center h-fit mt-1">
                             <a href="{{ route('admin.billing', $item->id) }}" class="mr-1">
                                 <img src="https://api.iconify.design/mdi:eye-settings-outline.svg?color=%2358bcee"

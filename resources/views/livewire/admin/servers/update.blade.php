@@ -1,5 +1,5 @@
 <div class="h-full w-full flex items-center justify-center">
-    <div class="max-w-xl p-8 w-full">
+    <div class="max-w-5xl p-8 w-full">
         @session('success')
             <x-alerts.success :message="$value" />
         @endsession
@@ -8,7 +8,7 @@
         </div>
         <h1 class="text-5xl mb-4 text-white text-center">Update Server</h1>
 
-        <div class="grid grid-cols-2 gap-3">
+        <div class="grid grid-cols-4 gap-3">
             <div class="mb-2">
                 <x-input-label :value="__('Panel NodeID')" />
                 <x-text-input class="block mt-1 w-full" type="number" wire:model="node_id" required />

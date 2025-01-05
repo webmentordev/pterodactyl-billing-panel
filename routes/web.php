@@ -3,11 +3,15 @@
 use App\Models\Order;
 use App\Models\Usage;
 use App\Livewire\Home;
+use App\Mail\Reminder;
 use App\Models\Server;
 use App\Mail\OrderSuccess;
 use Illuminate\Http\Request;
 use App\Livewire\Admin\Users;
 use App\Livewire\User\Dashboard;
+use App\Livewire\Admin\Reminders;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Package as SinglePackage;
@@ -18,11 +22,9 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
-use App\Livewire\Admin\Reminders;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
-use App\Mail\Reminder;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
@@ -69,6 +71,135 @@ Route::get('/order/renew/{order}/{status}/{billing}', RenewOrder::class)->name('
 // Route::get('/email', function () {
 //     return new Reminder();
 // });
+
+
+Route::get('/buynow', function () {
+    $apiToken = config('app.lemon_token');
+    $productID = config('app.lemon_product');
+    $storeID =  config('app.lemon_store');
+    $productVarientID =  config('app.lemon_varient');
+
+    $order = Order::first();
+    $returnURL = URL::temporarySignedRoute(
+        'order.success',
+        now()->addMinutes(30),
+        ['order' => $order->id]
+    );
+    $response = Http::withHeaders([
+        'Accept' => 'application/vnd.api+json',
+        'Content-Type' => 'application/vnd.api+json',
+        'Authorization' => 'Bearer ' . $apiToken,
+    ])->post('https://api.lemonsqueezy.com/v1/checkouts', [
+        'data' => [
+            'type' => 'checkouts',
+            'attributes' => [
+                'custom_price' => 20 * 100,
+                'product_options' => [
+                    'redirect_url' => "$returnURL"
+                ],
+                'checkout_data' => [
+                    'custom' => [
+                        'user_id' => "4673873",
+                    ],
+                ],
+                'expires_at' => now()->addDays(3),
+                'preview' => true,
+            ],
+            'relationships' => [
+                'store' => [
+                    'data' => [
+                        'type' => 'stores',
+                        'id' => "$storeID",
+                    ],
+                ],
+                'variant' => [
+                    'data' => [
+                        'type' => 'variants',
+                        'id' => "$productVarientID",
+                    ],
+                ],
+            ],
+        ],
+    ]);
+    if ($response->successful()) {
+        return $response->json();
+    } else {
+        return $response->body();
+    }
+});
+
+
+
+Route::get('/product', function () {
+    $apiToken = config('app.lemon_token');
+    $productID = config('app.lemon_product');
+    $storeID =  config('app.lemon_store');
+    $response = Http::withHeaders([
+        'Accept' => 'application/vnd.api+json',
+        'Content-Type' => 'application/vnd.api+json',
+        'Authorization' => 'Bearer ' . $apiToken,
+    ])->get('https://api.lemonsqueezy.com/v1/products/' . $productID);
+    if ($response->successful()) {
+        return $response->json();
+    } else {
+        return $response->body();
+    }
+});
+
+
+Route::get('/create/customer', function () {
+    $apiToken = config('app.lemon_token');
+    $storeID =  config('app.lemon_store');
+    #4673873
+    $response = Http::withHeaders([
+        'Accept' => 'application/vnd.api+json',
+        'Content-Type' => 'application/vnd.api+json',
+        'Authorization' => 'Bearer ' . $apiToken,
+    ])->post('https://api.lemonsqueezy.com/v1/customers', [
+        'data' => [
+            'type' => 'customers',
+            'attributes' => [
+                'name' => 'TESTAHMER',
+                'email' => 'web.earningskills@gmail.com',
+            ],
+            'relationships' => [
+                'store' => [
+                    'data' => [
+                        'type' => 'stores',
+                        'id' => $storeID,
+                    ],
+                ],
+            ],
+        ],
+    ]);
+    if ($response->successful()) {
+        return $response->json();
+    } else {
+        return $response->body();
+    }
+});
+
+
+
+Route::get('/product-varient', function () {
+    $apiToken = config('app.lemon_token');
+    $storeID =  config('app.lemon_store');
+    $productID = config('app.lemon_product');
+    $response = Http::withHeaders([
+        'Accept' => 'application/vnd.api+json',
+        'Content-Type' => 'application/vnd.api+json',
+        'Authorization' => 'Bearer ' . $apiToken,
+    ])->get('https://api.lemonsqueezy.com/v1/products/' . $productID . '/variants');
+
+    $variants = $response->json();
+    $variantID = $variants['data'][0]['id'] ?? null;
+
+    if (!$variantID) {
+        throw new Exception("No variants found for the product.");
+    }
+
+    return $variantID;
+});
 
 
 
