@@ -12,6 +12,8 @@ class Billing extends Model
 
     protected $fillable = [
         'order_id',
+        'gateway_order_id',
+        'gateway',
         'checkout_url',
         'has_paid',
         'status',

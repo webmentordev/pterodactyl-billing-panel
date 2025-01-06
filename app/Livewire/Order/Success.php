@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Artisan;
 
 class Success extends Component
 {
-    public $order;
+    public $order, $activeGateway = null;
 
     public function mount(Request $request, Order $order)
     {
@@ -23,6 +23,7 @@ class Success extends Component
         }
 
         if ($order->status == 'pending') {
+            $this->activeGateway = config('app.gateway');
             $time = Carbon::now()->addDays(31);
             $order->has_paid = true;
             $order->is_active = true;
@@ -36,6 +37,9 @@ class Success extends Component
 
             Billing::create([
                 'order_id' => $order->id,
+                'gateway_order_id' => $order->gateway_order_id,
+                'gateway' => $this->activeGateway,
+                'order_id' => $order->id,
                 'has_paid' => true,
                 'status' => 'paid',
                 'checkout_url' => $order->checkout_url,
@@ -45,7 +49,7 @@ class Success extends Component
             Mail::to($order->user->email)->send(new OrderSuccess($order, $resultPassword));
             $this->order = $order;
         } else {
-            abort(401);
+            abort(404);
         }
     }
 

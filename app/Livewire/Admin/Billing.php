@@ -24,7 +24,7 @@ class Billing extends Component
     {
         if ($this->bill) {
             return view('livewire.admin.billing', [
-                'billing' => BillingModel::latest()->where('order_id', $this->bill)->paginate(200)
+                'billing' => BillingModel::where('order_id', $this->bill)->latest()->paginate(200)
             ]);
         }
 

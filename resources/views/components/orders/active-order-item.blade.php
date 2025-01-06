@@ -53,7 +53,8 @@
                 </p>
                 <img src="https://api.iconify.design/tabler:calendar-due.svg?color=%23cd412b" width="20">
             </div>
-            <button wire:click='renew("{{ $order->id }}")' class="bg-rust-green py-2 px-3 rounded-lg font-semibold">
+            <button wire:click='renew("{{ $order->id }}")'
+                class="bg-rust-green py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust">
                 <div wire:target="renew" wire:loading.class="hidden">
                     Renew
                 </div>

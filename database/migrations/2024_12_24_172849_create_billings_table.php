@@ -12,6 +12,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->uuid('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+            $table->string('gateway_order_id')->nullable();
+            $table->string('gateway')->nullable();
             $table->boolean('has_paid')->default(false);
             $table->string('status')->default('pending');
             $table->text('checkout_url')->nullable();

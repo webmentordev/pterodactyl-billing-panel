@@ -20,7 +20,7 @@ class Cancel extends Component
             $order->status = "cancel";
             $order->save();
         } else {
-            abort(401);
+            abort(404);
         }
     }
 

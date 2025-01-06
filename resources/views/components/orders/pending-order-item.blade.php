@@ -21,7 +21,8 @@
                     {{ $order->created_at->addHours(3)->format('d M, Y H:i:s A') }}
                 </p>
             </div>
-            <button wire:click='pay("{{ $order->id }}")' class="bg-rust-green py-2 px-3 rounded-lg font-semibold">
+            <button wire:click='pay("{{ $order->id }}")'
+                class="bg-rust-green py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust">
                 <div wire:target="pay" wire:loading.class="hidden">
                     Pay Now
                 </div>

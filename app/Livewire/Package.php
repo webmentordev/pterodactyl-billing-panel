@@ -91,7 +91,7 @@ class Package extends Component
 
         $returnURL = URL::temporarySignedRoute(
             'order.success',
-            now()->addMinutes(30),
+            now()->addHours(3),
             ['order' => $order->id]
         );
 
@@ -116,7 +116,7 @@ class Package extends Component
                             'user_id' => "$userLemonID",
                         ],
                     ],
-                    'expires_at' => now()->addDays(1),
+                    'expires_at' => now()->addHours(3),
                     'preview' => true,
                 ],
                 'relationships' => [
@@ -168,12 +168,12 @@ class Package extends Component
             ]);
             $success = URL::temporarySignedRoute(
                 'order.success',
-                now()->addMinutes(30),
+                now()->addHours(3),
                 ['order' => $order->id]
             );
             $failed = URL::temporarySignedRoute(
                 'order.cancel',
-                now()->addMinutes(30),
+                now()->addHours(3),
                 ['order' => $order->id]
             );
             $record = $stripe->checkout->sessions->create([

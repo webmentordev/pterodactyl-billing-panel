@@ -16,3 +16,10 @@ Schedule::call(function () {
         ->where('created_at', '<', now()->subDays(2))
         ->delete();
 })->hourly();
+
+// Cancel orders older than 3 hours
+Schedule::call(function () {
+    Order::where('status', 'pending')
+        ->where('created_at', '<', now()->subHours(3))
+        ->update(['status' => 'cancel']);
+})->hourly();

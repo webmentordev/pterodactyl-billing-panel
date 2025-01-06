@@ -26,6 +26,7 @@ use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
 use App\Livewire\User\Billings;
+use App\Mail\OrderRenew;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
@@ -61,7 +62,10 @@ Route::middleware(['guest'])->group(function () {
 // Order purchase status
 Route::get('/order/{order}/success', SuccessOrder::class)->name('order.success');
 Route::get('/order/{order}/cancel', CancelOrder::class)->name('order.cancel');
-Route::get('/order/renew/{order}/{status}/{billing}', RenewOrder::class)->name('order.renew');
+Route::get('/order/renew/{order}/{billing}', RenewOrder::class)->name('order.renew');
+
+
+
 
 // Email Testing
 // Route::get('/email/{order}', function (Order $order) {
@@ -70,8 +74,14 @@ Route::get('/order/renew/{order}/{status}/{billing}', RenewOrder::class)->name('
 //     // return "Email Sent!";
 // });
 
+
 // Route::get('/email', function () {
 //     return new Reminder();
+// });
+
+
+// Route::get('/renew/{order}', function (Order $order) {
+//     return new OrderRenew($order);
 // });
 
 
