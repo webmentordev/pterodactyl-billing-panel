@@ -3,6 +3,7 @@
         <table class="w-full table-fixed">
             <tr>
                 <th width="130px">ID</th>
+                <th>Bill Order ID</th>
                 <th width="170px">User</th>
                 <th width="90px">Price</th>
                 <th width="90px">Payments</th>
@@ -18,6 +19,7 @@
             @foreach ($orders as $item)
                 <tr>
                     <td>{{ Str::afterLast($item->id, '-') }}</td>
+                    <td>{{ Str::afterLast($item->gateway_order_id, '-') }}</td>
                     <td>{{ $item->user->name }}</td>
                     <td>${{ $item->price }}</td>
                     <td>{{ $item->total_payments }}</td>

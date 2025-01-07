@@ -24,6 +24,7 @@ class Renew extends Component
         if ($billing->status == "pending") {
             $time = $order->expire_at->addDays(31);
             $order->expire_at = $time;
+            $order->gateway_order_id = $billing->gateway_order_id;
             $order->is_active = true;
             $order->total_payments = $order->total_payments + 1;
             $order->save();
