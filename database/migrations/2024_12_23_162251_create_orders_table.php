@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('status')->default('pending');
             $table->text('checkout_url')->nullable();
             $table->timestamp('expire_at')->nullable();
+            $table->timestamp('refund_at')->nullable();
             $table->text('total_payments')->default(0);
             $table->decimal('price', 10, 2);
             $table->boolean('is_active')->default(false);

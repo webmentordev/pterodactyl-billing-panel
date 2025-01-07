@@ -42,7 +42,7 @@
                     <a href="{{ route('register') }}" class="hover:text-rust transition-all text-md mb-2">Register</a>
                     <a href="{{ route('dashboard') }}" class="hover:text-rust transition-all text-md mb-2">Client
                         Area</a>
-                    <a href="{{ config('app.ptero_domain') }}" class="hover:text-rust transition-all text-md mb-2">Game
+                    <a href="{{ config('app.ptero_url') }}" class="hover:text-rust transition-all text-md mb-2">Game
                         Panel</a>
                     <a href="#" class="hover:text-rust transition-all text-md">Free Trial Server</a>
                 </ul>
@@ -51,9 +51,12 @@
             <div class="flex flex-col items-end">
                 <h2 class="mb-4 text-4xl text-white">Other Links</h2>
                 <ul class="flex flex-col text-gray-200 text-end">
-                    <a href="#" class="hover:text-rust transition-all text-md mb-2">Terms Of Service</a>
-                    <a href="#" class="hover:text-rust transition-all text-md mb-2">Privacy Policy</a>
-                    <a href="#" class="hover:text-rust transition-all text-md mb-2">Refund Policy</a>
+                    <a href="{{ route('terms') }}" class="hover:text-rust transition-all text-md mb-2">Terms Of
+                        Service</a>
+                    <a href="{{ route('privacy') }}" class="hover:text-rust transition-all text-md mb-2">Privacy
+                        Policy</a>
+                    <a href="{{ route('refund') }}" class="hover:text-rust transition-all text-md mb-2">Refund
+                        Policy</a>
                     <a href="#" class="hover:text-rust transition-all text-md mb-2">Rust Guide</a>
                 </ul>
             </div>

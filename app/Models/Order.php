@@ -22,6 +22,7 @@ class Order extends Model
         'status',
         'checkout_url',
         'expire_at',
+        'refund_at',
         'total_payments',
         'server_id',
         'is_active'
@@ -29,6 +30,7 @@ class Order extends Model
 
     protected $casts = [
         'expire_at' => 'datetime',
+        'refund_at' => 'datetime',
     ];
 
     public function user()

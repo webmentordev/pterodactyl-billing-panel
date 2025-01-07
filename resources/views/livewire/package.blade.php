@@ -15,7 +15,7 @@
                 <li class="mb-2">● Dedicated CPU Threads (No Sharing)</li>
                 <li class="mb-2">● 5 - 10 Minutes Restart Time</li>
                 <li class="mb-2">● 1Gbit/s Uplink</li>
-                <li class="mb-2">● DDoS Protection up to 2Tb/s</li>
+                <li class="mb-2">● DDoS Protection</li>
                 <li class="mb-2">● 2 Server Backups</li>
                 <li class="mb-2">● Unlimited Players Slot (150 Recommended)</li>
                 <li class="mb-2">● Up to 4250 Map Size (3750 Recommended)</li>

@@ -25,6 +25,9 @@ use App\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
+use App\Livewire\PrivacyPolicy;
+use App\Livewire\RefundPolicy;
+use App\Livewire\TermsOfService;
 use App\Livewire\User\Billings;
 use App\Mail\OrderRenew;
 
@@ -52,6 +55,11 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
 
     Route::get('/reminders', Reminders::class)->name('reminders');
 });
+
+// Policy Routes
+Route::get('terms-of-service', TermsOfService::class)->name('terms');
+Route::get('privacy-policy', PrivacyPolicy::class)->name('privacy');
+Route::get('refund-policy', RefundPolicy::class)->name('refund');
 
 // Google Auth Routes
 Route::middleware(['guest'])->group(function () {

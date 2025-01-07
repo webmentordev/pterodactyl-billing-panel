@@ -23,6 +23,7 @@ class Package extends Component
     public function mount()
     {
         $this->activeGateway = config('app.gateway');
+        $this->price = config('app.price');
         $server = $this->getServers($this->threads);
         if (!$server) {
             $this->outOfStock = true;

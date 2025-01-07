@@ -2,7 +2,9 @@
 
 namespace App\Livewire\User;
 
+use App\Jobs\OrderRefundJob;
 use Exception;
+use Carbon\Carbon;
 use App\Models\Order;
 use App\Models\Billing;
 use Livewire\Component;
@@ -14,12 +16,15 @@ use Illuminate\Support\Facades\Http;
 
 class Dashboard extends Component
 {
-    public $price = 20.0;
+    public $price = 20.0, $refundPercentage = 85, $refundDays = 4;
     public $activeGateway = null;
 
     public function mount()
     {
         $this->activeGateway = config('app.gateway');
+        $this->price = config('app.price');
+        $this->refundPercentage = config('app.refund_percentage');
+        $this->refundDays = config('app.refund_days');
     }
 
     #[Layout('layouts.livewire.user')]
@@ -32,6 +37,12 @@ class Dashboard extends Component
 
     public function renew(Order $order)
     {
+        $this->owner($order);
+        $refundDate = Carbon::parse($order->refund_at);
+        if (!$refundDate->isPast()) {
+            return session()->flash('failed', 'You cannot renew until your refund period has ended.');
+        }
+
         if ($this->activeGateway == 'lemon_squeezy') {
             $this->lemonCheckout($order);
         }
@@ -42,6 +53,7 @@ class Dashboard extends Component
 
     public function pay(Order $order)
     {
+        $this->owner($order);
         if ($order->status == 'pending') {
             return redirect($order->checkout_url);
         }
@@ -162,6 +174,23 @@ class Dashboard extends Component
             Http::post(config('app.discord_exception'), [
                 'content' => "```" . $e->getMessage() . "```",
             ]);
+        }
+    }
+
+    public function refund(Order $order)
+    {
+        $this->owner($order);
+        $refundDate = Carbon::parse($order->refund_at);
+        if ($refundDate->isPast()) {
+            return session()->flash('failed', 'Your refund request period has passed.');
+        }
+        OrderRefundJob::dispatch($order->id)->onQueue('refund');
+    }
+
+    private function owner($order)
+    {
+        if ($order->user_id != Auth::user()->id) {
+            return abort(403);
         }
     }
 }

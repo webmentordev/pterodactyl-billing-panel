@@ -8,7 +8,7 @@
             <ul class="flex items-center text-white links">
                 <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all">Home</a>
                 <a href="{{ route('package') }}" class="mx-6 hover:text-rust transition-all">Package</a>
-                <a href="{{ config('app.ptero_domain') }}" class="mx-6 hover:text-rust transition-all">GamePanel</a>
+                <a href="{{ config('app.ptero_url') }}" class="mx-6 hover:text-rust transition-all">GamePanel</a>
                 <a href="{{ route('dashboard') }}" class="mx-6 hover:text-rust transition-all">Client</a>
                 <div class="relative ml-6" x-data="{ open: false }">
                     <button class="flex items-center" x-on:click="open = !open">

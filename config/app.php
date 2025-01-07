@@ -17,7 +17,6 @@ return [
 
     'ptero_url' => env('PANEL_URL'),
     'ptero_api' => env('PANEL_API'),
-    'ptero_domain' => env('PANEL_DOMAIN'),
     'ptero_nest_id' => env('PANEL_NEST_ID'),
     'ptero_egg_id' => env('PANEL_EGG_ID'),
     'rust_max_ports' => env('RUST_MAX_PORTS'),
@@ -32,6 +31,14 @@ return [
     'google_secret' => env('GOOGLE_CLIENT_SECRET'),
     'mail_address' => env('MAIL_FROM_ADDRESS'),
     'mail_name' => env('MAIL_FROM_NAME'),
+
+    'price' => env('PACKAGE_PRICE'),
+    'refund_percentage' => env('REFUND_PERCENTAGE'),
+    'refund_days' => env('REFUND_DAYS'),
+
+    'discord_link' => env('DISCORD_LINK'),
+    'yourube_url' => env('YOUTUBE_LINK'),
+
     'discord_order' => env('DISCORD_ORDER_WEBHOOK'),
     'discord_server' => env('DISCORD_SERVER_WEBHOOK'),
     'discord_exception' => env('DISCORD_EXCEPTION_WEBHOOK'),

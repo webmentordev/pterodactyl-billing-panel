@@ -1,4 +1,4 @@
-@props(['order'])
+@props(['order', 'refund', 'days'])
 <div
     class="mb-3 bg-dark-100 rounded-xl border border-white/20 p-4 text-white border-r-8 border-r-green-500 flex justify-between items-center">
     <div class="flex items-center">
@@ -44,8 +44,8 @@
         </div>
     </div>
     <div>
-        <div class="flex flex-col">
-            <div class="flex items-center mb-2">
+        <div class="flex flex-col" x-data="{ open: false }">
+            <div class="flex items-center justify-end mb-2">
                 <p class="mr-2 text-sm text-gray-300">
                     @if ($order->expire_at)
                         {{ $order->expire_at->format('d M, Y H:i:s A') }}
@@ -53,15 +53,52 @@
                 </p>
                 <img src="https://api.iconify.design/tabler:calendar-due.svg?color=%23cd412b" width="20">
             </div>
-            <button wire:click='renew("{{ $order->id }}")'
-                class="bg-rust-green py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust">
-                <div wire:target="renew" wire:loading.class="hidden">
-                    Renew
+            @php
+                $refundDate = \Carbon\Carbon::parse($order->refund_at);
+                $expireDate = \Carbon\Carbon::parse($order->expire_at)->subDays(7);
+            @endphp
+            @if (!$refundDate->isPast())
+                <button @click="open = true"
+                    class="bg-rust py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust {{ !now()->greaterThan($expireDate) ? 'col-span-2' : '' }}">
+                    Request Refund
+                </button>
+                <div x-show="open" x-cloak x-transition x-on:click.self="open = false"
+                    class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center">
+                    <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full flex-col">
+                        <p class="text-white font-bold text-2xl mb-6">Are you sure you want to request a refund?
+                        </p>
+                        <p class="text-gray-200 mb-3">If you confirm the initiation of the refund, the server
+                            associated with this order will be deleted along with its backups, plugins,
+                            configurations, and any files you have stored using FTP.</p>
+                        <p class="text-gray-200 mb-3">As part of our refund policy, <strong
+                                class="text-rust">{{ $refund }}%</strong> of the paid amount is eligible for
+                            a
+                            refund within <strong class="text-rust">{{ $days * 24 }} Hours</strong> of the purchase
+                            or order
+                            renewal, to prevent refund abuse. Please read <a href="{{ route('refund') }}"
+                                class="text-rust underline">Our Refund Policy</a> for more details. </p>
+                        <button @click="open = true" wire:click='refund("{{ $order->id }}")'
+                            class="bg-rust-green py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust">
+                            <div wire:target="refund" wire:loading.class="hidden">
+                                Confirm: I want to request a refund
+                            </div>
+                            <div wire:target="refund" wire:loading>
+                                Processing...
+                            </div>
+                        </button>
+                    </div>
                 </div>
-                <div wire:target="renew" wire:loading>
-                    Processing...
-                </div>
-            </button>
+            @else
+                <button wire:click='renew("{{ $order->id }}")'
+                    class="bg-rust-green py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust">
+                    <div wire:target="renew" wire:loading.class="hidden">
+                        Renew
+                    </div>
+                    <div wire:target="renew" wire:loading>
+                        Processing...
+                    </div>
+                </button>
+            @endif
         </div>
     </div>
 </div>

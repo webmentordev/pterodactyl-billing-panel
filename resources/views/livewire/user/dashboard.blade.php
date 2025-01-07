@@ -1,10 +1,13 @@
 <section class="w-full mt-4">
     <div class="py-2 max-w-7xl m-auto">
+        @session('failed')
+            <x-alerts.failed :message="$value" />
+        @endsession
         <div class="flex flex-col">
             @if (count($orders))
                 @foreach ($orders as $order)
                     @if ($order->status == 'paid')
-                        <x-orders.active-order-item :order="$order" />
+                        <x-orders.active-order-item :order="$order" :refund="$refundPercentage" :days="$refundDays" />
                     @elseif ($order->status == 'cancel')
                         <x-orders.cancel-order-item :order="$order" />
                     @elseif ($order->status == 'pending')

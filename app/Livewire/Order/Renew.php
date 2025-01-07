@@ -23,7 +23,9 @@ class Renew extends Component
 
         if ($billing->status == "pending") {
             $time = $order->expire_at->addDays(31);
+            $refundTime = Carbon::now()->addDays(2);
             $order->expire_at = $time;
+            $order->refund_at = $refundTime;
             $order->gateway_order_id = $billing->gateway_order_id;
             $order->is_active = true;
             $order->total_payments = $order->total_payments + 1;

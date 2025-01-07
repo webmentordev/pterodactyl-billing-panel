@@ -25,10 +25,12 @@ class Success extends Component
         if ($order->status == 'pending') {
             $this->activeGateway = config('app.gateway');
             $time = Carbon::now()->addDays(31);
+            $refundTime = Carbon::now()->addDays(2);
             $order->has_paid = true;
             $order->is_active = true;
             $order->status = "paid";
             $order->expire_at = $time;
+            $order->refund_at = $refundTime;
             $order->total_payments = $order->total_payments + 1;
             $order->save();
 
