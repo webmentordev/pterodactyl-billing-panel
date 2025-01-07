@@ -73,6 +73,11 @@
                 <x-input-error :messages="$errors->get('threads')" class="mt-2" />
             </div>
             <div class="mb-2">
+                <x-input-label :value="__('Threads Limit')" />
+                <x-text-input class="block mt-1 w-full" type="number" wire:model="threads_limit" required />
+                <x-input-error :messages="$errors->get('threads_limit')" class="mt-2" />
+            </div>
+            <div class="mb-2">
                 <x-input-label :value="__('Swap (GB)')" />
                 <x-text-input class="block mt-1 w-full" type="number" wire:model="swap" required />
                 <x-input-error :messages="$errors->get('swap')" class="mt-2" />

@@ -13,8 +13,8 @@
             @endforeach
         </table>
         @if ($reminders->hasPages())
-            <div class="mt-3">
-                {{ $reminders->links }}
+            <div class="mt-3 bg-dark-100 rounded-lg p-3">
+                {{ $reminders->links() }}
             </div>
         @endif
     @else

@@ -8,7 +8,7 @@ use Livewire\Attributes\Layout;
 
 class Create extends Component
 {
-    public $node_id, $name, $ip, $location, $domain, $threads, $processor, $swap, $storage, $storage_type, $cores, $ram, $ram_type;
+    public $node_id, $name, $ip, $location, $domain, $threads, $threads_limit, $processor, $swap, $storage, $storage_type, $cores, $ram, $ram_type;
 
     #[Layout('layouts.livewire.admin')]
     public function render()
@@ -26,6 +26,7 @@ class Create extends Component
             'ip' => ['required', 'ipv4'],
             'location' => ['required'],
             'threads' => ['required', 'numeric', 'min:1'],
+            'threads_limit' => ['required', 'numeric', 'min:1'],
             'swap' => ['required', 'numeric', 'min:1'],
             'storage' => ['required', 'numeric', 'min:1'],
             'storage_type' => ['required'],
@@ -39,6 +40,7 @@ class Create extends Component
             'processor' => $this->processor,
             'domain' => $this->domain,
             'threads' => $this->threads,
+            'threads_limit' => $this->threads_limit,
             'swap' => $this->swap,
             'ip' => $this->ip,
             'location' => $this->location,

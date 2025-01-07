@@ -102,3 +102,8 @@ table tr {
 .markdown h1 {
     @apply mb-2;
 }
+
+
+.specs li {
+    @apply flex items-center justify-between border-b border-white/10 pt-2 pb-1 mb-2 last:border-none;
+}

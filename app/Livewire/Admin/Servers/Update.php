@@ -8,7 +8,7 @@ use Livewire\Attributes\Layout;
 
 class Update extends Component
 {
-    public $node_id, $server, $name, $ip, $domain, $threads, $swap, $processor, $location, $storage, $storage_type, $cores, $ram, $ram_type;
+    public $node_id, $server, $name, $ip, $threads_limit, $domain, $threads, $swap, $processor, $location, $storage, $storage_type, $cores, $ram, $ram_type;
 
     public function mount(Server $server)
     {
@@ -17,6 +17,7 @@ class Update extends Component
         $this->processor = $server->processor;
         $this->ip = $server->ip;
         $this->threads = $server->threads;
+        $this->threads_limit = $server->threads_limit;
         $this->swap = $server->swap;
         $this->domain = $server->domain;
         $this->location = $server->location;
@@ -58,6 +59,7 @@ class Update extends Component
             'processor' => $this->processor,
             'domain' => $this->domain,
             'threads' => $this->threads,
+            'threads_limit' => $this->threads_limit,
             'swap' => $this->swap,
             'ip' => $this->ip,
             'location' => $this->location,

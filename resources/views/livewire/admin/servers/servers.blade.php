@@ -10,18 +10,15 @@
         <table class="w-full table-fixed">
             <tr>
                 <th width="90px">NodeID</th>
-                <th width="90px">Name</th>
-                <th width="200px">Processor</th>
+                <th width="150px">Name</th>
+                <th width="250px">Processor</th>
                 <th width="210px">Domain</th>
-                <th>IP</th>
-                <th>Location</th>
-                <th width="80px">Cores & Threads</th>
-                <th>RAM</th>
-                <th>Storage</th>
-                <th width="80px">Swap</th>
+                <th width="130px">IP</th>
+                <th width="130px">Location</th>
+                <th width="130px">Specs</th>
                 <th class="text-end" width="80px">Orders</th>
                 <th class="text-end">Added At</th>
-                <th class="text-end">Action</th>
+                <th class="text-end" width="120px">Action</th>
             </tr>
             @foreach ($servers as $item)
                 <tr>
@@ -31,10 +28,23 @@
                     <td>{{ $item->domain }}</td>
                     <td>{{ $item->ip }}</td>
                     <td>{{ $item->location }}</td>
-                    <td>{{ $item->cores }} / {{ $item->threads }}</td>
-                    <td>{{ $item->ram }}GB ({{ $item->ram_type }})</td>
-                    <td>{{ $item->storage }}GB ({{ $item->storage_type }})</td>
-                    <td>{{ $item->swap }}GB</td>
+                    <td class="relative" x-data="{ pop: false }">
+                        <button class="text-rust-green underline font-semibold" @click="pop = !pop">View</button>
+                        <div x-show="pop" x-cloak x-transition
+                            class="z-10 top-12 right-0 bg-dark-100 absolute w-[250px] p-2 rounded-2xl border border-white/10">
+                            <ul class="specs p-3">
+                                <li><strong>Cores</strong><span>{{ $item->cores }}</span></li>
+                                <li><strong>Threads</strong><span>{{ $item->threads }}</span></li>
+                                <li><strong>Threads Limit</strong><span>{{ $item->threads_limit }}</span></li>
+                                <li><strong>Storage</strong><span>{{ $item->storage }}GB
+                                        ({{ $item->storage_type }})
+                                    </span></li>
+                                <li><strong>RAM</strong><span>{{ $item->ram }}GB
+                                        ({{ $item->ram_type }})</span></li>
+                                <li><strong>Swap</strong><span>{{ $item->swap }}GB</span></li>
+                            </ul>
+                        </div>
+                    </td>
                     <td class="text-end">{{ count($item->orders) }}</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                     <td class="flex items-center justify-end">
@@ -49,8 +59,8 @@
             @endforeach
         </table>
         @if ($servers->hasPages())
-            <div class="mt-3">
-                {{ $servers->links }}
+            <div class="mt-3 bg-dark-100 rounded-lg p-3">
+                {{ $servers->links() }}
             </div>
         @endif
     @else

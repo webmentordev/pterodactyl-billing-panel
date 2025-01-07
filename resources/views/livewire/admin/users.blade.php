@@ -45,8 +45,8 @@
             @endforeach
         </table>
         @if ($users->hasPages())
-            <div class="mt-3">
-                {{ $users->links }}
+            <div class="mt-3 bg-dark-100 rounded-lg p-3">
+                {{ $users->links() }}
             </div>
         @endif
     @else

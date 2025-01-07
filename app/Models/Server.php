@@ -16,6 +16,7 @@ class Server extends Model
         'domain',
         'cores',
         'threads',
+        'threads_limit',
         'swap',
         'ram',
         'ram_type',

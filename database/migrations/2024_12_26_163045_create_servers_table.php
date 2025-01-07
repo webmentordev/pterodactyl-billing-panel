@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('domain');
             $table->bigInteger('cores');
             $table->bigInteger('threads');
+            $table->bigInteger('threads_limit')->comment('How many threads to use from the server');
             $table->bigInteger('swap');
             $table->bigInteger('ram');
             $table->string('ram_type');

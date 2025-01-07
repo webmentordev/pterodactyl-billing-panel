@@ -9,21 +9,20 @@
                 <li class="mb-2">● Integrated Rust Console (RCON)</li>
                 <li class="mb-2">● Intel® Core™ i7-7700 @ 4.20GHz</li>
                 <li class="mb-2">● 2 vCores CPU Performance</li>
-                <li class="mb-2">● Dedicated CPU Threads (No Sharing)</li>
                 <li class="mb-2">● 15GB DDR4 RAM (Physical)</li>
                 <li class="mb-2">● 5GB RAM (Virtual)</li>
                 <li class="mb-2">● 50GB NVME SSD</li>
-                <li class="mb-2">● 8 Minutes Rust Server Startup Time</li>
-                <li class="mb-2">● 2Gbps Uplink</li>
+                <li class="mb-2">● Dedicated CPU Threads (No Sharing)</li>
+                <li class="mb-2">● 5 - 10 Minutes Restart Time</li>
+                <li class="mb-2">● 1Gbit/s Uplink</li>
                 <li class="mb-2">● DDoS Protection up to 2Tb/s</li>
                 <li class="mb-2">● 2 Server Backups</li>
                 <li class="mb-2">● Unlimited Players Slot (150 Recommended)</li>
-                <li class="mb-2">● Up to 20 Server Ticks (10 Recommended)</li>
-                <li class="mb-2">● Up to 5000 Map Size (4250 Recommended)</li>
+                <li class="mb-2">● Up to 4250 Map Size (3750 Recommended)</li>
                 <li class="mb-2">● Full FTP Access</li>
                 <li class="mb-2">● Sub User Management</li>
                 <li class="mb-2">● Carbon & Oxide Support</li>
-                <li class="mb-2">● Modded & Community Server</li>
+                <li class="mb-2">● Modded & Vanilla / Community Server</li>
                 <li class="mb-2">● Future Server Upgrade Support</li>
                 <li class="mb-2">● Quick <a href="https://discord.gg/5XFteSutRK"
                         class="text-rust font-semibold underline">Discord</a>
@@ -34,7 +33,7 @@
             class="flex flex-col text-white border border-white/20 bg-dark-100 h-fit rounded-2xl max-w-[400px] w-full ml-4 p-6">
             <h2 class="text-2xl text-center bg-dark w-full py-2 px-4 mb-4">Order Summery</h2>
 
-            <p class="mb-3 pb-3 border-b border-white/10">Rust - Assault Rifle</p>
+            <p class="mb-3 pb-3 border-b border-white/10">Rust - High Quality Metal</p>
             <ul class="list-disc ml-5">
                 <li>Rust Server</li>
                 <li>2 vCores (Core™ i7-7700 @ 4.20GHz)</li>
@@ -42,10 +41,11 @@
                 <li>5GB RAM (Virtual)</li>
                 <li>50GB M.2 NVME SSD</li>
                 <li>Unlimited Players Slot</li>
-                <li>5000 Map Size Support</li>
+                <li>4250 Map Size Support</li>
                 <li>Rust+ App Support</li>
                 <li>Full FTP Access</li>
                 <li>Location: Germany</li>
+                <li>Renewal Period: 31 Days</li>
             </ul>
             <div class="mb-3 pb-3 border-b border-white/10"></div>
             <p class="mb-3 pb-3 border-b border-white/10">Free Server Migration (Contact Support)</p>

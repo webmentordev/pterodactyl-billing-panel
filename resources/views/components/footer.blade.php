@@ -54,6 +54,7 @@
                     <a href="#" class="hover:text-rust transition-all text-md mb-2">Terms Of Service</a>
                     <a href="#" class="hover:text-rust transition-all text-md mb-2">Privacy Policy</a>
                     <a href="#" class="hover:text-rust transition-all text-md mb-2">Refund Policy</a>
+                    <a href="#" class="hover:text-rust transition-all text-md mb-2">Rust Guide</a>
                 </ul>
             </div>
         </div>

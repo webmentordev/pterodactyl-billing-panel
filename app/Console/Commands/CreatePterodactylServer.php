@@ -169,7 +169,7 @@ class CreatePterodactylServer extends Command
         $servers = Server::withCount('usage')
             ->get()
             ->filter(function ($server) use ($allowedThreads) {
-                $totalThreads = $server->threads;
+                $totalThreads = $server->threads_limit;
                 $maxUsageGroups = intdiv($totalThreads, $allowedThreads);
                 return $server->usage_count < $maxUsageGroups;
             });
