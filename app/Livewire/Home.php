@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class Home extends Component
 {
+    public $price = 20;
+
+    public function mount()
+    {
+        $this->price = config('app.price');
+    }
+
     #[Layout('layouts.livewire.guest')]
     public function render()
     {

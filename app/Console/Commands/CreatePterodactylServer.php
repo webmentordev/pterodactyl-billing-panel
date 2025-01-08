@@ -24,13 +24,15 @@ class CreatePterodactylServer extends Command
         $apiKey = config('app.ptero_api');
         $rustEggID = config('app.ptero_egg_id');
         $backgroundImage = config('app.url') . '/assets/rustdedicated-hosting-banner.png';
-        $allowedThreads = 2;
+        $allowedThreads = 4;
         $selectedServer = $this->getServers($allowedThreads);
 
         if ($selectedServer) {
             $threads = $this->getUsage($selectedServer);
             $threadOne = $threads[0];
             $threadTwo = $threads[1];
+            $threadThree = $threads[2];
+            $threadFour = $threads[3];
             $nodeNumber = $selectedServer->node_id;
             $seed = rand(0, 2147483647);
             $maxPorts = config('app.rust_max_ports');
@@ -77,15 +79,15 @@ class CreatePterodactylServer extends Command
                     'RCON_PASS' => $rconPassword,
                 ],
                 'limits' => [
-                    'memory' => 15360,
+                    'memory' => 20480,
                     'swap' => 5120,
-                    'disk' => 51200,
+                    'disk' => 61440,
                     'io' => 500,
-                    'cpu' => 200,
-                    'threads' => "$threadOne,$threadTwo"
+                    'cpu' => 400,
+                    'threads' => "$threadOne,$threadTwo,$threadThree,$threadFour"
                 ],
                 'feature_limits' => [
-                    'databases' => 0,
+                    'databases' => 1,
                     'backups' => 2
                 ],
                 'allocation' => [
@@ -101,6 +103,8 @@ class CreatePterodactylServer extends Command
                     'server_id' => $selectedServer->id,
                     'cpu_pin_1' => $threadOne,
                     'cpu_pin_2' => $threadTwo,
+                    'cpu_pin_3' => $threadThree,
+                    'cpu_pin_4' => $threadFour,
                     'server_port' => $serverPort,
                     'query_port' => $queryPort,
                     'rcon_port' => $rconPort,
@@ -179,17 +183,24 @@ class CreatePterodactylServer extends Command
     private function getUsage($server)
     {
         $assignedThreads = Usage::where('server_id', $server->id)
-            ->pluck('cpu_pin_1', 'cpu_pin_2')
+            ->pluck('cpu_pin_1', 'cpu_pin_2', 'cpu_pin_3', 'cpu_pin_4')
             ->flatten()
             ->toArray();
-        for ($index = 0; $index < $server->threads; $index += 2) {
+        for ($index = 0; $index < $server->threads_limit; $index += 4) {
             $firstThread = $index;
             $secondThread = $index + 1;
-            if (!in_array($firstThread, $assignedThreads) && !in_array($secondThread, $assignedThreads)) {
-                return [$firstThread, $secondThread];
+            $thirdThread = $index + 2;
+            $fourthThread = $index + 3;
+            if (
+                !in_array($firstThread, $assignedThreads) &&
+                !in_array($secondThread, $assignedThreads) &&
+                !in_array($thirdThread, $assignedThreads) &&
+                !in_array($fourthThread, $assignedThreads)
+            ) {
+                return [$firstThread, $secondThread, $thirdThread, $fourthThread];
             }
         }
-        $newThreadStart = max($server->threads, max($assignedThreads) + 2);
-        return [$newThreadStart, $newThreadStart + 1];
+        $newThreadStart = max($server->threads_limit, max($assignedThreads) + 4);
+        return [$newThreadStart, $newThreadStart + 1, $newThreadStart + 2, $newThreadStart + 3];
     }
 }

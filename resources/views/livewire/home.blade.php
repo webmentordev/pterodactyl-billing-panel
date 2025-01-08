@@ -11,7 +11,7 @@
                     seamless, <br> low-latency gameplay</p>
                 <a href="{{ route('package') }}"
                     class="inline-block text-white bg-rust p-3 rounded-sm font-semibold px-4 hover:bg-rust-green transition-all"
-                    title="Buy Under 20$ Dedicated Rust Server">Get 20$ Server</a>
+                    title="Buy Under 20$ Dedicated Rust Server">Get {{ $price }}$ Server</a>
             </div>
         </div>
     </div>

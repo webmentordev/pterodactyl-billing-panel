@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('panel_server_uid');
             $table->bigInteger('cpu_pin_1');
             $table->bigInteger('cpu_pin_2');
+            $table->bigInteger('cpu_pin_3');
+            $table->bigInteger('cpu_pin_4');
             $table->bigInteger('server_port');
             $table->bigInteger('query_port');
             $table->bigInteger('rcon_port');

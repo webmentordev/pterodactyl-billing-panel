@@ -7,24 +7,23 @@
             <ul class="">
                 <li class="mb-2">● Game Panel For Management</li>
                 <li class="mb-2">● Integrated Rust Console (RCON)</li>
-                <li class="mb-2">● Intel® Core™ i7-7700 @ 4.20GHz</li>
-                <li class="mb-2">● 2 vCores CPU Performance</li>
-                <li class="mb-2">● 15GB DDR4 RAM (Physical)</li>
+                <li class="mb-2">● Intel® or AMD Ryzen Processor with up to 4.20 GHz clock speed</li>
+                <li class="mb-2">● 4 Threads Performance (Dedicated)</li>
+                <li class="mb-2">● 20GB DDR4 RAM (Physical)</li>
                 <li class="mb-2">● 5GB RAM (Virtual)</li>
-                <li class="mb-2">● 50GB NVME SSD</li>
-                <li class="mb-2">● Dedicated CPU Threads (No Sharing)</li>
-                <li class="mb-2">● 5 - 10 Minutes Restart Time</li>
+                <li class="mb-2">● 60GB NVME SSD</li>
                 <li class="mb-2">● 1Gbit/s Uplink</li>
                 <li class="mb-2">● DDoS Protection</li>
                 <li class="mb-2">● 2 Server Backups</li>
+                <li class="mb-2">● 1 MySQL Database (May be store Player Stats)</li>
                 <li class="mb-2">● Unlimited Players Slot (150 Recommended)</li>
-                <li class="mb-2">● Up to 4250 Map Size (3750 Recommended)</li>
+                <li class="mb-2">● Up to 4500 Map Size (4250 Max Recommended)</li>
                 <li class="mb-2">● Full FTP Access</li>
                 <li class="mb-2">● Sub User Management</li>
                 <li class="mb-2">● Carbon & Oxide Support</li>
                 <li class="mb-2">● Modded & Vanilla / Community Server</li>
                 <li class="mb-2">● Future Server Upgrade Support</li>
-                <li class="mb-2">● Quick <a href="https://discord.gg/5XFteSutRK"
+                <li class="mb-2">● Quick <a href="{{ config('app.discord_link') }}"
                         class="text-rust font-semibold underline">Discord</a>
                     support</li>
             </ul>
@@ -36,14 +35,17 @@
             <p class="mb-3 pb-3 border-b border-white/10">Rust - High Quality Metal</p>
             <ul class="list-disc ml-5">
                 <li>Rust Server</li>
-                <li>2 vCores (Core™ i7-7700 @ 4.20GHz)</li>
-                <li>15GB DDR4 RAM</li>
+                <li>Intel or Ryzen CPU @ 4.20 GHz</li>
+                <li>4 CPU Threads (400%)</li>
+                <li>20GB DDR4 RAM</li>
                 <li>5GB RAM (Virtual)</li>
-                <li>50GB M.2 NVME SSD</li>
+                <li>60GB M.2 NVME SSD</li>
                 <li>Unlimited Players Slot</li>
-                <li>4250 Map Size Support</li>
+                <li>4500 Map Size Support</li>
                 <li>Rust+ App Support</li>
                 <li>Full FTP Access</li>
+                <li>2 Backups</li>
+                <li>1 Database</li>
                 <li>Location: Germany</li>
                 <li>Renewal Period: 31 Days</li>
             </ul>

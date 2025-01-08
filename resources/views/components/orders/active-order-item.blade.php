@@ -11,11 +11,17 @@
             <p class="text-sm flex items-center text-gray-200">
                 <img src="https://api.iconify.design/uil:processor.svg?color=%23cd412b" width="18" class="mr-2">
                 @if ($order->usage)
-                    {{ $order->usage->server->processor }}
+                    <span class="border-r border-white/10 pr-3">{{ $order->usage->server->processor }}</span>
+                    <img src="https://api.iconify.design/mingcute:threads-line.svg?color=%23cd412b" width="18"
+                        class="mx-2" title="CPU Threads Number">
+                    <span title="CPU Threads Number">{{ $order->usage->cpu_pin_1 }} to
+                        {{ $order->usage->cpu_pin_4 }}</span>
                 @else
                     -
                 @endif
             </p>
+            <p class="text-sm flex items-center text-gray-200">
+
         </div>
     </div>
     <div>
@@ -68,7 +74,7 @@
                         <p class="text-white font-bold text-2xl mb-6">Are you sure you want to request a refund?
                         </p>
                         <p class="text-gray-200 mb-3">If you confirm the initiation of the refund, the server
-                            associated with this order will be deleted along with its backups, plugins,
+                            associated with this order will be deleted along with its backups, database, plugins,
                             configurations, and any files you have stored using FTP.</p>
                         <p class="text-gray-200 mb-3">As part of our refund policy, <strong
                                 class="text-rust">{{ $refund }}%</strong> of the paid amount is eligible for
