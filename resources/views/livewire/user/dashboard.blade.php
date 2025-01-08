@@ -1,7 +1,10 @@
 <section class="w-full mt-4">
     <div class="py-2 max-w-7xl m-auto">
         @session('failed')
-            <x-alerts.failed :message="$value" />
+            <x-alerts.failed class="text-white" :message="$value" />
+        @endsession
+        @session('success')
+            <x-alerts.success :message="$value" />
         @endsession
         <div class="flex flex-col">
             @if (count($orders))

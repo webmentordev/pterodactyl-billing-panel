@@ -82,7 +82,7 @@ Follow these steps to properly setup Panel
 # Wing Installation & Setup  
 Follow these steps to properly setup Wings
 ```
-1. Install Wing In The server
+1. Install Wing In The server with Database Setup
 2. In the Wing, create 50GB of Swap Space
 3. Create Wing as a node on the panel 
     - Copy the config

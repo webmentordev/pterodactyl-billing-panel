@@ -9,11 +9,11 @@
             <p class="text-sm mb-1"><strong class="text-rust">OrderID#</strong> - {{ $order->id }}
             </p>
             <p class="text-sm flex items-center text-gray-200">
-                <img src="https://api.iconify.design/uil:processor.svg?color=%23cd412b" width="18" class="mr-2">
+                <img src="https://api.iconify.design/uil:processor.svg?color=%23cd412b" width="20" class="mr-2">
                 @if ($order->usage)
-                    <span class="border-r border-white/10 pr-3">{{ $order->usage->server->processor }}</span>
-                    <img src="https://api.iconify.design/mingcute:threads-line.svg?color=%23cd412b" width="18"
-                        class="mx-2" title="CPU Threads Number">
+                    <code class="border-r border-white/10 pr-3">{{ $order->usage->server->processor }}</code>
+                    <img src="https://api.iconify.design/fluent-emoji:thread.svg" width="18" class="mx-2"
+                        title="CPU Threads Number">
                     <span title="CPU Threads Number">{{ $order->usage->cpu_pin_1 }} to
                         {{ $order->usage->cpu_pin_4 }}</span>
                 @else
@@ -30,7 +30,7 @@
                 <img src="https://api.iconify.design/iconoir:ip-address-tag.svg?color=%23cd412b" width="20">
                 <p class="ml-2 text-sm text-gray-300">
                     @if ($order->usage)
-                        {{ $order->usage->server->ip }}:{{ $order->usage->server_port }}
+                        <code>{{ $order->usage->server->ip }}:{{ $order->usage->server_port }}</code>
                     @else
                         -
                     @endif
@@ -40,8 +40,8 @@
                 <img src="https://api.iconify.design/mdi:ethernet.svg?color=%235d7239" width="20">
                 <p class="ml-2 text-sm text-gray-300">
                     @if ($order->usage)
-                        {{ $order->usage->query_port }} / {{ $order->usage->app_port }} /
-                        {{ $order->usage->rcon_port }}
+                        <code>{{ $order->usage->query_port }} / {{ $order->usage->app_port }} /
+                            {{ $order->usage->rcon_port }}</code>
                     @else
                         -
                     @endif
@@ -92,6 +92,10 @@
                                 Processing...
                             </div>
                         </button>
+                        <p class="mt-3 border border-rust bg-rust/10 text-white p-3 rounded-lg">Refunds usually take up
+                            to 10 business
+                            days to appear on your
+                            statement.</p>
                     </div>
                 </div>
             @else

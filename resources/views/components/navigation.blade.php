@@ -19,14 +19,13 @@
 
                     <div x-show="open" x-cloak x-transition
                         class="absolute top-7 right-0 w-[150px] bg-dark border border-white/10 flex flex-col rounded-lg p-3">
-                        <a href="https://discord.gg/5XFteSutRK" target="_blank" title="RustDedicated Hosting Discord"
+                        <a href="{{ config('app.discord_link') }}" target="_blank" title="RustDedicated Hosting Discord"
                             class="hover:text-rust transition-all py-2 border-b border-white/10 flex items-center">
                             <img src="https://api.iconify.design/logos:discord-icon.svg"
                                 alt="RustDedicated Hosting Discord">
                             <strong class="ml-2">Discord</strong>
                         </a>
-                        <a href="https://youtube.com/@rustdedicatedhosting" target="_blank"
-                            title="RustDedicated Hosting YouTube"
+                        <a href="{{ config('app.yourube_url') }}" target="_blank" title="RustDedicated Hosting YouTube"
                             class="hover:text-rust transition-all py-2 flex items-center">
                             <img src="https://api.iconify.design/logos:youtube-icon.svg"
                                 alt="RustDedicated Hosting YouTube">

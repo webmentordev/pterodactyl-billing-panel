@@ -54,8 +54,10 @@ class Dashboard extends Component
     public function pay(Order $order)
     {
         $this->owner($order);
-        if ($order->status == 'pending') {
+        if ($order->status == 'pending' && $order->has_paid == false) {
             return redirect($order->checkout_url);
+        } else {
+            return session()->flash('failed', 'Something went wrong with the request.');
         }
     }
 
