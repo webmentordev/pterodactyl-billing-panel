@@ -2,13 +2,14 @@
 
 namespace App\Livewire\User;
 
-use App\Jobs\OrderRefundJob;
 use Exception;
 use Carbon\Carbon;
 use App\Models\Order;
+use App\Models\Refund;
 use App\Models\Billing;
 use Livewire\Component;
 use Stripe\StripeClient;
+use App\Jobs\OrderRefundJob;
 use Livewire\Attributes\Layout;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
@@ -186,7 +187,14 @@ class Dashboard extends Component
         if ($refundDate->isPast()) {
             return session()->flash('failed', 'Your refund request period has passed.');
         }
-        OrderRefundJob::dispatch($order->id)->onQueue('refund');
+        $refund = Refund::create([
+            'order_id' => $order->id,
+            'amount' => ($this->refundPercentage / 100) * $order->price
+        ]);
+        Http::post(config('app.discord_refund'), [
+            'content' => "```" . json_encode($refund) . "```",
+        ]);
+        return session()->flash('refund', 'Your refund request has been submitted. You will receive an email when the refund is initiated');
     }
 
     private function owner($order)

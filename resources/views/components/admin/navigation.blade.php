@@ -26,6 +26,9 @@
         <a href="{{ route('admin.billing') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/solar:bill-list-outline.svg?color=%23FFFFFF"
                 width="20px" class="mr-3"><span>Billings</span></a>
+        <a href="{{ route('admin.refunds') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
+            wire:current="bg-dark"><img src="https://api.iconify.design/heroicons:receipt-refund.svg?color=%23ffffff"
+                width="20px" class="mr-3"><span>Refunds</span></a>
         <a href="{{ route('admin.reminders') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img
                 src="https://api.iconify.design/material-symbols:brightness-alert-outline-rounded.svg?color=%23ffffff"

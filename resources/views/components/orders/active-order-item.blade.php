@@ -71,6 +71,9 @@
                 <div x-show="open" x-cloak x-transition x-on:click.self="open = false"
                     class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center">
                     <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full flex-col">
+                        @session('refund')
+                            <x-alerts.success :message="$value" />
+                        @endsession
                         <p class="text-white font-bold text-2xl mb-6">Are you sure you want to request a refund?
                         </p>
                         <p class="text-gray-200 mb-3">If you confirm the initiation of the refund, the server

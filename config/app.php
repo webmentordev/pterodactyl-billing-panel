@@ -42,6 +42,7 @@ return [
     'discord_order' => env('DISCORD_ORDER_WEBHOOK'),
     'discord_server' => env('DISCORD_SERVER_WEBHOOK'),
     'discord_exception' => env('DISCORD_EXCEPTION_WEBHOOK'),
+    'discord_refund' => env('DISCORD_REFUND_WEBHOOK'),
 
     /*
     |--------------------------------------------------------------------------

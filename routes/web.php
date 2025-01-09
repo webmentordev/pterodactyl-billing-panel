@@ -22,6 +22,7 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
+use App\Livewire\Admin\Refunds;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
@@ -54,6 +55,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/orders', AdminOrders::class)->name('orders');
 
     Route::get('/reminders', Reminders::class)->name('reminders');
+    Route::get('/refunds', Refunds::class)->name('refunds');
 });
 
 // Policy Routes
@@ -71,8 +73,6 @@ Route::middleware(['guest'])->group(function () {
 Route::get('/order/{order}/success', SuccessOrder::class)->name('order.success');
 Route::get('/order/{order}/cancel', CancelOrder::class)->name('order.cancel');
 Route::get('/order/renew/{order}/{billing}', RenewOrder::class)->name('order.renew');
-
-
 
 
 // Email Testing
