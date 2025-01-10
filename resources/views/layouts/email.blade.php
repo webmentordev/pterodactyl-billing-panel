@@ -9,15 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <!-- Scripts -->
     @vite(['resources/css/email.css', 'resources/js/app.js'])
 </head>
 
-<body class="font-sans antialiased ">
+<body class="font-sans antialiased">
     <div class="min-h-screen py-12 flex flex-col sm:justify-center items-center bg-dark px-3">
         <div
             class="w-full mb-5 max-w-lg mt-6 px-8 py-4 overflow-hidden sm:rounded-lg bg-dark-100 border border-white/10">

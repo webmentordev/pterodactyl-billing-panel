@@ -15,8 +15,6 @@ class Usage extends Model
         'panel_server_uid',
         'cpu_pin_1',
         'cpu_pin_2',
-        'cpu_pin_3',
-        'cpu_pin_4',
         'server_port',
         'query_port',
         'rcon_port',

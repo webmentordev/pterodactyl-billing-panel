@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Usage;
+use App\Models\Refund;
 use App\Models\Server;
 use App\Models\Billing;
 use Illuminate\Database\Eloquent\Model;
@@ -51,5 +52,10 @@ class Order extends Model
     public function usage()
     {
         return $this->hasOne(Usage::class);
+    }
+
+    public function refund()
+    {
+        return $this->hasOne(Refund::class);
     }
 }

@@ -88,9 +88,11 @@ Route::get('/order/renew/{order}/{billing}', RenewOrder::class)->name('order.ren
 // });
 
 
-// Route::get('/renew/{order}', function (Order $order) {
-//     return new OrderRenew($order);
-// });
+Route::get('/renew/{order}', function (Order $order) {
+    Mail::to('ahmertahir99@gmail.com')->send(new OrderSuccess($order));
+    return 'send!';
+    // return new OrderRenew($order);
+});
 
 
 // Route::get('/product-varient', function () {

@@ -15,6 +15,8 @@
                         <x-orders.cancel-order-item :order="$order" />
                     @elseif ($order->status == 'pending')
                         <x-orders.pending-order-item :order="$order" />
+                    @elseif ($order->status == 'refund')
+                        <x-orders.refund-order-item :order="$order" />
                     @endif
                 @endforeach
             @else

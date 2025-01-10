@@ -14,14 +14,12 @@
                     <code class="border-r border-white/10 pr-3">{{ $order->usage->server->processor }}</code>
                     <img src="https://api.iconify.design/fluent-emoji:thread.svg" width="18" class="mx-2"
                         title="CPU Threads Number">
-                    <span title="CPU Threads Number">{{ $order->usage->cpu_pin_1 }} to
-                        {{ $order->usage->cpu_pin_4 }}</span>
+                    <span title="CPU Threads Number">{{ $order->usage->cpu_pin_1 }} &
+                        {{ $order->usage->cpu_pin_2 }}</span>
                 @else
                     -
                 @endif
             </p>
-            <p class="text-sm flex items-center text-gray-200">
-
         </div>
     </div>
     <div>

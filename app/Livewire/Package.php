@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Http;
 
 class Package extends Component
 {
-    public $price = 20.0, $threads = 4, $outOfStock = false, $email;
+    public $price = 25.0, $threads = 2, $outOfStock = false, $email;
     public $activeGateway = null;
 
     public function mount()

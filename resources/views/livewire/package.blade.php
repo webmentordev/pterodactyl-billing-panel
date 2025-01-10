@@ -8,8 +8,8 @@
                 <li class="mb-2">● Game Panel For Management</li>
                 <li class="mb-2">● Integrated Rust Console (RCON)</li>
                 <li class="mb-2">● Intel® or AMD Ryzen Processor with up to 4.20 GHz clock speed</li>
-                <li class="mb-2">● 4 Threads Performance (Dedicated)</li>
-                <li class="mb-2">● 20GB DDR4 RAM (Physical)</li>
+                <li class="mb-2">● 2 Threads Performance (Dedicated)</li>
+                <li class="mb-2">● 15GB DDR4 RAM (Physical)</li>
                 <li class="mb-2">● 5GB RAM (Virtual)</li>
                 <li class="mb-2">● 60GB NVME SSD</li>
                 <li class="mb-2">● 1Gbit/s Uplink</li>
@@ -36,8 +36,8 @@
             <ul class="list-disc ml-5">
                 <li>Rust Server</li>
                 <li>Intel or Ryzen CPU @ 4.20 GHz</li>
-                <li>4 CPU Threads (400%)</li>
-                <li>20GB DDR4 RAM</li>
+                <li>2 CPU Threads (200%)</li>
+                <li>15GB DDR4 RAM</li>
                 <li>5GB RAM (Virtual)</li>
                 <li>60GB M.2 NVME SSD</li>
                 <li>Unlimited Players Slot</li>

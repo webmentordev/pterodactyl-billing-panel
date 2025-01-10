@@ -56,8 +56,29 @@ WorkingDirectory=/var/www/laravel
 WantedBy=multi-user.target
 ---------------------
 systemctl daemon-reload
-systemctl restart reminder-queue
+systemctl restart suspend-queue
 ```  
+### Setup Server Refund Worker  
+```
+sudo nano /etc/systemd/system/refund-queue.service
+---------------------
+[Unit]
+Description=Refund Job Queue
+After=network.target
+
+[Service]
+User=root
+Group=root
+Restart=always
+ExecStart=/usr/bin/php /var/www/laravel/artisan queue:work --queue=refund --env=production
+WorkingDirectory=/var/www/laravel
+
+[Install]
+WantedBy=multi-user.target
+---------------------
+systemctl daemon-reload
+systemctl restart refund-queue
+``` 
 ### Setup Cronjob for Timed tasks  
 ```
 sudo crontab -e
