@@ -25,14 +25,14 @@ class OrderSuccess extends Mailable
     {
         return new Envelope(
             from: new Address(config('app.mail_address'), config('app.mail_name')),
-            subject: '🎉 Order successfull!',
+            subject: '🎉 Order confirmation!',
         );
     }
 
     public function content(): Content
     {
         return new Content(
-            view: 'mail.order.success',
+            markdown: 'mail.order.success'
         );
     }
 

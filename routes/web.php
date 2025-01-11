@@ -56,6 +56,19 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
 
     Route::get('/reminders', Reminders::class)->name('reminders');
     Route::get('/refunds', Refunds::class)->name('refunds');
+
+    Route::get('/renew/{order}', function (Order $order) {
+        Mail::to('support_email')->send(new OrderRenew($order));
+        return 'send!';
+    });
+    Route::get('/success/{order}', function (Order $order) {
+        Mail::to('support_email')->send(new OrderSuccess($order));
+        return 'send!';
+    });
+    Route::get('/reminder/', function () {
+        Mail::to('support_email')->send(new Reminder());
+        return "Sent";
+    });
 });
 
 // Policy Routes
@@ -73,26 +86,6 @@ Route::middleware(['guest'])->group(function () {
 Route::get('/order/{order}/success', SuccessOrder::class)->name('order.success');
 Route::get('/order/{order}/cancel', CancelOrder::class)->name('order.cancel');
 Route::get('/order/renew/{order}/{billing}', RenewOrder::class)->name('order.renew');
-
-
-// Email Testing
-// Route::get('/email/{order}', function (Order $order) {
-//     return new OrderSuccess($order, null);
-//     // Mail::to($order->user->email)->send(new OrderSuccess($order));
-//     // return "Email Sent!";
-// });
-
-
-// Route::get('/email', function () {
-//     return new Reminder();
-// });
-
-
-Route::get('/renew/{order}', function (Order $order) {
-    Mail::to('ahmertahir99@gmail.com')->send(new OrderSuccess($order));
-    return 'send!';
-    // return new OrderRenew($order);
-});
 
 
 // Route::get('/product-varient', function () {
@@ -113,7 +106,5 @@ Route::get('/renew/{order}', function (Order $order) {
 //     }
 //     return $variantID;
 // });
-
-
 
 require __DIR__ . '/auth.php';

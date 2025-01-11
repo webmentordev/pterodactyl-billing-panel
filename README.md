@@ -35,6 +35,7 @@ WorkingDirectory=/var/www/laravel
 WantedBy=multi-user.target
 ---------------------
 systemctl daemon-reload
+systemctl enable reminder-queue
 systemctl restart reminder-queue
 ```  
 ### Setup Server Suspend Worker  
@@ -56,6 +57,7 @@ WorkingDirectory=/var/www/laravel
 WantedBy=multi-user.target
 ---------------------
 systemctl daemon-reload
+systemctl enable suspend-queue
 systemctl restart suspend-queue
 ```  
 ### Setup Server Refund Worker  
@@ -77,6 +79,7 @@ WorkingDirectory=/var/www/laravel
 WantedBy=multi-user.target
 ---------------------
 systemctl daemon-reload
+systemctl enable refund-queue
 systemctl restart refund-queue
 ``` 
 ### Setup Cronjob for Timed tasks  

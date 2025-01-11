@@ -24,14 +24,14 @@ class OrderRenew extends Mailable
     {
         return new Envelope(
             from: new Address(config('app.mail_address'), config('app.mail_name')),
-            subject: '🤗 Order has been renewed!',
+            subject: '🚀 Order has been renewed!',
         );
     }
 
     public function content(): Content
     {
         return new Content(
-            view: 'mail.order.renew',
+            markdown: 'mail.order.renew'
         );
     }
 

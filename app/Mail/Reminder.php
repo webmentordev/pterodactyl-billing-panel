@@ -30,7 +30,7 @@ class Reminder extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.reminder',
+            markdown: 'mail.reminder'
         );
     }
 
