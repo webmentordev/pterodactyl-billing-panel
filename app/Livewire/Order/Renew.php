@@ -28,6 +28,7 @@ class Renew extends Component
             $order->refund_at = $refundTime;
             $order->gateway_order_id = $billing->gateway_order_id;
             $order->is_active = true;
+            $order->status = 'paid';
             $order->total_payments = $order->total_payments + 1;
             $order->save();
 

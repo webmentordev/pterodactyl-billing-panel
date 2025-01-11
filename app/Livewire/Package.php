@@ -48,10 +48,10 @@ class Package extends Component
 
     private function getServers($allowedThreads)
     {
-        $servers = Server::withCount('usage')
+        $servers = Server::withCount('usage')->where('is_active', true)
             ->get()
             ->filter(function ($server) use ($allowedThreads) {
-                $totalThreads = $server->threads;
+                $totalThreads = $server->threads_limit;
                 $maxUsageGroups = intdiv($totalThreads, $allowedThreads);
                 return $server->usage_count < $maxUsageGroups;
             });

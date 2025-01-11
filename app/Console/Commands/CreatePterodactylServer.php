@@ -166,7 +166,7 @@ class CreatePterodactylServer extends Command
 
     private function getServers($allowedThreads)
     {
-        $servers = Server::withCount('usage')
+        $servers = Server::withCount('usage')->where('is_active', true)
             ->get()
             ->filter(function ($server) use ($allowedThreads) {
                 $totalThreads = $server->threads_limit;

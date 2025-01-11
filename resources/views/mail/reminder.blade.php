@@ -1,7 +1,6 @@
 <x-mail::message>
-# 📢 Servers are back in-stock
-We’re excited to announce that Rust servers are back in stock and ready for you to start your next adventur.
-
+# 📢 Rust Servers Are Back in Stock!
+We’re excited to announce that Rust servers are back in stock and ready for you to kick off your next adventure. Don’t miss this opportunity to set up your multiplayer experience today!
 
 ## Why choose our Rust servers?
 - Optimal performance for smooth gameplay.
@@ -12,10 +11,11 @@ We’re excited to announce that Rust servers are back in stock and ready for yo
 
 <a href="{{ route('package') }}" class="link" target="_blank">Get your server now</a>
 
-If you have any questions or need assistance, feel free to reply to this email. We're always here to help!  
+If you have any questions or need assistance, feel free to reply to this email. We're always here to help! 
+ 
 See you on the battlefield!  
-Best regards,    
 
+Best regards,  
 **{{ config('app.name') }}**  
 [support@rustdedicated.com](mailto:{{ config('app.mail_address') }})
 </x-mail::message>

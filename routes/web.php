@@ -26,15 +26,20 @@ use App\Livewire\Admin\Refunds;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
+use App\Livewire\FreeTrial;
 use App\Livewire\PrivacyPolicy;
 use App\Livewire\RefundPolicy;
 use App\Livewire\TermsOfService;
 use App\Livewire\User\Billings;
+use App\Mail\OrderDeleted;
+use App\Mail\OrderRefunded;
 use App\Mail\OrderRenew;
+use App\Mail\OrderSuspended;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
-Route::get('/buy-dedicated-rust-server', SinglePackage::class)->name('package');
+Route::get('/buy-dedicated-rust-server-hosting', SinglePackage::class)->name('package');
+Route::get('/rent-free-trial-rust-server-hosting', FreeTrial::class)->name('free.trial');
 
 // Customer Routes
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
@@ -46,28 +51,31 @@ Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
 Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', AdminDashboard::class)->name('dashboard');
     Route::get('/users', Users::class)->name('users');
-
     Route::get('/servers', AdminServer::class)->name('servers');
     Route::get('/server/create', CreateServer::class)->name('server.create');
     Route::get('/server/update/{server}', UpdateServer::class)->name('server.update');
-
     Route::get('/billings/{order?}', AdminBilling::class)->name('billing');
     Route::get('/orders', AdminOrders::class)->name('orders');
-
     Route::get('/reminders', Reminders::class)->name('reminders');
     Route::get('/refunds', Refunds::class)->name('refunds');
 
     Route::get('/renew/{order}', function (Order $order) {
-        Mail::to('support_email')->send(new OrderRenew($order));
-        return 'send!';
+        return new OrderRenew($order);
     });
     Route::get('/success/{order}', function (Order $order) {
-        Mail::to('support_email')->send(new OrderSuccess($order));
-        return 'send!';
+        return new OrderSuccess($order);
     });
-    Route::get('/reminder/', function () {
-        Mail::to('support_email')->send(new Reminder());
-        return "Sent";
+    Route::get('/refunded/{order}', function (Order $order) {
+        return new OrderRefunded($order);
+    });
+    Route::get('/deleted/{order}', function (Order $order) {
+        return new OrderDeleted($order);
+    });
+    Route::get('/suspended/{order}', function (Order $order) {
+        return new OrderSuspended($order);
+    });
+    Route::get('/reminder', function () {
+        return new Reminder();
     });
 });
 

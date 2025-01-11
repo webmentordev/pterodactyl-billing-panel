@@ -2,17 +2,15 @@
 
 namespace App\Jobs;
 
-use App\Mail\OrderRefunded;
-use Carbon\Carbon;
 use App\Models\Order;
-use App\Models\Refund;
 use App\Models\Billing;
+use App\Mail\OrderSuspended;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderRefundJob implements ShouldQueue
+class OrderSuspendJob implements ShouldQueue
 {
     use Queueable;
 
@@ -27,25 +25,21 @@ class OrderRefundJob implements ShouldQueue
     {
         try {
             $order = $this->order;
-            $url = config('app.ptero_url') . '/api/application/servers/' . $order->usage->panel_server_id . '/force';
+            $url = config('app.ptero_url') . '/api/application/servers/' . $order->usage->panel_server_id . '/suspend';
             $apiKey = config('app.ptero_api');
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . $apiKey,
-            ])->delete($url);
+            ])->post($url);
             if ($response->successful()) {
-                $order->status = 'refund';
+                $order->status = 'suspend';
                 $order->is_active = false;
                 $billing = Billing::where('gateway_order_id', $order->gateway_order_id)->first();
                 $billing->status = 'refund';
-                $refund = Refund::where('order_id', $order->id)->first();
-                $refund->refunded_at = Carbon::now();
                 $order->save();
                 $billing->save();
-                $refund->save();
-                $order->usage->delete();
-                Mail::to($order->user->email)->send(new OrderRefunded($order));
+                Mail::to($order->user->email)->send(new OrderSuspended($order));
             } else {
                 Http::post(config('app.discord_exception'), [
                     'content' => "```" . $response->body() . "```",

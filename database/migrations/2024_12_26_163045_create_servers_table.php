@@ -24,6 +24,7 @@ return new class extends Migration
             $table->bigInteger('storage');
             $table->string('storage_type');
             $table->string('location');
+            $table->boolean('is_active')->default(true)->comment('Decommission status of the server');
             $table->timestamps();
         });
     }

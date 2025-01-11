@@ -44,7 +44,8 @@
                         Area</a>
                     <a href="{{ config('app.ptero_url') }}" class="hover:text-rust transition-all text-md mb-2">Game
                         Panel</a>
-                    <a href="#" class="hover:text-rust transition-all text-md">Free Trial Server</a>
+                    <a href="{{ route('free.trial') }}" class="hover:text-rust transition-all text-md">Free Trial
+                        Server</a>
                 </ul>
             </div>
 

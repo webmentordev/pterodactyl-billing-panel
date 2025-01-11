@@ -2,17 +2,18 @@
 
 namespace App\Jobs;
 
-use App\Mail\OrderRefunded;
+use App\Mail\OrderDeleted;
 use Carbon\Carbon;
 use App\Models\Order;
 use App\Models\Refund;
 use App\Models\Billing;
+use App\Mail\OrderRefunded;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderRefundJob implements ShouldQueue
+class OrderDeleteJob implements ShouldQueue
 {
     use Queueable;
 
@@ -35,17 +36,14 @@ class OrderRefundJob implements ShouldQueue
                 'Authorization' => 'Bearer ' . $apiKey,
             ])->delete($url);
             if ($response->successful()) {
-                $order->status = 'refund';
+                $order->status = 'expired';
                 $order->is_active = false;
                 $billing = Billing::where('gateway_order_id', $order->gateway_order_id)->first();
-                $billing->status = 'refund';
-                $refund = Refund::where('order_id', $order->id)->first();
-                $refund->refunded_at = Carbon::now();
+                $billing->status = 'expired';
                 $order->save();
                 $billing->save();
-                $refund->save();
                 $order->usage->delete();
-                Mail::to($order->user->email)->send(new OrderRefunded($order));
+                Mail::to($order->user->email)->send(new OrderDeleted($order));
             } else {
                 Http::post(config('app.discord_exception'), [
                     'content' => "```" . $response->body() . "```",

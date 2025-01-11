@@ -22,7 +22,8 @@ class Server extends Model
         'ram_type',
         'storage',
         'storage_type',
-        'location'
+        'location',
+        'is_active'
     ];
 
     public function orders()

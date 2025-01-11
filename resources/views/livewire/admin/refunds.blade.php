@@ -7,10 +7,11 @@
             <tr>
                 <th width="150px">User</th>
                 <th>Email</th>
-                <th width="340px">OrderID</th>
+                <th width="150px">OrderID</th>
+                <th width="120px">Gateway</th>
                 <th width="120px">Ammount</th>
                 <th width="120px">Refunded</th>
-                <th width="120px">Refunded At</th>
+                <th class="text-end">Refunded At</th>
                 <th class="text-end">Created At</th>
                 <th width="130px" class="text-end">Action</th>
             </tr>
@@ -18,7 +19,14 @@
                 <tr>
                     <td>{{ $item->order->user->name }}</td>
                     <td>{{ $item->order->user->email }}</td>
-                    <td>{{ $item->order_id }}</td>
+                    <td>{{ Str::afterLast($item->order_id, '-') }}</td>
+                    <td>
+                        @if ($item->order->gateway == 'stripe')
+                            <img src="https://api.iconify.design/logos:stripe.svg" width="50">
+                        @else
+                            <img src="https://api.iconify.design/twemoji:lemon.svg" width="30">
+                        @endif
+                    </td>
                     <td>${{ number_format($item->amount, 2) }}</td>
                     <td>
                         @if ($item->refunded_at)
@@ -28,7 +36,7 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="18px">
                         @endif
                     </td>
-                    <td>
+                    <td class="text-end">
                         @if ($item->refunded_at)
                             {{ $item->refunded_at->format('d M,Y H:i:s') }} UTC
                         @else
@@ -36,7 +44,7 @@
                         @endif
                     </td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
-                    <td class="flex justify-end">
+                    <td class="text-end">
                         @if (!$item->refunded_at)
                             <div class="flex items-center h-fit mt-1">
                                 <button class="bg-rust-green text-white py-1 px-3 rounded-lg font-semibold"

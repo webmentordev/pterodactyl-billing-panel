@@ -7,11 +7,11 @@
             <ul class="">
                 <li class="mb-2">● Game Panel For Management</li>
                 <li class="mb-2">● Integrated Rust Console (RCON)</li>
-                <li class="mb-2">● Intel® or AMD Ryzen Processor with up to 4.20 GHz clock speed</li>
+                <li class="mb-2">● Intel® or AMD Ryzen Processor with up to 4.70 GHz</li>
                 <li class="mb-2">● 2 Threads Performance (Dedicated)</li>
                 <li class="mb-2">● 15GB DDR4 RAM (Physical)</li>
                 <li class="mb-2">● 5GB RAM (Virtual)</li>
-                <li class="mb-2">● 60GB NVME SSD</li>
+                <li class="mb-2">● 60GB M.2 NVME SSD</li>
                 <li class="mb-2">● 1Gbit/s Uplink</li>
                 <li class="mb-2">● DDoS Protection</li>
                 <li class="mb-2">● 2 Server Backups</li>
@@ -35,7 +35,7 @@
             <p class="mb-3 pb-3 border-b border-white/10">Rust - High Quality Metal</p>
             <ul class="list-disc ml-5">
                 <li>Rust Server</li>
-                <li>Intel or Ryzen CPU @ 4.20 GHz</li>
+                <li>Intel or Ryzen CPU @ 4.70 GHz</li>
                 <li>2 CPU Threads (200%)</li>
                 <li>15GB DDR4 RAM</li>
                 <li>5GB RAM (Virtual)</li>
@@ -97,8 +97,9 @@
                                 class="py-2 px-6 rounded-sm bg-rust-green mt-3 inline-block font-bold">Request</button>
                             <p
                                 class="p-4 py-2 rounded-lg italic text-white bg-rust-green/10 border border-rust-green mt-3">
-                                Once servers are back in stock, you will receive an email notification, after which your
-                                email address will be deleted from our system.</p>
+                                Once the servers are back in stock, you will receive an email notification. Afterward,
+                                your email address will be deleted from our system to enhance privacy and protect
+                                against accidental email spams.</p>
                         </div>
                     </div>
                 </div>

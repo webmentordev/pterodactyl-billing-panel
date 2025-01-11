@@ -184,17 +184,33 @@ class Dashboard extends Component
     {
         $this->owner($order);
         $refundDate = Carbon::parse($order->refund_at);
+        if ($order->refund) {
+            return session()->flash('failed', 'Order refund is already in progress.');
+        }
         if ($refundDate->isPast()) {
             return session()->flash('failed', 'Your refund request period has passed.');
         }
-        $refund = Refund::create([
+        Refund::create([
             'order_id' => $order->id,
             'amount' => ($this->refundPercentage / 100) * $order->price
         ]);
         Http::post(config('app.discord_refund'), [
-            'content' => "```" . json_encode($refund) . "```",
+            'content' => "```Order Refund Request: " . $order->id . "```",
         ]);
-        return session()->flash('refund', 'Your refund request has been submitted. You will receive an email when the refund is initiated');
+        return session()->flash('success', 'Your refund request has been submitted. You will receive an email when the refund is initiated');
+    }
+
+    public function cancel(Order $order)
+    {
+        $this->owner($order);
+        if (!$order->refund) {
+            return session()->flash('failed', 'Order does not have a refund request.');
+        }
+        $order->refund->delete();
+        Http::post(config('app.discord_refund'), [
+            'content' => "```Order Refund Cancel Request: " . $order->id . "```",
+        ]);
+        return session()->flash('success', 'Your refund request has been successfully canceled.');
     }
 
     private function owner($order)

@@ -24,4 +24,11 @@ class Servers extends Component
     {
         CreateReminderEmailJobs::dispatch()->onQueue('reminder');
     }
+
+    public function activeStatus(Server $server)
+    {
+        $server->is_active = !$server->is_active;
+        $server->save();
+        return session()->flash('success', 'Server Decommission status has been changed!');
+    }
 }

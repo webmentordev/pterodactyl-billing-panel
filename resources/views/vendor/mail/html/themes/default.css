@@ -93,13 +93,19 @@ h2 {
     color: #5D7239;
 }
 
-ul li{
+ul li {
     color: #dbdbdb;
 }
 
-.link{
-
+ul li a {
+    color: #cd412b;
 }
+
+ul li strong {
+    color: #48bb78;
+}
+
+.link {}
 
 h3 {
     font-size: 14px;
