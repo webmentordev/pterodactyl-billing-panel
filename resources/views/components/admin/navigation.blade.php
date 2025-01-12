@@ -1,4 +1,4 @@
-<nav class="w-full bg-dark-100 rounded-lg p-3 border h-full border-white/10 mb-3 flex flex-col max-w-[220px]">
+<nav class="w-full bg-dark-100 rounded-lg p-3 border h-full border-white/10 mb-3 flex flex-col max-w-[220px] px-4">
     <div class="flex justify-center">
         @if (auth()->user()->google_avatar)
             <a href="{{ route('home') }}"><img src="{{ auth()->user()->google_avatar }}" class="rounded-full"
@@ -30,6 +30,10 @@
         <a href="{{ route('admin.refunds') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/heroicons:receipt-refund.svg?color=%23ffffff"
                 width="20px" class="mr-3"><span>Refunds</span></a>
+        <a href="{{ route('admin.reviews') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
+            wire:current="bg-dark"><img
+                src="https://api.iconify.design/material-symbols:reviews-outline-sharp.svg?color=%23ffffff"
+                width="20px" class="mr-3"><span>Reviews</span></a>
         <a href="{{ route('admin.reminders') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img
                 src="https://api.iconify.design/material-symbols:brightness-alert-outline-rounded.svg?color=%23ffffff"

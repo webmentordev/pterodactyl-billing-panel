@@ -44,6 +44,8 @@ return [
     'discord_exception' => env('DISCORD_EXCEPTION_WEBHOOK'),
     'discord_refund' => env('DISCORD_REFUND_WEBHOOK'),
 
+    'trustpilot_email' => env('TRUSTPILOT_EMAIL'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

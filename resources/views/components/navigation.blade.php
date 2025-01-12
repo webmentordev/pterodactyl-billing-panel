@@ -1,4 +1,4 @@
-<nav class="fixed top-3 w-full z-50">
+<nav class="fixed top-3 w-full z-50 px-4">
     <div class="bg-dark-100/90 rounded-full p-2 border border-white/20 backdrop-blur max-w-7xl m-auto">
         <div class="flex items-center justify-between">
             <a href="{{ route('home') }}" class="flex items-center"><img
@@ -8,6 +8,7 @@
             <ul class="flex items-center text-white links">
                 <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all">Home</a>
                 <a href="{{ route('package') }}" class="mx-6 hover:text-rust transition-all">Package</a>
+                <a href="{{ route('free.trial') }}" class="mx-6 hover:text-rust transition-all">Trial</a>
                 <a href="{{ config('app.ptero_url') }}" class="mx-6 hover:text-rust transition-all">GamePanel</a>
                 <a href="{{ route('dashboard') }}" class="mx-6 hover:text-rust transition-all">Client</a>
                 <div class="relative ml-6" x-data="{ open: false }">
@@ -33,6 +34,7 @@
                         </a>
                     </div>
                 </div>
+                <a href="{{ route('about') }}" class="mx-6 hover:text-rust transition-all">About</a>
                 @auth
                     @if (Auth::user()->is_admin)
                         <a href="{{ route('admin.dashboard') }}" class="mx-6 hover:text-rust transition-all">Dashboard</a>

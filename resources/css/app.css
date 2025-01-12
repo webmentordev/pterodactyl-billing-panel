@@ -107,7 +107,7 @@ table tr {
     @apply flex items-center justify-between border-b border-white/10 pt-2 pb-1 mb-2 last:border-none;
 }
 
-code{
+code {
     font-family: "Space Mono", serif;
     @apply font-semibold;
 }

@@ -5,11 +5,24 @@ use App\Models\Usage;
 use App\Livewire\Home;
 use App\Mail\Reminder;
 use App\Models\Server;
+use App\Mail\OrderRenew;
+use App\Mail\OrderDeleted;
 use App\Mail\OrderSuccess;
+use App\Livewire\FreeTrial;
+use App\Mail\OrderRefunded;
+use App\Mail\OrderSuspended;
 use Illuminate\Http\Request;
 use App\Livewire\Admin\Users;
+use App\Livewire\RefundPolicy;
+use App\Livewire\Admin\Refunds;
+use App\Livewire\Admin\Reviews;
+use App\Livewire\PrivacyPolicy;
+use App\Livewire\User\Billings;
+use App\Livewire\TermsOfService;
 use App\Livewire\User\Dashboard;
+use App\Mail\OrderRenewReminder;
 use App\Livewire\Admin\Reminders;
+use App\Livewire\About as AboutUs;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
@@ -22,25 +35,15 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
-use App\Livewire\Admin\Refunds;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
-use App\Livewire\FreeTrial;
-use App\Livewire\PrivacyPolicy;
-use App\Livewire\RefundPolicy;
-use App\Livewire\TermsOfService;
-use App\Livewire\User\Billings;
-use App\Mail\OrderDeleted;
-use App\Mail\OrderRefunded;
-use App\Mail\OrderRenew;
-use App\Mail\OrderRenewReminder;
-use App\Mail\OrderSuspended;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
 Route::get('/buy-dedicated-rust-server-hosting', SinglePackage::class)->name('package');
-Route::get('/rent-free-trial-rust-server-hosting', FreeTrial::class)->name('free.trial');
+Route::get('/free-trial-rust-server-hosting', FreeTrial::class)->name('free.trial');
+Route::get('/about-us', AboutUs::class)->name('about');
 
 // Customer Routes
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
@@ -59,6 +62,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/orders', AdminOrders::class)->name('orders');
     Route::get('/reminders', Reminders::class)->name('reminders');
     Route::get('/refunds', Refunds::class)->name('refunds');
+    Route::get('/reviews', Reviews::class)->name('reviews');
 
     Route::get('/renew/{order}', function (Order $order) {
         return new OrderRenew($order);
@@ -87,6 +91,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
 Route::get('terms-of-service', TermsOfService::class)->name('terms');
 Route::get('privacy-policy', PrivacyPolicy::class)->name('privacy');
 Route::get('refund-policy', RefundPolicy::class)->name('refund');
+
 
 // Google Auth Routes
 Route::middleware(['guest'])->group(function () {

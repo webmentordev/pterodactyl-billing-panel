@@ -35,11 +35,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="flex flex-col items-end">
+            <nav class="flex flex-col items-end">
                 <h2 class="mb-4 text-4xl text-white">Navigation</h2>
                 <ul class="flex flex-col text-gray-200 text-end">
                     <a href="{{ route('home') }}" class="hover:text-rust transition-all text-md mb-2">Home</a>
                     <a href="{{ route('login') }}" class="hover:text-rust transition-all text-md mb-2">Login</a>
+                    <a href="{{ route('about') }}" class="hover:text-rust transition-all text-md mb-2">About Us</a>
                     <a href="{{ route('package') }}" class="hover:text-rust transition-all text-md mb-2">Package</a>
                     <a href="{{ route('register') }}" class="hover:text-rust transition-all text-md mb-2">Register</a>
                     <a href="{{ route('dashboard') }}" class="hover:text-rust transition-all text-md mb-2">Client
@@ -49,9 +50,9 @@
                     <a href="{{ route('free.trial') }}" class="hover:text-rust transition-all text-md">Free Trial
                         Server</a>
                 </ul>
-            </div>
+            </nav>
 
-            <div class="flex flex-col items-end">
+            <nav class="flex flex-col items-end">
                 <h2 class="mb-4 text-4xl text-white">Other Links</h2>
                 <ul class="flex flex-col text-gray-200 text-end">
                     <a href="{{ route('terms') }}" class="hover:text-rust transition-all text-md mb-2">Terms Of
@@ -62,7 +63,7 @@
                         Policy</a>
                     <a href="#" class="hover:text-rust transition-all text-md mb-2">Rust Guide</a>
                 </ul>
-            </div>
+            </nav>
         </div>
     </div class="w-full">
     <div class="text-center bg-dark border-t border-white/10 text-white py-7">

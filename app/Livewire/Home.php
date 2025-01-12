@@ -2,13 +2,9 @@
 
 namespace App\Livewire;
 
-use App\Models\Order;
-use App\Models\Package;
+use App\Models\Review;
 use Livewire\Component;
-use Stripe\StripeClient;
 use Livewire\Attributes\Layout;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Auth;
 
 class Home extends Component
 {
@@ -22,6 +18,8 @@ class Home extends Component
     #[Layout('layouts.livewire.guest')]
     public function render()
     {
-        return view('livewire.home');
+        return view('livewire.home', [
+            'reviews' => Review::latest()->get()
+        ]);
     }
 }

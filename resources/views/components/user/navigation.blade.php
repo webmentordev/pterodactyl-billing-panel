@@ -1,4 +1,4 @@
-<nav class="w-full">
+<nav class="w-full px-4">
     <div class="bg-dark-100/90 rounded-full p-2 border border-white/20 backdrop-blur max-w-7xl m-auto">
         <div class="flex items-center justify-between">
             @if (auth()->user()->google_avatar)
