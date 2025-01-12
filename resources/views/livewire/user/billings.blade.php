@@ -29,10 +29,13 @@
                             @elseif ($item->status == 'cancel')
                                 <span
                                     class="py-1 px-3 rounded-full border font-semibold text-red-500 border-red-800 bg-red-600/10">Cancel</span>
+                            @elseif ($item->status == 'suspend')
+                                <span
+                                    class="py-1 px-3 rounded-full border font-semibold text-indigo-700 border-indigo-800 bg-indigo-600/10">Suspended</span>
                             @elseif ($item->status == 'pending')
                                 <span
                                     class="py-1 px-3 rounded-full border font-semibold text-yellow-500 border-yellow-800 bg-yellow-600/10">Pending</span>
-                            @else
+                            @elseif ($item->status == 'refund')
                                 <span
                                     class="py-1 px-3 rounded-full border font-semibold text-blue-500 border-blue-800 bg-blue-600/10">Refunded</span>
                             @endif

@@ -3,11 +3,8 @@
 namespace App\Jobs;
 
 use App\Mail\OrderDeleted;
-use Carbon\Carbon;
 use App\Models\Order;
-use App\Models\Refund;
 use App\Models\Billing;
-use App\Mail\OrderRefunded;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Queue\Queueable;

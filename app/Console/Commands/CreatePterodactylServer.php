@@ -81,7 +81,7 @@ class CreatePterodactylServer extends Command
                     'swap' => 5120,
                     'disk' => 61440,
                     'io' => 500,
-                    'cpu' => 400,
+                    'cpu' => 200,
                     'threads' => "$threadOne,$threadTwo"
                 ],
                 'feature_limits' => [

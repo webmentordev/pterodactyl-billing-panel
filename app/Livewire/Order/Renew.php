@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Order;
 
+use App\Jobs\OrderUnsuspendJob;
 use Carbon\Carbon;
 use App\Models\Order;
 use Livewire\Component;
@@ -27,6 +28,9 @@ class Renew extends Component
             $order->expire_at = $time;
             $order->refund_at = $refundTime;
             $order->gateway_order_id = $billing->gateway_order_id;
+            if ($order->status == 'suspend') {
+                OrderUnsuspendJob::dispatch($order)->onQueue('suspend');
+            }
             $order->is_active = true;
             $order->status = 'paid';
             $order->total_payments = $order->total_payments + 1;

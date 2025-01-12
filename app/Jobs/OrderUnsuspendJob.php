@@ -3,14 +3,11 @@
 namespace App\Jobs;
 
 use App\Models\Order;
-use App\Models\Billing;
-use App\Mail\OrderSuspended;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class OrderSuspendJob implements ShouldQueue
+class OrderUnsuspendJob implements ShouldQueue
 {
     use Queueable;
 
@@ -25,7 +22,7 @@ class OrderSuspendJob implements ShouldQueue
     {
         try {
             $order = $this->order;
-            $url = config('app.ptero_url') . '/api/application/servers/' . $order->usage->panel_server_id . '/suspend';
+            $url = config('app.ptero_url') . '/api/application/servers/' . $order->usage->panel_server_id . '/unsuspend';
             $apiKey = config('app.ptero_api');
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
@@ -33,13 +30,9 @@ class OrderSuspendJob implements ShouldQueue
                 'Authorization' => 'Bearer ' . $apiKey,
             ])->post($url);
             if ($response->successful()) {
-                $order->status = 'suspend';
-                $order->is_active = false;
-                $billing = Billing::where('gateway_order_id', $order->gateway_order_id)->first();
-                $billing->status = 'suspend';
-                $order->save();
-                $billing->save();
-                Mail::to($order->user->email)->send(new OrderSuspended($order));
+                Http::post(config('app.discord_order'), [
+                    'content' => "```Server unsuspended: " . $order->id . "```",
+                ]);
             } else {
                 Http::post(config('app.discord_exception'), [
                     'content' => "```" . $response->body() . "```",
