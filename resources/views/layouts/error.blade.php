@@ -18,11 +18,12 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
-    <x-navigation />
     <div class="min-h-screen relative flex flex-col justify-center items-center pt-6 bg-dark">
-        @yield('content')
+        <div>
+            <h1 class="text-8xl text-white mb-3">404 - Page Not Found</h1>
+            <p class="text-gray-100 text-center">Sorry, the page you requested does not exist.</p>
+        </div>
     </div>
-    <x-footer />
 </body>
 
 </html>
