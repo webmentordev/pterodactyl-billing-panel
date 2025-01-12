@@ -20,6 +20,7 @@ return new class extends Migration
             $table->timestamp('refund_at')->nullable();
             $table->text('total_payments')->default(0);
             $table->decimal('price', 10, 2);
+            $table->boolean('has_emailed')->default(false);
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

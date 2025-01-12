@@ -82,6 +82,28 @@ systemctl daemon-reload
 systemctl enable refund-queue
 systemctl restart refund-queue
 ``` 
+### Setup Server Emaling Worker  
+```
+sudo nano /etc/systemd/system/email-queue.service
+---------------------
+[Unit]
+Description=Emailing Renew Reminder Job Queue
+After=network.target
+
+[Service]
+User=root
+Group=root
+Restart=always
+ExecStart=/usr/bin/php /var/www/laravel/artisan queue:work --queue=emailing --env=production
+WorkingDirectory=/var/www/laravel
+
+[Install]
+WantedBy=multi-user.target
+---------------------
+systemctl daemon-reload
+systemctl enable email-queue
+systemctl restart email-queue
+``` 
 ### Setup Cronjob for Timed tasks  
 ```
 sudo crontab -e

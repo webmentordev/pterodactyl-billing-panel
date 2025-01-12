@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Order;
 use App\Jobs\OrderDeleteJob;
 use App\Jobs\OrderSuspendJob;
-use App\Models\Order;
+use App\Jobs\OrderRenewReminderJob;
 use Illuminate\Support\Facades\Schedule;
 
 // Delete in-complete orders older than 3 hours
@@ -50,6 +51,21 @@ Schedule::call(function () {
     if ($orders->isNotEmpty()) {
         foreach ($orders as $order) {
             OrderDeleteJob::dispatch($order)->onQueue('suspend');
+        }
+    }
+})->hourly();
+
+
+// Send Order Renew Reminder Emails
+Schedule::call(function () {
+    $orders = Order::where('status', 'paid')
+        ->where('has_emailed', false)
+        ->where('expired_at', '>', now())
+        ->where('expired_at', '<=', now()->addDays(2))
+        ->get();
+    if ($orders->isNotEmpty()) {
+        foreach ($orders as $order) {
+            OrderRenewReminderJob::dispatch($order)->onQueue('emailing');
         }
     }
 })->hourly();

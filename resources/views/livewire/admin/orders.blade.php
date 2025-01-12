@@ -3,7 +3,7 @@
         <table class="w-full table-fixed">
             <tr>
                 <th width="130px">ID</th>
-                <th>Bill Order ID</th>
+                <th width="130px">Bill Order ID</th>
                 <th width="170px">User</th>
                 <th width="90px">Price</th>
                 <th width="90px">Payments</th>
@@ -11,6 +11,7 @@
                 <th width="90px">Paid</th>
                 <th width="90px">IsActive</th>
                 <th width="90px">Invoices</th>
+                <th width="90px">Emailed</th>
                 <th width="130px">Status</th>
                 <th class="text-end">Expire At</th>
                 <th class="text-end">Created At</th>
@@ -47,9 +48,16 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
                         @endif
                     </td>
-
                     <td>
                         {{ $item->billings_count }}
+                    </td>
+                    <td>
+                        @if ($item->has_emailed)
+                            <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
+                                width="30px">
+                        @else
+                            <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
+                        @endif
                     </td>
                     <td width="50px">
                         @if ($item->status == 'paid')

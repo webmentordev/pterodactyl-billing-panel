@@ -17,7 +17,6 @@ class Billing extends Model
         'checkout_url',
         'has_paid',
         'status',
-        'email_sent',
         'expire_at'
     ];
 

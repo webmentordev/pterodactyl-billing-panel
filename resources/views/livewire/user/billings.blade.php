@@ -28,7 +28,7 @@
                                     class="py-1 px-3 rounded-full border font-semibold text-green-500 border-green-800 bg-green-600/10">Paid</span>
                             @elseif ($item->status == 'cancel')
                                 <span
-                                    class="py-1 px-3 rounded-full border font-semibold text-red-500 border-red-800 bg-red-600/10">Cancel</span>
+                                    class="py-1 px-3 rounded-full border font-semibold text-red-500 border-red-800 bg-red-600/10">Canceled</span>
                             @elseif ($item->status == 'suspend')
                                 <span
                                     class="py-1 px-3 rounded-full border font-semibold text-indigo-700 border-indigo-800 bg-indigo-600/10">Suspended</span>
@@ -38,6 +38,9 @@
                             @elseif ($item->status == 'refund')
                                 <span
                                     class="py-1 px-3 rounded-full border font-semibold text-blue-500 border-blue-800 bg-blue-600/10">Refunded</span>
+                            @elseif ($item->status == 'expire')
+                                <span
+                                    class="py-1 px-3 rounded-full border font-semibold text-red-500 border-red-800 bg-red-600/10">Expired</span>
                             @endif
                         </td>
                         <td class="text-end" width="280px">
@@ -59,5 +62,31 @@
         @else
             <p class="mt-4 text-center text-white text-2xl">Your billing records not found</p>
     @endif
+    <div class="bg-dark-100 border border-white/10 rounded-lg p-4 mt-6">
+        <h3 class="text-white mb-3 text-4xl">Billing Status Explained:</h3>
+        <ul class="text-gray-200">
+            <li class="mb-1"><strong class="text-red-500">Canceled:</strong> Your order was canceled because payment
+                was not received within the required time frame. This invoice will be deleted, and no further action is
+                needed.</li>
+            <li class="mb-1"><strong class="text-green-500">Paid:</strong> Your invoice has been paid successfully,
+                and
+                everything is in order.
+            </li>
+            <li class="mb-1"><strong class="text-blue-500">Refunded:</strong> You requested a refund for the order,
+                which has been processed as guaranteed. Your server has been deleted and marked as expired.
+            </li>
+            <li class="mb-1"><strong class="text-yellow-500">Pending:</strong> Your order is pending payment. Please
+                visit the <a href="{{ route('dashboard') }}" class="underline text-rust">Dashboard</a> and
+                complete the payment to initiate the installation of your server.
+            </li>
+            <li class="mb-1"><strong class="text-indigo-500">Suspended:</strong> Your server has been suspended but
+                not
+                deleted. If you renew this order later, a new paid invoice will be generated.
+            </li>
+            <li class="mb-1"><strong class="text-red-500">Expired:</strong> Your server has been deleted because it
+                was not renewed on time, even after the 2-day grace period following suspension.
+            </li>
+        </ul>
+    </div>
     </div>
 </section>

@@ -26,6 +26,7 @@ class Order extends Model
         'refund_at',
         'total_payments',
         'server_id',
+        'has_emailed',
         'is_active'
     ];
 

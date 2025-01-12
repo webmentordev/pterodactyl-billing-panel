@@ -34,6 +34,7 @@ use App\Livewire\User\Billings;
 use App\Mail\OrderDeleted;
 use App\Mail\OrderRefunded;
 use App\Mail\OrderRenew;
+use App\Mail\OrderRenewReminder;
 use App\Mail\OrderSuspended;
 
 // Open Routes
@@ -73,6 +74,9 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     });
     Route::get('/suspended/{order}', function (Order $order) {
         return new OrderSuspended($order);
+    });
+    Route::get('/renew-reminder/{order}', function (Order $order) {
+        return new OrderRenewReminder($order);
     });
     Route::get('/reminder', function () {
         return new Reminder();

@@ -10,10 +10,12 @@
                         high-performance
                         solutions
                         backed by cutting-edge hardware.</p>
-                    <p>
+                    <p class="mb-1">
                         Thank you for visiting! We look forward to helping you create the ultimate Rust gaming
                         experience.
                     </p>
+                    <i>We are in no way affiliated with <a href="https://rust.facepunch.com/"
+                            class="underline text-rust" rel="nofollow" target="_blank">Facepunch</a></i>
                     <ul class="flex items-center mt-3">
                         <a href="https://discord.gg/5XFteSutRK" class="mr-5" target="_blank"
                             title="RustDedicated Hosting Discord">

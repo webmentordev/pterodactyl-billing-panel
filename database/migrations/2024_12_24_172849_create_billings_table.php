@@ -17,7 +17,6 @@ return new class extends Migration
             $table->boolean('has_paid')->default(false);
             $table->string('status')->default('pending');
             $table->text('checkout_url')->nullable();
-            $table->boolean('email_sent')->default(false);
             $table->timestamp('expire_at')->nullable();
             $table->timestamps();
         });
