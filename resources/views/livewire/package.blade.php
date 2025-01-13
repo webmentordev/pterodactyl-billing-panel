@@ -1,5 +1,5 @@
 <section class="w-full py-12 bg-cover bg-center relative bg-fixed"
-    style="background-image: url({{ asset('assets/background/header_3.jpg') }})">
+    style="background-image: url({{ asset('assets/background/rust-dedicated-client-header.jpg') }})">
     <div class="bg-black/50 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
     <div class="mt-12 max-w-7xl m-auto flex relative z-10">
         <div class="flex flex-col text-white border border-white/20 bg-dark-100 rounded-2xl w-full p-8">
@@ -27,6 +27,9 @@
                         class="text-rust font-semibold underline">Discord</a>
                     support</li>
             </ul>
+            <p class="bg-dark rounded-lg py-3 px-4 border border-white/10">By placing an order with us, you agree to the
+                <a href="{{ route('terms') }}" class="underline text-rust">Terms Of Service</a> and the <a
+                    href="{{ route('privacy') }}" class="underline text-rust">Privacy Policy</a></p>
         </div>
         <div x-data="{ open: false }"
             class="flex flex-col text-white border border-white/20 bg-dark-100 h-fit rounded-2xl max-w-[400px] w-full ml-4 p-6">

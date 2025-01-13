@@ -143,4 +143,6 @@ Follow these steps to properly setup Wings
     - sudo apt install stress
     - stress --cpu 16 --timeout 30s
     - watch -n 1 "cat /proc/cpuinfo | grep 'MHz'"
+6. Check RAM Requency / MHz
+    - sudo dmidecode --type memory | grep -i "speed"
 ```

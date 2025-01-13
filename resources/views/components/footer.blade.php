@@ -40,9 +40,9 @@
                 <ul class="flex flex-col text-gray-200 text-end">
                     <a href="{{ route('home') }}" class="hover:text-rust transition-all text-md mb-2">Home</a>
                     <a href="{{ route('login') }}" class="hover:text-rust transition-all text-md mb-2">Login</a>
-                    <a href="{{ route('about') }}" class="hover:text-rust transition-all text-md mb-2">About Us</a>
-                    <a href="{{ route('package') }}" class="hover:text-rust transition-all text-md mb-2">Package</a>
                     <a href="{{ route('register') }}" class="hover:text-rust transition-all text-md mb-2">Register</a>
+                    <a href="{{ route('package') }}" class="hover:text-rust transition-all text-md mb-2">Package</a>
+                    <a href="{{ route('about') }}" class="hover:text-rust transition-all text-md mb-2">About Us</a>
                     <a href="{{ route('dashboard') }}" class="hover:text-rust transition-all text-md mb-2">Client
                         Area</a>
                     <a href="{{ config('app.ptero_url') }}" class="hover:text-rust transition-all text-md mb-2">Game
@@ -62,6 +62,9 @@
                     <a href="{{ route('refund') }}" class="hover:text-rust transition-all text-md mb-2">Refund
                         Policy</a>
                     <a href="#" class="hover:text-rust transition-all text-md mb-2">Rust Guide</a>
+                    <a href="https://www.trustpilot.com/review/rustdedicated.com" target="_blank" rel="nofollow"
+                        class="hover:text-rust transition-all text-md mb-2">TrustPilot</a>
+
                 </ul>
             </nav>
         </div>

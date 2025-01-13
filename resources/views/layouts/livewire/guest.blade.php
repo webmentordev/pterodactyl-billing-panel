@@ -9,6 +9,19 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    @production
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JHNXFWX2E"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-4JHNXFWX2E');
+        </script>
+    @endproduction
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>

@@ -77,7 +77,7 @@
                 <th width="150px">Platform</th>
                 <th width="200px">Reviewed At</th>
                 <th width="150px">Stars</th>
-                <th width="150px">Read View</th>
+                <th width="150px">Read Review</th>
                 <th class="text-end">Created At</th>
                 <th width="120px" class="text-end">Action</th>
             </tr>

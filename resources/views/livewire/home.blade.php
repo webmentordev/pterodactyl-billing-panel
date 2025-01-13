@@ -112,8 +112,58 @@
     </div>
 
 
+    <div class="flex items-center justify-center py-12" id="packages">
+        <div class="max-w-5xl w-full p-3 text-white">
+            <div class="w-full flex items-center justify-center">
+                <h2 class="mb-4 m-auto">
+                    <strong title="How to choose the best rust server?" class="text-5xl text-center"
+                        title="Global Rust Server Hosting Locations">How to
+                        Choose
+                        <span class="text-rust">The Best Rust</span>
+                        Server</strong>
+                </h2>
+            </div>
+            <p class="text-center">An important aspect of running Rust is choosing the best server to host on</p>
+            <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10">
+                <p class="mb-3">Let’s explore Rust and how its servers operate.</p>
+                <strong class="text-3xl mb-4">Dedicated CPU</strong>
+                <p class="mt-3">Rust is a single-threaded game, which means it only requires a CPU’s single thread to
+                    function.
+                    All entities, such as animals, NPCs, AI (including sharks), and, most importantly, player
+                    population,
+                    are processed by this single thread. For this reason, a Rust server must have a processor with a
+                    clock speed averaging above 4.20 GHz. A higher CPU frequency can increase the processor’s
+                    temperature, so excellent cooling is essential for optimal server performance.
+                </p>
+                <p class="mt-1 mb-6">Assigning multiple cores or threads to a Rust server is unnecessary. While
+                    generating
+                    a procedural map, the server requires additional CPU power to load the map. That’s why we allocate
+                    two threads per server—no more, no less. In cases where there is extra load on the primary thread,
+                    the second thread handles additional tasks, effectively reducing lag and rubber banding.
+                </p>
+
+                <strong class="text-3xl mb-4">Dedicated RAM Usage</strong>
+                <p class="mt-3 mb-6">Server RAM usage depends on factors such as map size, the number of entities, and
+                    player population. For a 2000-size map, the minimum RAM requirement is approximately 7GB to 8GB
+                    after server bootup. The maximum map size in Rust, 6000, requires at least 12GB of RAM after bootup.
+                    RAM usage tends to increase over time, which can be a challenge for server owners running monthly
+                    wipe servers. Therefore, it’s always recommended to opt for a server with ample RAM capacity. While
+                    DDR4 RAM is sufficient, upgrading to DDR5 can further enhance server performance.
+                </p>
+
+                <strong class="text-3xl mb-4">NVME Storage</strong>
+                <p class="mt-3">Having fast storage, such as M.2 Gen4 NVMe, can significantly improve server bootup
+                    times. During asset warmup, Rust requires quick access to files, which directly impacts the server's
+                    startup speed. On average, HDDs take 6–8 minutes to load assets, standard SSDs take 3–5 minutes,
+                    while M.2 NVMe storage reduces this time dramatically to just 20–40 seconds. Investing in high-speed
+                    storage is essential for optimal server performance and minimizing downtime.</p>
+            </div>
+        </div>
+    </div>
+
+
     @if (count($reviews))
-        <div class="flex items-center justify-center py-[80px] text-white">
+        <div class="flex items-center justify-center pb-[80px] text-white">
             <div class="max-w-7xl w-full p-3">
                 <div class="w-full flex items-center justify-center">
                     <strong class=" text-5xl text-center mb-4 m-auto">Our Customer <span
@@ -128,7 +178,6 @@
             </div>
         </div>
     @endif
-
 
     {{-- <div class="flex items-center justify-center py-12" id="packages">
         <div class="max-w-4xl w-full p-3 grid grid-cols-3 gap-6">
