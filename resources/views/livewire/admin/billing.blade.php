@@ -39,7 +39,7 @@
                         @elseif ($item->status == 'refund')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-blue-500 border-blue-800 bg-blue-600/10">Refunded</span>
-                        @elseif ($item->status == 'expried')
+                        @elseif ($item->status == 'expired')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-red-700 border-red-800 bg-red-600/10">Expired</span>
                         @endif
