@@ -6,7 +6,6 @@
                 <th width="220px">User</th>
                 <th width="90px">Price</th>
                 <th width="90px">Paid</th>
-                <th width="120px">Emailed</th>
                 <th>Status</th>
                 <th class="text-end">Order Expire</th>
                 <th class="text-end" width="230px">Created At</th>
@@ -24,15 +23,6 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="18px">
                         @endif
                     </td>
-                    <td>
-                        @if ($item->email_sent)
-                            <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
-                                width="30px">
-                        @else
-                            <img src="https://api.iconify.design/material-symbols:alarm-outline.svg?color=%23f9fd26"
-                                width="20px">
-                        @endif
-                    </td>
                     <td width="50px">
                         @if ($item->status == 'paid')
                             <span
@@ -40,12 +30,18 @@
                         @elseif ($item->status == 'cancel')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-red-500 border-red-800 bg-red-600/10">Cancel</span>
+                        @elseif ($item->status == 'suspend')
+                            <span
+                                class="py-1 px-3 rounded-full border font-semibold text-indigo-700 border-indigo-800 bg-indigo-600/10">Suspended</span>
                         @elseif ($item->status == 'pending')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-yellow-500 border-yellow-800 bg-yellow-600/10">Pending</span>
-                        @else
+                        @elseif ($item->status == 'refund')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-blue-500 border-blue-800 bg-blue-600/10">Refunded</span>
+                        @elseif ($item->status == 'expried')
+                            <span
+                                class="py-1 px-3 rounded-full border font-semibold text-red-700 border-red-800 bg-red-600/10">Expired</span>
                         @endif
                     </td>
                     <td class="text-end" width="280px">
