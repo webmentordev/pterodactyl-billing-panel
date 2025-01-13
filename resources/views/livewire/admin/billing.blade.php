@@ -46,7 +46,7 @@
                     </td>
                     <td class="text-end" width="280px">
                         @if ($item->expire_at)
-                            {{ $item->expire_at->format('d M,Y H:i:s') }} UTC
+                            {{ $item->expire_at->diffForHumans() }} - {{ $item->expire_at->format('d M,Y H:i:s') }} UTC
                         @else
                             -
                         @endif

@@ -12,7 +12,7 @@
                 </tr>
                 @foreach ($billing as $item)
                     <tr class="odd:bg-white/10 first:border-none border-t border-white/20">
-                        <td>{{ $item->id }}</td>
+                        <td>{{ Str::afterLast($item->id, '-') }}</td>
                         <td>${{ $item->order->price }}</td>
                         <td>
                             @if ($item->has_paid)
@@ -45,7 +45,8 @@
                         </td>
                         <td class="text-end" width="280px">
                             @if ($item->expire_at)
-                                {{ $item->expire_at->format('d M, Y h:i:s') }} UTC
+                                {{ $item->expire_at->diffForHumans() }} - {{ $item->expire_at->format('d M, Y h:i:s') }}
+                                UTC
                             @else
                                 -
                             @endif
