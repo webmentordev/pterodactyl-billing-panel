@@ -5,9 +5,15 @@
         <div class="flex justify-between items-start">
             <div class="flex mb-5">
                 <div class="p-1 rounded-full border-[2px] border-rust group-hover:border-rust-green h-fit">
-                    <div class="h-[70px] w-[70px] bg-cover bg-center rounded-full"
-                        style="background-image: url({{ $review->avatar_url }})">
-                    </div>
+                    @if ($review->avatar_url)
+                        <div class="h-[70px] w-[70px] bg-cover bg-center rounded-full"
+                            style="background-image: url({{ $review->avatar_url }})">
+                        </div>
+                    @else
+                        <div class="h-[70px] w-[70px] bg-cover bg-center rounded-full"
+                            style="background-image: url({{ asset('assets/rust-logo.png') }})">
+                        </div>
+                    @endif
                 </div>
                 <div class="flex flex-col ml-3">
                     <div class="flex items-center mb-1">

@@ -19,8 +19,9 @@
                 <th width="130px">IP</th>
                 <th width="130px">Location</th>
                 <th width="130px">Specs</th>
-                <th class="text-end" width="80px">Active</th>
-                <th class="text-end" width="80px">Orders</th>
+                <th class="text-end" width="120px">Active</th>
+                <th class="text-end" width="120px">Orders</th>
+                <th class="text-end" width="120px">Usages</th>
                 <th class="text-end">Added At</th>
                 <th class="text-end" width="120px">Action</th>
             </tr>
@@ -60,6 +61,7 @@
 
                     </td>
                     <td class="text-end">{{ count($item->orders) }}</td>
+                    <td class="text-end">{{ count($item->usage) }}</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                     <td class="flex items-center justify-end">
                         <div class="flex items-center h-fit mt-1">

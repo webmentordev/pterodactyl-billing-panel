@@ -29,7 +29,8 @@
             </ul>
             <p class="bg-dark rounded-lg py-3 px-4 border border-white/10">By placing an order with us, you agree to the
                 <a href="{{ route('terms') }}" class="underline text-rust">Terms Of Service</a> and the <a
-                    href="{{ route('privacy') }}" class="underline text-rust">Privacy Policy</a></p>
+                    href="{{ route('privacy') }}" class="underline text-rust">Privacy Policy</a>
+            </p>
         </div>
         <div x-data="{ open: false }"
             class="flex flex-col text-white border border-white/20 bg-dark-100 h-fit rounded-2xl max-w-[400px] w-full ml-4 p-6">
@@ -87,7 +88,7 @@
                                 to meet the growing demand.</p>
                             <p class="text-gray-200 mb-3">Please provide your email address to receive a notification
                                 when servers are back in stock. It typically takes 2-3 hours for servers to become
-                                available again</p>
+                                available again.</p>
 
                             @session('success')
                                 <x-alerts.success :message="$value" />

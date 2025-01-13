@@ -9,8 +9,24 @@
                 <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all">Home</a>
                 <a href="{{ route('package') }}" class="mx-6 hover:text-rust transition-all">Package</a>
                 <a href="{{ route('free.trial') }}" class="mx-6 hover:text-rust transition-all">Trial</a>
-                <a href="{{ config('app.ptero_url') }}" class="mx-6 hover:text-rust transition-all">GamePanel</a>
-                <a href="{{ route('dashboard') }}" class="mx-6 hover:text-rust transition-all">Client</a>
+                <div class="relative ml-6" x-data="{ open: false }">
+                    <button class="flex items-center" x-on:click="open = !open">
+                        <span class="font hover:text-rust transition-all">Panel</span>
+                        <img src="https://api.iconify.design/material-symbols-light:arrow-drop-down.svg?color=%23ffffff"
+                            alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
+                    </button>
+                    <div x-show="open" x-cloak x-transition
+                        class="absolute top-7 right-0 w-[150px] bg-dark border border-white/10 flex flex-col rounded-lg p-3">
+                        <a href="{{ config('app.ptero_url') }}" target="_blank" title="RustDedicated Hosting Game Panel"
+                            class="hover:text-rust transition-all py-2 border-b border-white/10 flex items-center">
+                            <strong class="ml-2">Game Panel</strong>
+                        </a>
+                        <a href="{{ route('dashboard') }}" title="RustDedicated Hosting Client Area"
+                            class="hover:text-rust transition-all py-2 flex items-center">
+                            <strong class="ml-2">Client Area</strong>
+                        </a>
+                    </div>
+                </div>
                 <div class="relative ml-6" x-data="{ open: false }">
                     <button class="flex items-center" x-on:click="open = !open">
                         <span class="font hover:text-rust transition-all">Socials</span>
