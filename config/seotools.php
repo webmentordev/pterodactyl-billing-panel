@@ -36,8 +36,8 @@ return [
     ],
     'twitter' => [
         'defaults' => [
-            'card'        => 'large_summary',
-            'site'        => '@rustdedicatedhosting',
+            'card' => 'large_summary',
+            'site' => '@rustdedicated',
         ],
     ],
     'json-ld' => [
