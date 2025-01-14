@@ -3,11 +3,11 @@
         <div class="max-w-7xl m-auto mt-6 w-full">
             <table class="w-full table-fixed rounded-lg overflow-hidden">
                 <tr class="bg-dark-100 mt-4">
-                    <th width="350px">OrderID #</th>
+                    <th width="160px">OrderID #</th>
                     <th width="90px">Price</th>
                     <th width="90px">Paid</th>
                     <th>Status</th>
-                    <th class="text-end" width="230px">Order Expire</th>
+                    <th class="text-end" width="390px">Order Expire</th>
                     <th class="text-end" width="230px">Created At</th>
                 </tr>
                 @foreach ($billing as $item)
@@ -43,7 +43,7 @@
                                     class="py-1 px-3 rounded-full border font-semibold text-red-500 border-red-800 bg-red-600/10">Expired</span>
                             @endif
                         </td>
-                        <td class="text-end" width="280px">
+                        <td class="text-end">
                             @if ($item->expire_at)
                                 {{ $item->expire_at->diffForHumans() }} - {{ $item->expire_at->format('d M, Y h:i:s') }}
                                 UTC

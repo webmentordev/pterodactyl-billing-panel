@@ -13,6 +13,7 @@ return new class extends Migration
             $table->uuid('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->decimal('amount', 10, 2);
+            $table->text('reason');
             $table->timestamp('refunded_at')->nullable();
             $table->timestamps();
         });

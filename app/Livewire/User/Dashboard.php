@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Http;
 
 class Dashboard extends Component
 {
-    public $price = 20.0, $refundPercentage = 85, $refundDays = 4;
+    public $price = 20.0, $refundPercentage = 85, $refundDays = 4, $reason;
     public $activeGateway = null;
 
     public function mount()
@@ -183,6 +183,10 @@ class Dashboard extends Component
     public function refund(Order $order)
     {
         $this->owner($order);
+
+        $this->validate([
+            'reason' => ['required']
+        ]);
         $refundDate = Carbon::parse($order->refund_at);
         if ($order->refund) {
             return session()->flash('failed', 'Order refund is already in progress.');
@@ -192,11 +196,13 @@ class Dashboard extends Component
         }
         Refund::create([
             'order_id' => $order->id,
+            'reason' => $this->reason,
             'amount' => ($this->refundPercentage / 100) * $order->price
         ]);
         Http::post(config('app.discord_refund'), [
-            'content' => "```Order Refund Request: " . $order->id . "```",
+            'content' => "```Order Refund Request: " . $order->id . "\nReason:" . $this->reason . "```",
         ]);
+        $this->reset(['reason']);
         return session()->flash('success', 'Your refund request has been submitted. You will receive an email when the refund is initiated');
     }
 

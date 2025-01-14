@@ -1,6 +1,6 @@
 @props(['order', 'refund', 'days'])
 <div
-    class="mb-3 bg-dark-100 rounded-xl border border-white/20 p-4 text-white border-r-8 border-r-green-500 flex justify-between items-center">
+    class="mb-3 bg-dark-100 rounded-xl border border-green-500 p-4 text-white border-r-8 border-r-green-500 flex justify-between items-center">
     <div class="flex items-center">
         <div class="mr-3">
             <img src="{{ asset('assets/rust-logo.png') }}" width="45" class="rounded-full">
@@ -88,6 +88,10 @@
                                 or order
                                 renewal, to prevent refund abuse. Please read <a href="{{ route('refund') }}"
                                     class="text-rust underline">Our Refund Policy</a> for more details. </p>
+                            <p class="text-gray-200 mb-3">Please provide us with the reason for your refund. It will
+                                greatly help us improve our services.</p>
+                            <x-textarea wire:model="reason" placeholder="Write the reason for the refund here..." />
+                            <x-input-error :messages="$errors->get('reason')" class="mb-2" />
                             <button @click="open = true" wire:click='refund("{{ $order->id }}")'
                                 class="bg-rust-green py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust">
                                 <div wire:target="refund" wire:loading.class="hidden">

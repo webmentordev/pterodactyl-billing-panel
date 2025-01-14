@@ -23,6 +23,7 @@ class Servers extends Component
     public function sendReminder()
     {
         CreateReminderEmailJobs::dispatch()->onQueue('reminder');
+        return session()->flash('success', 'Server reminder job has been dispatched!');
     }
 
     public function activeStatus(Server $server)

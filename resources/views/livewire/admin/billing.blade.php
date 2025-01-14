@@ -44,7 +44,7 @@
                                 class="py-1 px-3 rounded-full border font-semibold text-red-700 border-red-800 bg-red-600/10">Expired</span>
                         @endif
                     </td>
-                    <td class="text-end" width="280px">
+                    <td class="text-end">
                         @if ($item->expire_at)
                             {{ $item->expire_at->diffForHumans() }} - {{ $item->expire_at->format('d M,Y H:i:s') }} UTC
                         @else
