@@ -30,7 +30,7 @@ return [
             'site_name'   => false,
             'images'      => [
                 config('app.url') . '/assets/rustdedicated-hosting-banner.png',
-                config('app.url') . '/assets/rust-dedicated-header-2'
+                config('app.url') . '/assets/rust-dedicated-header-2.png'
             ],
         ],
     ],
@@ -48,7 +48,7 @@ return [
             'type'        => 'WebPage',
             'images'      => [
                 config('app.url') . '/assets/rustdedicated-hosting-banner.png',
-                config('app.url') . '/assets/rust-dedicated-header-2'
+                config('app.url') . '/assets/rust-dedicated-header-2.png'
             ],
         ],
     ],
