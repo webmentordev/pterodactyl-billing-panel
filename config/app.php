@@ -45,6 +45,9 @@ return [
     'discord_refund' => env('DISCORD_REFUND_WEBHOOK'),
 
     'trustpilot_email' => env('TRUSTPILOT_EMAIL'),
+    'facebook_link' => env('FACEBOOK_LINK'),
+    'twitter_link' => env('TWITTER_LINK'),
+    'trustpilot_link' => env('TRUSTPILOT_LINK'),
 
     /*
     |--------------------------------------------------------------------------

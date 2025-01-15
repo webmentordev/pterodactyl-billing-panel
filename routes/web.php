@@ -11,7 +11,6 @@ use App\Mail\OrderSuccess;
 use App\Livewire\FreeTrial;
 use App\Mail\OrderRefunded;
 use App\Mail\OrderSuspended;
-use Illuminate\Http\Request;
 use App\Livewire\Admin\Users;
 use App\Livewire\RefundPolicy;
 use App\Livewire\Admin\Refunds;
@@ -23,15 +22,13 @@ use App\Livewire\User\Dashboard;
 use App\Mail\OrderRenewReminder;
 use App\Livewire\Admin\Reminders;
 use App\Livewire\About as AboutUs;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Package as SinglePackage;
 use App\Livewire\Order\Renew as RenewOrder;
 use App\Livewire\Admin\Orders as AdminOrders;
 use App\Livewire\Order\Cancel as CancelOrder;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\SiteMapController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
@@ -103,6 +100,9 @@ Route::middleware(['guest'])->group(function () {
 Route::get('/order/{order}/success', SuccessOrder::class)->name('order.success');
 Route::get('/order/{order}/cancel', CancelOrder::class)->name('order.cancel');
 Route::get('/order/renew/{order}/{billing}', RenewOrder::class)->name('order.renew');
+
+// SEO Controller
+Route::get('/sitemap.xml', [SiteMapController::class, 'index'])->name('sitemap');
 
 
 // Route::get('/product-varient', function () {

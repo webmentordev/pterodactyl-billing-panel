@@ -17,15 +17,25 @@
                     <i>We are in no way affiliated with <a href="https://rust.facepunch.com/"
                             class="underline text-rust" rel="nofollow" target="_blank">Facepunch</a></i>
                     <ul class="flex items-center mt-3">
-                        <a href="https://discord.gg/5XFteSutRK" class="mr-5" target="_blank"
+                        <a href="{{ config('app.discord_link') }}" class="mr-5" target="_blank"
                             title="RustDedicated Hosting Discord">
                             <img src="https://api.iconify.design/logos:discord-icon.svg"
                                 alt="RustDedicated Hosting Discord" width="25px">
                         </a>
-                        <a href="https://youtube.com/@rustdedicatedhosting" class="mr-5" target="_blank"
+                        <a href="{{ config('app.yourube_url') }}" class="mr-5" target="_blank"
                             title="RustDedicated Hosting YouTube">
                             <img src="https://api.iconify.design/logos:youtube-icon.svg"
                                 alt="RustDedicated Hosting YouTube" width="25px">
+                        </a>
+                        <a href="{{ config('app.facebook_link') }}" class="mr-5" target="_blank"
+                            title="RustDedicated Hosting Facebook">
+                            <img src="https://api.iconify.design/logos:facebook.svg"
+                                alt="RustDedicated Hosting Facebook" width="25px">
+                        </a>
+                        <a href="{{ config('app.twitter_link') }}" class="mr-5" target="_blank"
+                            title="RustDedicated Hosting Twitter">
+                            <img src="https://api.iconify.design/logos:twitter.svg" alt="RustDedicated Hosting Twitter"
+                                width="25px">
                         </a>
                         <a href="mailto:support@rustdedicated.com" class="mr-3" target="_blank"
                             title="RustDedicated Hosting Support Email">
@@ -62,7 +72,7 @@
                     <a href="{{ route('refund') }}" class="hover:text-rust transition-all text-md mb-2">Refund
                         Policy</a>
                     <a href="#" class="hover:text-rust transition-all text-md mb-2">Rust Guide</a>
-                    <a href="https://www.trustpilot.com/review/rustdedicated.com" target="_blank" rel="nofollow"
+                    <a href="{{ config('app.trustpilot_link') }}" target="_blank" rel="nofollow"
                         class="hover:text-rust transition-all text-md mb-2">TrustPilot</a>
 
                 </ul>

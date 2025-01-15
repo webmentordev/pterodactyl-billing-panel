@@ -1,7 +1,7 @@
 <section>
-    <div class="min-h-[800px] h-[800px] bg-cover bg-center relative"
-        style="background-image: url({{ asset('assets/background/header_1.jpg') }})">
-        <div class="absolute top-0 left-0 bg-dark/30 backdrop-blur-sm w-full h-full"></div>
+    <div class="min-h-[800px] h-[800px] bg-cover bg-center relative bg-fixed"
+        style="background-image: url({{ asset('assets/background/rust-dedicated-hosting-image.jpg') }})">
+        <div class="absolute top-0 left-0 bgGradient w-full h-full"></div>
         <div class="relative flex items-center justify-center h-full w-full z-10">
             <div class="text-center">
                 <h1 class="text-8xl text-gray-300">High Performance <strong class="text-rust">Dedicated</strong> <br> Rust
@@ -113,7 +113,7 @@
 
 
     <div class="flex items-center justify-center py-12" id="packages">
-        <div class="max-w-5xl w-full p-3 text-white">
+        <div class="max-w-7xl w-full p-3 text-white">
             <div class="w-full flex items-center justify-center">
                 <h2 class="mb-4 m-auto">
                     <strong title="How to choose the best rust server?" class="text-5xl text-center"

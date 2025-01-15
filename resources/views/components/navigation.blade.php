@@ -6,12 +6,12 @@
                 <strong class="text-white text-2xl ml-3">RustDedicated</strong>
             </a>
             <ul class="flex items-center text-white links">
-                <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all">Home</a>
-                <a href="{{ route('package') }}" class="mx-6 hover:text-rust transition-all">Package</a>
-                <a href="{{ route('free.trial') }}" class="mx-6 hover:text-rust transition-all">Trial</a>
+                <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all text-lg">Home</a>
+                <a href="{{ route('package') }}" class="mx-6 hover:text-rust transition-all text-lg">Package</a>
+                <a href="{{ route('free.trial') }}" class="mx-6 hover:text-rust transition-all text-lg">Trial</a>
                 <div class="relative ml-6" x-data="{ open: false }">
                     <button class="flex items-center" x-on:click="open = !open">
-                        <span class="font hover:text-rust transition-all">Panel</span>
+                        <span class="font hover:text-rust transition-all text-lg">Panel</span>
                         <img src="https://api.iconify.design/material-symbols-light:arrow-drop-down.svg?color=%23ffffff"
                             alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
                     </button>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="relative ml-6" x-data="{ open: false }">
                     <button class="flex items-center" x-on:click="open = !open">
-                        <span class="font hover:text-rust transition-all">Socials</span>
+                        <span class="font hover:text-rust transition-all text-lg">Socials</span>
                         <img src="https://api.iconify.design/material-symbols-light:arrow-drop-down.svg?color=%23ffffff"
                             alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
                     </button>
@@ -43,17 +43,31 @@
                             <strong class="ml-2">Discord</strong>
                         </a>
                         <a href="{{ config('app.yourube_url') }}" target="_blank" title="RustDedicated Hosting YouTube"
-                            class="hover:text-rust transition-all py-2 flex items-center">
+                            class="hover:text-rust transition-all py-2 flex items-center border-b border-white/10">
                             <img src="https://api.iconify.design/logos:youtube-icon.svg"
-                                alt="RustDedicated Hosting YouTube">
+                                alt="RustDedicated Hosting YouTube" width="20">
                             <strong class="ml-2">YouTube</strong>
+                        </a>
+                        <a href="{{ config('app.facebook_link') }}" target="_blank"
+                            title="RustDedicated Hosting Facebook"
+                            class="hover:text-rust transition-all py-2 flex items-center border-b border-white/10">
+                            <img src="https://api.iconify.design/logos:facebook.svg"
+                                alt="RustDedicated Hosting Facebook" width="20">
+                            <strong class="ml-2">Facebook</strong>
+                        </a>
+                        <a href="{{ config('app.twitter_link') }}" target="_blank"
+                            title="RustDedicated Hosting Twitter"
+                            class="hover:text-rust transition-all py-2 flex items-center">
+                            <img src="https://api.iconify.design/logos:twitter.svg" alt="RustDedicated Hosting Twitter">
+                            <strong class="ml-2">Twitter</strong>
                         </a>
                     </div>
                 </div>
-                <a href="{{ route('about') }}" class="mx-6 hover:text-rust transition-all">About</a>
+                <a href="{{ route('about') }}" class="mx-6 hover:text-rust transition-all text-lg">About</a>
                 @auth
                     @if (Auth::user()->is_admin)
-                        <a href="{{ route('admin.dashboard') }}" class="mx-6 hover:text-rust transition-all">Dashboard</a>
+                        <a href="{{ route('admin.dashboard') }}"
+                            class="mx-6 hover:text-rust transition-all text-lg">Dashboard</a>
                     @endif
                 @endauth
             </ul>
@@ -66,8 +80,8 @@
             @endauth
             @guest
                 <ul class="flex items-center mr-5 links">
-                    <a href="{{ route('login') }}" class="text-white pr-4 border-r border-white/10">Login</a>
-                    <a href="{{ route('register') }}" class="text-white pl-4">Register</a>
+                    <a href="{{ route('login') }}" class="text-white pr-4 border-r border-white/10 text-lg">Login</a>
+                    <a href="{{ route('register') }}" class="text-white pl-4 text-lg">Register</a>
                 </ul>
             @endguest
         </div>

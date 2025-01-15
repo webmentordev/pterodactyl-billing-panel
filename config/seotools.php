@@ -5,7 +5,7 @@ return [
         'defaults'       => [
             'title'        => "RustDedicated Hosting",
             'titleBefore'  => false,
-            'description'  => 'Rent high-performance Rust server hosting for under $25, with dedicated hardware, 4.40 GHz Processor, 60+ GB storage, 15 GB DDR4 RAM, support for unlimited player slots, the Rust+ app, and integrated RCON.',
+            'description'  => 'Rent high-performance Dedicated Rust server for $25, dedicated 4.40 GHz Processor, 60+ GB NVME storage, 15 GB DDR4 RAM, support for unlimited player slots, the Rust+ app, and integrated RCON.',
             'separator'    => ' - ',
             'keywords'     => [],
             'canonical'    => null,
@@ -24,12 +24,11 @@ return [
     'opengraph' => [
         'defaults' => [
             'title'       => 'RustDedicated Hosting',
-            'description' => 'Rent high-performance Rust server hosting for under $25, with dedicated hardware, 4.40 GHz Processor, 60+ GB storage, 15 GB DDR4 RAM, support for unlimited player slots, the Rust+ app, and integrated RCON.',
+            'description' => 'Rent high-performance Dedicated Rust server for $25, dedicated 4.40 GHz Processor, 60+ GB NVME storage, 15 GB DDR4 RAM, support for unlimited player slots, the Rust+ app, and integrated RCON.',
             'url'         => null,
             'type'        => false,
             'site_name'   => false,
             'images'      => [
-                config('app.url') . '/assets/rustdedicated-hosting-banner.png',
                 config('app.url') . '/assets/rust-dedicated-header-2.png'
             ],
         ],
@@ -43,11 +42,10 @@ return [
     'json-ld' => [
         'defaults' => [
             'title'       => 'RustDedicated Hosting',
-            'description' => 'Rent high-performance Rust server hosting for under $25, with dedicated hardware, 4.40 GHz Processor, 60+ GB storage, 15 GB DDR4 RAM, support for unlimited player slots, the Rust+ app, and integrated RCON.',
+            'description' => 'Rent high-performance Dedicated Rust server for $25, dedicated 4.40 GHz Processor, 60+ GB NVME storage, 15 GB DDR4 RAM, support for unlimited player slots, the Rust+ app, and integrated RCON.',
             'url'         => null,
             'type'        => 'WebPage',
             'images'      => [
-                config('app.url') . '/assets/rustdedicated-hosting-banner.png',
                 config('app.url') . '/assets/rust-dedicated-header-2.png'
             ],
         ],

@@ -111,3 +111,8 @@ code {
     font-family: "Space Mono", serif;
     @apply font-semibold;
 }
+
+.bgGradient {
+    background: rgb(27, 27, 27);
+    background: linear-gradient(0deg, rgba(27, 27, 27, 1) 9%, rgba(0, 212, 255, 0) 100%);
+}

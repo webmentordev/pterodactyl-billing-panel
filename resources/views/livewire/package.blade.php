@@ -1,6 +1,6 @@
 <section class="w-full py-12 bg-cover bg-center relative bg-fixed"
     style="background-image: url({{ asset('assets/background/rust-dedicated-client-header.jpg') }})">
-    <div class="bg-black/50 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
+    <div class="bgGradient backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
     <div class="mt-12 max-w-7xl m-auto flex relative z-10">
         <div class="flex flex-col text-white border border-white/20 bg-dark-100 rounded-2xl w-full p-8">
             <h1 class="text-5xl mb-3 w-full border-b border-white/10 pb-3">Budget High Specs Rust Hosting In Germany</h1>
@@ -11,7 +11,7 @@
                 <li class="mb-2">● 2 Threads Performance (Dedicated)</li>
                 <li class="mb-2">● 15GB DDR4 RAM (Physical)</li>
                 <li class="mb-2">● 5GB RAM (Virtual)</li>
-                <li class="mb-2">● 60GB M.2 NVME SSD</li>
+                <li class="mb-2">● 60GB M.2 NVMe SSD</li>
                 <li class="mb-2">● 1Gbit/s Uplink</li>
                 <li class="mb-2">● DDoS Protection</li>
                 <li class="mb-2">● 2 Server Backups</li>
@@ -43,13 +43,13 @@
                 <li>2 CPU Threads (200%)</li>
                 <li>15GB DDR4 RAM</li>
                 <li>5GB RAM (Virtual)</li>
-                <li>60GB M.2 NVME SSD</li>
+                <li>60GB M.2 NVMe SSD</li>
                 <li>Unlimited Players Slot</li>
                 <li>4500 Map Size Support</li>
                 <li>Rust+ App Support</li>
                 <li>Full FTP Access</li>
                 <li>2 Backups</li>
-                <li>1 Database</li>
+                <li>1 MySQL Database</li>
                 <li>Location: Germany</li>
                 <li>Renewal Period: 31 Days</li>
             </ul>
