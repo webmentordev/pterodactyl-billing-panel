@@ -1,10 +1,10 @@
 <section>
     <div class="min-h-[800px] h-[800px] bg-cover bg-center relative bg-fixed"
-        style="background-image: url({{ asset('assets/background/rust-dedicated-hosting-image.jpg') }})">
+        style="background-image: url({{ asset('assets/background/rust-dedicated-hosting-image.webp') }})">
         <div class="absolute top-0 left-0 bgGradient w-full h-full"></div>
         <div class="relative flex items-center justify-center h-full w-full z-10">
             <div class="text-center">
-                <h1 class="text-8xl text-gray-300">High Performance <strong class="text-rust">Dedicated</strong> <br> Rust
+                <h1 class="text-8xl text-gray-200">High Performance <strong class="text-rust">Dedicated</strong> <br> Rust
                     <strong class="text-rust">Servers</strong>
                 </h1>
                 <p class="text-white text-lg mb-4">We utilize high-performance consumer-grade hardware to ensure
@@ -54,7 +54,7 @@
 
                 <x-home-info-item image="https://api.iconify.design/carbon:accumulation-rain.svg?color=%23ffffff"
                     text="Oxide & Carbon Support Rust Server">
-                    Oxide / Carbon / Vanilla
+                    Oxide, Carbon & Vanilla
                 </x-home-info-item>
 
                 <x-home-info-item
@@ -77,7 +77,7 @@
                 <x-home-info-item
                     image="https://api.iconify.design/fluent:person-support-20-regular.svg?color=%23ffffff"
                     text="Rust Server Location">
-                    24 / 7 Discord Support
+                    24 / 7 Dedicated Support
                 </x-home-info-item>
 
                 <x-home-info-item image="https://api.iconify.design/fluent:arrow-join-20-regular.svg?color=%23ffffff"
@@ -88,6 +88,21 @@
                 <x-home-info-item image="https://api.iconify.design/hugeicons:file-01.svg?color=%23ffffff"
                     text="60GB NVME Storage Rust server">
                     60GB Storage FTP Access
+                </x-home-info-item>
+
+                <x-home-info-item image="https://api.iconify.design/tabler:map.svg?color=%23ffffff"
+                    text="Large Map Support Rust Server">
+                    Large Map Support
+                </x-home-info-item>
+
+                <x-home-info-item image="https://api.iconify.design/tabler:device-mobile.svg?color=%23ffffff"
+                    text="Rust+ App Support Rust server">
+                    Rust+ App Support
+                </x-home-info-item>
+
+                <x-home-info-item image="https://api.iconify.design/solar:alarm-broken.svg?color=%23ffffff"
+                    text="99.99% Uptime Rust server">
+                    99.99% Server Uptime
                 </x-home-info-item>
             </div>
         </div>
