@@ -2,9 +2,10 @@
     <div class="w-full py-12 bg-cover bg-center relative bg-fixed"
         style="background-image: url({{ asset('assets/background/rust-dedicated-client-header.webp') }})">
         <div class="bgGradient-2 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
-        <div class="mt-12 max-w-7xl m-auto flex relative z-10">
-            <div class="flex flex-col text-white border border-white/20 bg-dark-100 rounded-2xl w-full p-8">
-                <h1 class="text-5xl mb-3 w-full border-b border-white/10 pb-3">Budget High Specs Rust Hosting In Germany
+        <div class="mt-12 max-w-7xl m-auto flex relative z-10 px-2 920px:max-w-2xl 920px:flex-col">
+            <div class="flex flex-col text-white border border-white/20 bg-dark-100 rounded-2xl w-full p-8 530px:p-4">
+                <h1 class="text-5xl mb-3 w-full border-b border-white/10 pb-3 530px:text-3xl">Budget High Specs Rust
+                    Hosting In Germany
                 </h1>
                 <ul class="">
                     <li class="mb-2">● Game Panel For Management</li>
@@ -36,7 +37,7 @@
                 </p>
             </div>
             <div x-data="{ open: false }"
-                class="flex flex-col text-white border border-white/20 bg-dark-100 h-fit rounded-2xl max-w-[400px] w-full ml-4 p-6">
+                class="flex flex-col text-white border border-white/20 bg-dark-100 h-fit rounded-2xl max-w-[400px] 920px:max-w-2xl w-full ml-4 p-6 920px:ml-0 920px:mt-3">
                 <h2 class="text-2xl text-center bg-dark w-full py-2 px-4 mb-4">Order Summery</h2>
 
                 <p class="mb-3 pb-3 border-b border-white/10">Rust - High Quality Metal</p>
@@ -82,7 +83,7 @@
                             ${{ number_format($price) }}
                         </button>
                         <div x-show="pop" x-cloak x-transition x-on:click.self="pop = false"
-                            class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center">
+                            class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center px-2">
                             <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full">
                                 <p class="text-white font-bold text-2xl mb-6">We are currently <strong
                                         class="text-rust">Out
@@ -112,6 +113,10 @@
                                     Afterward,
                                     your email address will be deleted from our system to enhance privacy and protect
                                     against accidental email spams.</p>
+                                <div class="flex justify-end items-center">
+                                    <button @click="pop = false"
+                                        class="py-2 px-4 bg-rust text-white font-semibold mt-3 inline-block">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,7 +125,7 @@
                 <button class="text-center underline text-rust font-semibold" x-on:click="open = true">No Automatic
                     Renewal?</button>
                 <div x-show="open" x-cloak x-transition x-on:click.self="open = false"
-                    class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center">
+                    class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center px-2">
                     <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full">
                         <p class="text-white font-bold text-2xl mb-6">Why don’t we support automatic package renewal or
                             subscriptions?</p>
@@ -134,6 +139,10 @@
                         <p class="text-gray-200">We always email you 3 days before your package or server expires,
                             giving
                             you enough time to renew your server.</p>
+                        <div class="flex justify-end items-center">
+                            <button @click="open = false"
+                                class="py-2 px-4 bg-rust text-white font-semibold mt-3 inline-block">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -141,15 +150,16 @@
     </div>
 
     <div class="flex items-center justify-center py-[80px]">
-        <div class="max-w-7xl w-full p-3 text-white">
+        <div class="max-w-7xl w-full p-3 text-white 920px:max-w-3xl">
             <div class="w-full flex items-center justify-center">
-                <h2 class=" text-5xl text-center mb-4 m-auto">Rust Server <span class="text-rust font">Configurations
+                <h2 class="text-5xl text-center mb-4 m-auto 510px:text-4xl">Rust Server <span
+                        class="text-rust font">Configurations
                     </span>
                     We Offer</h2>
             </div>
             <p class="text-center">Explore our range of high-performance server setups tailored to meet diverse gaming
                 and hosting needs</p>
-            <div class="grid grid-cols-2 gap-6 mt-8">
+            <div class="grid grid-cols-2 gap-6 mt-8 920px:grid-cols-1">
                 <div class="w-full py-2">
                     <h3 class="text-3xl mb-4">User Friendly Game Panel</h3>
                     <p class="leading-7 mb-4">We use Pterodactyl servers for our Rust servers. Once you sign up for the
@@ -167,7 +177,7 @@
             </div>
 
 
-            <div class="grid grid-cols-2 gap-6 mt-8">
+            <div class="grid grid-cols-2 gap-6 mt-8 920px:grid-cols-1">
                 <div class="p-4 rounded-lg border border-white/10 bg-dark-100">
                     <h3 class="mb-3 text-lg">Why 2 Dedicated Threads for a Rust Server?</h3>
                     <p>Rust game servers run on a single thread. To handle additional tasks, we have assigned a second

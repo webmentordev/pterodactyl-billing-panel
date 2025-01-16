@@ -4,7 +4,8 @@
         <div class="absolute top-0 left-0 bgGradient w-full h-full"></div>
         <div class="relative flex items-center justify-center h-full w-full z-10">
             <div class="text-center">
-                <h1 class="text-8xl text-gray-200">High Performance <strong class="text-rust">Dedicated</strong> <br> Rust
+                <h1 class="text-8xl text-gray-200 550px:text-5xl">High Performance <strong
+                        class="text-rust">Dedicated</strong> <br> Rust
                     <strong class="text-rust">Servers</strong>
                 </h1>
                 <p class="text-white text-lg mb-4">We utilize high-performance consumer-grade hardware to ensure
@@ -20,12 +21,13 @@
     <div class="flex items-center justify-center py-[80px]">
         <div class="max-w-5xl w-full p-3 text-white">
             <div class="w-full flex items-center justify-center">
-                <strong class=" text-5xl text-center mb-4 m-auto">Rust <span class="text-rust">Servers</span>
+                <strong class=" text-5xl text-center mb-4 m-auto 510px:text-3xl">Rust <span
+                        class="text-rust">Servers</span>
                     For
                     Everyone</strong>
             </div>
             <p class="text-center">Dedicated Server Resources - Simple RCON Panel - File Manager</p>
-            <div class="grid grid-cols-3 gap-6 mt-8">
+            <div class="grid grid-cols-3 gap-6 mt-8 750px:grid-cols-2 530px:grid-cols-1">
                 <x-home-info-item image="https://api.iconify.design/uil:processor.svg?color=%23ffffff"
                     text="Dedicated CPU Core Rust Server">
                     Dedicated CPU Core
@@ -113,7 +115,8 @@
         <div class="flex items-center justify-center py-12" id="packages">
             <div class="max-w-5xl w-full p-3 text-white">
                 <div class="w-full flex items-center justify-center">
-                    <strong class=" text-5xl text-center mb-4 m-auto" title="Global Rust Server Hosting Locations">Our
+                    <strong class=" text-5xl text-center mb-4 m-auto 510px:text-3xl"
+                        title="Global Rust Server Hosting Locations">Our
                         <span class="text-rust">Global Server</span>
                         Locations</strong>
                 </div>
@@ -121,7 +124,7 @@
             </div>
         </div>
 
-        <div class="flex items-center justify-center py-12 bg-center bg-contain bg-no-repeat min-h-[800px]"
+        <div class="flex items-center justify-center py-12 bg-center bg-contain bg-no-repeat min-h-[800px] 1000px:min-h-[500px] 800px:min-h-[300px] 530px:min-h-[200px]"
             style="background-image: url({{ asset('assets/rust-dedicated-server-locations.png') }})">
         </div>
     </div>
@@ -131,7 +134,7 @@
         <div class="max-w-7xl w-full p-3 text-white">
             <div class="w-full flex items-center justify-center">
                 <h2 class="mb-4 m-auto">
-                    <strong title="How to choose the best rust server?" class="text-5xl text-center"
+                    <strong title="How to choose the best rust server?" class="text-5xl text-center 510px:text-3xl"
                         title="Global Rust Server Hosting Locations">How to
                         Choose
                         <span class="text-rust">The Best Rust</span>
@@ -139,7 +142,7 @@
                 </h2>
             </div>
             <p class="text-center">An important aspect of running Rust is choosing the best server to host on</p>
-            <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10">
+            <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 510px:p-4">
                 <p class="mb-3">Let’s explore Rust and how its servers operate.</p>
                 <strong class="text-3xl mb-4">Dedicated CPU</strong>
                 <p class="mt-3">Rust is a single-threaded game, which means it only requires a CPU’s single thread to
@@ -179,13 +182,13 @@
 
     @if (count($reviews))
         <div class="flex items-center justify-center pb-[80px] text-white">
-            <div class="max-w-7xl w-full p-3">
+            <div class="max-w-7xl w-full p-3 1000px:max-w-3xl m-auto 660px:max-w-xl">
                 <div class="w-full flex items-center justify-center">
-                    <strong class=" text-5xl text-center mb-4 m-auto">Our Customer <span
+                    <strong class=" text-5xl text-center mb-4 m-auto 510px:text-3xl">Our Customer <span
                             class="text-rust">Reviews</span></strong>
                 </div>
                 <p class="text-center">What Our Valued Customers Say About Our Services</p>
-                <div class="grid grid-cols-3 gap-6 mt-8">
+                <div class="grid grid-cols-3 gap-6 mt-8 1000px:grid-cols-2 660px:grid-cols-1">
                     @foreach ($reviews as $review)
                         <x-review-card :review="$review" :index="$loop->index" />
                     @endforeach

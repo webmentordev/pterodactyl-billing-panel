@@ -12,6 +12,36 @@ export default {
     theme: {
         extend: {
             screens: {
+                '1000px': {
+                    max: '1000px'
+                },
+                '920px': {
+                    max: '920px'
+                },
+                '890px': {
+                    max: '890px'
+                },
+                '870px': {
+                    max: '870px'
+                },
+                '800px': {
+                    max: '800px'
+                },
+                '750px': {
+                    max: '750px'
+                },
+                '660px': {
+                    max: '660px'
+                },
+                '550px': {
+                    max: '550px'
+                },
+                '530px': {
+                    max: '530px'
+                },
+                '510px': {
+                    max: '510px'
+                },
                 '360px': {
                     max: '360px'
                 }

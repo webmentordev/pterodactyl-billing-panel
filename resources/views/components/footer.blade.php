@@ -1,6 +1,6 @@
 <foter class="w-full">
     <div class="w-full bg-dark-100 border-t border-white/10 px-4 p-12">
-        <div class="grid grid-cols-3 gap-6 max-w-7xl w-full m-auto">
+        <div class="grid grid-cols-3 gap-6 max-w-7xl w-full m-auto 890px:grid-cols-2 510px:grid-cols-1">
             <div class="flex flex-col">
                 <img src="{{ asset('assets/nav-logo.png') }}" alt="Rust Game Dedicated Hosting Under 20$"
                     title="Rust Game Dedicated Hosting Under 20$" width="340px" class="mb-4">
@@ -45,9 +45,9 @@
                     </ul>
                 </div>
             </div>
-            <nav class="flex flex-col items-end">
+            <nav class="flex flex-col items-end 510px:items-start">
                 <h2 class="mb-4 text-4xl text-white">Navigation</h2>
-                <ul class="flex flex-col text-gray-200 text-end">
+                <ul class="flex flex-col text-gray-200 text-end 510px:text-start">
                     <a href="{{ route('home') }}" class="hover:text-rust transition-all text-md mb-2">Home</a>
                     <a href="{{ route('login') }}" class="hover:text-rust transition-all text-md mb-2">Login</a>
                     <a href="{{ route('register') }}" class="hover:text-rust transition-all text-md mb-2">Register</a>
@@ -62,9 +62,9 @@
                 </ul>
             </nav>
 
-            <nav class="flex flex-col items-end">
+            <nav class="flex flex-col items-end 890px:items-start">
                 <h2 class="mb-4 text-4xl text-white">Other Links</h2>
-                <ul class="flex flex-col text-gray-200 text-end">
+                <ul class="flex flex-col text-gray-200 text-end 890px:text-start">
                     <a href="{{ route('terms') }}" class="hover:text-rust transition-all text-md mb-2">Terms Of
                         Service</a>
                     <a href="{{ route('privacy') }}" class="hover:text-rust transition-all text-md mb-2">Privacy
