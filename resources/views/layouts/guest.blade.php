@@ -23,8 +23,8 @@
     <div class="min-h-screen relative flex flex-col justify-center items-center pt-6 bg-cover bg-center"
         style="background-image: url({{ asset('assets/background/rustdedicated-hosting-login-image.webp') }})">
         <div class="absolute w-full h-full top-0 left-0 bg-dark/30 backdrop-blur-sm"></div>
-        <div class="relative z-20 flex flex-col items-center max-w-lg w-full">
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 shadow-md overflow-hidden sm:rounded-lg bg-dark-100">
+        <div class="relative z-20 flex flex-col items-center max-w-lg w-full px-2">
+            <div class="w-full mt-6 px-6 py-4 shadow-md overflow-hidden rounded-lg bg-dark-100">
                 {{ $slot }}
             </div>
         </div>
