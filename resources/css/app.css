@@ -121,3 +121,11 @@ code {
     background: rgb(27, 27, 27);
     background: linear-gradient(0deg, rgba(27, 27, 27, 1) 34%, rgba(27, 27, 27, 0.5046393557422969) 100%);
 }
+
+.policy h3 {
+    @apply mt-6 text-xl;
+}
+
+.policy ul {
+    @apply list-disc ml-4;
+}

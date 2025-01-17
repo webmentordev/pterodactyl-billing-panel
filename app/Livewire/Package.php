@@ -10,10 +10,13 @@ use App\Models\Reminder;
 use Exception;
 use Stripe\StripeClient;
 use Livewire\Attributes\Layout;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\JsonLd;
 
 class Package extends Component
 {
@@ -22,6 +25,15 @@ class Package extends Component
 
     public function mount()
     {
+        SEOMeta::setTitle('Rent Budget Rust Server for $25');
+        SEOMeta::setDescription('Purchase a dedicated Rust server for just $25, featuring 60GB NVMe storage, 15GB DDR4 RAM, a 2-thread CPU, and unlimited player slots.');
+
+        OpenGraph::setDescription('Purchase a dedicated Rust server for just $25, featuring 60GB NVMe storage, 15GB DDR4 RAM, a 2-thread CPU, and unlimited player slots.');
+        OpenGraph::setTitle('Rent Budget Rust Server for $25');
+
+        JsonLd::setTitle('Rent Budget Rust Server for $25');
+        JsonLd::setDescription('Purchase a dedicated Rust server for just $25, featuring 60GB NVMe storage, 15GB DDR4 RAM, a 2-thread CPU, and unlimited player slots.');
+
         $this->activeGateway = config('app.gateway');
         $this->price = config('app.price');
         $server = $this->getServers($this->threads);
