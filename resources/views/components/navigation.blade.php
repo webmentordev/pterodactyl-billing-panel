@@ -3,7 +3,8 @@
         <div class="bg-dark-100/90 p-2 border border-white/20 backdrop-blur rounded-full max-w-7xl m-auto">
             <div class="flex items-center justify-between">
                 <a href="{{ route('home') }}" class="flex items-center"><img
-                        src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}" width="40">
+                        src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}" width="40"
+                        alt="RustDedicated Logo">
                     <strong class="text-white text-2xl ml-3">RustDedicated</strong>
                 </a>
                 <ul class="flex items-center text-white links 870px:hidden">

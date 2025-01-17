@@ -162,11 +162,12 @@
             <div class="grid grid-cols-2 gap-6 mt-8 920px:grid-cols-1">
                 <div class="w-full py-2">
                     <h3 class="text-3xl mb-4">User Friendly Game Panel</h3>
-                    <p class="leading-7 mb-4">We use Pterodactyl servers for our Rust servers. Once you sign up for the
+                    <p class="leading-7 mb-4">We use Pterodactyl panel for our Rust servers. Once you sign up for the
                         first time and place an order, we automatically create your account on the panel and email you
                         the login details. Simply log in, and you will easily be able to navigate through the panel. You
                         will find all the information you need to operate your Rust server.</p>
-                    <p>You will see your server status and resource usage, including RAM, CPU usage, uptime, etc. To
+                    <p class="leading-7">You will see your server status and resource usage, including RAM, CPU usage,
+                        uptime, etc. To
                         change your server configurations, such as the server name, description, switching to Oxide,
                         Vanilla, or Carbon, or checking ports, everything is conveniently available in the Startup tab
                         of the panel. You can also add your friends or Rust server developers directly from the panel.

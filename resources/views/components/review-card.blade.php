@@ -18,13 +18,14 @@
                 <div class="flex flex-col ml-3">
                     <div class="flex items-center mb-1">
                         @for ($index = 0; $index < $review->stars; $index++)
-                            <img src="https://api.iconify.design/fluent-color:star-28.svg" width="23"
-                                class="mr-1">
+                            <img src="https://api.iconify.design/fluent-color:star-28.svg" width="23" class="mr-1"
+                                alt="Review star {{ $index }}">
                         @endfor
                     </div>
                     <span class="font-bold text-lg">{{ $review->name }}</span>
                     <p class="flex items-center"><img
-                            src="https://api.iconify.design/si:verified-duotone.svg?color=%2318adec" width="20">
+                            src="https://api.iconify.design/si:verified-duotone.svg?color=%2318adec" width="20"
+                            alt="Verified Icon">
                         <span class="text-sm ml-1">Verified
                             Customer</span>
                     </p>
@@ -36,13 +37,14 @@
     <div class="flex justify-between items-center w-full mt-4">
         @if ($review->platform == 'Google')
             <div class="flex items-center">
-                <img src="https://api.iconify.design/devicon:google.svg" width="25px" class="object-fill">
+                <img src="https://api.iconify.design/devicon:google.svg" width="25px" class="object-fill"
+                    alt="Google Reviews Icon">
                 <strong class="ml-2">Google</strong>
             </div>
         @elseif($review->platform == 'TrustPilot')
             <div class="flex items-center">
                 <img src="https://api.iconify.design/simple-icons:trustpilot.svg?color=%2331bf4d" width="30px"
-                    class="object-fill">
+                    alt="Trustpilot Logo" class="object-fill">
                 <strong class="ml-2">Trustpilot</strong>
             </div>
         @endif
