@@ -34,6 +34,7 @@ Schedule::call(function () {
 Schedule::call(function () {
     $orders = Order::where('status', 'paid')
         ->where('expire_at', '<', now())
+        ->where('is_trial', false)
         ->get();
     if ($orders->isNotEmpty()) {
         foreach ($orders as $order) {
@@ -47,6 +48,7 @@ Schedule::call(function () {
 Schedule::call(function () {
     $orders = Order::where('status', 'suspend')
         ->where('expire_at', '<', now()->subDays(2))
+        ->where('is_trial', false)
         ->get();
     if ($orders->isNotEmpty()) {
         foreach ($orders as $order) {
@@ -62,6 +64,7 @@ Schedule::call(function () {
         ->where('has_emailed', false)
         ->where('expire_at', '>', now())
         ->where('expire_at', '<=', now()->addDays(2))
+        ->where('is_trial', false)
         ->get();
     if ($orders->isNotEmpty()) {
         foreach ($orders as $order) {
