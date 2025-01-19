@@ -38,6 +38,10 @@
             wire:current="bg-dark"><img
                 src="https://api.iconify.design/material-symbols:brightness-alert-outline-rounded.svg?color=%23ffffff"
                 width="20px" class="mr-3"><span>Reminders</span></a>
+        <a href="{{ route('admin.trails') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
+            wire:current="bg-dark"><img
+                src="https://api.iconify.design/carbon:global-loan-and-trial.svg?color=%23ffffff" width="20px"
+                class="mr-3"><span>Trials</span></a>
         <a href="{{ route('dashboard') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/ic:baseline-manage-accounts.svg?color=%23ffffff"
                 width="20px" class="mr-3"><span>Client Area</span></a>

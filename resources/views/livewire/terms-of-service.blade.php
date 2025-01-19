@@ -56,6 +56,10 @@
                 <li>You violate these Terms.</li>
                 <li>Payment is not received.</li>
                 <li>Your actions harm the Service or other users.</li>
+                <li>Not following <a
+                        href="https://support.facepunchstudios.com/hc/en-us/articles/360009062817-Guidelines-for-community-servers-using-plugins-mods"
+                        target="_blank" rel="nofollow" class="underline text-rust">Facepunch Community Server</a> Rules.
+                </li>
             </ul>
 
             <h3>7. Intellectual Property</h3>
@@ -86,9 +90,45 @@
             <p>These Terms are governed by the laws of the jurisdiction in which RustDedicated Hosting operates. Any
                 disputes shall be resolved in accordance with these laws.</p>
 
-            <h3>12. Contact Information</h3>
+            <h3>12. Free Trial Rust Servers</h3>
+            <p>A free trial Rust server is approved only once per account. If your request was rejected for any reason,
+                you can try again in 1-2 days. If you have not signed up with the email address provided during the free
+                trial request, we will automatically create an account for you and email you the login details for the
+                Billing Panel and Game Panel (where you can configure your Rust servers). The trial server will be
+                available for 24 hours from the time of approval, after which it will be deleted along with all server
+                data, including plugins, configurations, and everything included in the package.</p>
+            <p>We reserve the right to delete your free trial Rust server at any time if you violate the rules.</p>
+
+            <h3>13. Contact Information</h3>
             <p>For questions or concerns regarding these Terms, please contact us at <strong
                     class="text-rust">support@rustdedicated.com.</strong></p>
         </div>
+        <ul class="flex items-center mt-3">
+            <li class="mr-5"><a href="{{ config('app.discord_link') }}" target="_blank"
+                    title="RustDedicated Hosting Discord">
+                    <img src="https://api.iconify.design/logos:discord-icon.svg" alt="RustDedicated Hosting Discord"
+                        width="25px">
+                </a></li>
+            <li class="mr-5"><a href="{{ config('app.yourube_url') }}" target="_blank"
+                    title="RustDedicated Hosting YouTube">
+                    <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="RustDedicated Hosting YouTube"
+                        width="25px">
+                </a></li>
+            <li class="mr-5"><a href="{{ config('app.facebook_link') }}" target="_blank"
+                    title="RustDedicated Hosting Facebook">
+                    <img src="https://api.iconify.design/logos:facebook.svg" alt="RustDedicated Hosting Facebook"
+                        width="24px">
+                </a></li>
+            <li class="mr-5"><a href="{{ config('app.twitter_link') }}" target="_blank"
+                    title="RustDedicated Hosting Twitter">
+                    <img src="https://api.iconify.design/logos:twitter.svg" alt="RustDedicated Hosting Twitter"
+                        width="25px">
+                </a></li>
+            <li class="mr-3"><a href="mailto:support@rustdedicated.com" target="_blank"
+                    title="RustDedicated Hosting Support Email">
+                    <img src="https://api.iconify.design/twemoji:incoming-envelope.svg"
+                        alt="RustDedicated Hosting Support Email" width="25px">
+                </a></li>
+        </ul>
     </div>
 </div>

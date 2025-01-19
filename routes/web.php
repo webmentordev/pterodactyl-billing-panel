@@ -35,6 +35,10 @@ use App\Livewire\Admin\Dashboard as AdminDashboard;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
+use App\Livewire\Admin\Trials;
+use App\Mail\TrialRequestRejected;
+use App\Mail\TrialServerCreate;
+use App\Mail\TrialServerDelete;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
@@ -60,6 +64,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/reminders', Reminders::class)->name('reminders');
     Route::get('/refunds', Refunds::class)->name('refunds');
     Route::get('/reviews', Reviews::class)->name('reviews');
+    Route::get('/trails', Trials::class)->name('trails');
 
     Route::get('/renew/{order}', function (Order $order) {
         return new OrderRenew($order);
@@ -81,6 +86,15 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     });
     Route::get('/reminder', function () {
         return new Reminder();
+    });
+    Route::get('/rejected-trial', function () {
+        return new TrialRequestRejected();
+    });
+    Route::get('/approved/{order}', function (Order $order) {
+        return new TrialServerCreate($order, 'adsasddasadsdas');
+    });
+    Route::get('/trial-delete/{order}', function (Order $order) {
+        return new TrialServerDelete($order);
     });
 });
 

@@ -34,6 +34,10 @@
     <main>
         {{ $slot }}
     </main>
+    <div class="fixed bottom-3 left-3 bg-rust-green text-white py-3 px-4 rounded-xl z-50">
+        <h2 class="text-3xl mb-1">Hosting Under Development</h2>
+        <p>RustDedicated is under development.<br>The expected launch is on 1st February, 2025.</p>
+    </div>
     <x-footer />
     @livewireScripts
 </body>

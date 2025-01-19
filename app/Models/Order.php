@@ -27,7 +27,8 @@ class Order extends Model
         'total_payments',
         'server_id',
         'has_emailed',
-        'is_active'
+        'is_active',
+        'is_trial'
     ];
 
     protected $casts = [

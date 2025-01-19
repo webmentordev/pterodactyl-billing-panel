@@ -63,6 +63,9 @@
                         @if ($item->status == 'paid')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-green-500 border-green-800 bg-green-600/10">Paid</span>
+                        @elseif ($item->status == 'trial')
+                            <span
+                                class="py-1 px-3 rounded-full border font-semibold text-rust-green border-rust-green bg-rust-green/10">Trial</span>
                         @elseif ($item->status == 'cancel')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-red-500 border-red-800 bg-red-600/10">Cancel</span>
@@ -78,6 +81,10 @@
                         @elseif ($item->status == 'expired')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-red-700 border-red-800 bg-red-600/10">Expired</span>
+                        @elseif ($item->status == 'trial_expired')
+                            <span
+                                class="py-1 px-3 rounded-full border font-semibold text-orange-700 border-orange-800 bg-orange-600/10">Trial
+                                Expired</span>
                         @endif
                     </td>
                     <td class="text-end" width="280px">

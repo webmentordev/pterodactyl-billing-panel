@@ -89,7 +89,6 @@
                     </li>
                     <li class="mb-2 text-md"><a href="{{ config('app.trustpilot_link') }}" target="_blank"
                             rel="nofollow" class="hover:text-rust transition-all">TrustPilot</a></li>
-
                 </ul>
             </nav>
         </div>

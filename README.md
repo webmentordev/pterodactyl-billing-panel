@@ -104,6 +104,28 @@ systemctl daemon-reload
 systemctl enable email-queue
 systemctl restart email-queue
 ``` 
+### Setup Trial order server Worker  
+```
+sudo nano /etc/systemd/system/trial-queue.service
+---------------------
+[Unit]
+Description=Trial Server Job Queue
+After=network.target
+
+[Service]
+User=root
+Group=root
+Restart=always
+ExecStart=/usr/bin/php /var/www/laravel/artisan queue:work --queue=trial --env=production
+WorkingDirectory=/var/www/laravel
+
+[Install]
+WantedBy=multi-user.target
+---------------------
+systemctl daemon-reload
+systemctl enable trial-queue
+systemctl restart trial-queue
+``` 
 ### Setup Cronjob for Timed tasks  
 ```
 sudo crontab -e

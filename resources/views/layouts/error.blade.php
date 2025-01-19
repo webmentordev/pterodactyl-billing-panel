@@ -20,8 +20,12 @@
 
 <body class="font-sans text-gray-900 antialiased">
     <x-navigation />
-    <div class="min-h-screen relative flex flex-col justify-center items-center pt-6 bg-dark">
-        @yield('content')
+    <div class="min-h-screen relative flex flex-col justify-center items-center pt-6 bg-cover bg-center"
+        style="background-image: url({{ asset('assets/errors-page-background.webp') }})">
+        <div class="top-0 left-0 w-full h-full absolute bgGradient"></div>
+        <main class="relative z-10">
+            @yield('content')
+        </main>
     </div>
     <x-footer />
 </body>

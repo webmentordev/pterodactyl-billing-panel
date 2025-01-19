@@ -70,5 +70,32 @@
             <p>If you have any questions or concerns about this Privacy Policy, please contact us at <strong
                     class="text-rust">support@rustdedicated.com</strong>.</p>
         </div>
+        <ul class="flex items-center mt-3">
+            <li class="mr-5"><a href="{{ config('app.discord_link') }}" target="_blank"
+                    title="RustDedicated Hosting Discord">
+                    <img src="https://api.iconify.design/logos:discord-icon.svg" alt="RustDedicated Hosting Discord"
+                        width="25px">
+                </a></li>
+            <li class="mr-5"><a href="{{ config('app.yourube_url') }}" target="_blank"
+                    title="RustDedicated Hosting YouTube">
+                    <img src="https://api.iconify.design/logos:youtube-icon.svg" alt="RustDedicated Hosting YouTube"
+                        width="25px">
+                </a></li>
+            <li class="mr-5"><a href="{{ config('app.facebook_link') }}" target="_blank"
+                    title="RustDedicated Hosting Facebook">
+                    <img src="https://api.iconify.design/logos:facebook.svg" alt="RustDedicated Hosting Facebook"
+                        width="24px">
+                </a></li>
+            <li class="mr-5"><a href="{{ config('app.twitter_link') }}" target="_blank"
+                    title="RustDedicated Hosting Twitter">
+                    <img src="https://api.iconify.design/logos:twitter.svg" alt="RustDedicated Hosting Twitter"
+                        width="25px">
+                </a></li>
+            <li class="mr-3"><a href="mailto:support@rustdedicated.com" target="_blank"
+                    title="RustDedicated Hosting Support Email">
+                    <img src="https://api.iconify.design/twemoji:incoming-envelope.svg"
+                        alt="RustDedicated Hosting Support Email" width="25px">
+                </a></li>
+        </ul>
     </div>
 </div>

@@ -5,9 +5,10 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
+use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
-use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class RefundPolicy extends Component
 {
@@ -18,9 +19,13 @@ class RefundPolicy extends Component
 
         OpenGraph::setTitle('Refund Policy');
         OpenGraph::setDescription("Read RustDedicated Hosting's Refund Policy to understand what to do if you need a refund.");
+        OpenGraph::addImage(config('app.url') . '/assets/rust-dedicated-refund-policy.png');
+
+        TwitterCard::setImage(config('app.url') . '/assets/rust-dedicated-refund-policy.png');
 
         JsonLd::setTitle('Refund Policy');
         JsonLd::setDescription("Read RustDedicated Hosting's Refund Policy to understand what to do if you need a refund.");
+        JsonLd::addImage(config('app.url') . '/assets/rust-dedicated-refund-policy.png');
     }
 
     #[Layout('layouts.livewire.guest')]
