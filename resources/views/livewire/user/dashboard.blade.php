@@ -9,7 +9,11 @@
         <div class="flex flex-col">
             @if (count($orders))
                 @foreach ($orders as $order)
-                    @if ($order->status == 'paid')
+                    @if ($order->is_trial && $order->is_active)
+                        <x-orders.active-trial-order-item :order="$order" />
+                    @elseif ($order->is_trial && !$order->is_active)
+                        <x-orders.expired-trial-order-item :order="$order" />
+                    @elseif ($order->status == 'paid')
                         <x-orders.active-order-item :order="$order" :refund="$refundPercentage" :days="$refundDays" />
                     @elseif ($order->status == 'cancel')
                         <x-orders.cancel-order-item :order="$order" />

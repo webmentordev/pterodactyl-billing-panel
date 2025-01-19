@@ -20,7 +20,14 @@
             @foreach ($orders as $item)
                 <tr>
                     <td>{{ Str::afterLast($item->id, '-') }}</td>
-                    <td>{{ Str::afterLast($item->gateway_order_id, '-') }}</td>
+                    <td>
+                        @if ($item->is_trial)
+                            <span
+                                class="py-1 px-3 rounded-full border font-semibold text-yellow-500 border-yellow-800 bg-yellow-600/10">Trial</span>
+                        @else
+                            {{ Str::afterLast($item->gateway_order_id, '-') }}
+                        @endif
+                    </td>
                     <td>{{ $item->user->name }}</td>
                     <td>${{ $item->price }}</td>
                     <td>{{ $item->total_payments }}</td>

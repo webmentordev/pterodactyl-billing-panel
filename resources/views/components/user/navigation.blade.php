@@ -2,11 +2,11 @@
     <div class="bg-dark-100/90 rounded-full p-2 border border-white/20 backdrop-blur max-w-7xl m-auto">
         <div class="flex items-center justify-between">
             @if (auth()->user()->google_avatar)
-                <a href="{{ route('home') }}"><img src="{{ auth()->user()->google_avatar }}" class="rounded-full"
+                <a href="{{ route('home') }}"><img src="{{ auth()->user()->google_avatar }}" class="rounded-full lazyload"
                         width="40"></a>
             @else
                 <a href="{{ route('home') }}"><img src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}"
-                        width="40"></a>
+                        width="40" class="lazyload"></a>
             @endif
 
             <ul class="flex items-center text-white links">

@@ -124,7 +124,7 @@
             </div>
         </div>
 
-        <div class="flex items-center justify-center py-12 bg-center bg-contain bg-no-repeat min-h-[800px] 1000px:min-h-[500px] 800px:min-h-[300px] 530px:min-h-[200px]"
+        <div class="lazyload flex items-center justify-center py-12 bg-center bg-contain bg-no-repeat min-h-[800px] 1000px:min-h-[500px] 800px:min-h-[300px] 530px:min-h-[200px]"
             style="background-image: url({{ asset('assets/rust-dedicated-server-locations.png') }})">
         </div>
     </div>

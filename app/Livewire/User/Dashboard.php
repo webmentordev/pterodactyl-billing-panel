@@ -188,6 +188,9 @@ class Dashboard extends Component
             'reason' => ['required']
         ]);
         $refundDate = Carbon::parse($order->refund_at);
+        if ($order->is_trial) {
+            return session()->flash('failed', 'Order is a trial. You can not request refund for this order.');
+        }
         if ($order->refund) {
             return session()->flash('failed', 'Order refund is already in progress.');
         }
@@ -209,6 +212,9 @@ class Dashboard extends Component
     public function cancel(Order $order)
     {
         $this->owner($order);
+        if ($order->is_trial) {
+            return session()->flash('failed', 'Order is a trial. You can not cancel this order.');
+        }
         if (!$order->refund) {
             return session()->flash('failed', 'Order does not have a refund request.');
         }
