@@ -173,8 +173,8 @@
                         of the panel. You can also add your friends or Rust server developers directly from the panel.
                     </p>
                 </div>
-                <img data-src="{{ asset('assets/fast-rust-server-loading.png') }}" alt="User Friendly Game Panel"
-                    class="rounded-md lazyload">
+                <img src="{{ asset('assets/fast-rust-server-loading.png') }}" alt="User Friendly Game Panel"
+                    class="rounded-md">
             </div>
 
 

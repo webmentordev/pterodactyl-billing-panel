@@ -65,5 +65,12 @@
 
         <p class="my-4 text-center text-gray-100">Do not have an account? <a href="{{ route('register') }}"
                 class="text-rust underline">Register Now</a></p>
+
+        <p class="bg-dark rounded-lg py-3 px-4 border border-white/10 text-white">By signup, you agree
+            to
+            the
+            <a href="{{ route('terms') }}" class="underline text-rust">Terms Of Service</a> and the <a
+                href="{{ route('privacy') }}" class="underline text-rust">Privacy Policy</a>
+        </p>
     </form>
 </x-guest-layout>
