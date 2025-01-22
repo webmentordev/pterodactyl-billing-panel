@@ -8,7 +8,7 @@
             </h1>
         </div>
         <p class="text-center">Last updated: 15 Januray, 2025</p>
-        <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 policy">
+        <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 policy 510px:p-3">
             <h3>1. Introduction</h3>
             <p>RustDedicated Hosting ("we," "us," "our") is committed to protecting your privacy. This Privacy Policy
                 explains how we collect, use, and protect your personal information when you use our Website and
@@ -17,7 +17,8 @@
             <h3>2. Information We Collect</h3>
             <p>When you use our Services, we may collect the following information:</p>
             <ul>
-                <li>Signup and Login: Email address, username, and password.</li>
+                <li>Sign Up and Login: Email address, username, and password are required. Autofill the necessary data
+                    if you log in or sign up with a Google Account.</li>
                 <li>Billing Information: Name, billing address, and payment details required for processing
                     transactions.</li>
                 <li>Game Panel Usage: Server-related data and configurations for managing your Rust game server.</li>
@@ -28,9 +29,9 @@
             <p>We use your information solely for:</p>
             <ul>
                 <li>Providing and managing the hosting services.</li>
-                <li>Processing payments for server subscriptions.</li>
-                <li>Improving the functionality of our Game Panel.</li>
-                <li>Communicating important service updates or account notifications.</li>
+                <li>Processing payments for server renewal.</li>
+                <li>Communicating important service updates or account notifications, such as order renewal reminder
+                    emails, server suspension, or deletion notifications, etc.</li>
             </ul>
 
             <h3>4. Data Sharing</h3>
@@ -42,13 +43,14 @@
 
             <h3>5. Payment Information</h3>
             <p>We do not store your credit card or PayPal information on our servers. All payment data is securely
-                processed through third-party payment gateways that comply with industry security standards.</p>
+                processed through third-party payment gateways (Lemon Squeezy or Stripe) that comply with industry
+                security standards and are trustworthy.</p>
 
             <h3>6. Data Security</h3>
             <p>We implement industry-standard measures to protect your personal information from unauthorized access,
                 alteration, or disclosure. This includes:</p>
             <ul>
-                <li>Encryption of sensitive data.</li>
+                <li>Encryption of sensitive data, such as passwords for billing and game panel access.</li>
                 <li>Regular security audits and updates.</li>
             </ul>
 

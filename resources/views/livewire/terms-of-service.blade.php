@@ -8,7 +8,7 @@
             </h1>
         </div>
         <p class="text-center">Last updated: 15 Januray, 2025</p>
-        <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 text-white policy">
+        <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 text-white policy 510px:p-3">
             <h3>1. Acceptance of Terms</h3>
             <p> By signing up for an account on RustDedicated Hosting ("Service"), accessible via
                 https://rustdedicated.com
@@ -38,16 +38,25 @@
                 <li>Use the hosting servers only for legitimate Rust game hosting purposes.</li>
                 <li>Not engage in activities that are illegal, harmful, or disruptive to the Service or other users.
                 </li>
+                <li>Rust server in-game names should not be racist, homophobic, or hateful toward others.
+                </li>
+                <li>Storing prohibited files on the server, such as movies or pornography, is not allowed.</li>
+                <li>Follow the Facepunch Community Server guidelines for community servers.</li>
                 <li>Abide by any additional guidelines or rules provided by RustDedicated Hosting.</li>
                 <li>RustDedicated Hosting reserves the right to monitor and restrict any usage that violates these
                     Terms.</li>
             </ul>
 
             <h3>5. Payments and Refunds</h3>
-            <p>Payment for server hosting is due upfront and will be billed as per the selected plan (31 Days).</p>
-            <p>Refunds may be granted at the sole discretion of RustDedicated Hosting, typically only in cases of
-                Service
-                disruptions caused by the company (Us) & First 3 Days of Purchase & Renew.</p>
+            <ul>
+                <li>Payment for server hosting is due upfront and will be billed as per the selected plan (31 Days).
+                </li>
+                <li>Refunds will be granted if the refund period has not ended, service disruptions caused by the
+                    company (us).</li>
+                <li>Please refer to our <a href="{{ route('refund') }}" class="underline text-rust">Refund Policy</a>
+                    for
+                    more information.</li>
+            </ul>
 
 
             <h3>6. Suspension and Termination</h3>
@@ -71,12 +80,15 @@
             <h3>8. Limitation of Liability</h3>
             <p>RustDedicated Hosting is not responsible for:</p>
             <ul>
-                <li>Any downtime, data loss, or other issues caused by third-party services or user actions.</li>
+                <li>Any data loss caused by the user's actions or issues arising from third-party services, such as an
+                    installed plugin, incorrect server regeneration configuration, or other user actions.</li>
                 <li>Indirect, incidental, or consequential damages arising from your use of the Service.</li>
+                <li>Adding an untrusted subuser to your game panel or server who has access to sensitive data.</li>
             </ul>
 
             <h3>9. Privacy Policy</h3>
-            <p>RustDedicated Hosting respects your privacy. Please refer to our Privacy Policy for information on how
+            <p>RustDedicated Hosting respects your privacy. Please refer to <a href="{{ route('privacy') }}"
+                    class="underline text-rust">our Privacy Policy</a> for information on how
                 your
                 data is collected, used, and protected.</p>
 

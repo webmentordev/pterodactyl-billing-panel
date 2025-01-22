@@ -85,10 +85,13 @@
                     <li class="mb-2 text-md"><a href="{{ route('refund') }}"
                             class="hover:text-rust transition-all">Refund
                             Policy</a></li>
+
                     <li class="mb-2 text-md"><a href="#" class="hover:text-rust transition-all">Rust Guide</a>
                     </li>
                     <li class="mb-2 text-md"><a href="{{ config('app.trustpilot_link') }}" target="_blank"
                             rel="nofollow" class="hover:text-rust transition-all">TrustPilot</a></li>
+                    <li class="mb-2 text-md"><a href="{{ route('sitemap') }}" target="_blank" rel="nofollow"
+                            class="hover:text-rust transition-all">Sitemap</a></li>
                 </ul>
             </nav>
         </div>
