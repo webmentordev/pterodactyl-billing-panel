@@ -38,7 +38,8 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
                         @endif
                     </td>
-                    <td>{{ count($item->orders) }}</td>
+                    <td><a href="{{ route('admin.orders', [$item->id]) }}"
+                            class="underline text-rust">{{ count($item->orders) }}</a></td>
                     <td>#</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                 </tr>

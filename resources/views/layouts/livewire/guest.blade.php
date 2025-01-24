@@ -30,6 +30,10 @@
 </head>
 
 <body class="font-sans antialiased">
+    <a href="https://github.com/webmentordev/pterodactyl-billing-panel/" target="_blank" rel="nofollow"
+        class="fixed bottom-3 right-3 z-50">
+        <img src="https://api.iconify.design/skill-icons:github-dark.svg" alt="RustDedicated Hosting Code"
+            width="50"></a>
     <x-navigation />
     <main>
         {{ $slot }}

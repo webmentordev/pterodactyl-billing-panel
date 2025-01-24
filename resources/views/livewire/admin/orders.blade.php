@@ -24,11 +24,14 @@
                         @if ($item->is_trial)
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-yellow-500 border-yellow-800 bg-yellow-600/10">Trial</span>
+                        @elseif ($item->is_trial == null)
+                            -
                         @else
                             {{ Str::afterLast($item->gateway_order_id, '-') }}
                         @endif
                     </td>
-                    <td>{{ $item->user->name }}</td>
+                    <td><a href="{{ route('admin.orders', [$item->user->id]) }}"
+                            class="underline text-rust-green">{{ $item->user->name }}</a></td>
                     <td>${{ $item->price }}</td>
                     <td>{{ $item->total_payments }}</td>
                     <td>

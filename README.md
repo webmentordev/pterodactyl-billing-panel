@@ -1,11 +1,11 @@
-# This system is in development. Do not use this for now!  
-I will update the status when this panel is ready to use.   
+# This system is Ready to USE!  
+This system is ready to use and is open-source. It currently supports a single package for orders. Stay tuned for updates to the main branch code. I will update the working info in the future.   
 
 # Important Info  
 Main Branch has multiple packages  
 Single Branch has single Package Support
 
-# Setup The Project (In Development)  
+# Setup The Project (Ready for Production)  
 Get Google Console OAuth Keys, make sure to Name it to your company  
 ```
 https://console.cloud.google.com/apis/credentials

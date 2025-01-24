@@ -60,7 +60,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/server/create', CreateServer::class)->name('server.create');
     Route::get('/server/update/{server}', UpdateServer::class)->name('server.update');
     Route::get('/billings/{order?}', AdminBilling::class)->name('billing');
-    Route::get('/orders', AdminOrders::class)->name('orders');
+    Route::get('/orders/{order?}', AdminOrders::class)->name('orders');
     Route::get('/reminders', Reminders::class)->name('reminders');
     Route::get('/refunds', Refunds::class)->name('refunds');
     Route::get('/reviews', Reviews::class)->name('reviews');
