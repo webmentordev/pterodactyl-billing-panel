@@ -1,11 +1,9 @@
 <div class="w-full" x-data="{ open: false }">
     <nav class="fixed w-full z-50 px-1 top-3">
-        <div class="bg-dark-100/90 p-2 border border-white/20 backdrop-blur rounded-full max-w-7xl m-auto">
+        <div class="bg-dark-100/90 p-2 pl-5 border border-white/20 backdrop-blur rounded-full max-w-7xl m-auto">
             <div class="flex items-center justify-between">
                 <a href="{{ route('home') }}" class="flex items-center"><img
-                        src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}" width="40"
-                        alt="RustDedicated Logo">
-                    <strong class="text-white text-2xl ml-3">RustDedicated</strong>
+                        src="{{ asset('assets/rust-dedicated-logo.png') }}" width="80" alt="RustDedicated Logo">
                 </a>
                 <ul class="flex items-center text-white links 870px:hidden">
                     <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all text-lg">Home</a>

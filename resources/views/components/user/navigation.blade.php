@@ -5,7 +5,7 @@
                 <a href="{{ route('home') }}"><img src="{{ auth()->user()->google_avatar }}" class="rounded-full"
                         width="40"></a>
             @else
-                <a href="{{ route('home') }}"><img src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}"
+                <a href="{{ route('home') }}"><img src="{{ asset('assets/rust-dedicated-favicon.png') }}"
                         width="40"></a>
             @endif
 

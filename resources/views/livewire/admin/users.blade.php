@@ -17,7 +17,7 @@
                         @if ($item->google_avatar)
                             <img src="{{ $item->google_avatar }}" width="30" class="rounded-full">
                         @else
-                            <img src="{{ asset('assets/rust-dedicated-hosting-logo.png') }}" width="30"
+                            <img src="{{ asset('assets/rust-dedicated-favicon.png') }}" width="30"
                                 title="Rust Dedicated Server" alt="Rust Dedicated Server">
                         @endif
                     </td>

@@ -53,7 +53,7 @@ export default {
                 "dark": "#1b1b1b",
                 "dark-100": "#272727",
                 "main": "#E43E3E",
-                "rust": "#cd412b",
+                "rust": "#FF7623",
                 "rust-green": "#5D7239"
             }
         },

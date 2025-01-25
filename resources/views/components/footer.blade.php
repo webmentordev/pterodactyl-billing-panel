@@ -2,7 +2,7 @@
     <div class="w-full bg-dark-100 border-t border-white/10 px-4 p-12">
         <div class="grid grid-cols-3 gap-6 max-w-7xl w-full m-auto 890px:grid-cols-2 510px:grid-cols-1">
             <div class="flex flex-col">
-                <img src="{{ asset('assets/nav-logo.png') }}" alt="Rust Game Dedicated Hosting Under 20$"
+                <img src="{{ asset('assets/rust-dedicated-logo.png') }}" alt="Rust Game Dedicated Hosting Under 20$"
                     title="Rust Game Dedicated Hosting Under 20$" width="340px" class="mb-4">
                 <div class="mt-3 text-white">
                     <p class="mb-3">Welcome to the Official Website Of RustDedicated Hosting!</p>
@@ -15,7 +15,7 @@
                         experience.
                     </p>
                     <i>We are in no way affiliated with <a href="https://rust.facepunch.com/"
-                            class="underline text-red-200" rel="nofollow" target="_blank">Facepunch</a></i>
+                            class="underline text-rust" rel="nofollow" target="_blank">Facepunch</a></i>
                     <ul class="flex items-center mt-3">
                         <li class="mr-5"><a href="{{ config('app.discord_link') }}" target="_blank"
                                 title="RustDedicated Hosting Discord">
