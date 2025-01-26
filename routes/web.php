@@ -33,6 +33,7 @@ use App\Http\Controllers\SiteMapController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
+use App\Livewire\Admin\LemonOrdersData;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
@@ -62,6 +63,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/server/update/{server}', UpdateServer::class)->name('server.update');
     Route::get('/billings/{order?}', AdminBilling::class)->name('billing');
     Route::get('/orders/{order?}', AdminOrders::class)->name('orders');
+    Route::get('/lemon-orders', LemonOrdersData::class)->name('lemon.orders');
     Route::get('/reminders', Reminders::class)->name('reminders');
     Route::get('/refunds', Refunds::class)->name('refunds');
     Route::get('/reviews', Reviews::class)->name('reviews');

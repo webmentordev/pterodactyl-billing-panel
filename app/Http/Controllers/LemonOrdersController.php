@@ -22,7 +22,6 @@ class LemonOrdersController extends Controller
             }
             $payload = $request->getContent();
             LemonOrders::create(['payload' => $payload]);
-            Log::info('Webhook processed and saved:', ['payload' => $payload]);
             return response()->json(['message' => 'Webhook processed successfully'], 200);
         }
     }

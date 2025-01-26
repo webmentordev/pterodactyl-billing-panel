@@ -24,6 +24,9 @@
         <a href="{{ route('admin.orders') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/carbon:delivery-parcel.svg?color=%23ffffff"
                 width="20px" class="mr-3"><span>Orders</span></a>
+        <a href="{{ route('admin.lemon.orders') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
+            wire:current="bg-dark"><img src="https://api.iconify.design/simple-icons:lemonsqueezy.svg?color=%23ffffff"
+                width="20px" class="mr-3"><span>Lemons</span></a>
         <a href="{{ route('admin.billing') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/solar:bill-list-outline.svg?color=%23FFFFFF"
                 width="20px" class="mr-3"><span>Billings</span></a>
