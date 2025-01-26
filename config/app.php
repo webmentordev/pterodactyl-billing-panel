@@ -24,6 +24,7 @@ return [
     'lemon_varient' => env('LEMON_PRODUCT_VERIENT_ID'),
     'lemon_token' => env('LEMON_SQUEEZY_API_KEY'),
     'lemon_store' => env('LEMON_STORE'),
+    'lemon_webhook_key' => env('LEMON_WEHBHOOK_KEY'),
     'stripe_token' => env('STRIPE_TOKEN'),
     'stripe_product_id' => env('STRIPE_PRODUCT_ID'),
     'gateway' => env('ACTIVE_GATEWAY'),

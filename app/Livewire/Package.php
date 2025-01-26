@@ -21,7 +21,7 @@ use Artesaos\SEOTools\Facades\JsonLd;
 class Package extends Component
 {
     public $price = 25.0, $threads = 2, $outOfStock = false, $email;
-    public $activeGateway = null;
+    private $activeGateway = null;
 
     public function mount()
     {
@@ -50,6 +50,10 @@ class Package extends Component
 
     public function buyNow()
     {
+        if ($this->throttle()) {
+            return session()->flash('failed', 'Please complete your previous order! visit the client area.');
+        }
+
         if ($this->activeGateway == 'lemon_squeezy') {
             $this->lemonCheckout();
         }
@@ -261,6 +265,17 @@ class Package extends Component
             Http::post(config('app.discord_exception'), [
                 'content' => "```" . $e->getMessage() . "```",
             ]);
+        }
+    }
+
+
+    private function throttle()
+    {
+        $order = Order::where('user_id', Auth::user()->id)->where('status', 'pending')->get();
+        if (count($order)) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

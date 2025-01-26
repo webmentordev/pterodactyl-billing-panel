@@ -28,6 +28,7 @@ use App\Livewire\Order\Renew as RenewOrder;
 use App\Livewire\Admin\Orders as AdminOrders;
 use App\Livewire\Order\Cancel as CancelOrder;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\LemonOrdersController;
 use App\Http\Controllers\SiteMapController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;

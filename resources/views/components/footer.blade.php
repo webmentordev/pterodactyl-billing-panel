@@ -3,7 +3,7 @@
         <div class="grid grid-cols-3 gap-6 max-w-7xl w-full m-auto 890px:grid-cols-2 510px:grid-cols-1">
             <div class="flex flex-col">
                 <img src="{{ asset('assets/rust-dedicated-logo.png') }}" alt="Rust Game Dedicated Hosting Under 20$"
-                    title="Rust Game Dedicated Hosting Under 20$" width="340px" class="mb-4">
+                    title="Rust Game Dedicated Hosting Under 20$" width="210px" class="mb-4">
                 <div class="mt-3 text-white">
                     <p class="mb-3">Welcome to the Official Website Of RustDedicated Hosting!</p>
                     <p class="mb-3">RustDedicated is your trusted provider for Rust game hosting, delivering
