@@ -11,6 +11,9 @@
 
             <ul class="flex items-center text-white links">
                 <a href="{{ route('dashboard') }}" class="mx-6 text-lg">Dashboard</a>
+                @if (Auth::user()->is_admin)
+                    <a href="{{ route('admin.dashboard') }}" class="mx-6 text-lg">Admin</a>
+                @endif
                 <a href="{{ route('billings') }}" class="mx-6 text-lg">Billing</a>
                 <a href="{{ config('app.ptero_url') }}" class="mx-6 text-lg" target="_blank">Game Panel</a>
                 <div class="relative ml-6" x-data="{ open: false }">

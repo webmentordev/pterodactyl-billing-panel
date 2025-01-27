@@ -206,7 +206,7 @@ class Dashboard extends Component
             'content' => "```Order Refund Request: " . $order->id . "\nReason:" . $this->reason . "```",
         ]);
         $this->reset(['reason']);
-        return session()->flash('success', 'Your refund request has been submitted. You will receive an email when the refund is initiated');
+        return session()->flash('success', 'Your refund request has been submitted. You will receive an email when the refund is initiated.');
     }
 
     public function cancel(Order $order)

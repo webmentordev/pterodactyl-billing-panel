@@ -28,7 +28,6 @@ use App\Livewire\Order\Renew as RenewOrder;
 use App\Livewire\Admin\Orders as AdminOrders;
 use App\Livewire\Order\Cancel as CancelOrder;
 use App\Http\Controllers\GoogleAuthController;
-use App\Http\Controllers\LemonOrdersController;
 use App\Http\Controllers\SiteMapController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
@@ -106,7 +105,6 @@ Route::get('terms-of-service', TermsOfService::class)->name('terms');
 Route::get('privacy-policy', PrivacyPolicy::class)->name('privacy');
 Route::get('refund-policy', RefundPolicy::class)->name('refund');
 
-
 // Google Auth Routes
 Route::middleware(['guest'])->group(function () {
     Route::get('/google/auth/redirect', [GoogleAuthController::class, 'index'])->name('google.redirect');
@@ -120,25 +118,5 @@ Route::get('/order/renew/{order}/{billing}', RenewOrder::class)->name('order.ren
 
 // SEO Controller
 Route::get('/sitemap.xml', [SiteMapController::class, 'index'])->name('sitemap');
-
-
-// Route::get('/product-varient', function () {
-//     $apiToken = config('app.lemon_token');
-//     $storeID =  config('app.lemon_store');
-//     $productID = config('app.lemon_product');
-//     $response = Http::withHeaders([
-//         'Accept' => 'application/vnd.api+json',
-//         'Content-Type' => 'application/vnd.api+json',
-//         'Authorization' => 'Bearer ' . $apiToken,
-//     ])->get('https://api.lemonsqueezy.com/v1/products/' . $productID . '/variants');
-
-//     $variants = $response->json();
-//     $variantID = $variants['data'][0]['id'] ?? null;
-
-//     if (!$variantID) {
-//         throw new Exception("No variants found for the product.");
-//     }
-//     return $variantID;
-// });
 
 require __DIR__ . '/auth.php';

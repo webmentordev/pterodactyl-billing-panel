@@ -79,8 +79,10 @@
                                 associated with this order will be deleted along with its backups, database,
                                 plugins,
                                 configurations, and any files you have stored using FTP.</p>
-                            <p class="text-gray-200 mb-3">As part of our refund policy, <strong
-                                    class="text-rust">{{ $refund }}%</strong> of the paid amount is eligible
+                            <p class="text-gray-200 mb-3">All first-time orders are eligible for a full refund. If not,
+                                as part
+                                of our refund policy, <strong class="text-rust">{{ $refund }}%</strong> of the
+                                paid amount is eligible
                                 for
                                 a
                                 refund within <strong class="text-rust">{{ $days * 24 }} Hours</strong> of the

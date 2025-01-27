@@ -67,7 +67,7 @@
 
                     </td>
                     <td class="text-end">{{ count($item->orders) }}</td>
-                    <td class="text-end">{{ count($item->usage) }}</td>
+                    <td class="text-end">{{ count($item->usage) }}/{{ $item->threads_limit / 2 }}</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                     <td class="flex items-center justify-end">
                         <div class="flex items-center h-fit mt-1">

@@ -48,7 +48,6 @@
                     MYSQL Database
                 </x-home-info-item>
 
-
                 <x-home-info-item image="https://api.iconify.design/material-symbols-light:globe.svg?color=%23ffffff"
                     text="Rust Server Location">
                     EU Servers Location

@@ -14,7 +14,8 @@
                 However, we understand that there may be instances where you require a refund. This Refund Policy
                 outlines the conditions and procedures for requesting a refund.</p>
 
-            <p class="p-4 rounded-r-lg bg-rust/10 border-l-4 mt-3 border-rust">To protect against refund
+            <p class="p-4 rounded-r-lg bg-rust/10 border-l-4 mt-3 border-rust">All first-time orders are eligible for a
+                full refund. To protect against refund
                 spams,
                 partial refunds
                 of {{ config('app.refund_percentage') }}% will be issued. Full refunds are issued in certain cases that
@@ -26,6 +27,7 @@
                 <li>You request a refund within 48 hours of your first purchase or server renewal.</li>
                 <li>Full refunds are provided at any time if you encounter an issue on our side, such as, but not
                     limited to, NVMe failure causing data loss, etc.</li>
+                <li>Full refund for all first-time orders.</li>
                 <li>The Service experiences significant downtime due to issues caused by RustDedicated Hosting.</li>
                 <li>A billing error occurred, such as duplicate charges.</li>
                 <li>Refund requests outside these conditions will be reviewed on a case-by-case basis at the discretion
