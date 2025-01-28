@@ -51,8 +51,6 @@
             <ul>
                 <li>Click the 'Refund' button in the <a href="{{ route('dashboard') }}" class="text-rust underline"
                         target="_blank">Client Area</a> next to your order that is eligible for a refund.</li>
-                <li>Contact us at <strong class="text-rust">support@rustdedicated.com</strong> or socials within the
-                    eligible refund period.</li>
                 <li>While it is not required, please provide a reason for the refund so we can understand the cause and
                     improve our services.
                 </li>
@@ -75,8 +73,6 @@
                 for refund requests.</p>
 
             <h3>8. Contact Information</h3>
-            <p>For any questions or concerns regarding this Refund Policy, please contact us at <strong
-                    class="text-rust">support@rustdedicated.com</strong>.</p>
         </div>
         <ul class="flex items-center mt-3">
             <li class="mr-5"><a href="{{ config('app.discord_link') }}" target="_blank"
@@ -98,11 +94,6 @@
                     title="RustDedicated Hosting Twitter">
                     <img src="https://api.iconify.design/logos:twitter.svg" alt="RustDedicated Hosting Twitter"
                         width="25px">
-                </a></li>
-            <li class="mr-3"><a href="mailto:support@rustdedicated.com" target="_blank"
-                    title="RustDedicated Hosting Support Email">
-                    <img src="https://api.iconify.design/twemoji:incoming-envelope.svg"
-                        alt="RustDedicated Hosting Support Email" width="25px">
                 </a></li>
         </ul>
     </div>

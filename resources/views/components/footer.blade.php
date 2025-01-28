@@ -37,11 +37,6 @@
                                 <img src="https://api.iconify.design/logos:twitter.svg"
                                     alt="RustDedicated Hosting Twitter" width="25px">
                             </a></li>
-                        <li class="mr-3"><a href="mailto:support@rustdedicated.com" target="_blank"
-                                title="RustDedicated Hosting Support Email">
-                                <img src="https://api.iconify.design/twemoji:incoming-envelope.svg"
-                                    alt="RustDedicated Hosting Support Email" width="25px">
-                            </a></li>
                     </ul>
                 </div>
             </div>

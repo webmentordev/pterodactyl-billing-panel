@@ -85,6 +85,64 @@
                         <div x-show="pop" x-cloak x-transition x-on:click.self="pop = false"
                             class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center px-2">
                             <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full">
+                                <div class="p-2 border-[3px] border-rust rounded-full w-fit h-fit m-auto">
+                                    <div class="bg-center bg-cover rounded-full w-[150px] h-[150px] m-auto overflow-hidden hover:scale-125 transition-all"
+                                        style="background-image: url({{ asset('assets/avatar.png') }})">
+                                    </div>
+                                </div>
+                                <p class="text-2xl mt-2 font-bold text-center flex flex-col">Ahmer<span
+                                        class="font-bold text-rust text-sm">(Founder /
+                                        Owner)</span></p>
+                                <ul class="flex items-center mt-3 m-auto w-fit">
+                                    <li class="mr-3"><a href="#" target="_blank"
+                                            title="RustDedicated Hosting Discord">
+                                            <div class="flex items-center">
+                                                <img src="https://api.iconify.design/logos:discord-icon.svg"
+                                                    alt="RustDedicated Hosting Discord" width="25px">
+                                                <span class="ml-2">(iLoBBer)</span>
+                                            </div>
+                                        </a></li>
+                                    <li class="mr-5"><a href="https://steamcommunity.com/id/MATRED97/" target="_blank"
+                                            title="Ahmer's Steam">
+                                            <div class="flex items-center">
+                                                <img src="https://api.iconify.design/mdi:steam.svg?color=%23d6d6d6"
+                                                    alt="Ahmer's Steam" width="25px">
+                                            </div>
+                                        </a></li>
+                                    <li class="mr-5"><a
+                                            href="https://www.linkedin.com/in/muhammad-ahmer-tahir-%E2%80%8B-a00748136/"
+                                            target="_blank" title="Ahmer's LinkedIN">
+                                            <div class="flex items-center">
+                                                <img src="https://api.iconify.design/skill-icons:linkedin.svg"
+                                                    alt="Ahmer's LinkedIN" width="24px">
+                                            </div>
+
+                                        </a></li>
+                                    <li class="mr-5"><a href="https://github.com/webmentordev" target="_blank"
+                                            title="Ahmer's GitHub">
+                                            <div class="flex items-center">
+                                                <img src="https://api.iconify.design/skill-icons:github-light.svg"
+                                                    alt="Ahmer's GitHub" width="24px">
+                                            </div>
+                                        </a></li>
+                                    <li class="mr-5"><a href="https://www.fiverr.com/users/mahmer97" target="_blank"
+                                            title="Ahmer's Fiverr">
+                                            <div class="flex items-center">
+                                                <img src="https://api.iconify.design/jam:fiverr-circle.svg?color=%2346dd64"
+                                                    alt="Ahmer's Fiverr" width="30px">
+                                            </div>
+                                        </a></li>
+                                </ul>
+                                <p class="mt-2">Due to restriction with payment gateway approval, i have to manually
+                                    provide the
+                                    services. You can message me anywhere you want on the platfroms mentioned here.
+                                    Discord is the fasted. i will gladly help you in all aspects of your server &
+                                    provide details you need.</p>
+                            </div>
+                        </div>
+                        {{-- <div x-show="pop" x-cloak x-transition x-on:click.self="pop = false"
+                            class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center px-2">
+                            <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full">
                                 <p class="text-white font-bold text-2xl mb-6">We are currently <strong
                                         class="text-rust">Out
                                         Of Stock</strong></p>
@@ -118,7 +176,7 @@
                                         class="py-2 px-4 bg-rust text-white font-semibold mt-3 inline-block">Close</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 @endif
                 <p class="text-end">Total Due Today</p>

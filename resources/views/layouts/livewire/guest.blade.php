@@ -38,18 +38,6 @@
     <main>
         {{ $slot }}
     </main>
-    <div class="top-0 left-0 fixed w-full h-full flex items-center justify-center z-50 bg-black/30 backdrop-blur-sm"
-        x-show="open" x-on:click="open = false">
-        <div class="max-w-3xl w-full bg-dark text-white p-6 rounded-xl z-50">
-            <h3 class="text-3xl mb-2">Service Discontinued 😥</h3>
-            <p>Due to a payment gateway rejection, we are unable to continue providing the service. It was never
-                initiated,
-                ended before it started. I will not spend further time on this project, but if anyone else wants to
-                start a
-                similar service, feel free to visit the GitHub repository.</p>
-            <img src="{{ asset('assets/approval-rejection.png') }}" class="w-full mt-3 rounded-lg">
-        </div>
-    </div>
     <x-footer />
     @livewireScripts
 </body>
