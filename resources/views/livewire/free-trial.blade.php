@@ -8,15 +8,47 @@
                     <br>
                     <strong class="text-rust text-6xl">Server Trial</strong>
                 </h1>
-                <p class="text-white text-lg mb-4">Get your free trial of a Rust server for 24 hours. Submit request now.
+                <p class="text-white text-lg mb-4">Get your free trial of a Rust server for 24 hours. Submit request now
+                    by Contact Us at these platforms.
                 </p>
                 <div class="max-w-lg flex items-center m-auto">
-                    <div class="flex flex-col mr-3 w-full">
-                        <x-text-input id="email" class="block mt-1 w-full" type="email" wire:model="email"
-                            :value="old('email')" required placeholder="Email Address" autocomplete="off" />
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
-                    </div>
-                    <button class="py-2 px-3 bg-rust font-bold rounded-md text-white">Submit</button>
+                    <ul class="flex items-center mt-3 m-auto w-fit">
+                        <li class="mr-3"><a href="#" target="_blank" title="RustDedicated Hosting Discord">
+                                <div class="flex items-center">
+                                    <img src="https://api.iconify.design/logos:discord-icon.svg"
+                                        alt="RustDedicated Hosting Discord" width="25px">
+                                    <span class="ml-2 text-white">(iLoBBer)</span>
+                                </div>
+                            </a></li>
+                        <li class="mr-5"><a href="https://steamcommunity.com/id/MATRED97/" target="_blank"
+                                title="Ahmer's Steam">
+                                <div class="flex items-center">
+                                    <img src="https://api.iconify.design/mdi:steam.svg?color=%23d6d6d6"
+                                        alt="Ahmer's Steam" width="25px">
+                                </div>
+                            </a></li>
+                        <li class="mr-5"><a
+                                href="https://www.linkedin.com/in/muhammad-ahmer-tahir-%E2%80%8B-a00748136/"
+                                target="_blank" title="Ahmer's LinkedIN">
+                                <div class="flex items-center">
+                                    <img src="https://api.iconify.design/skill-icons:linkedin.svg"
+                                        alt="Ahmer's LinkedIN" width="24px">
+                                </div>
+                            </a></li>
+                        <li class="mr-5"><a href="{{ config('app.facebook_link') }}" target="_blank"
+                                title="Ahmer's Facebook">
+                                <div class="flex items-center">
+                                    <img src="https://api.iconify.design/logos:facebook.svg" alt="Ahmer's Facebook"
+                                        width="24px">
+                                </div>
+                            </a></li>
+
+                        <li class="mr-5"><a href="{{ config('app.twitter_link') }}" target="_blank"
+                                title="RustDedicated Hosting Facebook">
+                                <img src="https://api.iconify.design/logos:twitter.svg"
+                                    alt="RustDedicated Hosting Facebook" width="24px">
+                            </a></li>
+                    </ul>
                 </div>
             </div>
         </div>

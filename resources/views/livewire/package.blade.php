@@ -116,28 +116,25 @@
                                                 <img src="https://api.iconify.design/skill-icons:linkedin.svg"
                                                     alt="Ahmer's LinkedIN" width="24px">
                                             </div>
+                                        </a></li>
+                                    <li class="mr-5"><a href="{{ config('app.facebook_link') }}" target="_blank"
+                                            title="Ahmer's Facebook">
+                                            <div class="flex items-center">
+                                                <img src="https://api.iconify.design/logos:facebook.svg"
+                                                    alt="Ahmer's Facebook" width="24px">
+                                            </div>
+                                        </a></li>
 
-                                        </a></li>
-                                    <li class="mr-5"><a href="https://github.com/webmentordev" target="_blank"
-                                            title="Ahmer's GitHub">
-                                            <div class="flex items-center">
-                                                <img src="https://api.iconify.design/skill-icons:github-light.svg"
-                                                    alt="Ahmer's GitHub" width="24px">
-                                            </div>
-                                        </a></li>
-                                    <li class="mr-5"><a href="https://www.fiverr.com/users/mahmer97" target="_blank"
-                                            title="Ahmer's Fiverr">
-                                            <div class="flex items-center">
-                                                <img src="https://api.iconify.design/jam:fiverr-circle.svg?color=%2346dd64"
-                                                    alt="Ahmer's Fiverr" width="30px">
-                                            </div>
+                                    <li class="mr-5"><a href="{{ config('app.twitter_link') }}" target="_blank"
+                                            title="RustDedicated Hosting Facebook">
+                                            <img src="https://api.iconify.design/logos:twitter.svg"
+                                                alt="RustDedicated Hosting Facebook" width="24px">
                                         </a></li>
                                 </ul>
-                                <p class="mt-2">Due to restriction with payment gateway approval, i have to manually
-                                    provide the
-                                    services. You can message me anywhere you want on the platfroms mentioned here.
-                                    Discord is the fasted. i will gladly help you in all aspects of your server &
-                                    provide details you need.</p>
+                                <p class="mt-2">Due to restrictions with payment gateway approval, I have to manually
+                                    provide the services. You can message me on any of the platforms mentioned here.
+                                    Discord is the fastest. I will gladly assist you with all aspects of your server and
+                                    provide any details you need.</p>
                             </div>
                         </div>
                         {{-- <div x-show="pop" x-cloak x-transition x-on:click.self="pop = false"
