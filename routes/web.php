@@ -28,6 +28,7 @@ use App\Livewire\Order\Renew as RenewOrder;
 use App\Livewire\Admin\Orders as AdminOrders;
 use App\Livewire\Order\Cancel as CancelOrder;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\RequestController;
 use App\Http\Controllers\SiteMapController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
@@ -46,6 +47,11 @@ Route::get('/', Home::class)->name('home');
 Route::get('/buy-dedicated-rust-server-hosting', SinglePackage::class)->name('package');
 Route::get('/free-trial-rust-server-hosting', FreeTrial::class)->name('free.trial');
 Route::get('/about-us', AboutUs::class)->name('about');
+
+// Routes with Throttle
+Route::post('/submit/trial-request', [RequestController::class, 'requestTrial'])
+    ->middleware(['throttle:1,10'])
+    ->name('request.trial');
 
 // Customer Routes
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {

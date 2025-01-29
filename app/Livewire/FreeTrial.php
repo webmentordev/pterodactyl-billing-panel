@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Trial;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 
@@ -9,6 +10,7 @@ use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\TwitterCard;
+use Illuminate\Http\Request;
 
 class FreeTrial extends Component
 {

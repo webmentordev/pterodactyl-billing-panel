@@ -10,14 +10,20 @@
                 </h1>
                 <p class="text-white text-lg mb-4">Get your free trial of a Rust server for 24 hours. Submit request now.
                 </p>
-                <div class="max-w-lg flex items-center m-auto">
-                    <div class="flex flex-col mr-3 w-full">
-                        <x-text-input id="email" class="block mt-1 w-full" type="email" wire:model="email"
-                            :value="old('email')" required placeholder="Email Address" autocomplete="off" />
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <form action="{{ route('request.trial') }}" method="post">
+                    @csrf
+                    <div class="max-w-lg flex items-center m-auto">
+                        <div class="flex flex-col mr-3 w-full">
+                            @session('success')
+                                <x-alerts.success :message="$value" />
+                            @endsession
+                            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                :value="old('email')" required placeholder="Email Address" autocomplete="off" />
+                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                        </div>
+                        <button class="py-2 px-3 bg-rust font-bold rounded-md text-white" type="submit">Submit</button>
                     </div>
-                    <button class="py-2 px-3 bg-rust font-bold rounded-md text-white">Submit</button>
-                </div>
+                </form>
             </div>
         </div>
     </div>

@@ -38,7 +38,7 @@
     <main>
         {{ $slot }}
     </main>
-    <div class="top-0 left-0 fixed w-full h-full flex items-center justify-center z-50 bg-black/30 backdrop-blur-sm"
+    {{-- <div class="top-0 left-0 fixed w-full h-full flex items-center justify-center z-50 bg-black/30 backdrop-blur-sm"
         x-show="open" x-on:click="open = false">
         <div class="max-w-3xl w-full bg-dark text-white p-6 rounded-xl z-50">
             <h3 class="text-3xl mb-2">Service Discontinued 😥</h3>
@@ -49,7 +49,7 @@
                 similar service, feel free to visit the GitHub repository.</p>
             <img src="{{ asset('assets/approval-rejection.png') }}" class="w-full mt-3 rounded-lg">
         </div>
-    </div>
+    </div> --}}
     <x-footer />
     @livewireScripts
 </body>
