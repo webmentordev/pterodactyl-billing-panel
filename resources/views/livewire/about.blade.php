@@ -56,6 +56,22 @@
                         </a></li>
                 </ul>
             </div>
+            <h2 class="text-3xl mt-7 mb-3 border-b border-white/10 pb-2">About RustDedicated Hosting</h2>
+            <p class="mb-3">RustDedicated Hosting is a Rust game server rental service aimed at providing
+                high-performance Rust servers for players in the EU with low latency. Our focus is on delivering a
+                seamless gaming experience through powerful hardware, optimized network infrastructure, and reliable
+                server management. We strive to ensure minimal downtime, robust security, and customizable server
+                options to meet the needs of the Rust gaming community.</p>
+            <p class="mb-3">The biggest problem for me was getting servers, and I outsource them. I do not own them
+                myself, but I make sure the server is perfect for Rust and does not thermal throttle under load. As I'm
+                unable to colocate within the datacenter, I rent servers at an affordable price, making it
+                cost-effective for both myself and customers (you). Renting at an affordable price has limited options,
+                so I decided to focus on Germany because it can cover the EU, some parts of Asia, and the Middle East
+                player base.</p>
+            <p class="mb-3">Let's see how we allocate server resources. If we have a server with Ryzen 7 7700
+                processor, which has 8 cores and 16 threads, I have configured this system to assign only 6 cores for
+                customers — 1 core or 2 threads per customer. The remaining 2 cores are reserved for server operations
+                to avoid stress, thermal throttling, and slowdowns on Rust servers.</p>
             <h2 class="text-3xl mt-2 mb-3 border-b border-white/10 pb-2">About My Profession</h2>
             <p class="mb-3">Hi, my name is Ahmer, and I'm the sole owner, founder, and operator of this hosting
                 service, RustDedicated. I work as a freelancer on Fiverr and provide Rust game server modding services
@@ -71,20 +87,6 @@
                 there are server-side changes, such as opening new ports or increased RAM requirements, etc.</p>
             <p>As I'm the sole operator of this hosting service, I am available 7 days a week (5 AM to 7 PM UTC) to
                 provide support in case you need help with your server, plugins, etc.</p>
-            <h2 class="text-3xl mt-7 mb-3 border-b border-white/10 pb-2">About RustDedicated Hosting</h2>
-            <p class="mb-3">RustDedicated Hosting is my personal project. The main purpose of RustDedicated is to
-                provide the best Rust experience for players and make it easy for owners to operate their servers
-                without any problems.</p>
-            <p class="mb-3">The biggest problem for me was getting servers, and I outsource them. I do not own them
-                myself, but I make sure the server is perfect for Rust and does not thermal throttle under load. As I'm
-                unable to colocate within the datacenter, I rent servers at an affordable price, making it
-                cost-effective for both myself and customers (you). Renting at an affordable price has limited options,
-                so I decided to focus on Germany because it can cover the EU, some parts of Asia, and the Middle East
-                player base.</p>
-            <p class="mb-3">Let's see how we allocate server resources. If we have a server with Ryzen 7 7700
-                processor, which has 8 cores and 16 threads, I have configured this system to assign only 6 cores for
-                customers — 1 core or 2 threads per customer. The remaining 2 cores are reserved for server operations
-                to avoid stress, thermal throttling, and slowdowns on Rust servers.</p>
             <p>(Grammer fixed by ChatGPT 😁)</p>
         </div>
     </div>
