@@ -15,7 +15,7 @@ Run command to link storage with public folder
 php artisan storage:link
 ```  
 # Billing Project Installation & Setup  
-Follow these steps to properly this panel
+Follow these steps to properly install this panel
 ### Setup Reminder Queue Worker  
 ```
 sudo nano /etc/systemd/system/reminder-queue.service
@@ -113,7 +113,7 @@ sudo crontab -e
 ```  
 
 # Panel Installation & Setup  
-Follow these steps to properly setup Panel
+Follow these steps to properly setup pterodactyl Panel
 ```
 1. Go to Application API and Generate API Key
 2. Go to settings, update the company name
