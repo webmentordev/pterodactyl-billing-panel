@@ -50,6 +50,12 @@ return [
     'twitter_link' => env('TWITTER_LINK'),
     'trustpilot_link' => env('TRUSTPILOT_LINK'),
 
+    'tebex_user' => env('TBEX_USER'),
+    'tebex_private' => env('TBEX_PRIVATE'),
+    'tebex_public' => env('TBEX_PUBLIC'),
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
