@@ -13,5 +13,5 @@ Route::get('/user', function (Request $request) {
 Route::prefix('webhook')->group(function () {
     // Store Lemon Squeezy Orders
     Route::post('/lemon-squeezy/order/store', [LemonOrdersController::class, 'store']);
-    Route::post('/tebex/purchase', [WebHookController::class, 'order']);
+    Route::get('/tebex/purchase', [WebHookController::class, 'tebexOrder']);
 });
