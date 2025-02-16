@@ -23,7 +23,7 @@ class TrialRequestRejected extends Mailable
     {
         return new Envelope(
             from: new Address(config('app.mail_address'), config('app.mail_name')),
-            subject: '❌ Rust Free Trail Rejected',
+            subject: '❌ Out Of Trial Servers',
         );
     }
 

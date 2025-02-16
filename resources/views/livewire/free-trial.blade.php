@@ -13,10 +13,10 @@
                 <form action="{{ route('request.trial') }}" method="post">
                     @csrf
                     <div class="max-w-lg flex items-center m-auto">
+                        @session('success')
+                            <x-alerts.success :message="$value" />
+                        @endsession
                         <div class="flex flex-col mr-3 w-full">
-                            @session('success')
-                                <x-alerts.success :message="$value" />
-                            @endsession
                             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
                                 :value="old('email')" required placeholder="Email Address" autocomplete="off" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
