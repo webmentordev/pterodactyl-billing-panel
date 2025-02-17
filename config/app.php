@@ -44,6 +44,7 @@ return [
     'discord_server' => env('DISCORD_SERVER_WEBHOOK'),
     'discord_exception' => env('DISCORD_EXCEPTION_WEBHOOK'),
     'discord_refund' => env('DISCORD_REFUND_WEBHOOK'),
+    'discord_trial' => env('DISCORD_TRIAL_WEBHOOK'),
 
     'trustpilot_email' => env('TRUSTPILOT_EMAIL'),
     'facebook_link' => env('FACEBOOK_LINK'),
