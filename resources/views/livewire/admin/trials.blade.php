@@ -9,7 +9,7 @@
                 <th class="text-end" width="200px">Action</th>
             </tr>
             @foreach ($trials as $item)
-                <tr>
+                <tr wire:key="{{ $item->id }}">
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->ip_address }}</td>
                     <td>
@@ -54,6 +54,16 @@
                             <span
                                 class="border-rust border bg-rust/10 text-white py-1 px-3 rounded-lg font-semibold">Rejected</span>
                         @endif
+                        <button wire:confirm="are you sure?"
+                            class="border-rust-green border bg-rust-green/10 text-white py-1 px-3 rounded-lg font-semibold"
+                            wire:click='deleteTrial({{ $item->id }})'>
+                            <div wire:target="deleteTrial" wire:loading.class="hidden">
+                                Delete
+                            </div>
+                            <div wire:target="deleteTrial" wire:loading>
+                                Processing...
+                            </div>
+                        </button>
                     </td>
                 </tr>
             @endforeach

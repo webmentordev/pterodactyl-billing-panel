@@ -36,4 +36,10 @@ class Trials extends Component
         $trial->save();
         Mail::to($trial->email)->send(new TrialRequestRejected());
     }
+
+
+    public function deleteTrial(Trial $trial)
+    {
+        $trial->delete();
+    }
 }

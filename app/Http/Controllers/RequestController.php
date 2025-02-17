@@ -10,7 +10,7 @@ class RequestController extends Controller
     public function requestTrial(Request $request)
     {
         $request->validate([
-            'email' => ['required', 'email', 'unique:trials,email']
+            'email' => ['required', 'email']
         ]);
         Trial::create([
             'email' => $request->email,
