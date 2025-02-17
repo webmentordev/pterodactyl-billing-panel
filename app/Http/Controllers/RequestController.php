@@ -17,7 +17,7 @@ class RequestController extends Controller
             'email' => $request->email,
             'ip_address' => $request->ip()
         ]);
-        Http::post(config('app.discord_exception'), [
+        Http::post(config('app.discord_trial'), [
             'content' => "```Trial Request has been recieved from: \n" . $request->email . "```",
         ]);
         return back()->with('success', 'Your request has been submitted! wait for our email.');
