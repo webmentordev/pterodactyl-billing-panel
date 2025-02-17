@@ -39,6 +39,8 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Livewire\Admin\Billing as AdminBilling;
 use App\Livewire\Order\Success as SuccessOrder;
 use App\Livewire\Admin\Dashboard as AdminDashboard;
+use App\Livewire\Admin\Emails\Create as AdminCreateEmail;
+use App\Livewire\Admin\Emails\Emails as AdminEmails;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
@@ -74,6 +76,9 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/refunds', Refunds::class)->name('refunds');
     Route::get('/reviews', Reviews::class)->name('reviews');
     Route::get('/trails', Trials::class)->name('trails');
+
+    Route::get('/emails', AdminEmails::class)->name('emails');
+    Route::get('/emails/create', AdminCreateEmail::class)->name('emails.create');
 
     Route::get('/renew/{order}', function (Order $order) {
         return new OrderRenew($order);

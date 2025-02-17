@@ -48,6 +48,9 @@
         <a href="{{ route('dashboard') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
             wire:current="bg-dark"><img src="https://api.iconify.design/ic:baseline-manage-accounts.svg?color=%23ffffff"
                 width="20px" class="mr-3"><span>Client Area</span></a>
+        <a href="{{ route('admin.emails') }}" class="py-3 w-full pl-5 flex items-center rounded-sm"
+            wire:current="bg-dark"><img src="https://api.iconify.design/tabler:mail-opened.svg?color=%23ffffff"
+                width="20px" class="mr-3"><span>Custom Emails</span></a>
 
     </ul>
 
