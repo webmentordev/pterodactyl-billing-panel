@@ -277,9 +277,6 @@ code {
 }
 
 .preview .wrapper {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
     background-color: #1b1b1b;
     margin: 0;
     padding: 0;
@@ -287,9 +284,6 @@ code {
 }
 
 .preview .content {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -326,9 +320,6 @@ code {
 }
 
 .preview .inner-body {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 570px;
     background-color: #272727;
     border-color: #e8e5ef;
     border-radius: 10px;
@@ -355,9 +346,6 @@ code {
 }
 
 .preview .footer {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 570px;
     margin: 0 auto;
     padding: 0;
     text-align: center;
@@ -376,9 +364,6 @@ code {
 }
 
 .preview .table table {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
     margin: 30px auto;
     width: 100%;
 }
@@ -413,9 +398,6 @@ code {
 }
 
 .preview .action {
-    -premailer-cellpadding: 0;
-    -premailer-cellspacing: 0;
-    -premailer-width: 100%;
     margin: 30px auto;
     padding: 0;
     text-align: center;
@@ -486,5 +468,3 @@ code {
 .preview .break-all {
     word-break: break-all;
 }
-
-/*# sourceMappingURL=app.css.map */

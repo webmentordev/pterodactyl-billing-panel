@@ -20,16 +20,10 @@ return [
     'ptero_nest_id' => env('PANEL_NEST_ID'),
     'ptero_egg_id' => env('PANEL_EGG_ID'),
     'rust_max_ports' => env('RUST_MAX_PORTS'),
-    'lemon_product' => env('LEMON_PRODUCT_ID'),
-    'lemon_varient' => env('LEMON_PRODUCT_VERIENT_ID'),
-    'lemon_token' => env('LEMON_SQUEEZY_API_KEY'),
-    'lemon_store' => env('LEMON_STORE'),
-    'lemon_webhook_key' => env('LEMON_WEHBHOOK_KEY'),
-    'stripe_token' => env('STRIPE_TOKEN'),
-    'stripe_product_id' => env('STRIPE_PRODUCT_ID'),
-    'gateway' => env('ACTIVE_GATEWAY'),
+
     'google_id' => env('GOOGLE_CLIENT_ID'),
     'google_secret' => env('GOOGLE_CLIENT_SECRET'),
+
     'mail_address' => env('MAIL_FROM_ADDRESS'),
     'mail_name' => env('MAIL_FROM_NAME'),
 
