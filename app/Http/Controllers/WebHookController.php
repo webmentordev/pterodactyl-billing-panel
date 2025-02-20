@@ -11,9 +11,10 @@ class WebHookController extends Controller
     public function tebexOrder(Request $request)
     {
         $json = file_get_contents('php://input');
+        $hashedBody = hash('sha256', $json);
         $secret = config('app.tebex_webhook');
-        $computedSignature = hash_hmac('sha256', $json, $secret);
-        $receivedSignature = $request->header('X-Tebex-Signature');
+        $computedSignature = hash_hmac('sha256', $hashedBody, $secret);
+        $receivedSignature = $request->header('x-signature');
 
         if (!hash_equals($computedSignature, $receivedSignature)) {
             Log::error('Signature mismatch', [
@@ -23,7 +24,10 @@ class WebHookController extends Controller
             ]);
             return response()->json(['message' => 'Invalid signature'], 403);
         }
-
+        $payload = json_decode($json, true);
+        if ($payload['type'] === 'validation.webhook') {
+            return response()->json(['id' => $payload['id']], 200);
+        }
         OrderCallback::create(['payload' => $json]);
         return response()->json(['message' => 'Webhook processed successfully'], 200);
     }
