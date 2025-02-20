@@ -5,5 +5,5 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebHookController;
 
 Route::prefix('webhook')->group(function () {
-    Route::post('/tebex/purchase', [WebHookController::class, 'tebexOrder']);
+    Route::get('/tebex/purchase', [WebHookController::class, 'tebexOrder']);
 });

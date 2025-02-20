@@ -18,7 +18,7 @@ class Success extends Component
 
     public function mount(Request $request, Order $order)
     {
-        if (! $request->hasValidSignature()) {
+        if (!$request->hasValidSignatureWhileIgnoring(['txn-id'])) {
             abort(401);
         }
 

@@ -21,7 +21,7 @@ use Artesaos\SEOTools\Facades\OpenGraph;
 
 class Package extends Component
 {
-    public $price = 25.0, $threads = 2, $outOfStock = false, $email;
+    public $price = 25.00, $threads = 2, $outOfStock = false, $email;
 
     public function mount()
     {
@@ -73,6 +73,7 @@ class Package extends Component
             'price' => number_format($this->price)
         ]);
 
+
         $completeURL = URL::temporarySignedRoute(
             'order.success',
             now()->addHours(3),
@@ -100,7 +101,7 @@ class Package extends Component
             'items' => [
                 [
                     'package' => [
-                        'price' => 25.00,
+                        'price' => number_format($this->price),
                         'name' => 'Rust Game Server'
                     ]
                 ],

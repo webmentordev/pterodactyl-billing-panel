@@ -18,7 +18,7 @@ class Renew extends Component
 
     public function mount(Request $request, Order $order, Billing $billing)
     {
-        if (! $request->hasValidSignature()) {
+        if (!$request->hasValidSignatureWhileIgnoring(['txn-id'])) {
             abort(401);
         }
 

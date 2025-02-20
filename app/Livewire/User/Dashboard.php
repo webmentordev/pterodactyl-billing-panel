@@ -18,11 +18,9 @@ use Illuminate\Support\Facades\Http;
 class Dashboard extends Component
 {
     public $price = 20.0, $refundPercentage = 85, $refundDays = 4, $reason;
-    public $activeGateway = null;
 
     public function mount()
     {
-        $this->activeGateway = config('app.gateway');
         $this->price = config('app.price');
         $this->refundPercentage = config('app.refund_percentage');
         $this->refundDays = config('app.refund_days');
@@ -44,12 +42,15 @@ class Dashboard extends Component
             return session()->flash('failed', 'You cannot renew until your refund period has ended.');
         }
 
-        if ($this->activeGateway == 'lemon_squeezy') {
-            $this->lemonCheckout($order);
+        $billing = Billing::where([
+            ['order_id', $order->id],
+            ['status', 'pending'],
+        ])->latest()->first();
+        if ($billing) {
+            return redirect($billing->checkout_url);
         }
-        if ($this->activeGateway == 'stripe') {
-            $this->stripeCheckout($order);
-        }
+
+        $this->tebexCheckout($order);
     }
 
     public function pay(Order $order)
@@ -62,67 +63,53 @@ class Dashboard extends Component
         }
     }
 
-
-    private function lemonCheckout(Order $order)
+    private function tebexCheckout(Order $order)
     {
-        $apiToken = config('app.lemon_token');
-        $storeID =  config('app.lemon_store');
-        $productVarientID =  config('app.lemon_varient');
-        $user = Auth::user();
-        $userLemonID = $user->lemon_user_id;
+        $tebexUser = config('app.tebex_user');
+        $tebexPrivate =  config('app.tebex_private');
 
         $billing = Billing::create([
             'order_id' => $order->id,
             'status' => 'pending'
         ]);
 
-        $returnURL = URL::temporarySignedRoute(
+        $completeURL = URL::temporarySignedRoute(
             'order.renew',
             now()->addHours(3),
             ['order' => $order->id, 'billing' => $billing->id]
         );
 
-        $response = Http::withHeaders([
-            'Accept' => 'application/vnd.api+json',
-            'Content-Type' => 'application/vnd.api+json',
-            'Authorization' => 'Bearer ' . $apiToken,
-        ])->post('https://api.lemonsqueezy.com/v1/checkouts', [
-            'data' => [
-                'type' => 'checkouts',
-                'attributes' => [
-                    'custom_price' => $this->price * 100,
-                    'product_options' => [
-                        'redirect_url' => "$returnURL"
-                    ],
-                    'checkout_data' => [
-                        'custom' => [
-                            'user_id' => "$userLemonID",
-                        ],
-                    ],
-                    'expires_at' => now()->addHours(3),
-                    'preview' => true,
-                ],
-                'relationships' => [
-                    'store' => [
-                        'data' => [
-                            'type' => 'stores',
-                            'id' => "$storeID",
-                        ],
-                    ],
-                    'variant' => [
-                        'data' => [
-                            'type' => 'variants',
-                            'id' => "$productVarientID",
-                        ],
-                    ],
-                ],
+        $data = [
+            'basket' => [
+                'first_name' => Auth::user()->name,
+                'last_name' => 'User',
+                'email' => Auth::user()->email,
+                'return_url' => config('app.url'),
+                'complete_url' => $completeURL,
+                'expires_at' => Carbon::now()->addHours(3)->toIso8601String(),
+                'custom' => [
+                    'order_id' => $order->id
+                ]
             ],
-        ]);
+            'items' => [
+                [
+                    'package' => [
+                        'price' => number_format($this->price),
+                        'name' => 'Rust Game Server - Renew'
+                    ]
+                ],
+            ]
+        ];
+        $response = Http::withBasicAuth($tebexUser, $tebexPrivate)
+            ->withHeaders([
+                'Content-Type' => 'application/json'
+            ])
+            ->post('https://checkout.tebex.io/api/checkout', $data);
         if ($response->successful()) {
             $result = $response->json();
-            $url = $result['data']['attributes']['url'];
-            $billing->gateway_order_id = $result['data']['id'];
-            $billing->gateway = $this->activeGateway;
+            $url = $result['links']['checkout'];
+            $billing->gateway_order_id = $result['ident'];
+            $billing->gateway = 'tebex';
             $billing->checkout_url = $url;
             $billing->save();
             return redirect($url);
@@ -131,52 +118,6 @@ class Dashboard extends Component
                 'content' => "```" .  $response->body() . "```",
             ]);
             return abort(500);
-        }
-    }
-
-    private function stripeCheckout(Order $order)
-    {
-        try {
-            $stripe = new StripeClient(config('app.stripe_token'));
-            $order = Order::create([
-                'user_id' => Auth::user()->id,
-                'price' => number_format($this->price)
-            ]);
-            $success = URL::temporarySignedRoute(
-                'order.success',
-                now()->addMinutes(30),
-                ['order' => $order->id]
-            );
-            $failed = URL::temporarySignedRoute(
-                'order.cancel',
-                now()->addMinutes(30),
-                ['order' => $order->id]
-            );
-            $record = $stripe->checkout->sessions->create([
-                'success_url' => $success,
-                'cancel_url' => $failed,
-                'line_items' => [
-                    [
-                        'price_data' => [
-                            'currency' => 'usd',
-                            'product' => config('app.stripe_product_id'),
-                            'unit_amount' => intval($this->price * 100),
-                        ],
-                        'quantity' => 1,
-                    ],
-                ],
-                'mode' => 'payment',
-                'expires_at' => time() + (30 * 60),
-            ]);
-            $order->gateway_order_id = $record['id'];
-            $order->gateway = $this->activeGateway;
-            $order->checkout_url = $record['url'];
-            $order->save();
-            return redirect($record['url']);
-        } catch (Exception $e) {
-            Http::post(config('app.discord_exception'), [
-                'content' => "```" . $e->getMessage() . "```",
-            ]);
         }
     }
 
