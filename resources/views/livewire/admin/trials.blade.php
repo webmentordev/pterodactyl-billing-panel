@@ -1,5 +1,8 @@
 <section class="w-full h-full">
     @if (count($trials))
+        @session('failed')
+            <x-alerts.failed class="text-white" :message="$value" />
+        @endsession
         <table class="w-full">
             <tr>
                 <th width="350px">Email</th>
@@ -54,16 +57,18 @@
                             <span
                                 class="border-rust border bg-rust/10 text-white py-1 px-3 rounded-lg font-semibold">Rejected</span>
                         @endif
-                        <button wire:confirm="are you sure?"
-                            class="border-rust-green border bg-rust-green/10 text-white py-1 px-3 rounded-lg font-semibold"
-                            wire:click='deleteTrial({{ $item->id }})'>
-                            <div wire:target="deleteTrial" wire:loading.class="hidden">
-                                Delete
-                            </div>
-                            <div wire:target="deleteTrial" wire:loading>
-                                Processing...
-                            </div>
-                        </button>
+                        @if ($item->status !== 'approved')
+                            <button wire:confirm="are you sure?"
+                                class="border-rust-green border bg-rust-green/10 text-white py-1 px-3 rounded-lg font-semibold"
+                                wire:click='deleteTrial({{ $item->id }})'>
+                                <div wire:target="deleteTrial" wire:loading.class="hidden">
+                                    Delete
+                                </div>
+                                <div wire:target="deleteTrial" wire:loading>
+                                    Processing...
+                                </div>
+                            </button>
+                        @endif
                     </td>
                 </tr>
             @endforeach
