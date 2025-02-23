@@ -22,11 +22,7 @@
                     <td>{{ $item->order->user->email }}</td>
                     <td>{{ Str::afterLast($item->order_id, '-') }}</td>
                     <td>
-                        @if ($item->order->gateway == 'stripe')
-                            <img src="https://api.iconify.design/logos:stripe.svg" width="50">
-                        @else
-                            <img src="https://api.iconify.design/twemoji:lemon.svg" width="30">
-                        @endif
+                        <img src="{{ asset('assets/tebex-logo.png') }}" width="60">
                     </td>
                     <td>${{ number_format($item->amount, 2) }}</td>
                     <td>

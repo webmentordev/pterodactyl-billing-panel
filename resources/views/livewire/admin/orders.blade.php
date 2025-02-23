@@ -12,7 +12,7 @@
                 <th width="90px">IsActive</th>
                 <th width="90px">Invoices</th>
                 <th width="90px">Emailed</th>
-                <th width="130px">Status</th>
+                <th width="150px">Status</th>
                 <th class="text-end">Expire At</th>
                 <th class="text-end">Created At</th>
                 <th class="text-end" width="160px">Action</th>
@@ -69,7 +69,7 @@
                             <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
                         @endif
                     </td>
-                    <td width="50px">
+                    <td>
                         @if ($item->status == 'paid')
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-green-500 border-green-800 bg-green-600/10">Paid</span>

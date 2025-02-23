@@ -20,6 +20,10 @@
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
+        @session('failed')
+            <x-alerts.failed class="text-white" :message="$value" />
+        @endsession
+
         <!-- Name -->
         <div>
             <x-input-label for="name" class="text-gray-100" :value="__('Name')" />
@@ -54,6 +58,14 @@
                 name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        </div>
+
+
+        <div class="mt-4">
+            <x-input-label for="answer" class="text-gray-100" :value="__('What is the answer?')" />
+            <x-text-input id="answer" class="block w-full mt-1" type="text" name="result" required
+                placeholder="What is {{ $start }} + {{ $end }}" />
+            <x-input-error :messages="$errors->get('result')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">

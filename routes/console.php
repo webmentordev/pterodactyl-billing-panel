@@ -1,10 +1,11 @@
 <?php
 
+use App\Models\User;
 use App\Models\Order;
 use App\Jobs\OrderDeleteJob;
 use App\Jobs\OrderSuspendJob;
-use App\Jobs\OrderRenewReminderJob;
 use App\Jobs\TrialOrderDeleteJob;
+use App\Jobs\OrderRenewReminderJob;
 use Illuminate\Support\Facades\Schedule;
 
 // Delete in-complete orders older than 3 hours
@@ -71,3 +72,11 @@ Schedule::call(function () {
         }
     }
 })->hourly();
+
+
+// Delete Unverified Users
+Schedule::call(function () {
+    User::where('created_at', '<', now()->subDays(2))
+        ->where('email_verified_at', null)
+        ->delete();
+})->daily();

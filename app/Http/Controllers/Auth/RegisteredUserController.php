@@ -14,37 +14,47 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
+    public $start = 0, $end = 0, $result = 0;
     public function create(): View
     {
-        return view('auth.register');
+        $this->start = rand(9, 99);
+        $this->end = rand(9, 99);
+        $this->result = $this->start + $this->end;
+
+        session(['math_result' => $this->result]);
+
+        return view('auth.register', [
+            'start' => $this->start,
+            'end' => $this->end
+        ]);
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request)
     {
+        $sessionResult = session('math_result');
+        session()->forget('math_result');
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'result' => ['required', 'numeric'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        if ($request->result == $sessionResult) {
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
 
-        event(new Registered($user));
+            event(new Registered($user));
 
-        Auth::login($user);
+            Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
+            return redirect(route('dashboard', absolute: false));
+        } else {
+            return back()->with('failed', 'Wrong answer with basic maths 😑');
+        }
     }
 }
