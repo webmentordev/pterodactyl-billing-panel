@@ -49,6 +49,7 @@ return [
     'tebex_private' => env('TBEX_PRIVATE'),
     'tebex_public' => env('TBEX_PUBLIC'),
     'tebex_webhook' => env('TBEX_HB_TOKEN'),
+    'tebex_package' => env('TBEX_PACKAGE'),
 
 
 

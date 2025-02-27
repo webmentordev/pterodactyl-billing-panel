@@ -65,8 +65,8 @@ class Package extends Component
             return $this->redirect('/login');
         }
 
-        $tebexUser = config('app.tebex_user');
-        $tebexPrivate =  config('app.tebex_private');
+        $tebexPublic =  config('app.tebex_public');
+        $tebexPackage =  config('app.tebex_package');
 
         $order = Order::create([
             'user_id' => Auth::user()->id,
@@ -87,37 +87,35 @@ class Package extends Component
         );
 
         $data = [
-            'basket' => [
-                'first_name' => Auth::user()->name,
-                'last_name' => 'User',
-                'email' => Auth::user()->email,
-                'return_url' => $returnURL,
+            [
+                'cancel_url' => $returnURL,
                 'complete_url' => $completeURL,
-                'expires_at' => Carbon::now()->addHours(3)->toIso8601String(),
+                'complete_auto_redirect' => true,
                 'custom' => [
                     'order_id' => $order->id
                 ]
-            ],
-            'items' => [
-                [
-                    'package' => [
-                        'price' => number_format($this->price),
-                        'name' => 'Rust Game Server'
-                    ]
-                ],
-            ],
+            ]
         ];
 
-        $response = Http::withBasicAuth($tebexUser, $tebexPrivate)
-            ->withHeaders([
-                'Content-Type' => 'application/json'
-            ])
-            ->post('https://checkout.tebex.io/api/checkout', $data);
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json'
+        ])->post('https://headless.tebex.io/api/accounts/' . $tebexPublic . '/baskets', $data);
 
         if ($response->successful()) {
             $result = $response->json();
-            $url = $result['links']['checkout'];
-            $order->gateway_order_id = $result['ident'];
+            $data = $result['data'];
+            $basketIdent = $data['ident'];
+
+            $response = Http::withHeaders([
+                'Content-Type' => 'application/json'
+            ])->post('https://headless.tebex.io/api/baskets/' . $basketIdent . '/packages', [
+                [
+                    'package_id' => $tebexPackage,
+                    'quantity' => 1
+                ]
+            ]);
+            $url = $data['links']['checkout'];
+            $order->gateway_order_id = $basketIdent;
             $order->gateway = 'tebex';
             $order->checkout_url = $url;
             $order->save();
