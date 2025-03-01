@@ -94,10 +94,9 @@ class Dashboard extends Component
 
         if ($response->successful()) {
             $result = $response->json();
-            $data = $result['data'];
-            $basketIdent = $data['ident'];
+            $basketIdent = $result['data']['ident'];
 
-            $response = Http::withHeaders([
+            $paymentResponse = Http::withHeaders([
                 'Content-Type' => 'application/json'
             ])->post('https://headless.tebex.io/api/baskets/' . $basketIdent . '/packages', [
                 [
@@ -105,12 +104,19 @@ class Dashboard extends Component
                     'quantity' => 1
                 ]
             ]);
-            $url = $data['links']['checkout'];
-            $order->gateway_order_id = $basketIdent;
-            $order->gateway = 'tebex';
-            $order->checkout_url = $url;
-            $order->save();
-            return redirect($url);
+            if ($paymentResponse->successful()) {
+                $paymentData = $paymentResponse->json();
+                $url = $paymentData['data']['links']['checkout'];
+                $order->gateway_order_id = $basketIdent;
+                $order->gateway = 'tebex';
+                $order->checkout_url = $url;
+                $order->save();
+                return redirect($url);
+            } else {
+                Http::post(config('app.discord_exception'), [
+                    'content' => "```" .  $paymentResponse->body() . "```",
+                ]);
+            }
         } else {
             Http::post(config('app.discord_exception'), [
                 'content' => "```" .  $response->body() . "```",
