@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('trials', function (Blueprint $table) {
             $table->id();
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('ip_address');
             $table->string('status')->default('pending');
             $table->timestamps();

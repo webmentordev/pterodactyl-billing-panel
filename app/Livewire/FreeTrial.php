@@ -17,16 +17,16 @@ class FreeTrial extends Component
     public function mount()
     {
         SEOMeta::setTitle('Free Rust Server Trial');
-        SEOMeta::setDescription("Get your free 24-hour Rust server trial today—no credit card required or minimum contract!");
+        SEOMeta::setDescription("Get a high-performance Dedicated Rust server for free for 24 hours without requiring a credit card or login");
 
         OpenGraph::setTitle('Free Rust Server Trial');
-        OpenGraph::setDescription("Get your free 24-hour Rust server trial today—no credit card required or minimum contract!");
+        OpenGraph::setDescription("Get a high-performance Dedicated Rust server for free for 24 hours without requiring a credit card or login");
         OpenGraph::addImage(config('app.url') . '/assets/rust-dedicated-free-trial.png');
 
         TwitterCard::setImage(config('app.url') . '/assets/rust-dedicated-free-trial.png');
 
         JsonLd::setTitle('Free Rust Server Trial');
-        JsonLd::setDescription("Get your free 24-hour Rust server trial today—no credit card required or minimum contract!");
+        JsonLd::setDescription("Get a high-performance Dedicated Rust server for free for 24 hours without requiring a credit card or login");
         JsonLd::addImage(config('app.url') . '/assets/rust-dedicated-free-trial.png');
     }
 
