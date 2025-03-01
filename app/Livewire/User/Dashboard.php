@@ -99,10 +99,8 @@ class Dashboard extends Component
             $paymentResponse = Http::withHeaders([
                 'Content-Type' => 'application/json'
             ])->post('https://headless.tebex.io/api/baskets/' . $basketIdent . '/packages', [
-                [
-                    'package_id' => $tebexPackage,
-                    'quantity' => 1
-                ]
+                'package_id' => $tebexPackage,
+                'quantity' => 1
             ]);
             if ($paymentResponse->successful()) {
                 $paymentData = $paymentResponse->json();
