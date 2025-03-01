@@ -64,6 +64,9 @@ class Package extends Component
         if (!Auth::check()) {
             return $this->redirect('/login');
         }
+        if (Auth::check() && is_null(Auth::user()->email_verified_at)) {
+            return redirect('/verify-email');
+        }
 
         $tebexPublic =  config('app.tebex_public');
         $tebexPackage =  config('app.tebex_package');
@@ -72,7 +75,6 @@ class Package extends Component
             'user_id' => Auth::user()->id,
             'price' => number_format($this->price)
         ]);
-
 
         $completeURL = URL::temporarySignedRoute(
             'order.success',
