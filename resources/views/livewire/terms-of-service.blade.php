@@ -111,6 +111,17 @@
                 data, including plugins, configurations, and everything included in the package.</p>
             <p>We reserve the right to delete your free trial Rust server at any time if you violate the rules.</p>
 
+
+            <h3>13. Sales Tax on Purchase</h3>
+            <p>Customers are responsible for paying any applicable sales tax on their purchase or renewal, which is not
+                included in the prices listed on our website <strong
+                    class="text-rust">"https://rustdedicated.com"</strong>. Sales tax amounts vary
+                according to the customer's country or residence, and we cannot modify these amounts. For more
+                information on how taxes are calculated and collected, please visit our Payment Gateway Provider's
+                website at <a class="underline text-rust"
+                    href="https://docs.tebex.io/creators/tebex-checkout/vat">https://docs.tebex.io/creators/tebex-checkout/vat</a>.
+            </p>
+
             <h3>13. Contact Information</h3>
             <p>For questions or concerns regarding these Terms, please contact us at <strong
                     class="text-rust">support@rustdedicated.com.</strong></p>

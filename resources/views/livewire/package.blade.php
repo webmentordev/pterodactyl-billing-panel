@@ -121,7 +121,10 @@
                         </div>
                     </div>
                 @endif
-                <p class="text-end">Total Due Today</p>
+                <div class="flex items-center justify-between">
+                    <p class="text-start">(excl. Sales Tax)</p>
+                    <p class="text-end">Total Due Today</p>
+                </div>
                 <button class="text-center underline text-rust font-semibold" x-on:click="open = true">No Automatic
                     Renewal?</button>
                 <div x-show="open" x-cloak x-transition x-on:click.self="open = false"
