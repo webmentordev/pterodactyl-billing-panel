@@ -46,6 +46,21 @@ Schedule::call(function () {
 })->hourly();
 
 
+// Send Order Renew Reminder Emails
+Schedule::call(function () {
+    $orders = Order::where('status', 'paid')
+        ->where('has_emailed', false)
+        ->where('expired_at', '>', now())
+        ->where('expired_at', '<=', now()->addDays(2))
+        ->get();
+    if ($orders->isNotEmpty()) {
+        foreach ($orders as $order) {
+            OrderRenewReminderJob::dispatch($order)->onQueue('emailing');
+        }
+    }
+})->hourly();
+
+
 // Delete servers that were not renewed and had been suspended
 Schedule::call(function () {
     $orders = Order::where('status', 'suspend')
