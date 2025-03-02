@@ -3,10 +3,9 @@
 namespace App\Console\Commands;
 
 use App\Models\Order;
-use App\Models\Server;
 use App\Models\Usage;
+use App\Models\Server;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 
 class CreatePterodactylServer extends Command
@@ -46,6 +45,7 @@ class CreatePterodactylServer extends Command
                     $additionalPorts[] = $port['id'];
                 }
             }
+
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',

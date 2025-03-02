@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Mail;
 class Trials extends Component
 {
     use WithPagination;
+    public $threads = 2;
 
     #[Layout('layouts.livewire.admin')]
     public function render()
