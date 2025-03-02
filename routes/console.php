@@ -78,5 +78,6 @@ Schedule::call(function () {
 Schedule::call(function () {
     User::where('created_at', '<', now()->subDays(2))
         ->where('email_verified_at', null)
+        ->where('panel_user_id', null)
         ->delete();
 })->daily();
