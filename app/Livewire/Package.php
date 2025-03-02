@@ -89,13 +89,11 @@ class Package extends Component
         );
 
         $data = [
-            [
-                'cancel_url' => $returnURL,
-                'complete_url' => $completeURL,
-                'complete_auto_redirect' => true,
-                'custom' => [
-                    'order_id' => $order->id
-                ]
+            'cancel_url' => $returnURL,
+            'complete_url' => $completeURL,
+            'complete_auto_redirect' => true,
+            'custom' => [
+                'order_id' => $order->id
             ]
         ];
 

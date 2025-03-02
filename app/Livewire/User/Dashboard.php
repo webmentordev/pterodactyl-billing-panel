@@ -80,12 +80,10 @@ class Dashboard extends Component
         );
 
         $data = [
-            [
-                'complete_url' => $completeURL,
-                'complete_auto_redirect' => true,
-                'custom' => [
-                    'order_id' => $order->id
-                ]
+            'complete_url' => $completeURL,
+            'complete_auto_redirect' => true,
+            'custom' => [
+                'order_id' => $order->id
             ]
         ];
         $response = Http::withHeaders([
