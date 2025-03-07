@@ -49,6 +49,9 @@ class Package extends Component
 
     public function buyNow()
     {
+        if (!Auth::check()) {
+            return $this->redirect('/login');
+        }
         if ($this->throttle()) {
             return session()->flash('failed', 'Please complete your previous order! visit the client area.');
         }
