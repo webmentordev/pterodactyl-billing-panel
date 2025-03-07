@@ -50,8 +50,8 @@ Schedule::call(function () {
 Schedule::call(function () {
     $orders = Order::where('status', 'paid')
         ->where('has_emailed', false)
-        ->where('expired_at', '>', now())
-        ->where('expired_at', '<=', now()->addDays(2))
+        ->where('expire_at', '>', now())
+        ->where('expire_at', '<=', now()->addDays(2))
         ->get();
     if ($orders->isNotEmpty()) {
         foreach ($orders as $order) {
