@@ -15,13 +15,14 @@ class GoogleAuthController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    public function verify()
+    public function verify(Request $request)
     {
         $googleUser = Socialite::driver('google')->user();
         $user = User::where('email', $googleUser->email)->first();
         if ($user) {
             $user->update([
                 'google_id' => $googleUser->id,
+                'ip_address' => $request->ip(),
                 'name' => $googleUser->name,
                 'google_token' => $googleUser->token,
                 'google_refresh_token' => $googleUser->refreshToken,
@@ -29,6 +30,7 @@ class GoogleAuthController extends Controller
         } else {
             $user = User::create([
                 'google_id' => $googleUser->id,
+                'ip_address' => $request->ip(),
                 'name' => $googleUser->name,
                 'email' => $googleUser->email,
                 'google_token' => $googleUser->token,

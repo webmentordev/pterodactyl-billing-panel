@@ -4,6 +4,7 @@
             <tr>
                 <th width="60px">Logo</th>
                 <th>Name</th>
+                <th>IP Address</th>
                 <th>Email</th>
                 <th width="80px">Signed</th>
                 <th>Admin</th>
@@ -22,6 +23,7 @@
                         @endif
                     </td>
                     <td>{{ $item->name }}</td>
+                    <td>{{ $item->ip_address ? $item->ip_address : '-' }}</td>
                     <td>{{ $item->email }}</td>
                     <td>
                         @if ($item->google_id)

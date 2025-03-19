@@ -19,6 +19,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'lemon_user_id',
         'subscribed',
         'password',
+        'ip_address',
         'is_admin',
         'google_id',
         'google_token',
