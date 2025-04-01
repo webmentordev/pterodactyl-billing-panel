@@ -65,7 +65,7 @@
                 </p>
                 <p class="flex justify-between items-center"><span>Server Ready In:</span> <span>~10 Minutes</span></p>
                 @if (!$outOfStock)
-                    <button type="button" wire:click="buyNow"
+                    <button type="button" wire:click="buyNow" onclick="trackBuyNow()"
                         class="py-3 bg-rust-green text-white font-semibold my-2 rounded-sm">
                         <div wire:target="buyNow" wire:loading.class="hidden">
                             Pay Now
@@ -78,7 +78,7 @@
                 @else
                     <div class="w-full relative" x-data="{ pop: false }">
                         <button class="py-3 bg-rust-green text-white font-semibold my-2 rounded-sm w-full"
-                            x-on:click="pop = true">
+                            x-on:click="pop = true" onclick="trackBuyNow()">
                             Pay Now
                             ${{ number_format($price) }}
                         </button>
@@ -215,5 +215,13 @@
             </div>
         </div>
     </div>
-
+    <script>
+        function trackBuyNow() {
+            gtag('event', 'buy_now_click', {
+                'event_category': 'Purchases',
+                'event_label': 'Buy Now Button',
+                'value': 25
+            });
+        }
+    </script>
 </section>
