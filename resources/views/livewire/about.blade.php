@@ -3,7 +3,8 @@
         <div class="w-full flex items-center justify-center">
             <h1 class="mb-4 m-auto text-center">
                 <strong title="RustDedicated Hosting Refund Policy" class="text-5xl text-center"
-                    title="Global Rust Server Hosting Locations"><span class="text-rust">About Us</span><br>RustDedicated
+                    title="Global Rust Server Hosting Locations"><span class="text-rust">About
+                        Us</span><br>RustDedicated
                     Hosting
                 </strong>
             </h1>
@@ -32,14 +33,6 @@
                                 <img src="https://api.iconify.design/mdi:steam.svg?color=%23d6d6d6" alt="Ahmer's Steam"
                                     width="25px">
                             </div>
-                        </a></li>
-                    <li class="mr-5"><a href="https://www.linkedin.com/in/muhammad-ahmer-tahir-%E2%80%8B-a00748136/"
-                            target="_blank" title="Ahmer's LinkedIN">
-                            <div class="flex items-center">
-                                <img src="https://api.iconify.design/skill-icons:linkedin.svg" alt="Ahmer's LinkedIN"
-                                    width="24px">
-                            </div>
-
                         </a></li>
                     <li class="mr-5"><a href="https://github.com/webmentordev" target="_blank" title="Ahmer's GitHub">
                             <div class="flex items-center">

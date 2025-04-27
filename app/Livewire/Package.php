@@ -25,14 +25,14 @@ class Package extends Component
 
     public function mount()
     {
-        SEOMeta::setTitle('Rent Budget Rust Server for $25');
-        SEOMeta::setDescription('Purchase a dedicated Rust server for just $25, featuring 60GB NVMe storage, 15GB DDR4 RAM, a 2-thread CPU, and unlimited player slots.');
+        SEOMeta::setTitle('Rent Budget Rust Servers Under $30');
+        SEOMeta::setDescription('Rent dedicated Rust servers under $30, 60GB NVMe storage, 15GB DDR4 RAM, dedicated CPU, and unlimited player slots.');
 
-        OpenGraph::setDescription('Purchase a dedicated Rust server for just $25, featuring 60GB NVMe storage, 15GB DDR4 RAM, a 2-thread CPU, and unlimited player slots.');
-        OpenGraph::setTitle('Rent Budget Rust Server for $25');
+        OpenGraph::setDescription('Rent dedicated Rust servers under $30, 60GB NVMe storage, 15GB DDR4 RAM, dedicated CPU, and unlimited player slots.');
+        OpenGraph::setTitle('Rent Budget Rust Servers Under $30');
 
-        JsonLd::setTitle('Rent Budget Rust Server for $25');
-        JsonLd::setDescription('Purchase a dedicated Rust server for just $25, featuring 60GB NVMe storage, 15GB DDR4 RAM, a 2-thread CPU, and unlimited player slots.');
+        JsonLd::setTitle('Rent Budget Rust Servers Under $30');
+        JsonLd::setDescription('Rent dedicated Rust servers under $30, 60GB NVMe storage, 15GB DDR4 RAM, dedicated CPU, and unlimited player slots.');
 
         $this->price = config('app.price');
         $server = $this->getServers($this->threads);

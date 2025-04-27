@@ -11,7 +11,7 @@
                 <p class="text-white text-lg mb-4">We utilize high-performance consumer-grade hardware to ensure
                     seamless, <br> low-latency, lag-free gameplay</p>
                 <a href="{{ route('package') }}"
-                    class="inline-block text-white bg-rust p-3 rounded-sm font-semibold px-4 hover:bg-rust-green transition-all"
+                    class="inline-block text-white bg-rust p-3 rounded-sm font-bold px-4 hover:bg-rust-green transition-all"
                     title="Buy Under 25$ Dedicated Rust Server">Get {{ $price }}$ Server</a>
             </div>
         </div>
@@ -124,13 +124,13 @@
         </div>
 
         <div class="lazyload flex items-center justify-center py-12 bg-center bg-contain bg-no-repeat min-h-[800px] 1000px:min-h-[500px] 800px:min-h-[300px] 530px:min-h-[200px]"
-            style="background-image: url({{ asset('assets/rust-dedicated-server-locations.png') }})">
+            style="background-image: url({{ asset('assets/rust-dedicated-server-locations.webp') }})">
         </div>
     </div>
 
 
     <div class="flex items-center justify-center py-12" id="packages">
-        <div class="max-w-7xl w-full p-3 text-white">
+        <div class="max-w-6xl w-full p-3 text-white">
             <div class="w-full flex items-center justify-center">
                 <h2 class="mb-4 m-auto">
                     <strong title="How to choose the best rust server?" class="text-5xl text-center 510px:text-3xl"
@@ -174,6 +174,8 @@
                     startup speed. On average, HDDs take 6–8 minutes to load assets, standard SSDs take 3–5 minutes,
                     while M.2 NVMe storage reduces this time dramatically to just 20–40 seconds. Investing in high-speed
                     storage is essential for optimal server performance and minimizing downtime.</p>
+                <img class="mt-6 rounded-lg" src="{{ asset('assets/fast-rust-server-loading.png') }}"
+                    title="Rust Server ControlPanel" alt="Rust Server ControlPanel">
             </div>
         </div>
     </div>
@@ -199,32 +201,32 @@
     {{-- <div class="flex items-center justify-center py-12" id="packages">
         <div class="max-w-4xl w-full p-3 grid grid-cols-3 gap-6">
             @foreach ($packages as $package)
-                <div class="rounded-lg bg-dark-100 border border-white/10 p-8 flex flex-col justify-between text-white">
-                    <div class="w-full">
-                        <img src="{{ asset('/storage/' . $package->image) }}" width="80px" class="m-auto mb-5">
-                        <h3 class="text-center text-2xl mt-3 mb-3 pb-4 border-b border-white/10">{{ $package->name }}
-                        </h3>
-                        <p class="uppercase mb-4 font-semibold text-rust text-center">{{ $package->players }} Players
-                            recommended</p>
-                        <div class="flex
+            <div class="rounded-lg bg-dark-100 border border-white/10 p-8 flex flex-col justify-between text-white">
+                <div class="w-full">
+                    <img src="{{ asset('/storage/' . $package->image) }}" width="80px" class="m-auto mb-5">
+                    <h3 class="text-center text-2xl mt-3 mb-3 pb-4 border-b border-white/10">{{ $package->name }}
+                    </h3>
+                    <p class="uppercase mb-4 font-semibold text-rust text-center">{{ $package->players }} Players
+                        recommended</p>
+                    <div class="flex
                             justify-between w-full mb-4">
-                            <div class="w-fit text-start">
-                                {{ $package->ram }} RAM
-                                {{ $package->ram_type }}
-                            </div>
-                            <div class="w-fit text-end">
-                                {{ $package->storage }}GB {{ $package->storage_type }}
-                                STORAGE
-                            </div>
+                        <div class="w-fit text-start">
+                            {{ $package->ram }} RAM
+                            {{ $package->ram_type }}
                         </div>
-                        <div class="markdown mb-4 text-sm">
-                            {!! Str::of($package->body)->markdown() !!}
+                        <div class="w-fit text-end">
+                            {{ $package->storage }}GB {{ $package->storage_type }}
+                            STORAGE
                         </div>
                     </div>
-                    <button wire:click='purchase("{{ $package->name }}")'
-                        class="w-full bg-rust rounded-lg text-white font-semibold py-3">Pay
-                        {{ $package->price }}</button>
+                    <div class="markdown mb-4 text-sm">
+                        {!! Str::of($package->body)->markdown() !!}
+                    </div>
                 </div>
+                <button wire:click='purchase("{{ $package->name }}")'
+                    class="w-full bg-rust rounded-lg text-white font-semibold py-3">Pay
+                    {{ $package->price }}</button>
+            </div>
             @endforeach
         </div>
     </div> --}}

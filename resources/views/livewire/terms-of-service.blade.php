@@ -7,7 +7,7 @@
                     <br><span class="text-rust">Terms Of Service</span></strong>
             </h1>
         </div>
-        <p class="text-center">Last updated: 15 Januray, 2025</p>
+        <p class="text-center">Last updated: 27 April, 2025</p>
         <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 text-white policy 510px:p-3">
             <h3>1. Acceptance of Terms</h3>
             <p> By signing up for an account on RustDedicated Hosting ("Service"), accessible via
@@ -121,6 +121,18 @@
                 website at <a class="underline text-rust"
                     href="https://docs.tebex.io/creators/tebex-checkout/vat">https://docs.tebex.io/creators/tebex-checkout/vat</a>.
             </p>
+
+            <h3>14. How We Use Cookies</h3>
+            <p>At <strong class="text-rust">RustDedicated.com</strong>, we use cookies only for account login purposes.
+                These cookies are necessary to:</p>
+            <ul class="mb-2">
+                <li>Recognize you when you log into your account</li>
+                <li>Maintain your session while you are logged in</li>
+                <li>Improve your experience on our site by keeping you signed in securely</li>
+            </ul>
+            <p>We do not use cookies for tracking, marketing, or advertising purposes. We do not store any credit card
+                or payment information through cookies.</p>
+
 
             <h3>13. Contact Information</h3>
             <p>For questions or concerns regarding these Terms, please contact us at <strong

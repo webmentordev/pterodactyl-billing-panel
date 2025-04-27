@@ -3,7 +3,7 @@
         <div class="bg-dark-100/90 p-2 pl-5 border border-white/20 backdrop-blur rounded-full max-w-7xl m-auto">
             <div class="flex items-center justify-between">
                 <a href="{{ route('home') }}" class="flex items-center"><img
-                        src="{{ asset('assets/rust-dedicated-logo.png') }}" width="80" alt="RustDedicated Logo">
+                        src="{{ asset('assets/rust-dedicated-logo.webp') }}" width="80" alt="RustDedicated Logo">
                 </a>
                 <ul class="flex items-center text-white links 870px:hidden">
                     <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all text-lg">Home</a>
@@ -96,8 +96,8 @@
             </div>
         </div>
     </nav>
-    <div class="fixed top-0 left-0 z-50 h-full w-full right-0 flex justify-end" @click.self="open = false"
-        x-show="open" x-cloak x-transition:enter="transform transition-transform duration-300"
+    <div class="fixed top-0 left-0 z-50 h-full w-full right-0 flex justify-end" @click.self="open = false" x-show="open"
+        x-cloak x-transition:enter="transform transition-transform duration-300"
         x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
         x-transition:leave="transform transition-transform duration-300" x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full">
