@@ -42,6 +42,9 @@ export default {
                 '510px': {
                     max: '510px'
                 },
+                '470px': {
+                    max: '470px'
+                },
                 '360px': {
                     max: '360px'
                 }

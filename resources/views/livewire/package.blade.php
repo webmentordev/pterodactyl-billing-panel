@@ -4,8 +4,9 @@
         <div class="bgGradient-2 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
         <div class="mt-12 max-w-7xl m-auto flex relative z-10 px-2 920px:max-w-2xl 920px:flex-col">
             <div class="flex flex-col text-white border border-white/20 bg-dark-100 rounded-2xl w-full p-8 530px:p-4">
-                <h1 class="text-5xl mb-3 w-full border-b border-white/10 pb-3 530px:text-3xl">Budget High Specs Rust
-                    Hosting In Germany
+                <h1 class="text-5xl mb-3 w-full border-b border-white/10 pb-3 530px:text-3xl" title="Budget High Specs Rust
+                    Hosting In Germany">Budget High Specs Rust
+                    Hosting Uner 30$
                 </h1>
                 <ul class="">
                     <li class="mb-2">● Game Panel For Management</li>
@@ -17,7 +18,7 @@
                     <li class="mb-2">● 60GB M.2 NVMe SSD</li>
                     <li class="mb-2">● 1Gbit/s Uplink</li>
                     <li class="mb-2">● DDoS Protection</li>
-                    <li class="mb-2">● 2 Server Backups</li>
+                    <li class="mb-2">● 2 Server Backups (System Backups)</li>
                     <li class="mb-2">● 1 MySQL Database (May be store Player Stats)</li>
                     <li class="mb-2">● Unlimited Players Slot (150 Recommended)</li>
                     <li class="mb-2">● Up to 4500 Map Size (4250 Max Recommended)</li>
@@ -146,6 +147,52 @@
                                 class="py-2 px-4 bg-rust text-white font-semibold mt-3 inline-block">Close</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center py-[80px]">
+        <div class="max-w-7xl w-full p-3 text-white 870px:max-w-2xl 470px:max-w-[300px]">
+            <div class="grid grid-cols-4 gap-6 mt-8 870px:grid-cols-2 470px:grid-cols-1">
+                <div
+                    class="flex flex-col items-center bg-dark-100 py-6 px-4 rounded-lg border border-white/10 hover:scale-110 transition-all">
+                    <div class="flex items-center justify-center p-3 mb-4 border border-rust rounded-lg">
+                        <img src="https://api.iconify.design/uil:processor.svg?color=%23ffffff" alt="Dedicated Server"
+                            title="Dedicated Server" width="60">
+                    </div>
+                    <strong class="text-center text-3xl leading-[40px] text-">Simple <br> <span
+                            class="text-rust">Console</span></strong>
+                </div>
+
+                <div
+                    class="flex flex-col items-center bg-dark-100 py-8 px-4 rounded-lg border border-white/10 hover:scale-110 transition-all">
+                    <div class="flex items-center justify-center p-3 mb-4 border border-rust rounded-lg">
+                        <img src="https://api.iconify.design/carbon:document-configuration.svg?color=%23ffffff"
+                            alt="Dedicated Server" title="Dedicated Server" width="60">
+                    </div>
+                    <strong class="text-center text-3xl leading-[40px] text-">Simple File <br> <span
+                            class="text-rust">Explorer</span></strong>
+                </div>
+
+                <div
+                    class="flex flex-col items-center bg-dark-100 py-8 px-4 rounded-lg border border-white/10 hover:scale-110 transition-all">
+                    <div class="flex items-center justify-center p-3 mb-4 border border-rust rounded-lg">
+                        <img src="https://api.iconify.design/mdi:database-plus.svg?color=%23ffffff"
+                            alt="Dedicated Server" title="Dedicated Server" width="60">
+                    </div>
+                    <strong class="text-center text-3xl leading-[40px] text-">MySQL <br> <span
+                            class="text-rust">Database</span></strong>
+                </div>
+
+                <div
+                    class="flex flex-col items-center bg-dark-100 py-8 px-4 rounded-lg border border-white/10 hover:scale-110 transition-all">
+                    <div class="flex items-center justify-center p-3 mb-4 border border-rust rounded-lg">
+                        <img src="https://api.iconify.design/ic:outline-alarm-on.svg?color=%23ffffff"
+                            alt="Dedicated Server" title="Dedicated Server" width="60">
+                    </div>
+                    <strong class="text-center text-3xl leading-[40px] text-">99.99% <br> <span
+                            class="text-rust">Uptime</span></strong>
                 </div>
             </div>
         </div>

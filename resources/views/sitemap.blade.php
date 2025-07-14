@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>{{ url('/') }}</loc>
-        <lastmod>2025-01-15T09:34:11+00:00</lastmod>
+        <lastmod>2025-07-14T09:34:11+00:00</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
@@ -12,7 +12,7 @@
     </url>
     <url>
         <loc>{{ url('/') }}/buy-dedicated-rust-server-hosting</loc>
-        <lastmod>2025-01-15T09:34:11+00:00</lastmod>
+        <lastmod>2025-07-14T09:34:11+00:00</lastmod>
         <priority>0.90</priority>
     </url>
     <url>

@@ -12,101 +12,108 @@
                     seamless, <br> low-latency, lag-free gameplay</p>
                 <a href="{{ route('package') }}"
                     class="inline-block text-white bg-rust p-3 rounded-sm font-bold px-4 hover:bg-rust-green transition-all"
-                    title="Buy Under 25$ Dedicated Rust Server">Get {{ $price }}$ Server</a>
+                    title="Buy Under 30$ Dedicated Rust Server">Get {{ $price }}$ Server</a>
             </div>
         </div>
     </div>
 
 
-    <div class="flex items-center justify-center py-[80px]">
-        <div class="max-w-5xl w-full p-3 text-white">
-            <div class="w-full flex items-center justify-center">
-                <strong class=" text-5xl text-center mb-4 m-auto 510px:text-3xl">Rust <span
-                        class="text-rust">Servers</span>
-                    For
-                    Everyone</strong>
-            </div>
-            <p class="text-center">Dedicated Server Resources - Simple RCON Panel - File Manager</p>
-            <div class="grid grid-cols-3 gap-6 mt-8 750px:grid-cols-2 530px:grid-cols-1">
-                <x-home-info-item image="https://api.iconify.design/uil:processor.svg?color=%23ffffff"
-                    text="Dedicated CPU Core Rust Server">
-                    Dedicated CPU Core
-                </x-home-info-item>
+    <div class="flex flex-col py-[80px]">
+        <div class="flex items-center justify-center">
+            <div class="max-w-5xl w-full p-3 text-white">
+                <div class="w-full flex items-center justify-center">
+                    <strong class=" text-5xl text-center mb-4 m-auto 510px:text-3xl">Rust <span
+                            class="text-rust">Servers</span>
+                        For
+                        Everyone</strong>
+                </div>
+                <p class="text-center">Dedicated Server Resources - Simple RCON Panel - File Manager</p>
+                <div class="grid grid-cols-3 gap-6 mt-8 750px:grid-cols-2 530px:grid-cols-1">
+                    <x-home-info-item image="https://api.iconify.design/uil:processor.svg?color=%23ffffff"
+                        text="Dedicated CPU Core Rust Server">
+                        Dedicated CPU Core
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/solar:video-frame-2-outline.svg?color=%23ffffff"
-                    text="Dedicated DDR4 RAM Rust Server">
-                    15GB DDR4 Memory
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/solar:video-frame-2-outline.svg?color=%23ffffff"
+                        text="Dedicated DDR4 RAM Rust Server">
+                        15GB DDR4 Memory
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/bi:nvme.svg?color=%23ffffff"
-                    text="Fast NVME Storage Rust Server">
-                    Fast M.2 NVME Storage
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/bi:nvme.svg?color=%23ffffff"
+                        text="Fast NVME Storage Rust Server">
+                        Fast M.2 NVME Storage
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/solar:database-outline.svg?color=%23ffffff"
-                    text="Free MySQL Database Rust Server">
-                    MYSQL Database
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/solar:database-outline.svg?color=%23ffffff"
+                        text="Free MySQL Database Rust Server">
+                        MYSQL Database
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/material-symbols-light:globe.svg?color=%23ffffff"
-                    text="Rust Server Location">
-                    EU Servers Location
-                </x-home-info-item>
+                    <x-home-info-item
+                        image="https://api.iconify.design/material-symbols-light:globe.svg?color=%23ffffff"
+                        text="Rust Server Location">
+                        EU Servers Location
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/carbon:accumulation-rain.svg?color=%23ffffff"
-                    text="Oxide & Carbon Support Rust Server">
-                    Oxide, Carbon & Vanilla
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/carbon:accumulation-rain.svg?color=%23ffffff"
+                        text="Oxide & Carbon Support Rust Server">
+                        Oxide, Carbon & Vanilla
+                    </x-home-info-item>
 
-                <x-home-info-item
-                    image="https://api.iconify.design/fluent:people-community-32-regular.svg?color=%23ffffff"
-                    text="Modded & Community Rust Server Hosting">
-                    Modded, Community Server
-                </x-home-info-item>
+                    <x-home-info-item
+                        image="https://api.iconify.design/fluent:people-community-32-regular.svg?color=%23ffffff"
+                        text="Modded & Community Rust Server Hosting">
+                        Modded, Community Server
+                    </x-home-info-item>
 
-                <x-home-info-item
-                    image="https://api.iconify.design/fluent:panel-left-key-16-regular.svg?color=%23ffffff"
-                    text="Rust Server Panel">
-                    Custom Game Panel
-                </x-home-info-item>
+                    <x-home-info-item
+                        image="https://api.iconify.design/fluent:panel-left-key-16-regular.svg?color=%23ffffff"
+                        text="Rust Server Panel">
+                        Custom Game Panel
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/teenyicons:money-outline.svg?color=%23ffffff"
-                    text="{{ config('app.refund_days') * 24 }} Refund Policy">
-                    {{ config('app.refund_days') * 24 }} Hours Refund Policy
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/teenyicons:money-outline.svg?color=%23ffffff"
+                        text="{{ config('app.refund_days') * 24 }} Refund Policy">
+                        {{ config('app.refund_days') * 24 }} Hours Refund Policy
+                    </x-home-info-item>
 
-                <x-home-info-item
-                    image="https://api.iconify.design/fluent:person-support-20-regular.svg?color=%23ffffff"
-                    text="Rust Server Location">
-                    24 / 7 Dedicated Support
-                </x-home-info-item>
+                    <x-home-info-item
+                        image="https://api.iconify.design/fluent:person-support-20-regular.svg?color=%23ffffff"
+                        text="Rust Server Location">
+                        24 / 7 Dedicated Support
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/fluent:arrow-join-20-regular.svg?color=%23ffffff"
-                    text="Unlimited player slots Rust Server">
-                    Unlimited Player Slots
-                </x-home-info-item>
+                    <x-home-info-item
+                        image="https://api.iconify.design/fluent:arrow-join-20-regular.svg?color=%23ffffff"
+                        text="Unlimited player slots Rust Server">
+                        Unlimited Player Slots
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/hugeicons:file-01.svg?color=%23ffffff"
-                    text="60GB NVME Storage Rust server">
-                    60GB Storage FTP Access
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/hugeicons:file-01.svg?color=%23ffffff"
+                        text="60GB NVME Storage Rust server">
+                        60GB Storage FTP Access
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/tabler:map.svg?color=%23ffffff"
-                    text="Large Map Support Rust Server">
-                    Large Map Support
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/tabler:map.svg?color=%23ffffff"
+                        text="Large Map Support Rust Server">
+                        Large Map Support
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/tabler:device-mobile.svg?color=%23ffffff"
-                    text="Rust+ App Support Rust server">
-                    Rust+ App Support
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/tabler:device-mobile.svg?color=%23ffffff"
+                        text="Rust+ App Support Rust server">
+                        Rust+ App Support
+                    </x-home-info-item>
 
-                <x-home-info-item image="https://api.iconify.design/solar:alarm-broken.svg?color=%23ffffff"
-                    text="99.99% Uptime Rust server">
-                    99.99% Server Uptime
-                </x-home-info-item>
+                    <x-home-info-item image="https://api.iconify.design/solar:alarm-broken.svg?color=%23ffffff"
+                        text="99.99% Uptime Rust server">
+                        99.99% Server Uptime
+                    </x-home-info-item>
+                </div>
             </div>
         </div>
+        <a href="{{ route('package') }}"
+            class="inline-block text-white bg-rust p-3 mt-4 rounded-sm font-bold px-4 w-fit m-auto hover:bg-rust-green transition-all"
+            title="Buy Under 30$ Dedicated Rust Server">Get your Rust server now</a>
     </div>
 
 
@@ -209,7 +216,7 @@
                     <p class="uppercase mb-4 font-semibold text-rust text-center">{{ $package->players }} Players
                         recommended</p>
                     <div class="flex
-                            justify-between w-full mb-4">
+                                justify-between w-full mb-4">
                         <div class="w-fit text-start">
                             {{ $package->ram }} RAM
                             {{ $package->ram_type }}
