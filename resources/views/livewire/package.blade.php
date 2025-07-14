@@ -85,8 +85,7 @@
                         <div x-show="pop" x-cloak x-transition x-on:click.self="pop = false"
                             class="fixed top-0 left-0 w-full h-full z-30 bg-dark/70 backdrop-blur-md flex items-center justify-center px-2">
                             <div class="bg-dark-100 p-5 rounded-lg border border-white/10 max-w-lg w-full">
-                                <p class="text-white font-bold text-2xl mb-6">We are currently <strong
-                                        class="text-rust">Out
+                                <p class="text-white font-bold text-2xl mb-6">We are currently <strong class="text-rust">Out
                                         Of Stock</strong></p>
                                 <p class="text-gray-200 mb-3">We regret to inform you that we are currently out of stock
                                     of
@@ -224,4 +223,7 @@
             });
         }
     </script>
+    @if (!$outOfStock)
+        <x-in-stock />
+    @endif
 </section>
