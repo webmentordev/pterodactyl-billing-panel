@@ -130,23 +130,6 @@ code {
     @apply list-disc ml-4;
 }
 
-
-.preview {
-    /* Base */
-    @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Moderustic:wght@300..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-    /* Typography */
-    /* Layout */
-    /* Header */
-    /* Logo */
-    /* Body */
-    /* Subcopy */
-    /* Footer */
-    /* Tables */
-    /* Buttons */
-    /* Panels */
-    /* Utilities */
-}
-
 .preview * {
     font-family: "DM Sans", serif;
 }
