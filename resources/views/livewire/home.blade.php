@@ -73,8 +73,8 @@
                     </x-home-info-item>
 
                     <x-home-info-item image="https://api.iconify.design/teenyicons:money-outline.svg?color=%23ffffff"
-                        text="{{ config('app.refund_days') * 24 }} Refund Policy">
-                        {{ config('app.refund_days') * 24 }} Hours Refund Policy
+                        text="{{ (int) config('app.refund_days') * 24 }} Refund Policy">
+                        {{ (int) config('app.refund_days') * 24 }} Hours Refund Policy
                     </x-home-info-item>
 
                     <x-home-info-item
