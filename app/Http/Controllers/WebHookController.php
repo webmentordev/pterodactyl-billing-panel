@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\OrderCallback;
+use App\Models\Trial;
 use Illuminate\Support\Facades\Log;
 
 class WebHookController extends Controller
@@ -30,5 +31,15 @@ class WebHookController extends Controller
         }
         OrderCallback::create(['payload' => $json]);
         return response()->json(['message' => 'Webhook processed successfully'], 200);
+    }
+
+    public function open_email(Trial $trial){
+        $trial->viewed_email = true;
+        $trial->save();
+        return response()->file(public_path("assets/rust-dedicated-logo.png"), [
+            'Cache-Control' => 'no-cache, no-store, must-revalidate',
+            'Pragma' => 'no-cache',
+            'Expires' => '0'
+        ]); 
     }
 }

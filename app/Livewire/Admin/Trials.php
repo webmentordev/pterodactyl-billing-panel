@@ -53,7 +53,15 @@ class Trials extends Component
     {
         $trial->status = 'rejected';
         $trial->save();
-        Mail::to($trial->email)->send(new TrialRequestRejected());
+        Mail::to($trial->email)->send(new TrialRequestRejected($trial));
+    }
+
+    public function reject_delete(Trial $trial)
+    {
+        $trial->status = 'rejected';
+        $trial->will_delete = true;
+        $trial->save();
+        Mail::to($trial->email)->send(new TrialRequestRejected($trial));
     }
 
     public function deleteTrial(Trial $trial)

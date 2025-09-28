@@ -10,7 +10,11 @@ class Trial extends Model
     protected $fillable = [
         'email',
         'ip_address',
-        'status'
+        'status',
+        'will_delete',
+        'token',
+        'viewed_email',
+        'user_agent'
     ];
 
     public function order()

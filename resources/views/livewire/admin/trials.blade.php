@@ -3,13 +3,15 @@
         @session('failed')
             <x-alerts.failed class="text-white" :message="$value" />
         @endsession
-        <table class="w-full">
+        <table class="w-full table-fixed">
             <tr>
-                <th width="350px">Email</th>
-                <th width="150px">IP Address</th>
-                <th>Status</th>
-                <th class="text-end">Created At</th>
-                <th class="text-end" width="200px">Action</th>
+                <th width="300px">Email</th>
+                <th width="120px">IP Address</th>
+                <th width="120px">Status</th>
+                <th>User Agent</th>
+                <th width="50px">Viewed?</th>
+                <th class="text-end" width="180px">Created At</th>
+                <th class="text-end" width="330px">Action</th>
             </tr>
             @foreach ($trials as $item)
                 <tr wire:key="{{ $item->id }}">
@@ -27,16 +29,40 @@
                                 class="py-1 px-3 rounded-full border font-semibold text-yellow-500 border-yellow-800 bg-yellow-600/10">Pending</span>
                         @endif
                     </td>
-                    <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
+                    <td x-data="{read: false}">
+                        @if ($item->user_agent)
+                            <span class="cursor-pointer" x-show="!read" @click="read = true">{{ Str::limit($item->user_agent, 50, '...') }}</span>
+                            <span class="cursor-pointer" x-show="read" @click="read = false">{{ $item->user_agent }}</span>
+                        @else
+                            -
+                        @endif
+                    </td>
+                    <td>
+                        @if ($item->viewed_email)
+                            <strong class="py-1 px-3 bg-rust-green">Yes</strong>
+                        @else
+                            <strong class="py-1 px-3 bg-rust">No</strong>
+                        @endif
+                    </td>
+                    <td class="text-end">{{ $item->created_at->format('d M,Y H:i') }}</td>
                     <td class="text-end">
                         @if ($item->status == 'pending')
-                            <div class="flex items-center h-fit mt-1 justify-end">
+                            <div class="flex items-center h-fit">
                                 <button class="bg-rust-green text-white py-1 px-3 rounded-lg font-semibold mr-2"
                                     wire:click='approve("{{ $item->id }}")'>
                                     <div wire:target="approve" wire:loading.class="hidden">
                                         Approve
                                     </div>
                                     <div wire:target="approve" wire:loading>
+                                        Processing...
+                                    </div>
+                                </button>
+                                <button class="bg-red-600 text-white py-1 px-3 rounded-lg font-semibold mr-2"
+                                    wire:click='reject_delete("{{ $item->id }}")'>
+                                    <div wire:target="reject_delete" wire:loading.class="hidden">
+                                        Reject & Delete
+                                    </div>
+                                    <div wire:target="reject_delete" wire:loading>
                                         Processing...
                                     </div>
                                 </button>
@@ -56,18 +82,6 @@
                         @elseif ($item->status == 'rejected')
                             <span
                                 class="border-rust border bg-rust/10 text-white py-1 px-3 rounded-lg font-semibold">Rejected</span>
-                        @endif
-                        @if ($item->status !== 'approved')
-                            <button wire:confirm="are you sure?"
-                                class="border-rust-green border bg-rust-green/10 text-white py-1 px-3 rounded-lg font-semibold"
-                                wire:click='deleteTrial({{ $item->id }})'>
-                                <div wire:target="deleteTrial" wire:loading.class="hidden">
-                                    Delete
-                                </div>
-                                <div wire:target="deleteTrial" wire:loading>
-                                    Processing...
-                                </div>
-                            </button>
                         @endif
                     </td>
                 </tr>

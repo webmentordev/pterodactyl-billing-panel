@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Trial;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
@@ -14,7 +15,7 @@ class TrialRequestRejected extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct()
+    public function __construct(public Trial $trial)
     {
         //
     }
@@ -30,7 +31,7 @@ class TrialRequestRejected extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mail.trial.rejected'
+            markdown: 'mail.trial.rejected',
         );
     }
 

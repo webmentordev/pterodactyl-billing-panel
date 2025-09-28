@@ -6,6 +6,7 @@ use App\Jobs\OrderDeleteJob;
 use App\Jobs\OrderSuspendJob;
 use App\Jobs\TrialOrderDeleteJob;
 use App\Jobs\OrderRenewReminderJob;
+use App\Models\Trial;
 use Illuminate\Support\Facades\Schedule;
 
 // Delete in-complete orders older than 3 hours
@@ -21,7 +22,7 @@ Schedule::call(function () {
     Order::where('status', 'cancel')
         ->where('created_at', '<', now()->subDays(2))
         ->delete();
-})->hourly();
+})->everyThreeHours();
 
 
 // Cancel orders older than 3 hours if not paid
@@ -29,7 +30,7 @@ Schedule::call(function () {
     Order::where('status', 'pending')
         ->where('created_at', '<', now()->subHours(3))
         ->update(['status' => 'cancel']);
-})->hourly();
+})->everyThreeHours();
 
 
 // Suspend servers that have not been renewed
@@ -43,7 +44,7 @@ Schedule::call(function () {
             OrderSuspendJob::dispatch($order)->onQueue('suspend');
         }
     }
-})->hourly();
+})->everyThreeHours();
 
 
 // Send Order Renew Reminder Emails
@@ -58,7 +59,7 @@ Schedule::call(function () {
             OrderRenewReminderJob::dispatch($order)->onQueue('emailing');
         }
     }
-})->hourly();
+})->everyThreeHours();
 
 
 // Delete servers that were not renewed and had been suspended
@@ -72,7 +73,7 @@ Schedule::call(function () {
             OrderDeleteJob::dispatch($order)->onQueue('suspend');
         }
     }
-})->hourly();
+})->everyThreeHours();
 
 
 // Delete Trial Orders
@@ -86,7 +87,7 @@ Schedule::call(function () {
             TrialOrderDeleteJob::dispatch($order)->onQueue('trial');
         }
     }
-})->hourly();
+})->everyThreeHours();
 
 
 // Delete Unverified Users
@@ -95,4 +96,10 @@ Schedule::call(function () {
         ->where('email_verified_at', null)
         ->where('panel_user_id', null)
         ->delete();
+})->daily();
+
+
+// Delete Rejected Trials every 2 days
+Schedule::call(function () {
+    Trial::where("status", "rejected")->where("will_delete", true)->where('updated_at', '<=', now()->addDays(2))->delete();
 })->daily();

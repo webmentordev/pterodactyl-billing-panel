@@ -43,6 +43,7 @@ use App\Livewire\Admin\Emails\Emails as AdminEmails;
 use App\Livewire\Admin\Servers\Create as CreateServer;
 use App\Livewire\Admin\Servers\Servers as AdminServer;
 use App\Livewire\Admin\Servers\Update as UpdateServer;
+use App\Models\Trial;
 
 // Open Routes
 Route::get('/', Home::class)->name('home');
@@ -100,7 +101,7 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
         return new Reminder();
     });
     Route::get('/rejected-trial', function () {
-        return new TrialRequestRejected();
+        return new TrialRequestRejected(Trial::latest()->first());
     });
     Route::get('/approved/{order}', function (Order $order) {
         return new TrialServerCreate($order, 'adsasddasadsdas');
