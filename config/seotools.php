@@ -3,7 +3,7 @@
 return [
     'meta' => [
         'defaults'       => [
-            'title'        => "RustDedicated Hosting",
+            'title'        => "Dedicated Rust servers under $30 | RustDedicated Hosting",
             'titleBefore'  => false,
             'description'  => 'Rent high-performance Dedicated Rust servers under $30, dedicated cores or threads, 60+ GB NVME storage, 15 GB DDR4 RAM, unlimited player slots, the Rust+ app, and RCON.',
             'separator'    => ' - ',
@@ -23,7 +23,7 @@ return [
     ],
     'opengraph' => [
         'defaults' => [
-            'title'       => 'RustDedicated Hosting',
+            'title'       => 'Dedicated Rust servers under $30 | RustDedicated Hosting',
             'description' => 'Rent high-performance Dedicated Rust servers under $30, dedicated cores or threads, 60+ GB NVME storage, 15 GB DDR4 RAM, unlimited player slots, the Rust+ app, and RCON.',
             'url'         => null,
             'type'        => false,
@@ -41,7 +41,7 @@ return [
     ],
     'json-ld' => [
         'defaults' => [
-            'title'       => 'RustDedicated Hosting',
+            'title'       => 'Dedicated Rust servers under $30 | RustDedicated Hosting',
             'description' => 'Rent high-performance Dedicated Rust servers under $30, dedicated cores or threads, 60+ GB NVME storage, 15 GB DDR4 RAM, unlimited player slots, the Rust+ app, and RCON.',
             'url'         => null,
             'type'        => 'WebPage',
