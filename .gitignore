@@ -23,6 +23,6 @@ yarn-error.log
 /.zed
 /completed.txt
 response.json
-composer.lock
-package-lock.json
+./composer.lock
+./package-lock.json
 
