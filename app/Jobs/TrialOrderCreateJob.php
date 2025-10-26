@@ -59,7 +59,7 @@ class TrialOrderCreateJob implements ShouldQueue
             $resultPassword = trim(Artisan::output());
 
             Artisan::call('app:create-pterodactyl-server', ['orderID' => $order->id]);
-            Mail::to($order->user->email)->send(new TrialServerCreate($order, $resultPassword, $newUser, $newPassword));
+            Mail::to($order->user->email)->send(new TrialServerCreate($this->trial, $order, $resultPassword, $newUser, $newPassword));
         } catch (\Exception $e) {
             Http::post(config('app.discord_exception'), [
                 'content' => "```Trial Order Creation Job:\n" . $e->getMessage() . "```",

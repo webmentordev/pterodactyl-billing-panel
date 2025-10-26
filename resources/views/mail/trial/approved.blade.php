@@ -28,4 +28,5 @@ Thank you for choosing us, and happy gaming!
 Best regards,  
 **{{ config('app.name') }}**  
 [support@rustdedicated.com](mailto:{{ config('app.mail_address') }})
+<img src="{{ route('email.open', $trial->token) }}" width="1px" height="1px">
 </x-mail::message>

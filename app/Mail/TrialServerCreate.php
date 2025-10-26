@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Models\Order;
+use App\Models\Trial;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
@@ -15,7 +16,7 @@ class TrialServerCreate extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public function __construct(public Order $order, public $password = null, public $isNew = false, public $newPassword = null)
+    public function __construct(public Trial $trial, public Order $order, public $password = null, public $isNew = false, public $newPassword = null)
     {
         $this->order = $order;
         $this->password = $password;

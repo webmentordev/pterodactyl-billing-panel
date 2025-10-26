@@ -26,7 +26,7 @@ class CreatePterodactylUser extends Command
                 'Authorization' => "Bearer $apiKey",
             ])->post($url, [
                 'email' => $recordUser->email,
-                'username' => str_replace(' ', '-', strtolower($recordUser->name)) . '-' . rand(9, 999999),
+                'username' => 'user-' . rand(999, 9999999),
                 'first_name' => $recordUser->name,
                 'last_name' => 'Guest',
                 'password' => $password,
