@@ -51,8 +51,8 @@
             <ul>
                 <li>Payment for server hosting is due upfront and will be billed as per the selected plan (31 Days).
                 </li>
-                <li>Refunds will be granted if the refund period has not ended, service disruptions caused by the
-                    company (us).</li>
+                {{-- <li>Refunds will be granted if the refund period has not ended, service disruptions caused by the
+                    company (us).</li> --}}
                 <li>Please refer to our <a href="{{ route('refund') }}" class="underline text-rust">Refund Policy</a>
                     for
                     more information.</li>

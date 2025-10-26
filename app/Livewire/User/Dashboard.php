@@ -123,6 +123,8 @@ class Dashboard extends Component
 
     public function refund(Order $order)
     {
+        return session()->flash('success', 'Our refund policy changed due to payment processor do we can not issue refunds.');
+
         $this->owner($order);
 
         $this->validate([

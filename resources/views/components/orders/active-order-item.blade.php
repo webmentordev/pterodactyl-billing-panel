@@ -63,7 +63,7 @@
                     $expireDate = \Carbon\Carbon::parse($order->expire_at)->subDays(7);
                 @endphp
                 @if (!$refundDate->isPast())
-                    <button @click="open = true"
+                    {{-- <button @click="open = true"
                         class="bg-rust py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust {{ !now()->greaterThan($expireDate) ? 'col-span-2' : '' }}">
                         Request Refund
                     </button>
@@ -110,7 +110,7 @@
                                 days to appear on your
                                 statement.</p>
                         </div>
-                    </div>
+                    </div> --}}
                 @else
                     <button wire:click='renew("{{ $order->id }}")'
                         class="bg-rust-green py-2 px-3 rounded-lg font-semibold transition-all hover:bg-rust">
