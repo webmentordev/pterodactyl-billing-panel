@@ -62,7 +62,7 @@ class TrialOrderCreateJob implements ShouldQueue
             Mail::to($order->user->email)->send(new TrialServerCreate($this->trial, $order, $resultPassword, $newUser, $newPassword));
         } catch (\Exception $e) {
             Http::post(config('app.discord_exception'), [
-                'content' => "```Trial Order Creation Job:\n" . $e->getMessage() . "```",
+                'content' => "```Trial Order Creation Job Exception:\n" . $e->getMessage() . "```",
             ]);
         }
     }
@@ -70,12 +70,5 @@ class TrialOrderCreateJob implements ShouldQueue
     private function generatePassword()
     {
         $alphabet = 'abcdefghij&*()^%$#@!_+{}":?><klmnopqrstuvwzxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-        $pass = array();
-        $alphaLength = strlen($alphabet) - 1;
-        for ($i = 0; $i < 15; $i++) {
-            $n = rand(0, $alphaLength);
-            $pass[] = $alphabet[$n];
-        }
-        return implode($pass);
-    }
-}
+    $pass=array(); $alphaLength=strlen($alphabet) - 1; for ($i=0; $i < 15; $i++) { $n=rand(0, $alphaLength);
+    $pass[]=$alphabet[$n]; } return implode($pass); } }

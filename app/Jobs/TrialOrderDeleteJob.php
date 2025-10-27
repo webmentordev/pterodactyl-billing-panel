@@ -39,12 +39,12 @@ class TrialOrderDeleteJob implements ShouldQueue
                 Mail::to($order->user->email)->send(new TrialServerDelete($order));
             } else {
                 Http::post(config('app.discord_exception'), [
-                    'content' => "```Trials Server Delete:\n" . $response->body() . "```",
+                    'content' => "```Trials Server Delete Error Panel:\n" . $response->body() . "```",
                 ]);
             }
         } catch (\Exception $e) {
             Http::post(config('app.discord_exception'), [
-                'content' => "```Trials Server Delete:\n" . $e->getMessage() . "```",
+                'content' => "```Trials Server Delete Exception:\n" . $e->getMessage() . "```",
             ]);
         }
     }
