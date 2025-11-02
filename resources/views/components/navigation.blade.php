@@ -72,6 +72,9 @@
                         @if (Auth::user()->is_admin)
                             <a href="{{ route('admin.dashboard') }}"
                                 class="mx-6 hover:text-rust transition-all text-lg">Dashboard</a>
+                        @else
+                            <a href="{{ route('dashboard') }}"
+                                class="mx-6 hover:text-rust transition-all text-lg">Dashboard</a>
                         @endif
                     @endauth
                 </ul>

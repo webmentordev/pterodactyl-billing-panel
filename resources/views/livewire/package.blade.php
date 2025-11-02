@@ -1,12 +1,12 @@
 <section class="w-full h-full">
     <div class="w-full py-12 bg-cover bg-center relative bg-fixed"
         style="background-image: url({{ asset('assets/background/rust-dedicated-client-header.webp') }})">
+        <time class="hidden" datetime="2025-11-02T00:00:00Z" itemprop="dateUpdated">Last updated: 2 November, 2025</time>
         <div class="bgGradient-2 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
         <div class="mt-12 max-w-7xl m-auto flex relative z-10 px-2 920px:max-w-2xl 920px:flex-col">
             <div class="flex flex-col text-white border border-white/20 bg-dark-100 rounded-2xl w-full p-8 530px:p-4">
                 <h1 class="text-5xl mb-3 w-full border-b border-white/10 pb-3 530px:text-3xl" title="Budget High Specs Rust
-                    Hosting In Germany">Budget High Specs Rust
-                    Hosting Uner 30$
+                    Hosting In Germany">Budget Friendly Rust Server Under 30$US
                 </h1>
                 <ul class="">
                     <li class="mb-2">● Game Panel For Management</li>
@@ -27,6 +27,7 @@
                     <li class="mb-2">● Carbon & Oxide Support</li>
                     <li class="mb-2">● Modded & Vanilla / Community Server</li>
                     <li class="mb-2">● Future Server Upgrade Support</li>
+                    <li class="mb-2">● 60MB Public Accessible File Storage (Upload maps or images e.t.c)</li>
                     <li class="mb-2">● Quick <a href="{{ config('app.discord_link') }}"
                             class="text-rust font-semibold underline">Discord</a>
                         support</li>
@@ -53,10 +54,11 @@
                     <li>4500 Map Size Support</li>
                     <li>Rust+ App Support</li>
                     <li>Full FTP Access</li>
-                    <li>2 Backups</li>
+                    <li>2 Backups (Server)</li>
                     <li>1 MySQL Database</li>
                     <li>Location: Germany</li>
                     <li>Renewal Period: 31 Days</li>
+                    <li>60MB Public Storage</li>
                 </ul>
                 <div class="mb-3 pb-3 border-b border-white/10"></div>
                 <p class="mb-3 pb-3 border-b border-white/10">Free Server Migration (Contact Support)</p>

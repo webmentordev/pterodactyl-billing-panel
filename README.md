@@ -16,6 +16,28 @@ php artisan storage:link
 ```  
 # Billing Project Installation & Setup  
 Follow these steps to properly this panel
+### Setup Overall Queue Worker  
+```
+sudo nano /etc/systemd/system/laravel-worker.service
+---------------------
+[Unit]
+Description=Overall Worker Job Queue
+After=network.target
+
+[Service]
+User=root
+Group=root
+Restart=always
+ExecStart=/usr/bin/php /var/www/laravel/artisan queue:work --env=production
+WorkingDirectory=/var/www/laravel
+
+[Install]
+WantedBy=multi-user.target
+---------------------
+systemctl daemon-reload
+systemctl enable laravel-worker
+systemctl restart laravel-worker
+```  
 ### Setup Reminder Queue Worker  
 ```
 sudo nano /etc/systemd/system/reminder-queue.service

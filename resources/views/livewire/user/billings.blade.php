@@ -63,7 +63,7 @@
         @else
             <p class="mt-4 text-center text-white text-2xl">Your billing records not found</p>
     @endif
-    <div class="bg-dark-100 border border-white/10 rounded-lg p-4 mt-6">
+    <div class="bg-dark-100 border border-white/10 rounded-lg p-4 mt-6 max-w-7xl m-auto w-full">
         <h3 class="text-white mb-3 text-4xl">Billing Status Explained:</h3>
         <ul class="text-gray-200">
             <li class="mb-1"><strong class="text-red-500">Canceled:</strong> Your order was canceled because payment

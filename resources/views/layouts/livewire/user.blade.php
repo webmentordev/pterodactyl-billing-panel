@@ -14,7 +14,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen p-3">
+    <div class="min-h-screen p-3 bg-cover bg-center" style="background-image: url({{ asset('assets/dashboard-bg.webp') }}">
         @include('components.user.navigation')
         <main>
             {{ $slot }}

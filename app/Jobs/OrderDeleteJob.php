@@ -2,9 +2,10 @@
 
 namespace App\Jobs;
 
-use App\Mail\OrderDeleted;
 use App\Models\Order;
 use App\Models\Billing;
+use App\Mail\OrderDeleted;
+use App\Jobs\VerifyFilesJob;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Queue\Queueable;
@@ -41,6 +42,7 @@ class OrderDeleteJob implements ShouldQueue
                 $billing->save();
                 $order->usage->delete();
                 Mail::to($order->user->email)->send(new OrderDeleted($order));
+                VerifyFilesJob::dispatch($order);
             } else {
                 Http::post(config('app.discord_exception'), [
                     'content' => "```" . $response->body() . "```",

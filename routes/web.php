@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Uploads;
 use App\Models\Order;
 use App\Models\Usage;
 use App\Livewire\Home;
@@ -60,6 +61,7 @@ Route::post('/submit/trial-request', [RequestController::class, 'requestTrial'])
 Route::middleware(['auth', 'verified'])->prefix('user')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/billings', Billings::class)->name('billings');
+    Route::get('/uploads', Uploads::class)->name('uploads');
 });
 
 // Administartor Routes
@@ -103,9 +105,9 @@ Route::middleware(['auth', 'verified', 'is_admin'])->prefix('admin')->name('admi
     Route::get('/rejected-trial', function () {
         return new TrialRequestRejected(Trial::latest()->first());
     });
-    Route::get('/approved/{order}', function (Order $order) {
-        return new TrialServerCreate($order, 'adsasddasadsdas');
-    });
+    // Route::get('/approved/{order}', function (Order $order) {
+    //     return new TrialServerCreate($order, 'adsasddasadsdas');
+    // });
     Route::get('/trial-delete/{order}', function (Order $order) {
         return new TrialServerDelete($order);
     });

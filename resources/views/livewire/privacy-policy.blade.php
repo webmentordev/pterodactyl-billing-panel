@@ -7,7 +7,9 @@
                     <br><span class="text-rust">Privacy Policy</span></strong>
             </h1>
         </div>
-        <p class="text-center">Last updated: 15 Januray, 2025</p>
+        <div class="w-full flex items-center justify-center">
+            <time datetime="2025-11-02T00:00:00Z" itemprop="dateUpdated">Last updated: 2 November, 2025</time>
+        </div>
         <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 policy 510px:p-3">
             <h3>1. Introduction</h3>
             <p>RustDedicated Hosting ("we," "us," "our") is committed to protecting your privacy. This Privacy Policy
@@ -43,7 +45,7 @@
 
             <h3>5. Payment Information</h3>
             <p>We do not store your credit card or PayPal information on our servers. All payment data is securely
-                processed through third-party payment gateways (Lemon Squeezy or Stripe) that comply with industry
+                processed through third-party payment gateways tebex that comply with industry
                 security standards and are trustworthy.</p>
 
             <h3>6. Data Security</h3>

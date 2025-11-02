@@ -24,7 +24,7 @@
                         @if ($item->is_trial)
                             <span
                                 class="py-1 px-3 rounded-full border font-semibold text-yellow-500 border-yellow-800 bg-yellow-600/10">Trial</span>
-                        @elseif ($item->is_trial == null)
+                        @elseif (!$item->is_trial && $item->status == 'pending')
                             -
                         @else
                             {{ Str::afterLast($item->gateway_order_id, '-') }}

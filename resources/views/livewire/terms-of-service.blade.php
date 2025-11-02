@@ -7,7 +7,9 @@
                     <br><span class="text-rust">Terms Of Service</span></strong>
             </h1>
         </div>
-        <p class="text-center">Last updated: 26 October, 2025</p>
+        <div class="w-full flex items-center justify-center">
+            <time datetime="2025-10-26T00:00:00Z" itemprop="dateCreated">Last updated: 26 October, 2025</time>
+        </div>
         <div class="mt-4 p-8 rounded-lg bg-dark-100 border border-white/10 text-white policy 510px:p-3">
             <h3>1. Acceptance of Terms</h3>
             <p> By signing up for an account on RustDedicated Hosting ("Service"), accessible via
