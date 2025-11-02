@@ -172,21 +172,23 @@ Follow these steps to properly setup Panel
 # Wing Installation & Setup  
 Follow these steps to properly setup Wings
 ```
-1. Install Wing In The server with Database Setup
-2. In the Wing, create 32GB of Swap Space
-3. Create Wing as a node on the panel 
+1. Install package: 
+    - sudo apt-get install libgdiplus lib32gcc-s1
+2. Install Wing In The server with Database Setup
+3. In the Wing, create 32GB of Swap Space
+4. Create Wing as a node on the panel 
     - Copy the config
     - Paste the config on Wing in /etc/pterodactyl/config.yml
     - Restart the Wings.servic
     - Check In Panel if Node is working
     - In Node setting, increase 'Maximum Web Upload Filesize'
-4. Add Ports for the Wing / Node 28015-28090
-5. Boost Server to Max Performance / GHz
+5. Add Ports for the Wing / Node 28015-28090
+6. Boost Server to Max Performance / GHz
     - sudo apt install cpufrequtils -y
     - sudo cpufreq-set -g performance
     - sudo apt install stress
     - stress --cpu 16 --timeout 30s
     - watch -n 1 "cat /proc/cpuinfo | grep 'MHz'"
-6. Check RAM Requency / MHz
+7. Check RAM Requency / MHz
     - sudo dmidecode --type memory | grep -i "speed"
 ```
