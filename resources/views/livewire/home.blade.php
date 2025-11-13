@@ -1,6 +1,6 @@
 <section>
     <div class="min-h-[800px] h-[800px] bg-cover bg-center relative bg-fixed"
-        style="background-image: url({{ asset('assets/background/rust-dedicated-hosting-image.webp') }})">
+        style="background-image: url({{ asset('assets/background/rust-dedicated-hosting-image-2.webp') }})">
         <div class="absolute top-0 left-0 bgGradient w-full h-full"></div>
         <div class="relative flex items-center justify-center h-full w-full z-10">
             <div class="text-center">

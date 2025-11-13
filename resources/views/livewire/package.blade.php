@@ -1,6 +1,6 @@
 <section class="w-full h-full">
     <div class="w-full py-12 bg-cover bg-center relative bg-fixed"
-        style="background-image: url({{ asset('assets/background/rust-dedicated-client-header.webp') }})">
+        style="background-image: url({{ asset('assets/background/rust-dedicated-hosting-image-2.webp') }})">
         <time class="hidden" datetime="2025-11-02T00:00:00Z" itemprop="dateUpdated">Last updated: 2 November, 2025</time>
         <div class="bgGradient-2 backdrop-blur-sm absolute top-0 left-0 w-full h-full"></div>
         <div class="mt-12 max-w-7xl m-auto flex relative z-10 px-2 920px:max-w-2xl 920px:flex-col">

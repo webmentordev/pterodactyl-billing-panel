@@ -7,7 +7,7 @@
                 </a>
                 <ul class="flex items-center text-white links 870px:hidden">
                     <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all text-lg">Home</a>
-                    <a href="{{ route('package') }}" class="mx-6 hover:text-rust transition-all text-lg">Package</a>
+                    <a href="{{ route('package') }}" class="mx-6 text-rust transition-all text-lg">Buy Now</a>
                     <a href="{{ route('free.trial') }}" class="mx-6 hover:text-rust transition-all text-lg">Trial</a>
                     <div class="relative ml-6" x-data="{ open: false }">
                         <button class="flex items-center" x-on:click="open = !open">
