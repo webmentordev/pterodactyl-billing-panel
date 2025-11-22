@@ -47,7 +47,7 @@ class FreeTrial extends Component
     {
         $this->validate([
             'email' => ['required', 'email', 'unique:trials,email'],
-            'trustileResponse' => ['required', new Turnstile]
+            'cf-turnstile-response' => ['required', new Turnstile]
         ]);
         Trial::create([
             'email' => $this->email,

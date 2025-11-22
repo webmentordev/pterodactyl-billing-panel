@@ -23,7 +23,7 @@
                             </div>
                             <button class="py-2 px-3 bg-rust font-bold rounded-md text-white" type="submit">Submit</button>
                         </div>
-                        <x-turnstile wire:model="trustileResponse" data-action="newsletter" data-theme="light" />
+                        <x-turnstile data-action="newsletter" data-theme="light" />
                     </div>
                 </form>
             </div>
