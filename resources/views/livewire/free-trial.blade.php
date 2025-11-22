@@ -11,19 +11,26 @@
                 <p class="text-white text-lg mb-4">Get your free trial of a Rust server for 24 hours. Submit request now.
                 </p>
                 <form wire:submit="requestTrial" method="post">
-                    <div class="flex flex-col max-w-lg w-full" wire:ignore>
-                        <div class="flex items-center m-auto w-full mb-3">
+                    <div class="flex flex-col max-w-lg w-full">
+                        <div class="m-auto w-full mb-3">
                             @session('success')
                                 <x-alerts.success :message="$value" />
                             @endsession
-                            <div class="flex flex-col mr-3 w-full">
-                                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                                    :value="old('email')" required placeholder="Email Address" autocomplete="off" />
-                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            <div class="flex items-center">
+                                <div class="flex flex-col mr-3 w-full">
+                                    <x-text-input id="email" wire:model="email" class="block mt-1 w-full"
+                                        type="email" required placeholder="Email Address" autocomplete="off" />
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                </div>
+                                <button class="py-2 px-3 bg-rust font-bold rounded-md text-white"
+                                    type="submit">Submit</button>
                             </div>
-                            <button class="py-2 px-3 bg-rust font-bold rounded-md text-white" type="submit">Submit</button>
                         </div>
-                        <x-turnstile data-action="newsletter" data-theme="light" />
+                        <div wire:ignore>
+                            <x-turnstile wire:model="trustileResponse" data-action="newsletter" data-theme="light" />
+                        </div>
+                        <p class="text-white">Due to bot spam, please submit your email here, then join our Discord and
+                            let us know in the general chat so we know you are a legitimate user.</p>
                     </div>
                 </form>
             </div>

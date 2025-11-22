@@ -47,7 +47,7 @@ class FreeTrial extends Component
     {
         $this->validate([
             'email' => ['required', 'email', 'unique:trials,email'],
-            'cf-turnstile-response' => ['required', new Turnstile]
+            'trustileResponse' => ['required', new Turnstile]
         ]);
         Trial::create([
             'email' => $this->email,
@@ -56,8 +56,8 @@ class FreeTrial extends Component
             'token' => Str::uuid()
         ]);
         Http::post(config('app.discord_trial'), [
-            'content' => "```Trial Request has been recieved from: \n" . $request->email . "```",
+            'content' => "```Trial Request has been recieved from: \n" . $this->email . "```",
         ]);
-        return back()->with('success', 'Your request has been submitted! wait for our email.');
+        session()->flash('success', 'Your request has been submitted! wait for our email.');
     }
 }

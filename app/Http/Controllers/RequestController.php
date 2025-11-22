@@ -6,13 +6,16 @@ use App\Models\Trial;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Validation\Rule;
+use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class RequestController extends Controller
 {
     public function requestTrial(Request $request)
     {
         $request->validate([
-            'email' => ['required', 'email', 'unique:trials,email']
+            'email' => ['required', 'email', 'unique:trials,email'],
+            'cf-turnstile-response' => ['required', new Turnstile]
         ]);
         Trial::create([
             'email' => $request->email,
