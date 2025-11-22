@@ -13,6 +13,7 @@
         "laravel/socialite": "^5.16",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
+        "ryangjchandler/laravel-cloudflare-turnstile": "^3.0",
         "stripe/stripe-php": "^16.4"
     },
     "require-dev": {

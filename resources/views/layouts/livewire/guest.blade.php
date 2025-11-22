@@ -24,8 +24,9 @@
             gtag('config', 'G-4JHNXFWX2E');
         </script>
     @endproduction
-
+    
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <x-turnstile.scripts />
     @livewireStyles
 </head>
 

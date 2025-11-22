@@ -10,18 +10,20 @@
                 </h1>
                 <p class="text-white text-lg mb-4">Get your free trial of a Rust server for 24 hours. Submit request now.
                 </p>
-                <form action="{{ route('request.trial') }}" method="post">
-                    @csrf
-                    <div class="max-w-lg flex items-center m-auto">
-                        @session('success')
-                            <x-alerts.success :message="$value" />
-                        @endsession
-                        <div class="flex flex-col mr-3 w-full">
-                            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                                :value="old('email')" required placeholder="Email Address" autocomplete="off" />
-                            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <form wire:submit="requestTrial" method="post">
+                    <div class="flex flex-col max-w-lg w-full" wire:ignore>
+                        <div class="flex items-center m-auto w-full mb-3">
+                            @session('success')
+                                <x-alerts.success :message="$value" />
+                            @endsession
+                            <div class="flex flex-col mr-3 w-full">
+                                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
+                                    :value="old('email')" required placeholder="Email Address" autocomplete="off" />
+                                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            </div>
+                            <button class="py-2 px-3 bg-rust font-bold rounded-md text-white" type="submit">Submit</button>
                         </div>
-                        <button class="py-2 px-3 bg-rust font-bold rounded-md text-white" type="submit">Submit</button>
+                        <x-turnstile wire:model="trustileResponse" data-action="newsletter" data-theme="light" />
                     </div>
                 </form>
             </div>
