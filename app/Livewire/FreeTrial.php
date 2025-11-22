@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 use Livewire\Attributes\Layout;
 use Illuminate\Support\Facades\Http;
 use Artesaos\SEOTools\Facades\JsonLd;
@@ -46,7 +47,7 @@ class FreeTrial extends Component
     {
         $this->validate([
             'email' => ['required', 'email', 'unique:trials,email'],
-            'trustileResponse' => ['required', Rule::turnstile()]
+            'trustileResponse' => ['required', new Turnstile]
         ]);
         Trial::create([
             'email' => $this->email,
