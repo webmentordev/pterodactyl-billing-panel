@@ -16,7 +16,7 @@ class Servers extends Component
     public function render()
     {
         return view('livewire.admin.servers.servers', [
-            'servers' => Server::latest()->paginate(200)
+            'servers' => Server::latest()->withCount(['orders', 'trials'])->paginate(200)
         ]);
     }
 

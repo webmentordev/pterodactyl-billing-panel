@@ -27,6 +27,7 @@
                 <th width="130px">Specs</th>
                 <th class="text-end" width="120px">Active</th>
                 <th class="text-end" width="120px">Orders</th>
+                <th class="text-end" width="120px">Trials</th>
                 <th class="text-end" width="120px">Usages</th>
                 <th class="text-end">Added At</th>
                 <th class="text-end" width="120px">Action</th>
@@ -66,7 +67,8 @@
                         @endif
 
                     </td>
-                    <td class="text-end">{{ count($item->orders) }}</td>
+                    <td class="text-end">{{ $item->orders_count }}</td>
+                    <td class="text-end">{{ $item->trails_count }}</td>
                     <td class="text-end">{{ count($item->usage) }}/{{ $item->threads_limit / 2 }}</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                     <td class="flex items-center justify-end">

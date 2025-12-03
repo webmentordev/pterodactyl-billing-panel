@@ -28,7 +28,12 @@ class Server extends Model
 
     public function orders()
     {
-        return $this->hasMany(Order::class);
+        return $this->hasMany(Order::class)->where('is_trial', false);
+    }
+
+    public function trials()
+    {
+        return $this->hasMany(Order::class)->where('is_trial', true);
     }
 
     public function usage()
