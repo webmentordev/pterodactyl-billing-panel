@@ -33,7 +33,7 @@ class Server extends Model
 
     public function trials()
     {
-        return $this->hasMany(Order::class)->where('is_trial', true);
+        return $this->hasMany(Order::class, 'server_id', 'id')->where('is_trial', true);
     }
 
     public function usage()
