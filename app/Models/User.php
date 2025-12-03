@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Billing;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -50,6 +51,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function active_orders()
     {
         return $this->hasMany(Order::class)->where('status', 'paid');
+    }
+
+    public function trials()
+    {
+        return $this->hasMany(Order::class)->where('is_trial', true);
+    }
+
+    public function billings(){
+        return $this->hasManyThrough(Billing::class, Order::class);
     }
 
     public function uploads()

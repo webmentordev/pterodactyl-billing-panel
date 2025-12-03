@@ -9,7 +9,8 @@
                 <th width="80px">Signed</th>
                 <th>Admin</th>
                 <th>Orders</th>
-                <th>Servers</th>
+                <th>Paid Invoices</th>
+                <th>Trials</th>
                 <th class="text-end">Joined At</th>
             </tr>
             @foreach ($users as $item)
@@ -41,8 +42,9 @@
                         @endif
                     </td>
                     <td><a href="{{ route('admin.orders', [$item->id]) }}"
-                            class="underline text-rust">{{ count($item->orders) }}</a></td>
-                    <td>#</td>
+                            class="underline text-rust">{{ $item->orders_count }}</a></td>
+                    <td>{{ $item->billings_count }}</td>
+                    <td>{{ $item->trials_count }}</td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
                 </tr>
             @endforeach
