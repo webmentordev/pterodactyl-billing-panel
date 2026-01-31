@@ -27,7 +27,7 @@
                         @elseif (!$item->is_trial && $item->status == 'pending')
                             -
                         @else
-                            {{ Str::afterLast($item->gateway_order_id, '-') }}
+                            <x-expand-item text="{{ Str::afterLast($item->gateway_order_id, '-') }}" length="9"/>
                         @endif
                     </td>
                     <td><a href="{{ route('admin.orders', [$item->user->id]) }}"

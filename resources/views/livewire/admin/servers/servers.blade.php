@@ -42,7 +42,7 @@
                     <td>{{ $item->location }}</td>
                     <td class="relative" x-data="{ pop: false }">
                         <button class="text-rust-green underline font-semibold" @click="pop = !pop">View</button>
-                        <div x-show="pop" x-cloak x-transition
+                        <div x-show="pop" x-cloak x-transition @click.away="pop = false"
                             class="z-10 top-12 right-0 bg-dark-100 absolute w-[250px] p-2 rounded-2xl border border-white/10">
                             <ul class="specs p-3">
                                 <li><strong>Cores</strong><span>{{ $item->cores }}</span></li>
