@@ -11,7 +11,7 @@
             <th>User Agent</th>
             <th width="90px">Viewed?</th>
             <th class="text-end" width="180px">Created At</th>
-            <th class="text-end" width="330px">Action</th>
+            <th class="text-end" width="410px">Action</th>
         </tr>
         @foreach ($trials as $item)
         <tr wire:key="{{ $item->id }}">
@@ -67,12 +67,21 @@
                             Processing...
                         </div>
                     </button>
-                    <button class="bg-rust text-white py-1 px-3 rounded-lg font-semibold"
+                    <button class="bg-rust text-white py-1 px-3 rounded-lg font-semibold mr-2"
                         wire:click='reject("{{ $item->id }}")'>
                         <div wire:target="reject" wire:loading.class="hidden">
                             Reject
                         </div>
                         <div wire:target="reject" wire:loading>
+                            Processing...
+                        </div>
+                    </button>
+                    <button class="bg-indigo-600 text-white py-1 px-3 rounded-lg font-semibold"
+                        wire:click='silent_reject("{{ $item->id }}")'>
+                        <div wire:target="silent_reject" wire:loading.class="hidden">
+                            Trash
+                        </div>
+                        <div wire:target="silent_reject" wire:loading>
                             Processing...
                         </div>
                     </button>

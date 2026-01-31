@@ -56,6 +56,12 @@ class Trials extends Component
         Mail::to($trial->email)->send(new TrialRequestRejected($trial));
     }
 
+    public function silent_reject(Trial $trial)
+    {
+        $trial->status = 'rejected';
+        $trial->save();
+    }
+
     public function reject_delete(Trial $trial)
     {
         $trial->status = 'rejected';
