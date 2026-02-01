@@ -6,7 +6,7 @@
     <table class="w-full table-fixed">
         <tr>
             <th width="300px">Email</th>
-            <th width="120px">IP Address</th>
+            <th width="130px">IP Address</th>
             <th width="120px">Status</th>
             <th>User Agent</th>
             <th width="90px">Viewed?</th>
@@ -31,9 +31,7 @@
             </td>
             <td x-data="{read: false}">
                 @if ($item->user_agent)
-                <span class="cursor-pointer" x-show="!read"
-                    @click="read = true">{{ Str::limit($item->user_agent, 50, '...') }}</span>
-                <span class="cursor-pointer" x-show="read" @click="read = false">{{ $item->user_agent }}</span>
+                    <x-expand-item text="{{ $item->user_agent }}" length="50"/>
                 @else
                 -
                 @endif
@@ -48,7 +46,7 @@
             <td class="text-end">{{ $item->created_at->format('d M,Y H:i') }}</td>
             <td class="text-end">
                 @if ($item->status == 'pending')
-                <div class="flex items-center h-fit">
+                <div class="flex items-center justify-end h-fit">
                     <button class="bg-rust-green text-white py-1 px-3 rounded-lg font-semibold mr-2"
                         wire:click='approve("{{ $item->id }}")'>
                         <div wire:target="approve" wire:loading.class="hidden">

@@ -30,8 +30,7 @@
                             <x-expand-item text="{{ Str::afterLast($item->gateway_order_id, '-') }}" length="9"/>
                         @endif
                     </td>
-                    <td><a href="{{ route('admin.orders', [$item->user->id]) }}"
-                            class="underline text-rust-green">{{ $item->user->name }}</a></td>
+                    <td><x-expand-item text="{{ $item->user->name }}" length="15"/></td>
                     <td>${{ $item->price }}</td>
                     <td>{{ $item->total_payments }}</td>
                     <td>
