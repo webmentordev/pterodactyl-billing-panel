@@ -18,4 +18,10 @@ class Emails extends Component
             'emails' => CustomEmail::latest()->paginate(200)
         ]);
     }
+
+
+    public function delete_email(CustomEmail $email){
+        $email->delete();
+        return session()->flash("success", "Email has been deleted!");
+    }
 }

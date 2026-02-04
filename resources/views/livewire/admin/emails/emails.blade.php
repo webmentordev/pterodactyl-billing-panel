@@ -14,6 +14,7 @@
                 <th width="450px">Subject</th>
                 <th class="text-end">Content</th>
                 <th class="text-end" width="240px">Created At</th>
+                <th class="text-end" width="140">Delete</th>
             </tr>
             @foreach ($emails as $item)
                 <tr>
@@ -27,6 +28,18 @@
                         </div>
                     </td>
                     <td class="text-end">{{ $item->created_at->format('d M,Y H:i:s') }} UTC</td>
+                    <td class="flex items-center justify-end">
+                        <button class="bg-rust text-white py-1 px-3 rounded-lg font-semibold"
+                            wire:confirm="Are you sure you want to delete this email?"
+                            wire:click='delete_email("{{ $item->id }}")'>
+                            <div wire:target="delete_email" wire:loading.class="hidden">
+                                Delete
+                            </div>
+                            <div wire:target="delete_email" wire:loading>
+                                Processing...
+                            </div>
+                        </button>
+                    </td>
                 </tr>
             @endforeach
         </table>
