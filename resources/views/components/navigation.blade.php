@@ -15,7 +15,7 @@
                             <img src="https://api.iconify.design/material-symbols-light:arrow-drop-down.svg?color=%23ffffff"
                                 alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
                         </button>
-                        <div x-show="open" x-cloak x-transition
+                        <div x-show="open" x-cloak x-transition @click.away="open = false"
                             class="absolute top-7 right-0 w-[150px] bg-dark border border-white/10 flex flex-col rounded-lg p-3">
                             <a href="{{ config('app.ptero_url') }}" target="_blank"
                                 title="RustDedicated Hosting Game Panel"
@@ -35,7 +35,7 @@
                                 alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
                         </button>
 
-                        <div x-show="open" x-cloak x-transition
+                        <div x-show="open" x-cloak x-transition @click.away="open = false"
                             class="absolute top-7 right-0 w-[150px] bg-dark border border-white/10 flex flex-col rounded-lg p-3">
                             <a href="{{ config('app.discord_link') }}" target="_blank"
                                 title="RustDedicated Hosting Discord"
