@@ -1,8 +1,9 @@
 <section>
-    <div class="min-h-[800px] h-[800px] bg-cover bg-center relative bg-fixed"
-        style="background-image: url({{ asset('assets/background/rust-dedicated-hosting-image-2.webp') }})">
-        <div class="absolute top-0 left-0 bgGradient w-full h-full"></div>
-        <div class="relative flex items-center justify-center h-full w-full z-10">
+    <div class="min-h-[800px] h-[800px] relative">
+        <img src="{{ asset('assets/background/rust-dedicated-hosting-image-2.webp') }}"
+            alt="Rustdedicated hosting banner" fetchpriority="high" loading="eager" class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <div class="absolute top-0 left-0 bgGradient w-full h-full z-10"></div>
+        <div class="relative flex items-center justify-center h-full w-full z-20">
             <div class="text-center">
                 <h1 class="text-8xl text-gray-200 550px:text-5xl">High Performance <strong
                         class="text-rust">Dedicated</strong> <br> Rust
@@ -11,7 +12,7 @@
                 <p class="text-white text-lg mb-4">We utilize high-performance consumer-grade hardware to ensure
                     seamless, <br> low-latency, lag-free gameplay</p>
                 <a href="{{ route('package') }}"
-                    class="inline-block text-white bg-rust p-3 rounded-sm font-bold px-4 hover:bg-rust-green transition-all"
+                    class="inline-block text-white bg-rust-green p-3 rounded-sm font-bold px-4 hover:bg-rust transition-all"
                     title="Buy Under 30$ Dedicated Rust Server">Get {{ $price }}$ Server</a>
             </div>
         </div>
@@ -112,7 +113,7 @@
             </div>
         </div>
         <a href="{{ route('package') }}"
-            class="inline-block text-white bg-rust p-3 mt-4 rounded-sm font-bold px-4 w-fit m-auto hover:bg-rust-green transition-all"
+            class="inline-block text-white bg-rust-green p-3 mt-4 rounded-sm font-bold px-4 w-fit m-auto hover:bg-rust transition-all"
             title="Buy Under 30$ Dedicated Rust Server">Get your Rust server now</a>
     </div>
 
@@ -181,7 +182,7 @@
                     startup speed. On average, HDDs take 6–8 minutes to load assets, standard SSDs take 3–5 minutes,
                     while M.2 NVMe storage reduces this time dramatically to just 20–40 seconds. Investing in high-speed
                     storage is essential for optimal server performance and minimizing downtime.</p>
-                <img class="mt-6 rounded-lg" src="{{ asset('assets/fast-rust-server-loading.png') }}"
+                <img class="mt-6 rounded-lg max-w-[354px] max-h-[213px]" src="{{ asset('assets/rust-dedicated-server-panel.webp') }}"
                     title="Rust Server ControlPanel" alt="Rust Server ControlPanel">
             </div>
         </div>

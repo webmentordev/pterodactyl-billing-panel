@@ -1,0 +1,46 @@
+# RustDedicated Hosting
+
+> RustDedicated Hosting provides high-performance Rust game server rentals located in Germany, optimized for low-latency play across the EU, parts of Asia, and the Middle East. Servers run on outsourced (non-colocated) hardware selected and configured specifically to avoid thermal throttling under Rust's single-threaded CPU load.
+
+RustDedicated is owned and operated by Ahmer, a full-stack web developer and cloud engineer who also works as a freelance Rust server modder (plugins, custom maps) with 3+ years of Rust hosting experience and 3500+ hours playing Rust. Support is available 7 days a week, 5 AM–7 PM UTC, covering both server hosting issues and plugin/mod troubleshooting.
+
+Servers use Ryzen 7 7700 hardware (8 cores / 16 threads), with 6 cores made available to customers at a rate of 1 core (2 threads) per customer; the remaining 2 cores are reserved for host-level operations to prevent thermal throttling and slowdowns. Rust is single-threaded, so 2 dedicated threads per server is intentional: the primary thread runs the game, the second offloads tasks like map generation to reduce lag and rubber-banding.
+
+Not affiliated with Facepunch Studios or the official Rust game.
+
+## Hosting Plans
+
+- [Buy a Rust Server](https://rustdedicated.com/buy-dedicated-rust-server-hosting): Starting at $25 (promo) / $25–30 monthly. Includes dedicated CPU thread(s) up to 4.70GHz, 15GB DDR4 physical RAM + 5GB virtual RAM, 60GB M.2 NVMe SSD, 1Gbit/s uplink, DDoS protection, 2 backups, 1 MySQL database, unlimited player slots (150 recommended), up to 4500 map size, full FTP access, sub-user management, Oxide/Carbon/Vanilla support, Rust+ app support, and Discord support.
+- [Free Trial](https://rustdedicated.com/free-trial-rust-server-hosting): Try a Rust server before purchasing.
+
+## Account & Management
+
+- [Home](https://rustdedicated.com/): Main landing page.
+- [Login](https://rustdedicated.com/login): Existing customer sign-in.
+- [Register](https://rustdedicated.com/user/account/create/new): Create a new account.
+- [About Us](https://rustdedicated.com/about-us): Background on the company and founder.
+- [Client Area / User Dashboard](https://rustdedicated.com/user/dashboard): Manage billing, orders, and account details.
+- [Game Panel](https://panel.rustdedicated.com/): Pterodactyl-based control panel for server management — start/stop, resource monitoring (CPU/RAM/uptime), switching between Oxide/Carbon/Vanilla, port configuration, and adding collaborators.
+
+## Policies
+
+- [Terms of Service](https://rustdedicated.com/terms-of-service)
+- [Privacy Policy](https://rustdedicated.com/privacy-policy)
+- [Refund Policy](https://rustdedicated.com/refund-policy): 48-hour refund policy on new orders.
+- Free server migration available on request via support.
+
+## Technical Notes (Why We Configure Servers This Way)
+
+- **CPU**: Rust relies on a single CPU thread for core game logic (entities, NPCs, AI, player population), so servers need high clock speed (4.20GHz+) rather than many cores. A second thread is allocated to offload secondary tasks like procedural map generation.
+- **RAM**: A 2000-size map needs ~7–8GB RAM after bootup; a 6000-size (max) map needs ~12GB+. 15GB DDR4 is allocated to maintain stability through monthly wipe cycles.
+- **Storage**: M.2 NVMe SSDs cut asset warmup/bootup time to 20–40 seconds, versus 3–5 minutes on SATA SSDs or 6–8 minutes on HDDs.
+- **Location**: Servers are based in Germany to balance affordability with central coverage of the EU, and reasonable latency to parts of Asia and the Middle East.
+
+## Community & Reviews
+
+- [Discord Support](https://discord.gg/5XFteSutRK): Quick support and community discussion.
+- [TrustPilot Reviews](https://www.trustpilot.com/review/rustdedicated.com): Independent customer reviews.
+
+## Sitemap
+
+- [XML Sitemap](https://rustdedicated.com/sitemap.xml): Full list of indexable pages.

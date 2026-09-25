@@ -2,8 +2,8 @@
     <div class="w-full bg-dark-100 border-t border-white/10 px-4 p-12">
         <div class="grid grid-cols-3 gap-6 max-w-7xl w-full m-auto 890px:grid-cols-2 510px:grid-cols-1">
             <div class="flex flex-col">
-                <img src="{{ asset('assets/rust-dedicated-logo.png') }}" alt="Rust Game Dedicated Hosting Under 20$"
-                    title="Rust Game Dedicated Hosting Under 20$" width="210px" class="mb-4">
+                <img src="{{ asset('assets/rust-dedicated-logo.webp') }}" alt="Rust Game Dedicated Hosting Under 20$"
+                    title="Rust Game Dedicated Hosting Under 20$" width="180" height="180" class="mb-4">
                 <div class="mt-3 text-white">
                     <p class="mb-3">Welcome to the Official Website Of RustDedicated Hosting!</p>
                     <p class="mb-3">RustDedicated is your trusted provider for Rust game hosting, delivering
@@ -20,27 +20,27 @@
                         <li class="mr-5"><a href="{{ config('app.discord_link') }}" target="_blank"
                                 title="RustDedicated Hosting Discord">
                                 <img src="https://api.iconify.design/logos:discord-icon.svg"
-                                    alt="RustDedicated Hosting Discord" width="25px">
+                                    alt="RustDedicated Hosting Discord" width="25" height="25">
                             </a></li>
                         <li class="mr-5"><a href="{{ config('app.yourube_url') }}" target="_blank"
                                 title="RustDedicated Hosting YouTube">
                                 <img src="https://api.iconify.design/logos:youtube-icon.svg"
-                                    alt="RustDedicated Hosting YouTube" width="25px">
+                                    alt="RustDedicated Hosting YouTube" width="25" height="25">
                             </a></li>
                         <li class="mr-5"><a href="{{ config('app.facebook_link') }}" target="_blank"
                                 title="RustDedicated Hosting Facebook">
                                 <img src="https://api.iconify.design/logos:facebook.svg"
-                                    alt="RustDedicated Hosting Facebook" width="24px">
+                                    alt="RustDedicated Hosting Facebook" width="25" height="25">
                             </a></li>
                         <li class="mr-5"><a href="{{ config('app.twitter_link') }}" target="_blank"
                                 title="RustDedicated Hosting Twitter">
                                 <img src="https://api.iconify.design/logos:twitter.svg"
-                                    alt="RustDedicated Hosting Twitter" width="25px">
+                                    alt="RustDedicated Hosting Twitter" width="25" height="25">
                             </a></li>
                         <li class="mr-3"><a href="mailto:support@rustdedicated.com" target="_blank"
                                 title="RustDedicated Hosting Support Email">
                                 <img src="https://api.iconify.design/twemoji:incoming-envelope.svg"
-                                    alt="RustDedicated Hosting Support Email" width="25px">
+                                    alt="RustDedicated Hosting Support Email" width="25" height="25">
                             </a></li>
                     </ul>
                 </div>

@@ -3,17 +3,17 @@
         <div class="bg-dark-100/90 p-2 pl-5 border border-white/20 backdrop-blur rounded-full max-w-7xl m-auto">
             <div class="flex items-center justify-between">
                 <a href="{{ route('home') }}" class="flex items-center"><img
-                        src="{{ asset('assets/rust-dedicated-logo.webp') }}" width="80" alt="RustDedicated Logo">
+                        src="{{ asset('assets/rust-dedicated-logo.webp') }}" width="80" height="80" alt="RustDedicated Logo">
                 </a>
                 <ul class="flex items-center text-white links 870px:hidden">
-                    <a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all text-lg">Home</a>
-                    <a href="{{ route('package') }}" class="mx-6 text-rust transition-all text-lg">Buy Now</a>
-                    <a href="{{ route('free.trial') }}" class="mx-6 hover:text-rust transition-all text-lg">Trial</a>
-                    <div class="relative ml-6" x-data="{ open: false }">
+                    <li><a href="{{ route('home') }}" class="mx-6 hover:text-rust transition-all text-lg">Home</a></li>
+                    <li><a href="{{ route('package') }}" class="mx-6 text-rust transition-all text-lg">Buy Now</a></li>
+                    <li><a href="{{ route('free.trial') }}" class="mx-6 hover:text-rust transition-all text-lg">Trial</a></li>
+                    <li><div class="relative ml-6" x-data="{ open: false }">
                         <button class="flex items-center" x-on:click="open = !open">
                             <span class="font hover:text-rust transition-all text-lg">Panel</span>
                             <img src="https://api.iconify.design/material-symbols-light:arrow-drop-down.svg?color=%23ffffff"
-                                alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
+                                alt="Arrow Down" width="30" height="30" :class="open ? 'rotate-180' : ''">
                         </button>
                         <div x-show="open" x-cloak x-transition @click.away="open = false"
                             class="absolute top-7 right-0 w-[150px] bg-dark border border-white/10 flex flex-col rounded-lg p-3">
@@ -27,12 +27,12 @@
                                 <strong class="ml-2">Client Area</strong>
                             </a>
                         </div>
-                    </div>
-                    <div class="relative ml-6" x-data="{ open: false }">
+                    </div></li>
+                    <li><div class="relative ml-6" x-data="{ open: false }">
                         <button class="flex items-center" x-on:click="open = !open">
                             <span class="font hover:text-rust transition-all text-lg">Socials</span>
                             <img src="https://api.iconify.design/material-symbols-light:arrow-drop-down.svg?color=%23ffffff"
-                                alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
+                                alt="Arrow Down" width="30" height="30" :class="open ? 'rotate-180' : ''">
                         </button>
 
                         <div x-show="open" x-cloak x-transition @click.away="open = false"
@@ -41,34 +41,34 @@
                                 title="RustDedicated Hosting Discord"
                                 class="hover:text-rust transition-all py-2 border-b border-white/10 flex items-center">
                                 <img src="https://api.iconify.design/logos:discord-icon.svg"
-                                    alt="RustDedicated Hosting Discord">
+                                    alt="RustDedicated Hosting Discord" width="20" height="20">
                                 <strong class="ml-2">Discord</strong>
                             </a>
                             <a href="{{ config('app.yourube_url') }}" target="_blank"
                                 title="RustDedicated Hosting YouTube"
                                 class="hover:text-rust transition-all py-2 flex items-center border-b border-white/10">
                                 <img src="https://api.iconify.design/logos:youtube-icon.svg"
-                                    alt="RustDedicated Hosting YouTube" width="20">
+                                    alt="RustDedicated Hosting YouTube" width="20" height="20">
                                 <strong class="ml-2">YouTube</strong>
                             </a>
                             <a href="{{ config('app.facebook_link') }}" target="_blank"
                                 title="RustDedicated Hosting Facebook"
                                 class="hover:text-rust transition-all py-2 flex items-center border-b border-white/10">
                                 <img src="https://api.iconify.design/logos:facebook.svg"
-                                    alt="RustDedicated Hosting Facebook" width="20">
+                                    alt="RustDedicated Hosting Facebook" width="20" height="20">
                                 <strong class="ml-2">Facebook</strong>
                             </a>
                             <a href="{{ config('app.twitter_link') }}" target="_blank"
                                 title="RustDedicated Hosting Twitter"
                                 class="hover:text-rust transition-all py-2 flex items-center">
-                                <img src="https://api.iconify.design/logos:twitter.svg"
+                                <img src="https://api.iconify.design/logos:twitter.svg" width="20" height="20"
                                     alt="RustDedicated Hosting Twitter">
                                 <strong class="ml-2">Twitter</strong>
                             </a>
                         </div>
-                    </div>
-                    <a href="{{ route('about') }}" class="mx-6 hover:text-rust transition-all text-lg">About</a>
-                    @auth
+                    </div></li>
+                    <li><a href="{{ route('about') }}" class="mx-6 hover:text-rust transition-all text-lg">About</a></li>
+                    <li>@auth
                         @if (Auth::user()->is_admin)
                             <a href="{{ route('admin.dashboard') }}"
                                 class="mx-6 hover:text-rust transition-all text-lg">Dashboard</a>
@@ -76,7 +76,7 @@
                             <a href="{{ route('dashboard') }}"
                                 class="mx-6 hover:text-rust transition-all text-lg">Dashboard</a>
                         @endif
-                    @endauth
+                    @endauth</li>
                 </ul>
                 @auth
                     <form action="{{ route('logout') }}" method="post" class="870px:hidden">
@@ -87,14 +87,14 @@
                 @endauth
                 @guest
                     <ul class="flex items-center mr-5 links 870px:hidden">
-                        <a href="{{ route('login') }}" class="text-white pr-4 border-r border-white/10 text-lg">Login</a>
-                        <a href="{{ route('register') }}" class="text-white pl-4 text-lg">Register</a>
+                        <li><a href="{{ route('login') }}" class="text-white pr-4 border-r border-white/10 text-lg">Login</a></li>
+                        <li><a href="{{ route('register') }}" class="text-white pl-4 text-lg">Register</a></li>
                     </ul>
                 @endguest
                 <div class="w-fit relative hidden 870px:block">
-                    <button class="mr-2 mt-1" @click="open = true"><img
+                    <button class="mr-2 mt-1" @click="open = true" aria-label="Open drawer icon"><img
                             src="https://api.iconify.design/iconoir:align-right.svg?color=%23ffffff" alt="Burger Icon"
-                            width="30"></button>
+                            width="30" height="30"></button>
                 </div>
             </div>
         </div>

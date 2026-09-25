@@ -25,4 +25,4 @@ yarn-error.log
 response.json
 ./composer.lock
 ./package-lock.json
-
+/public/qr.html

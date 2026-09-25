@@ -17,7 +17,7 @@ body {
     @apply bg-dark;
 }
 
-body:after {
+/* body:after {
     background-image: url("https://files.facepunch.com/garry/1b1011b1/test.png?1=");
     content: " ";
     position: fixed;
@@ -28,7 +28,7 @@ body:after {
     z-index: 500;
     pointer-events: none;
     opacity: .6;
-}
+} */
 
 html {
     scroll-behavior: smooth;
