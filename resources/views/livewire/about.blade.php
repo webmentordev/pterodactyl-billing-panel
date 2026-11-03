@@ -22,29 +22,26 @@
                 <ul class="flex items-center mt-3">
                     <li class="mr-3"><a href="#" target="_blank" title="RustDedicated Hosting Discord">
                             <div class="flex items-center">
-                                <img src="https://api.iconify.design/logos:discord-icon.svg"
-                                    alt="RustDedicated Hosting Discord" width="25px">
+                                <iconify-icon icon="logos:discord-icon" width="25px"></iconify-icon>
                                 <span class="ml-2">(iLoBBer)</span>
                             </div>
                         </a></li>
                     <li class="mr-5"><a href="https://steamcommunity.com/id/MATRED97/" target="_blank"
                             title="Ahmer's Steam">
                             <div class="flex items-center">
-                                <img src="https://api.iconify.design/mdi:steam.svg?color=%23d6d6d6" alt="Ahmer's Steam"
-                                    width="25px">
+                                <iconify-icon icon="mdi:steam" width="25px" class="text-[#d6d6d6]"></iconify-icon>
                             </div>
                         </a></li>
                     <li class="mr-5"><a href="https://github.com/webmentordev" target="_blank" title="Ahmer's GitHub">
                             <div class="flex items-center">
-                                <img src="https://api.iconify.design/skill-icons:github-light.svg" alt="Ahmer's GitHub"
-                                    width="24px">
+                                <iconify-icon icon="skill-icons:github-light" width="24px"></iconify-icon>
                             </div>
                         </a></li>
                     <li class="mr-5"><a href="https://www.fiverr.com/users/mahmer97" target="_blank"
                             title="Ahmer's Fiverr">
                             <div class="flex items-center">
-                                <img src="https://api.iconify.design/jam:fiverr-circle.svg?color=%2346dd64"
-                                    alt="Ahmer's Fiverr" width="30px">
+                                <iconify-icon icon="jam:fiverr-circle" width="30px"
+                                    class="text-[#46dd64]"></iconify-icon>
                             </div>
                         </a></li>
                 </ul>
