@@ -1,4 +1,4 @@
-<foter class="w-full">
+<footer class="w-full">
     <div class="w-full bg-dark-100 border-t border-white/10 px-4 p-12">
         <div class="grid grid-cols-3 gap-6 max-w-7xl w-full m-auto 890px:grid-cols-2 510px:grid-cols-1">
             <div class="flex flex-col">
@@ -19,28 +19,24 @@
                     <ul class="flex items-center mt-3">
                         <li class="mr-5"><a href="{{ config('app.discord_link') }}" target="_blank"
                                 title="RustDedicated Hosting Discord">
-                                <img src="https://api.iconify.design/logos:discord-icon.svg"
-                                    alt="RustDedicated Hosting Discord" width="25" height="25">
+                                <iconify-icon icon="logos:discord-icon" width="25" height="25"></iconify-icon>
                             </a></li>
                         <li class="mr-5"><a href="{{ config('app.yourube_url') }}" target="_blank"
                                 title="RustDedicated Hosting YouTube">
-                                <img src="https://api.iconify.design/logos:youtube-icon.svg"
-                                    alt="RustDedicated Hosting YouTube" width="25" height="25">
+                                <iconify-icon icon="logos:youtube-icon" width="25" height="25"></iconify-icon>
                             </a></li>
                         <li class="mr-5"><a href="{{ config('app.facebook_link') }}" target="_blank"
                                 title="RustDedicated Hosting Facebook">
-                                <img src="https://api.iconify.design/logos:facebook.svg"
-                                    alt="RustDedicated Hosting Facebook" width="25" height="25">
+                                <iconify-icon icon="logos:facebook" width="25" height="25"></iconify-icon>
                             </a></li>
                         <li class="mr-5"><a href="{{ config('app.twitter_link') }}" target="_blank"
                                 title="RustDedicated Hosting Twitter">
-                                <img src="https://api.iconify.design/logos:twitter.svg"
-                                    alt="RustDedicated Hosting Twitter" width="25" height="25">
+                                <iconify-icon icon="logos:twitter" width="25" height="25"></iconify-icon>
                             </a></li>
                         <li class="mr-3"><a href="mailto:support@rustdedicated.com" target="_blank"
                                 title="RustDedicated Hosting Support Email">
-                                <img src="https://api.iconify.design/twemoji:incoming-envelope.svg"
-                                    alt="RustDedicated Hosting Support Email" width="25" height="25">
+                                <iconify-icon icon="twemoji:incoming-envelope" width="25"
+                                    height="25"></iconify-icon>
                             </a></li>
                     </ul>
                 </div>
@@ -102,4 +98,4 @@
                 target="_blank">Ahmer</a>
         </p>
     </div>
-</foter>
+</footer>

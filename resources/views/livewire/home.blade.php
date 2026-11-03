@@ -1,7 +1,7 @@
 <section>
     <div class="min-h-[800px] h-[800px] relative">
-        <img src="{{ asset('assets/background/rust-dedicated-hosting-image-2.webp') }}"
-            alt="Rustdedicated hosting banner" fetchpriority="high" loading="eager" class="absolute top-0 left-0 w-full h-full object-cover z-0">
+        <img src="{{ asset('assets/background/rust-dedicated-hosting-image-2.webp') }}" alt="Rustdedicated hosting banner"
+            fetchpriority="high" loading="eager" class="absolute top-0 left-0 w-full h-full object-cover z-0">
         <div class="absolute top-0 left-0 bgGradient w-full h-full z-10"></div>
         <div class="relative flex items-center justify-center h-full w-full z-20">
             <div class="text-center">
@@ -30,83 +30,65 @@
                 </div>
                 <p class="text-center">Dedicated Server Resources - Simple RCON Panel - File Manager</p>
                 <div class="grid grid-cols-3 gap-6 mt-8 750px:grid-cols-2 530px:grid-cols-1">
-                    <x-home-info-item image="https://api.iconify.design/uil:processor.svg?color=%23ffffff"
-                        text="Dedicated CPU Core Rust Server">
+                    <x-home-info-item icon="uil:processor" text="Dedicated CPU Core Rust Server">
                         Dedicated CPU Core
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/solar:video-frame-2-outline.svg?color=%23ffffff"
-                        text="Dedicated DDR4 RAM Rust Server">
+                    <x-home-info-item icon="solar:video-frame-2-outline" text="Dedicated DDR4 RAM Rust Server">
                         15GB DDR4 Memory
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/bi:nvme.svg?color=%23ffffff"
-                        text="Fast NVME Storage Rust Server">
+                    <x-home-info-item icon="bi:nvme" text="Fast NVME Storage Rust Server">
                         Fast M.2 NVME Storage
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/solar:database-outline.svg?color=%23ffffff"
-                        text="Free MySQL Database Rust Server">
+                    <x-home-info-item icon="solar:database-outline" text="Free MySQL Database Rust Server">
                         MYSQL Database
                     </x-home-info-item>
 
-                    <x-home-info-item
-                        image="https://api.iconify.design/material-symbols-light:globe.svg?color=%23ffffff"
-                        text="Rust Server Location">
+                    <x-home-info-item icon="material-symbols-light:globe" text="Rust Server Location">
                         EU Servers Location
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/carbon:accumulation-rain.svg?color=%23ffffff"
-                        text="Oxide & Carbon Support Rust Server">
+                    <x-home-info-item icon="carbon:accumulation-rain" text="Oxide & Carbon Support Rust Server">
                         Oxide, Carbon & Vanilla
                     </x-home-info-item>
 
-                    <x-home-info-item
-                        image="https://api.iconify.design/fluent:people-community-32-regular.svg?color=%23ffffff"
+                    <x-home-info-item icon="fluent:people-community-32-regular"
                         text="Modded & Community Rust Server Hosting">
                         Modded, Community Server
                     </x-home-info-item>
 
-                    <x-home-info-item
-                        image="https://api.iconify.design/fluent:panel-left-key-16-regular.svg?color=%23ffffff"
-                        text="Rust Server Panel">
+                    <x-home-info-item icon="fluent:panel-left-key-16-regular" text="Rust Server Panel">
                         Custom Game Panel
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/teenyicons:money-outline.svg?color=%23ffffff"
+                    <x-home-info-item icon="teenyicons:money-outline"
                         text="{{ (int) config('app.refund_days') * 24 }} Refund Policy">
                         {{ (int) config('app.refund_days') * 24 }} Hours Refund Policy
                     </x-home-info-item>
 
-                    <x-home-info-item
-                        image="https://api.iconify.design/fluent:person-support-20-regular.svg?color=%23ffffff"
-                        text="Rust Server Location">
+                    <x-home-info-item icon="fluent:person-support-20-regular" text="Rust Server Location">
                         24 / 7 Dedicated Support
                     </x-home-info-item>
 
-                    <x-home-info-item
-                        image="https://api.iconify.design/fluent:arrow-join-20-regular.svg?color=%23ffffff"
-                        text="Unlimited player slots Rust Server">
+                    <x-home-info-item icon="fluent:arrow-join-20-regular" text="Unlimited player slots Rust Server">
                         Unlimited Player Slots
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/hugeicons:file-01.svg?color=%23ffffff"
-                        text="60GB NVME Storage Rust server">
+                    <x-home-info-item icon="hugeicons:file-01" text="60GB NVME Storage Rust server">
                         60GB Storage FTP Access
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/tabler:map.svg?color=%23ffffff"
-                        text="Large Map Support Rust Server">
+                    <x-home-info-item icon="tabler:map" text="Large Map Support Rust Server">
                         Large Map Support
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/tabler:device-mobile.svg?color=%23ffffff"
-                        text="Rust+ App Support Rust server">
+                    <x-home-info-item icon="tabler:device-mobile" text="Rust+ App Support Rust server">
                         Rust+ App Support
                     </x-home-info-item>
 
-                    <x-home-info-item image="https://api.iconify.design/solar:alarm-broken.svg?color=%23ffffff"
-                        text="99.99% Uptime Rust server">
+                    <x-home-info-item icon="solar:alarm-broken" text="99.99% Uptime Rust server">
                         99.99% Server Uptime
                     </x-home-info-item>
                 </div>
@@ -182,8 +164,9 @@
                     startup speed. On average, HDDs take 6–8 minutes to load assets, standard SSDs take 3–5 minutes,
                     while M.2 NVMe storage reduces this time dramatically to just 20–40 seconds. Investing in high-speed
                     storage is essential for optimal server performance and minimizing downtime.</p>
-                <img class="mt-6 rounded-lg max-w-[354px] max-h-[213px]" src="{{ asset('assets/rust-dedicated-server-panel.webp') }}"
-                    title="Rust Server ControlPanel" alt="Rust Server ControlPanel">
+                <img class="mt-6 rounded-lg max-w-[354px] max-h-[213px]"
+                    src="{{ asset('assets/rust-dedicated-server-panel.webp') }}" title="Rust Server ControlPanel"
+                    alt="Rust Server ControlPanel">
             </div>
         </div>
     </div>
