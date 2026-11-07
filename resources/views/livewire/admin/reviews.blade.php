@@ -94,14 +94,13 @@
                     <td>
                         @if ($item->platform == 'Google')
                             <div class="flex items-center">
-                                <img src="https://api.iconify.design/devicon:google.svg" width="25px"
-                                    class="object-fill">
+                                <iconify-icon icon="devicon:google" width="25px"></iconify-icon>
                                 <strong class="ml-2">Google</strong>
                             </div>
                         @elseif($item->platform == 'TrustPilot')
                             <div class="flex items-center">
-                                <img src="https://api.iconify.design/simple-icons:trustpilot.svg?color=%2331bf4d"
-                                    width="30px" class="object-fill">
+                                <iconify-icon icon="simple-icons:trustpilot" width="30px"
+                                    class="text-[#31bf4d]"></iconify-icon>
                                 <strong class="ml-2">Trustpilot</strong>
                             </div>
                         @endif
@@ -110,7 +109,7 @@
                     <td>
                         <div class="h-full flex items-center">
                             @for ($index = 0; $index < $item->stars; $index++)
-                                <img src="https://api.iconify.design/fluent-color:star-28.svg">
+                                <iconify-icon icon="fluent-color:star-28"></iconify-icon>
                             @endfor
                         </div>
                     </td>
@@ -122,8 +121,8 @@
                         <div class="h-full flex items-center justify-end p-1">
                             <button wire:confirm="are you sure?" wire:click='delete("{{ $item->id }}")'
                                 class="flex items-center rounded-md border border-red-600 bg-red-600/10 px-2">
-                                <img
-                                    src="https://api.iconify.design/material-symbols:delete-forever-sharp.svg?color=%23db3c14">
+                                <iconify-icon icon="material-symbols:delete-forever-sharp"
+                                    class="text-[#db3c14]"></iconify-icon>
                                 <span class="ml-1">Delete</span>
                             </button>
                         </div>

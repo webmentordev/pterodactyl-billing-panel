@@ -27,10 +27,10 @@
                         @elseif (!$item->is_trial && $item->status == 'pending')
                             -
                         @else
-                            <x-expand-item text="{{ Str::afterLast($item->gateway_order_id, '-') }}" length="9"/>
+                            <x-expand-item text="{{ Str::afterLast($item->gateway_order_id, '-') }}" length="9" />
                         @endif
                     </td>
-                    <td><x-expand-item text="{{ $item->user->name }}" length="15"/></td>
+                    <td><x-expand-item text="{{ $item->user->name }}" length="15" /></td>
                     <td>${{ $item->price }}</td>
                     <td>{{ $item->total_payments }}</td>
                     <td>
@@ -42,19 +42,19 @@
                     </td>
                     <td>
                         @if ($item->has_paid)
-                            <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
-                                width="30px">
+                            <iconify-icon icon="teenyicons:tick-small-solid" width="30px"
+                                class="text-[#34f31b]"></iconify-icon>
                         @else
-                            <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="18px">
+                            <iconify-icon icon="fluent-emoji-flat:cross-mark" width="18px"></iconify-icon>
                         @endif
                     </td>
 
                     <td>
                         @if ($item->is_active)
-                            <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
-                                width="30px">
+                            <iconify-icon icon="teenyicons:tick-small-solid" width="30px"
+                                class="text-[#34f31b]"></iconify-icon>
                         @else
-                            <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
+                            <iconify-icon icon="fluent-emoji-flat:cross-mark" width="20px"></iconify-icon>
                         @endif
                     </td>
                     <td>
@@ -62,10 +62,10 @@
                     </td>
                     <td>
                         @if ($item->has_emailed)
-                            <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
-                                width="30px">
+                            <iconify-icon icon="teenyicons:tick-small-solid" width="30px"
+                                class="text-[#34f31b]"></iconify-icon>
                         @else
-                            <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
+                            <iconify-icon icon="fluent-emoji-flat:cross-mark" width="20px"></iconify-icon>
                         @endif
                     </td>
                     <td>
@@ -107,8 +107,8 @@
                     <td class="flex items-center justify-end" width="160px">
                         <div class="flex items-center h-fit mt-1">
                             <a href="{{ route('admin.billing', $item->id) }}" class="mr-1">
-                                <img src="https://api.iconify.design/mdi:eye-settings-outline.svg?color=%2358bcee"
-                                    width="18">
+                                <iconify-icon icon="mdi:eye-settings-outline" width="18px"
+                                    class="text-[#58bcee]"></iconify-icon>
                             </a>
                         </div>
                     </td>

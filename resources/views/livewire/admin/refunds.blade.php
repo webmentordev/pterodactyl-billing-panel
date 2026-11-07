@@ -27,10 +27,10 @@
                     <td>${{ number_format($item->amount, 2) }}</td>
                     <td>
                         @if ($item->refunded_at)
-                            <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
-                                width="30px">
+                            <iconify-icon icon="teenyicons:tick-small-solid" width="30px"
+                                class="text-[#34f31b]"></iconify-icon>
                         @else
-                            <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="18px">
+                            <iconify-icon icon="fluent-emoji-flat:cross-mark" width="18px"></iconify-icon>
                         @endif
                     </td>
                     <td x-data="{ open: false }">

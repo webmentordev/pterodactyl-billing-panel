@@ -74,8 +74,8 @@
                     <td class="flex items-center justify-end">
                         <div class="flex items-center h-fit mt-1">
                             <a href="{{ route('admin.server.update', $item->id) }}" class="mr-1">
-                                <img src="https://api.iconify.design/solar:pen-new-square-outline.svg?color=%233998fe"
-                                    width="18">
+                                <iconify-icon icon="solar:pen-new-square-outline" width="18px"
+                                    class="text-[#3998fe]"></iconify-icon>
                             </a>
                         </div>
                     </td>

@@ -28,17 +28,17 @@
                     <td>{{ $item->email }}</td>
                     <td>
                         @if ($item->google_id)
-                            <img src="https://api.iconify.design/skill-icons:gmail-dark.svg" width="25px">
+                            <iconify-icon icon="skill-icons:gmail-dark" width="25px"></iconify-icon>
                         @else
                             -
                         @endif
                     </td>
                     <td>
                         @if ($item->is_admin)
-                            <img src="https://api.iconify.design/teenyicons:tick-small-solid.svg?color=%2334f31b"
-                                width="30px">
+                            <iconify-icon icon="teenyicons:tick-small-solid" width="30px"
+                                class="text-[#34f31b]"></iconify-icon>
                         @else
-                            <img src="https://api.iconify.design/fluent-emoji-flat:cross-mark.svg" width="20px">
+                            <iconify-icon icon="fluent-emoji-flat:cross-mark" width="20px"></iconify-icon>
                         @endif
                     </td>
                     <td><a href="{{ route('admin.orders', [$item->id]) }}"
