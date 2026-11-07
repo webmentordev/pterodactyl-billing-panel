@@ -20,8 +20,8 @@
                 <div class="relative ml-6" x-data="{ open: false }">
                     <button class="flex items-center" x-on:click="open = !open">
                         <span class="font hover:text-rust transition-all text-lg">Support</span>
-                        <img src="https://api.iconify.design/material-symbols-light:arrow-drop-down.svg?color=%23ffffff"
-                            alt="Arrow Down" width="30" :class="open ? 'rotate-180' : ''">
+                        <iconify-icon icon="material-symbols-light:arrow-drop-down" width="30" class="text-white"
+                            :class="open ? 'rotate-180' : ''"></iconify-icon>
                     </button>
 
                     <div x-show="open" x-cloak x-transition
@@ -29,20 +29,18 @@
                         <a href="mailto:{{ config('app.mail_address') }}" target="_blank"
                             title="RustDedicated Hosting Discord"
                             class="hover:text-rust transition-all py-2 border-b border-white/10 flex items-center">
-                            <img src="https://api.iconify.design/twemoji:incoming-envelope.svg" width="22"
-                                alt="RustDedicated Hosting Discord">
+                            <iconify-icon icon="twemoji:incoming-envelope" width="22"></iconify-icon>
                             <strong class="ml-3">Email</strong>
                         </a>
-                        <a href="{{ config('app.discord_link') }}" target="_blank" title="RustDedicated Hosting Discord"
+                        <a href="{{ config('app.discord_link') }}" target="_blank"
+                            title="RustDedicated Hosting Discord"
                             class="hover:text-rust transition-all py-2 border-b border-white/10 flex items-center">
-                            <img src="https://api.iconify.design/logos:discord-icon.svg"
-                                alt="RustDedicated Hosting Discord">
+                            <iconify-icon icon="logos:discord-icon" width="22"></iconify-icon>
                             <strong class="ml-3">Discord</strong>
                         </a>
                         <a href="{{ config('app.yourube_url') }}" target="_blank" title="RustDedicated Hosting YouTube"
                             class="hover:text-rust transition-all py-2 flex items-center">
-                            <img src="https://api.iconify.design/logos:youtube-icon.svg"
-                                alt="RustDedicated Hosting YouTube">
+                            <iconify-icon icon="logos:youtube-icon" width="22"></iconify-icon>
                             <strong class="ml-3">YouTube</strong>
                         </a>
                     </div>
